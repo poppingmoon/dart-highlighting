@@ -33,7 +33,9 @@ void language_javascript_contains_0_contains_0_variants_0_onBegin(
   Response response,
 ) {
   final afterMatchIndex = match[0]!.length + match.index;
-  final nextChar = match.input[afterMatchIndex];
+  final nextChar = afterMatchIndex < match.input.length
+      ? match.input[afterMatchIndex]
+      : null;
   if (
       // HTML should not include another raw `<` inside a tag
       // nested type?
