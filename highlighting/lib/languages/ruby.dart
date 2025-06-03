@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -135,7 +136,7 @@ final ruby = Language(
     '~contains~1~starts~contains~0~contains~1~contains~6~contains~0~contains~12':
         Mode(
           className: "params",
-          begin: "\\|",
+          begin: "\\|(?!=)",
           end: "\\|",
           excludeBegin: true,
           excludeEnd: true,

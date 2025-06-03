@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -10,7 +11,7 @@ import '../src/language_definition_common.dart';
 final delphi = Language(
   id: "delphi",
   refs: {
-    '~contains~5~contains~1~contains~5': Mode(
+    '~contains~4~contains~1~contains~5': Mode(
       scope: "comment",
       begin: "\\(\\*",
       end: "\\*\\)",
@@ -29,7 +30,7 @@ final delphi = Language(
       ],
       relevance: 10,
     ),
-    '~contains~5~contains~1~contains~4': Mode(
+    '~contains~4~contains~1~contains~4': Mode(
       scope: "comment",
       begin: "\\{",
       end: "\\}",
@@ -48,14 +49,22 @@ final delphi = Language(
       ],
       relevance: 0,
     ),
-    '~contains~5~contains~1~contains~2': Mode(
+    '~contains~4~contains~1~contains~2': Mode(
       className: "meta",
       variants: [
         Mode(begin: "\\{\\\$", end: "\\}"),
         Mode(begin: "\\(\\*\\\$", end: "\\*\\)"),
       ],
     ),
-    '~contains~1': Mode(className: "string", begin: "(#\\d+)+"),
+    '~contains~1': Mode(
+      className: "string",
+      variants: [
+        Mode(match: "#\\d[\\d_]*"),
+        Mode(match: "#\\\$[\\dA-Fa-f][\\dA-Fa-f_]*"),
+        Mode(match: "#&[0-7][0-7_]*"),
+        Mode(match: "#%[01][01_]*"),
+      ],
+    ),
     '~contains~0': Mode(
       className: "string",
       begin: "'",
@@ -199,14 +208,16 @@ final delphi = Language(
   contains: [
     ModeReference('~contains~0'),
     ModeReference('~contains~1'),
-    NUMBER_MODE,
     Mode(
       className: "number",
       relevance: 0,
       variants: [
-        Mode(begin: "\\\$[0-9A-Fa-f]+"),
-        Mode(begin: "&[0-7]+"),
-        Mode(begin: "%[01]+"),
+        Mode(match: "\\b\\d[\\d_]*(\\.\\d[\\d_]*)?"),
+        Mode(match: "\\\$[\\dA-Fa-f_]+"),
+        Mode(match: "\\\$", relevance: 0),
+        Mode(match: "&[0-7][0-7_]*"),
+        Mode(match: "%[01_]+"),
+        Mode(match: "%", relevance: 0),
       ],
     ),
     Mode(
@@ -357,21 +368,21 @@ final delphi = Language(
           contains: [
             ModeReference('~contains~0'),
             ModeReference('~contains~1'),
-            ModeReference('~contains~5~contains~1~contains~2'),
+            ModeReference('~contains~4~contains~1~contains~2'),
             C_LINE_COMMENT_MODE,
-            ModeReference('~contains~5~contains~1~contains~4'),
-            ModeReference('~contains~5~contains~1~contains~5'),
+            ModeReference('~contains~4~contains~1~contains~4'),
+            ModeReference('~contains~4~contains~1~contains~5'),
           ],
         ),
-        ModeReference('~contains~5~contains~1~contains~2'),
+        ModeReference('~contains~4~contains~1~contains~2'),
         C_LINE_COMMENT_MODE,
-        ModeReference('~contains~5~contains~1~contains~4'),
-        ModeReference('~contains~5~contains~1~contains~5'),
+        ModeReference('~contains~4~contains~1~contains~4'),
+        ModeReference('~contains~4~contains~1~contains~5'),
       ],
     ),
-    ModeReference('~contains~5~contains~1~contains~2'),
+    ModeReference('~contains~4~contains~1~contains~2'),
     C_LINE_COMMENT_MODE,
-    ModeReference('~contains~5~contains~1~contains~4'),
-    ModeReference('~contains~5~contains~1~contains~5'),
+    ModeReference('~contains~4~contains~1~contains~4'),
+    ModeReference('~contains~4~contains~1~contains~5'),
   ],
 );

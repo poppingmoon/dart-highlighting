@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -19,7 +20,7 @@ final haskell = Language(
       variants: [
         Mode(
           scope: "comment",
-          begin: "--",
+          begin: "--+",
           end: "\$",
           contains: [
             Mode(
@@ -92,6 +93,7 @@ final haskell = Language(
   aliases: ["hs"],
   keywords:
       "let in if then else case of where do module import hiding qualified type data newtype deriving class instance as default infix infixl infixr foreign export ccall stdcall cplusplus jvm dotnet safe unsafe family forall mdo proc rec",
+  unicodeRegex: true,
   contains: [
     Mode(
       beginKeywords: "module",
@@ -206,6 +208,10 @@ final haskell = Language(
     ),
     ModeReference('~contains~2~contains~0'),
     Mode(scope: "title", begin: "^[_a-z][\\w']*", relevance: 0),
+    Mode(
+      begin:
+          "(?!-)([!#\$%&*+.\\/<=>?@\\\\^\\x7e-]|(?!([(),;\\[\\]`|{}]|[_:\"']))(\\p{S}|\\p{P}))--+|--+(?!-)([!#\$%&*+.\\/<=>?@\\\\^~-]|(?!([(),;\\[\\]`|{}]|[_:\"']))(\\p{S}|\\p{P}))",
+    ),
     ModeReference('~contains~0~contains~0~contains~4'),
     Mode(begin: "->|<-"),
   ],

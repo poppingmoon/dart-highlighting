@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -83,6 +84,7 @@ final rust = Language(
       "try",
       "type",
       "typeof",
+      "union",
       "unsafe",
       "unsized",
       "use",
@@ -132,6 +134,7 @@ final rust = Language(
       "debug_assert!",
       "debug_assert_eq!",
       "env!",
+      "eprintln!",
       "panic!",
       "file!",
       "format!",
@@ -185,14 +188,23 @@ final rust = Language(
       end: "\"",
       contains: [BACKSLASH_ESCAPE],
     ),
+    Mode(className: "symbol", begin: "'[a-zA-Z_][a-zA-Z0-9_]*(?!')"),
     Mode(
-      className: "string",
+      scope: "string",
       variants: [
         Mode(begin: "b?r(#*)\"(.|\\n)*?\"\\1(?!#)"),
-        Mode(begin: "b?'\\\\?(x\\w{2}|u\\w{4}|U\\w{8}|.)'"),
+        Mode(
+          begin: "b?'",
+          end: "'",
+          contains: [
+            Mode(
+              scope: "char.escape",
+              match: "\\\\('|\\w|x\\w{2}|u\\w{4}|U\\w{8})",
+            ),
+          ],
+        ),
       ],
     ),
-    Mode(className: "symbol", begin: "'[a-zA-Z_][a-zA-Z0-9_]*"),
     Mode(
       className: "number",
       variants: [
@@ -209,29 +221,40 @@ final rust = Language(
       relevance: 0,
     ),
     Mode(
-      begin: ["fn", "\\s+", "[a-zA-Z_]\\w*"],
+      begin: ["fn", "\\s+", "(r#)?[a-zA-Z_]\\w*"],
       className: {"1": "keyword", "3": "title.function"},
     ),
     Mode(
       className: "meta",
       begin: "#!?\\[",
       end: "\\]",
-      contains: [Mode(className: "string", begin: "\"", end: "\"")],
+      contains: [
+        Mode(
+          className: "string",
+          begin: "\"",
+          end: "\"",
+          contains: [BACKSLASH_ESCAPE],
+        ),
+      ],
     ),
     Mode(
-      begin: ["let", "\\s+", "(?:mut\\s+)?", "[a-zA-Z_]\\w*"],
+      begin: ["let", "\\s+", "(?:mut\\s+)?", "(r#)?[a-zA-Z_]\\w*"],
       className: {"1": "keyword", "3": "keyword", "4": "variable"},
     ),
     Mode(
-      begin: ["for", "\\s+", "[a-zA-Z_]\\w*", "\\s+", "in"],
+      begin: ["for", "\\s+", "(r#)?[a-zA-Z_]\\w*", "\\s+", "in"],
       className: {"1": "keyword", "3": "variable", "5": "keyword"},
     ),
     Mode(
-      begin: ["type", "\\s+", "[a-zA-Z_]\\w*"],
+      begin: ["type", "\\s+", "(r#)?[a-zA-Z_]\\w*"],
       className: {"1": "keyword", "3": "title.class"},
     ),
     Mode(
-      begin: ["(?:trait|enum|struct|union|impl|for)", "\\s+", "[a-zA-Z_]\\w*"],
+      begin: [
+        "(?:trait|enum|struct|union|impl|for)",
+        "\\s+",
+        "(r#)?[a-zA-Z_]\\w*",
+      ],
       className: {"1": "keyword", "3": "title.class"},
     ),
     Mode(
@@ -278,6 +301,7 @@ final rust = Language(
           "debug_assert!",
           "debug_assert_eq!",
           "env!",
+          "eprintln!",
           "panic!",
           "file!",
           "format!",
@@ -332,7 +356,8 @@ final rust = Language(
     Mode(
       className: "title.function.invoke",
       relevance: 0,
-      begin: "\\b(?!let\\b)[a-zA-Z]\\w*(?=\\s*\\()",
+      begin:
+          "\\b(?!let|for|while|if|else|match\\b)(r#)?[a-zA-Z]\\w*(?=\\s*\\()",
     ),
   ],
 );

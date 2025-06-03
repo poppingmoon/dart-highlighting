@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -354,7 +355,7 @@ final nsis = Language(
     Mode(
       className: "keyword",
       begin:
-          "!(?:addincludedir|addplugindir|appendfile|cd|define|delfile|echo|else|endif|error|execute|finalize|getdllversion|gettlbversion|if|ifdef|ifmacrodef|ifmacrondef|ifndef|include|insertmacro|macro|macroend|makensis|packhdr|searchparse|searchreplace|system|tempfile|undef|uninstfinalize|verbose|warning)",
+          "!(?:addincludedir|addplugindir|appendfile|assert|cd|define|delfile|echo|else|endif|error|execute|finalize|getdllversion|gettlbversion|if|ifdef|ifmacrodef|ifmacrondef|ifndef|include|insertmacro|macro|macroend|makensis|packhdr|searchparse|searchreplace|system|tempfile|undef|uninstfinalize|verbose|warning)",
     ),
     ModeReference('~contains~6~contains~2'),
     ModeReference('~contains~6~contains~3'),

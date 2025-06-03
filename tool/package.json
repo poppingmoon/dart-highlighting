@@ -7,7 +7,7 @@
     "circular-json": "^0.5.9",
     "esm": "^3.2.25",
     "gulp": "^5.0.1",
-    "highlight.js": "11.8.0",
+    "highlight.js": "11.11.1",
     "lodash": "^4.17.21",
     "postcss": "^8.5.4",
     "typescript": "^5.8.3"

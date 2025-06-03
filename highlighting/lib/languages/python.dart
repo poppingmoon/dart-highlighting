@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -10,7 +11,7 @@ import '../src/language_definition_common.dart';
 final python = Language(
   id: "python",
   refs: {
-    '~contains~7~contains~0': Mode(
+    '~contains~8~contains~0': Mode(
       className: "params",
       variants: [
         Mode(className: overwritingNullString, begin: "\\(\\s*\\)", skip: true),
@@ -156,13 +157,13 @@ final python = Language(
             ModeSelfReference(),
             ModeReference('~contains~0'),
             ModeReference('~contains~1'),
-            ModeReference('~contains~4'),
+            ModeReference('~contains~5'),
             HASH_COMMENT_MODE,
           ],
         ),
       ],
     ),
-    '~contains~4~variants~2~contains~3': Mode(
+    '~contains~5~variants~2~contains~3': Mode(
       className: "subst",
       begin: "\\{",
       end: "\\}",
@@ -301,13 +302,13 @@ final python = Language(
       },
       illegal: "#",
       contains: [
-        ModeReference('~contains~4'),
+        ModeReference('~contains~5'),
         ModeReference('~contains~1'),
         ModeReference('~contains~0'),
       ],
     ),
-    '~contains~4~variants~2~contains~2': Mode(begin: "\\{\\{", relevance: 0),
-    '~contains~4': Mode(
+    '~contains~5~variants~2~contains~2': Mode(begin: "\\{\\{", relevance: 0),
+    '~contains~5': Mode(
       className: "string",
       contains: [BACKSLASH_ESCAPE],
       variants: [
@@ -329,8 +330,8 @@ final python = Language(
           contains: [
             BACKSLASH_ESCAPE,
             ModeReference('~contains~0'),
-            ModeReference('~contains~4~variants~2~contains~2'),
-            ModeReference('~contains~4~variants~2~contains~3'),
+            ModeReference('~contains~5~variants~2~contains~2'),
+            ModeReference('~contains~5~variants~2~contains~3'),
           ],
         ),
         Mode(
@@ -339,8 +340,8 @@ final python = Language(
           contains: [
             BACKSLASH_ESCAPE,
             ModeReference('~contains~0'),
-            ModeReference('~contains~4~variants~2~contains~2'),
-            ModeReference('~contains~4~variants~2~contains~3'),
+            ModeReference('~contains~5~variants~2~contains~2'),
+            ModeReference('~contains~5~variants~2~contains~3'),
           ],
         ),
         Mode(begin: "([uU]|[rR])'", end: "'", relevance: 10),
@@ -352,8 +353,8 @@ final python = Language(
           end: "'",
           contains: [
             BACKSLASH_ESCAPE,
-            ModeReference('~contains~4~variants~2~contains~2'),
-            ModeReference('~contains~4~variants~2~contains~3'),
+            ModeReference('~contains~5~variants~2~contains~2'),
+            ModeReference('~contains~5~variants~2~contains~3'),
           ],
         ),
         Mode(
@@ -361,8 +362,8 @@ final python = Language(
           end: "\"",
           contains: [
             BACKSLASH_ESCAPE,
-            ModeReference('~contains~4~variants~2~contains~2'),
-            ModeReference('~contains~4~variants~2~contains~3'),
+            ModeReference('~contains~5~variants~2~contains~2'),
+            ModeReference('~contains~5~variants~2~contains~3'),
           ],
         ),
         APOS_STRING_MODE,
@@ -545,9 +546,10 @@ final python = Language(
   contains: [
     ModeReference('~contains~0'),
     ModeReference('~contains~1'),
-    Mode(begin: "\\bself\\b"),
+    Mode(scope: "variable.language", match: "\\bself\\b"),
     Mode(beginKeywords: "if", relevance: 0),
-    ModeReference('~contains~4'),
+    Mode(match: "\\bor\\b", scope: "keyword"),
+    ModeReference('~contains~5'),
     Mode(
       className: "comment",
       begin: "(?=# type:)",
@@ -694,7 +696,7 @@ final python = Language(
     Mode(
       match: ["\\bdef", "\\s+", "[\\p{XID_Start}_]\\p{XID_Continue}*"],
       scope: {"1": "keyword", "3": "title.function"},
-      contains: [ModeReference('~contains~7~contains~0')],
+      contains: [ModeReference('~contains~8~contains~0')],
     ),
     Mode(
       variants: [
@@ -721,8 +723,8 @@ final python = Language(
       end: "(?=#)|\$",
       contains: [
         ModeReference('~contains~1'),
-        ModeReference('~contains~7~contains~0'),
-        ModeReference('~contains~4'),
+        ModeReference('~contains~8~contains~0'),
+        ModeReference('~contains~5'),
       ],
     ),
   ],

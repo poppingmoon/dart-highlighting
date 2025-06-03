@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -10,11 +11,24 @@ import '../src/language_definition_common.dart';
 final dart = Language(
   id: "dart",
   refs: {
+    '~contains~0~variants~4~contains~2~contains~0': Mode(
+      className: "number",
+      relevance: 0,
+      variants: [
+        Mode(
+          match: "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?([eE][+-]?[0-9][0-9_]*)?\\b",
+        ),
+        Mode(match: "\\b0[xX][0-9A-Fa-f][0-9A-Fa-f_]*\\b"),
+      ],
+    ),
     '~contains~0~variants~4~contains~2': Mode(
       className: "subst",
       variants: [Mode(begin: "\\\$\\{", end: "\\}")],
       keywords: "true false null this is new super",
-      contains: [C_NUMBER_MODE, ModeReference('~contains~0')],
+      contains: [
+        ModeReference('~contains~0~variants~4~contains~2~contains~0'),
+        ModeReference('~contains~0'),
+      ],
     ),
     '~contains~0~variants~4~contains~1': Mode(
       className: "subst",
@@ -255,7 +269,7 @@ final dart = Language(
         UNDERSCORE_TITLE_MODE,
       ],
     ),
-    C_NUMBER_MODE,
+    ModeReference('~contains~0~variants~4~contains~2~contains~0'),
     Mode(className: "meta", begin: "@[A-Za-z]+"),
     Mode(begin: "=>"),
   ],

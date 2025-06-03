@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -14,6 +15,7 @@ final fortran = Language(
   case_insensitive: true,
   aliases: ["f90", "f95"],
   keywords: {
+    "\$pattern": "\\b[a-z][a-z0-9_]+\\b|\\.[a-z][a-z0-9_]+\\.",
     "keyword": [
       "kind",
       "do",

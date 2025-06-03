@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -10,18 +11,18 @@ import '../src/language_definition_common.dart';
 final scala = Language(
   id: "scala",
   refs: {
-    '~contains~4~contains~0': Mode(
+    '~contains~5~contains~0': Mode(
       className: "title",
       begin:
           "[^0-9\\n\\t \"'(),.`{}\\[\\]:;][^\\n\\t \"'(),.`{}\\[\\]:;]+|[^0-9\\n\\t \"'(),.`{}\\[\\]:;=]",
       relevance: 0,
     ),
-    '~contains~3': Mode(
+    '~contains~4': Mode(
       className: "type",
       begin: "\\b[A-Z][A-Za-z0-9_]*",
       relevance: 0,
     ),
-    '~contains~2~variants~2~contains~1': Mode(
+    '~contains~3~variants~2~contains~1': Mode(
       className: "subst",
       variants: [
         Mode(begin: "\\\$[A-Za-z0-9_]+"),
@@ -36,6 +37,12 @@ final scala = Language(
         "type yield lazy override def with val var sealed abstract private trait object if then forSome for while do throw finally protected extends import final return else break new catch super class case package default try this match continue throws implicit export enum given transparent",
   },
   contains: [
+    Mode(
+      begin: ["//>", "\\s+", "using", "\\s+", "\\S+"],
+      beginScope: {"1": "comment", "3": "keyword", "5": "type"},
+      end: "\$",
+      contains: [Mode(className: "string", begin: "\\S+")],
+    ),
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
     Mode(
@@ -54,24 +61,24 @@ final scala = Language(
           illegal: "\\n",
           contains: [
             BACKSLASH_ESCAPE,
-            ModeReference('~contains~2~variants~2~contains~1'),
+            ModeReference('~contains~3~variants~2~contains~1'),
           ],
         ),
         Mode(
           className: "string",
           begin: "[a-z]+\"\"\"",
           end: "\"\"\"",
-          contains: [ModeReference('~contains~2~variants~2~contains~1')],
+          contains: [ModeReference('~contains~3~variants~2~contains~1')],
           relevance: 10,
         ),
       ],
     ),
-    ModeReference('~contains~3'),
+    ModeReference('~contains~4'),
     Mode(
       className: "function",
       beginKeywords: "def",
       end: "(?=[:={\\[(\\n;])",
-      contains: [ModeReference('~contains~4~contains~0')],
+      contains: [ModeReference('~contains~5~contains~0')],
     ),
     Mode(
       className: "class",
@@ -88,7 +95,11 @@ final scala = Language(
           excludeBegin: true,
           excludeEnd: true,
           relevance: 0,
-          contains: [ModeReference('~contains~3')],
+          contains: [
+            ModeReference('~contains~4'),
+            C_LINE_COMMENT_MODE,
+            C_BLOCK_COMMENT_MODE,
+          ],
         ),
         Mode(
           className: "params",
@@ -97,9 +108,13 @@ final scala = Language(
           excludeBegin: true,
           excludeEnd: true,
           relevance: 0,
-          contains: [ModeReference('~contains~3')],
+          contains: [
+            ModeReference('~contains~4'),
+            C_LINE_COMMENT_MODE,
+            C_BLOCK_COMMENT_MODE,
+          ],
         ),
-        ModeReference('~contains~4~contains~0'),
+        ModeReference('~contains~5~contains~0'),
       ],
     ),
     C_NUMBER_MODE,

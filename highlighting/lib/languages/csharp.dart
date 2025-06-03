@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -23,17 +24,17 @@ final csharp = Language(
       begin: "[a-zA-Z](\\.?\\w)*",
       relevance: 0,
     ),
-    '~contains~4~variants~0~contains~3~contains~2': Mode(
+    '~contains~4~variants~1~contains~3~contains~2': Mode(
       className: "string",
       begin: "@\"",
       end: "\"",
       contains: [
         ModeReference(
-          '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~2~contains~0',
+          '~contains~4~variants~1~contains~3~contains~1~contains~3~contains~2~contains~0',
         ),
       ],
     ),
-    '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5': Mode(
+    '~contains~4~variants~1~contains~3~contains~1~contains~3~contains~5': Mode(
       className: "number",
       variants: [
         Mode(begin: "\\b(0b[01']+)"),
@@ -48,9 +49,9 @@ final csharp = Language(
       ],
       relevance: 0,
     ),
-    '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~2~contains~0':
+    '~contains~4~variants~1~contains~3~contains~1~contains~3~contains~2~contains~0':
         Mode(begin: "\"\""),
-    '~contains~4~variants~0~contains~3~contains~1~contains~3': Mode(
+    '~contains~4~variants~1~contains~3~contains~1~contains~3': Mode(
       className: "subst",
       begin: "\\{",
       end: "\\}",
@@ -117,11 +118,14 @@ final csharp = Language(
           "alias",
           "and",
           "ascending",
+          "args",
           "async",
           "await",
           "by",
           "descending",
+          "dynamic",
           "equals",
+          "file",
           "from",
           "get",
           "global",
@@ -137,7 +141,10 @@ final csharp = Language(
           "or",
           "orderby",
           "partial",
+          "record",
           "remove",
+          "required",
+          "scoped",
           "select",
           "set",
           "unmanaged",
@@ -183,19 +190,19 @@ final csharp = Language(
             Mode(begin: "\\}\\}"),
             Mode(begin: "\"\""),
             ModeReference(
-              '~contains~4~variants~0~contains~3~contains~1~contains~3',
+              '~contains~4~variants~1~contains~3~contains~1~contains~3',
             ),
           ],
           illegal: "\\n",
         ),
-        ModeReference('~contains~4~variants~0~contains~3~contains~1'),
+        ModeReference('~contains~4~variants~1~contains~3~contains~1'),
         Mode(
           className: "string",
           begin: "@\"",
           end: "\"",
           contains: [
             ModeReference(
-              '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~2~contains~0',
+              '~contains~4~variants~1~contains~3~contains~1~contains~3~contains~2~contains~0',
             ),
           ],
           illegal: "\\n",
@@ -203,7 +210,7 @@ final csharp = Language(
         APOS_STRING_MODE,
         QUOTE_STRING_MODE,
         ModeReference(
-          '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5',
+          '~contains~4~variants~1~contains~3~contains~1~contains~3~contains~5',
         ),
         Mode(
           scope: "comment",
@@ -226,7 +233,7 @@ final csharp = Language(
         ),
       ],
     ),
-    '~contains~4~variants~0~contains~3~contains~1': Mode(
+    '~contains~4~variants~1~contains~3~contains~1': Mode(
       className: "string",
       begin: "\\\$\"",
       end: "\"",
@@ -236,11 +243,11 @@ final csharp = Language(
         Mode(begin: "\\}\\}"),
         BACKSLASH_ESCAPE,
         ModeReference(
-          '~contains~4~variants~0~contains~3~contains~1~contains~3',
+          '~contains~4~variants~1~contains~3~contains~1~contains~3',
         ),
       ],
     ),
-    '~contains~4~variants~0': Mode(
+    '~contains~4~variants~1': Mode(
       className: "string",
       begin: "\\\$@\"",
       end: "\"",
@@ -315,11 +322,14 @@ final csharp = Language(
               "alias",
               "and",
               "ascending",
+              "args",
               "async",
               "await",
               "by",
               "descending",
+              "dynamic",
               "equals",
+              "file",
               "from",
               "get",
               "global",
@@ -335,7 +345,10 @@ final csharp = Language(
               "or",
               "orderby",
               "partial",
+              "record",
               "remove",
+              "required",
+              "scoped",
               "select",
               "set",
               "unmanaged",
@@ -371,13 +384,13 @@ final csharp = Language(
             "literal": ["default", "false", "null", "true"],
           },
           contains: [
-            ModeReference('~contains~4~variants~0'),
-            ModeReference('~contains~4~variants~0~contains~3~contains~1'),
-            ModeReference('~contains~4~variants~0~contains~3~contains~2'),
+            ModeReference('~contains~4~variants~1'),
+            ModeReference('~contains~4~variants~1~contains~3~contains~1'),
+            ModeReference('~contains~4~variants~1~contains~3~contains~2'),
             APOS_STRING_MODE,
             QUOTE_STRING_MODE,
             ModeReference(
-              '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5',
+              '~contains~4~variants~1~contains~3~contains~1~contains~3~contains~5',
             ),
             C_BLOCK_COMMENT_MODE,
           ],
@@ -386,9 +399,14 @@ final csharp = Language(
     ),
     '~contains~4': Mode(
       variants: [
-        ModeReference('~contains~4~variants~0'),
-        ModeReference('~contains~4~variants~0~contains~3~contains~1'),
-        ModeReference('~contains~4~variants~0~contains~3~contains~2'),
+        Mode(
+          className: "string",
+          begin: "\"\"\"(\"*)(?!\")(.|\\n)*?\"\"\"\\1",
+          relevance: 1,
+        ),
+        ModeReference('~contains~4~variants~1'),
+        ModeReference('~contains~4~variants~1~contains~3~contains~1'),
+        ModeReference('~contains~4~variants~1~contains~3~contains~2'),
         APOS_STRING_MODE,
         QUOTE_STRING_MODE,
       ],
@@ -459,11 +477,14 @@ final csharp = Language(
       "alias",
       "and",
       "ascending",
+      "args",
       "async",
       "await",
       "by",
       "descending",
+      "dynamic",
       "equals",
+      "file",
       "from",
       "get",
       "global",
@@ -479,7 +500,10 @@ final csharp = Language(
       "or",
       "orderby",
       "partial",
+      "record",
       "remove",
+      "required",
+      "scoped",
       "select",
       "set",
       "unmanaged",
@@ -556,7 +580,7 @@ final csharp = Language(
     ),
     ModeReference('~contains~4'),
     ModeReference(
-      '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5',
+      '~contains~4~variants~1~contains~3~contains~1~contains~3~contains~5',
     ),
     Mode(
       beginKeywords: "class interface",
@@ -673,11 +697,14 @@ final csharp = Language(
           "alias",
           "and",
           "ascending",
+          "args",
           "async",
           "await",
           "by",
           "descending",
+          "dynamic",
           "equals",
+          "file",
           "from",
           "get",
           "global",
@@ -693,7 +720,10 @@ final csharp = Language(
           "or",
           "orderby",
           "partial",
+          "record",
           "remove",
+          "required",
+          "scoped",
           "select",
           "set",
           "unmanaged",
@@ -810,11 +840,14 @@ final csharp = Language(
               "alias",
               "and",
               "ascending",
+              "args",
               "async",
               "await",
               "by",
               "descending",
+              "dynamic",
               "equals",
+              "file",
               "from",
               "get",
               "global",
@@ -830,7 +863,10 @@ final csharp = Language(
               "or",
               "orderby",
               "partial",
+              "record",
               "remove",
+              "required",
+              "scoped",
               "select",
               "set",
               "unmanaged",
@@ -869,7 +905,7 @@ final csharp = Language(
           contains: [
             ModeReference('~contains~4'),
             ModeReference(
-              '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5',
+              '~contains~4~variants~1~contains~3~contains~1~contains~3~contains~5',
             ),
             C_BLOCK_COMMENT_MODE,
           ],

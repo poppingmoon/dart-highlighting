@@ -127,5 +127,6 @@ final lang1C = Language(
     ModeReference('~contains~1~contains~0~contains~0~contains~0'),
     ModeReference('~contains~1~contains~0~contains~0~contains~1'),
     ModeReference('~contains~1~contains~0~contains~0~contains~2'),
+    Mode(match: "[;()+\\-:=,]", className: "punctuation", relevance: 0),
   ],
 );

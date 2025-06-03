@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -342,6 +343,52 @@ final php = Language(
       match:
           "[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*(?![A-Za-z0-9])(?![\$])(?=:)(?=(?!::))",
     ),
+    '~contains~0': Mode(
+      begin:
+          "#\\[\\s*\\\\?(?:(\\\\?[A-Z][a-z0-9_\\x7f-\\xff]+|\\\\?[A-Z]+(?=[A-Z][a-z0-9_\\x7f-\\xff])){1,}(?![A-Za-z0-9])(?![\$])|[A-Z]+(?![A-Za-z0-9])(?![\$]))",
+      beginScope: "meta",
+      end: "]",
+      endScope: "meta",
+      keywords: {
+        "literal": ["false", "null", "true"],
+        "keyword": ["new", "array"],
+      },
+      contains: [
+        Mode(
+          begin: "\\[",
+          end: "]",
+          keywords: {
+            "literal": ["false", "null", "true"],
+            "keyword": ["new", "array"],
+          },
+          contains: [
+            ModeSelfReference(),
+            ModeReference('~contains~0~contains~0~contains~1'),
+            ModeReference('~contains~0~contains~0~contains~2'),
+            C_BLOCK_COMMENT_MODE,
+            ModeReference('~contains~0~contains~0~contains~4'),
+            ModeReference('~contains~0~contains~0~contains~5'),
+            ModeReference('~contains~0~contains~0~contains~6'),
+          ],
+        ),
+        ModeReference('~contains~0~contains~0~contains~1'),
+        ModeReference('~contains~0~contains~0~contains~2'),
+        C_BLOCK_COMMENT_MODE,
+        ModeReference('~contains~0~contains~0~contains~4'),
+        ModeReference('~contains~0~contains~0~contains~5'),
+        ModeReference('~contains~0~contains~0~contains~6'),
+        Mode(
+          scope: "meta",
+          variants: [
+            Mode(
+              match:
+                  "(\\\\?[A-Z][a-z0-9_\\x7f-\\xff]+|\\\\?[A-Z]+(?=[A-Z][a-z0-9_\\x7f-\\xff])){1,}(?![A-Za-z0-9])(?![\$])",
+            ),
+            Mode(match: "[A-Z]+(?![A-Za-z0-9])(?![\$])"),
+          ],
+        ),
+      ],
+    ),
   },
   keywords: {
     "keyword": [
@@ -529,47 +576,7 @@ final php = Language(
     ],
   },
   contains: [
-    Mode(
-      begin:
-          "#\\[\\s*(\\\\?[A-Z][a-z0-9_\\x7f-\\xff]+|\\\\?[A-Z]+(?=[A-Z][a-z0-9_\\x7f-\\xff])){1,}(?![A-Za-z0-9])(?![\$])",
-      beginScope: "meta",
-      end: "]",
-      endScope: "meta",
-      keywords: {
-        "literal": ["false", "null", "true"],
-        "keyword": ["new", "array"],
-      },
-      contains: [
-        Mode(
-          begin: "\\[",
-          end: "]",
-          keywords: {
-            "literal": ["false", "null", "true"],
-            "keyword": ["new", "array"],
-          },
-          contains: [
-            ModeSelfReference(),
-            ModeReference('~contains~0~contains~0~contains~1'),
-            ModeReference('~contains~0~contains~0~contains~2'),
-            C_BLOCK_COMMENT_MODE,
-            ModeReference('~contains~0~contains~0~contains~4'),
-            ModeReference('~contains~0~contains~0~contains~5'),
-            ModeReference('~contains~0~contains~0~contains~6'),
-          ],
-        ),
-        ModeReference('~contains~0~contains~0~contains~1'),
-        ModeReference('~contains~0~contains~0~contains~2'),
-        C_BLOCK_COMMENT_MODE,
-        ModeReference('~contains~0~contains~0~contains~4'),
-        ModeReference('~contains~0~contains~0~contains~5'),
-        ModeReference('~contains~0~contains~0~contains~6'),
-        Mode(
-          scope: "meta",
-          match:
-              "(\\\\?[A-Z][a-z0-9_\\x7f-\\xff]+|\\\\?[A-Z]+(?=[A-Z][a-z0-9_\\x7f-\\xff])){1,}(?![A-Za-z0-9])(?![\$])",
-        ),
-      ],
-    ),
+    ModeReference('~contains~0'),
     HASH_COMMENT_MODE,
     Mode(
       scope: "comment",
@@ -843,6 +850,7 @@ final php = Language(
           },
           contains: [
             ModeSelfReference(),
+            ModeReference('~contains~0'),
             ModeReference('~contains~7'),
             ModeReference('~contains~0~contains~0~contains~2'),
             C_BLOCK_COMMENT_MODE,

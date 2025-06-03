@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -11,7 +12,7 @@ final xquery = Language(
   id: "xquery",
   refs: {},
   name: "XQuery",
-  aliases: ["xpath", "xq"],
+  aliases: ["xpath", "xq", "xqm"],
   illegal: "(proc)|(abstract)|(extends)|(until)|(#)",
   keywords: {
     "\$pattern": "[a-zA-Z\$][a-zA-Z0-9_:-]*",

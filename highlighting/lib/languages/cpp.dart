@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -21,14 +22,13 @@ final cpp = Language(
     '~contains~0~contains~5': Mode(
       className: "number",
       variants: [
-        Mode(begin: "\\b(0b[01']+)"),
         Mode(
           begin:
-              "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)",
+              "[+-]?(?:(?:[0-9](?:'?[0-9])*\\.(?:[0-9](?:'?[0-9])*)?|\\.[0-9](?:'?[0-9])*)(?:[Ee][+-]?[0-9](?:'?[0-9])*)?|[0-9](?:'?[0-9])*[Ee][+-]?[0-9](?:'?[0-9])*|0[Xx](?:[0-9A-Fa-f](?:'?[0-9A-Fa-f])*(?:\\.(?:[0-9A-Fa-f](?:'?[0-9A-Fa-f])*)?)?|\\.[0-9A-Fa-f](?:'?[0-9A-Fa-f])*)[Pp][+-]?[0-9](?:'?[0-9])*)(?:[Ff](?:16|32|64|128)?|(BF|bf)16|[Ll]|)",
         ),
         Mode(
           begin:
-              "(-?)(\\b0[xX][a-fA-F0-9']+|(\\b[\\d']+(\\.[\\d']*)?|\\.[\\d']+)([eE][-+]?[\\d']+)?)",
+              "[+-]?\\b(?:0[Bb][01](?:'?[01])*|0[Xx][0-9A-Fa-f](?:'?[0-9A-Fa-f])*|0(?:'?[0-7])*|[1-9](?:'?[0-9])*)(?:[Uu](?:LL?|ll?)|[Uu][Zz]?|(?:LL?|ll?)[Uu]?|[Zz][Uu]|)",
         ),
       ],
       relevance: 0,
@@ -332,6 +332,8 @@ final cpp = Language(
       "counting_semaphore",
       "deque",
       "false_type",
+      "flat_map",
+      "flat_set",
       "future",
       "imaginary",
       "initializer_list",
@@ -509,6 +511,8 @@ final cpp = Language(
           "counting_semaphore",
           "deque",
           "false_type",
+          "flat_map",
+          "flat_set",
           "future",
           "imaginary",
           "initializer_list",
@@ -688,6 +692,8 @@ final cpp = Language(
               "counting_semaphore",
               "deque",
               "false_type",
+              "flat_map",
+              "flat_set",
               "future",
               "imaginary",
               "initializer_list",
@@ -878,6 +884,8 @@ final cpp = Language(
           "counting_semaphore",
           "deque",
           "false_type",
+          "flat_map",
+          "flat_set",
           "future",
           "imaginary",
           "initializer_list",
@@ -1050,6 +1058,8 @@ final cpp = Language(
               "counting_semaphore",
               "deque",
               "false_type",
+              "flat_map",
+              "flat_set",
               "future",
               "imaginary",
               "initializer_list",
@@ -1246,6 +1256,8 @@ final cpp = Language(
               "counting_semaphore",
               "deque",
               "false_type",
+              "flat_map",
+              "flat_set",
               "future",
               "imaginary",
               "initializer_list",
@@ -1424,6 +1436,8 @@ final cpp = Language(
                   "counting_semaphore",
                   "deque",
                   "false_type",
+                  "flat_map",
+                  "flat_set",
                   "future",
                   "imaginary",
                   "initializer_list",
@@ -1499,7 +1513,7 @@ final cpp = Language(
     ModeReference('~contains~0~contains~1'),
     Mode(
       begin:
-          "\\b(deque|list|queue|priority_queue|pair|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array|tuple|optional|variant|function)\\s*<(?!<)",
+          "\\b(deque|list|queue|priority_queue|pair|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array|tuple|optional|variant|function|flat_map|flat_set)\\s*<(?!<)",
       end: ">",
       keywords: {
         "type": [
@@ -1623,6 +1637,8 @@ final cpp = Language(
           "counting_semaphore",
           "deque",
           "false_type",
+          "flat_map",
+          "flat_set",
           "future",
           "imaginary",
           "initializer_list",
@@ -1795,6 +1811,8 @@ final cpp = Language(
           "counting_semaphore",
           "deque",
           "false_type",
+          "flat_map",
+          "flat_set",
           "future",
           "imaginary",
           "initializer_list",

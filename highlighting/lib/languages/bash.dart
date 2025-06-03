@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -44,7 +45,7 @@ final bash = Language(
     ),
   },
   name: "Bash",
-  aliases: ["sh"],
+  aliases: ["sh", "zsh"],
   keywords: {
     "\$pattern": "\\b[a-z][a-z0-9._-]+\\b",
     "keyword": [
@@ -53,6 +54,7 @@ final bash = Language(
       "else",
       "elif",
       "fi",
+      "time",
       "for",
       "while",
       "until",
@@ -61,6 +63,7 @@ final bash = Language(
       "done",
       "case",
       "esac",
+      "coproc",
       "function",
       "select",
     ],
@@ -101,6 +104,7 @@ final bash = Language(
       "read",
       "readarray",
       "source",
+      "sudo",
       "type",
       "typeset",
       "ulimit",
@@ -309,7 +313,23 @@ final bash = Language(
         ModeReference('~contains~3~contains~2'),
       ],
     ),
-    HASH_COMMENT_MODE,
+    Mode(
+      scope: {"2": "comment"},
+      contains: [
+        Mode(
+          scope: "doctag",
+          begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
+          end: "(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):",
+          excludeBegin: true,
+          relevance: 0,
+        ),
+        Mode(
+          begin:
+              "[ ]+((?:I|a|is|so|us|to|at|if|in|it|on|[A-Za-z]+['](d|ve|re|ll|t|s|n)|[A-Za-z]+[-][a-z]+|[A-Za-z][a-z]{2,})[.]?[:]?([.][ ]|[ ])){3}",
+        ),
+      ],
+      match: ["(^|\\s)", "#.*\$"],
+    ),
     Mode(
       begin: "<<-?\\s*(?=\\w+)",
       starts: Mode(
@@ -326,8 +346,9 @@ final bash = Language(
     ),
     Mode(match: "(\\/[a-z._-]+)+"),
     ModeReference('~contains~7'),
-    Mode(className: overwritingNullString, begin: "\\\\\""),
+    Mode(match: "\\\\\""),
     Mode(className: "string", begin: "'", end: "'"),
+    Mode(match: "\\\\'"),
     ModeReference('~contains~3~contains~2'),
   ],
 );

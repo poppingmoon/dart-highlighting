@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -97,11 +98,22 @@ final go = Language(
       className: "number",
       variants: [
         Mode(
-          begin:
-              "(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)[i]",
-          relevance: 1,
+          match:
+              "-?\\b0[xX]\\.[a-fA-F0-9](_?[a-fA-F0-9])*[pP][+-]?\\d(_?\\d)*i?",
+          relevance: 0,
         ),
-        C_NUMBER_MODE,
+        Mode(
+          match:
+              "-?\\b0[xX](_?[a-fA-F0-9])+((\\.([a-fA-F0-9](_?[a-fA-F0-9])*)?)?[pP][+-]?\\d(_?\\d)*)?i?",
+          relevance: 0,
+        ),
+        Mode(match: "-?\\b0[oO](_?[0-7])*i?", relevance: 0),
+        Mode(match: "-?\\.\\d(_?\\d)*([eE][+-]?\\d(_?\\d)*)?i?", relevance: 0),
+        Mode(
+          match:
+              "-?\\b\\d(_?\\d)*(\\.(\\d(_?\\d)*)?)?([eE][+-]?\\d(_?\\d)*)?i?",
+          relevance: 0,
+        ),
       ],
     ),
     Mode(begin: ":="),

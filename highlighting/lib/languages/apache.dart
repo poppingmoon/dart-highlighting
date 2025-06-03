@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -66,6 +67,7 @@ final apache = Language(
         relevance: 0,
         keywords: {"literal": "on off all deny allow"},
         contains: [
+          Mode(scope: "punctuation", match: "\\\\\\n"),
           Mode(className: "meta", begin: "\\s\\[", end: "\\]\$"),
           Mode(
             className: "variable",

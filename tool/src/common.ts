@@ -1,6 +1,7 @@
 export const NOTICE_COMMENT = "// GENERATED CODE - DO NOT MODIFY BY HAND\n\n";
 
 const ignore_for_file = [
+  "file_names",
   "lines_longer_than_80_chars",
   "prefer_single_quotes",
   "unnecessary_raw_strings",

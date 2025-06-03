@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -54,6 +55,7 @@ final javascript = Language(
           "from",
           "export",
           "extends",
+          "using",
         ],
         "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
         "built_in": [
@@ -189,7 +191,7 @@ final javascript = Language(
       ],
     ),
     '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4': Mode(
-      begin: "gql`",
+      begin: ".?gql`",
       end: "",
       starts: Mode(
         end: "`",
@@ -202,7 +204,7 @@ final javascript = Language(
       ),
     ),
     '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3': Mode(
-      begin: "css`",
+      begin: ".?css`",
       end: "",
       starts: Mode(
         end: "`",
@@ -259,6 +261,7 @@ final javascript = Language(
           "from",
           "export",
           "extends",
+          "using",
         ],
         "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
         "built_in": [
@@ -365,7 +368,7 @@ final javascript = Language(
       ],
     ),
     '~exports~PARAMS_CONTAINS~3': Mode(
-      begin: "html`",
+      begin: ".?html`",
       end: "",
       starts: Mode(
         end: "`",
@@ -378,7 +381,7 @@ final javascript = Language(
       ),
     ),
     '~exports~PARAMS_CONTAINS~10': Mode(
-      begin: "\\(",
+      begin: "(\\s*)\\(",
       end: "\\)",
       keywords: {
         "\$pattern": "[A-Za-z\$_][0-9A-Za-z\$_]*",
@@ -421,6 +424,7 @@ final javascript = Language(
           "from",
           "export",
           "extends",
+          "using",
         ],
         "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
         "built_in": [
@@ -635,7 +639,7 @@ final javascript = Language(
     ),
     '~contains~13~contains~0': Mode(
       className: "params",
-      begin: "\\(",
+      begin: "(\\s*)\\(",
       end: "\\)",
       excludeBegin: true,
       excludeEnd: true,
@@ -680,6 +684,7 @@ final javascript = Language(
           "from",
           "export",
           "extends",
+          "using",
         ],
         "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
         "built_in": [
@@ -831,6 +836,7 @@ final javascript = Language(
       "from",
       "export",
       "extends",
+      "using",
     ],
     "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
     "built_in": [
@@ -938,11 +944,7 @@ final javascript = Language(
     Mode(match: "\\\$\\d+"),
     ModeReference('~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7'),
     ModeReference('~exports~CLASS_REFERENCE'),
-    Mode(
-      className: "attr",
-      begin: "[A-Za-z\$_][0-9A-Za-z\$_]*(?=:)",
-      relevance: 0,
-    ),
+    Mode(scope: "attr", match: "[A-Za-z\$_][0-9A-Za-z\$_]*(?=:)", relevance: 0),
     Mode(
       match: [
         "const|var|let",
@@ -982,7 +984,7 @@ final javascript = Language(
                   skip: true,
                 ),
                 Mode(
-                  begin: "\\(",
+                  begin: "(\\s*)\\(",
                   end: "\\)",
                   excludeBegin: true,
                   excludeEnd: true,
@@ -1027,6 +1029,7 @@ final javascript = Language(
                       "from",
                       "export",
                       "extends",
+                      "using",
                     ],
                     "literal": [
                       "true",
@@ -1220,7 +1223,7 @@ final javascript = Language(
     ),
     Mode(
       match:
-          "\\b(?!setInterval|setTimeout|clearInterval|clearTimeout|require|exports|eval|isFinite|isNaN|parseFloat|parseInt|decodeURI|decodeURIComponent|encodeURI|encodeURIComponent|escape|unescape|super|import)[A-Za-z\$_][0-9A-Za-z\$_]*(?=\\()",
+          "\\b(?!setInterval\\s*\\(|setTimeout\\s*\\(|clearInterval\\s*\\(|clearTimeout\\s*\\(|require\\s*\\(|exports\\s*\\(|eval\\s*\\(|isFinite\\s*\\(|isNaN\\s*\\(|parseFloat\\s*\\(|parseInt\\s*\\(|decodeURI\\s*\\(|decodeURIComponent\\s*\\(|encodeURI\\s*\\(|encodeURIComponent\\s*\\(|escape\\s*\\(|unescape\\s*\\(|super\\s*\\(|import\\s*\\()[A-Za-z\$_][0-9A-Za-z\$_]*(?=\\s*\\()",
       className: "title.function",
       relevance: 0,
     ),

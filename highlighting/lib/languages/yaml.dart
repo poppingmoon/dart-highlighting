@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -40,12 +41,19 @@ final yaml = Language(
       className: "string",
       begin: "[\\|>]([1-9]?[+-])?[ ]*\\n( +)[^ ][^\\n]*\\n(\\2[^\\n]+\\n?)*",
     ),
-    '~contains~15~contains~0~contains~17~contains~1': Mode(
+    '~contains~15~contains~0~contains~18~contains~1': Mode(
       className: "template-variable",
       variants: [
         Mode(begin: "\\{\\{", end: "\\}\\}"),
         Mode(begin: "%\\{", end: "\\}"),
       ],
+    ),
+    '~contains~15~contains~0~contains~17': Mode(
+      className: "string",
+      relevance: 0,
+      begin: "'",
+      end: "'",
+      contains: [Mode(match: "''", scope: "char.escape", relevance: 0)],
     ),
     '~contains~15~contains~0~contains~16': Mode(
       begin: "\\[",
@@ -78,17 +86,22 @@ final yaml = Language(
         ModeReference('~contains~14'),
         ModeReference('~contains~15'),
         ModeReference('~contains~15~contains~0~contains~16'),
+        ModeReference('~contains~15~contains~0~contains~17'),
         Mode(
           className: "string",
           relevance: 0,
           variants: [
-            Mode(begin: "'", end: "'"),
+            Mode(
+              begin: "'",
+              end: "'",
+              contains: [Mode(begin: "''", relevance: 0)],
+            ),
             Mode(begin: "\"", end: "\""),
             Mode(begin: "[^\\s,{}[\\]]+"),
           ],
           contains: [
             BACKSLASH_ESCAPE,
-            ModeReference('~contains~15~contains~0~contains~17~contains~1'),
+            ModeReference('~contains~15~contains~0~contains~18~contains~1'),
           ],
         ),
       ],
@@ -124,9 +137,9 @@ final yaml = Language(
     '~contains~0': Mode(
       className: "attr",
       variants: [
-        Mode(begin: "\\w[\\w :\\/.-]*:(?=[ \t]|\$)"),
-        Mode(begin: "\"\\w[\\w :\\/.-]*\":(?=[ \t]|\$)"),
-        Mode(begin: "'\\w[\\w :\\/.-]*':(?=[ \t]|\$)"),
+        Mode(begin: "[\\w*@][\\w*@ :()\\./-]*:(?=[ \\t]|\$)"),
+        Mode(begin: "\"[\\w*@][\\w*@ :()\\./-]*\":(?=[ \\t]|\$)"),
+        Mode(begin: "'[\\w*@][\\w*@ :()\\./-]*':(?=[ \\t]|\$)"),
       ],
     ),
   },
@@ -151,17 +164,17 @@ final yaml = Language(
     ModeReference('~contains~14'),
     ModeReference('~contains~15'),
     ModeReference('~contains~15~contains~0~contains~16'),
+    ModeReference('~contains~15~contains~0~contains~17'),
     Mode(
       className: "string",
       relevance: 0,
       variants: [
-        Mode(begin: "'", end: "'"),
         Mode(begin: "\"", end: "\""),
         Mode(begin: "\\S+"),
       ],
       contains: [
         BACKSLASH_ESCAPE,
-        ModeReference('~contains~15~contains~0~contains~17~contains~1'),
+        ModeReference('~contains~15~contains~0~contains~18~contains~1'),
       ],
     ),
   ],

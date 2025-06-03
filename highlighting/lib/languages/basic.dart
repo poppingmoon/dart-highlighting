@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -196,7 +197,12 @@ final basic = Language(
     ],
   },
   contains: [
-    QUOTE_STRING_MODE,
+    Mode(
+      scope: "string",
+      begin: "\"",
+      end: "\"|\$",
+      contains: [BACKSLASH_ESCAPE],
+    ),
     Mode(
       scope: "comment",
       begin: "REM",

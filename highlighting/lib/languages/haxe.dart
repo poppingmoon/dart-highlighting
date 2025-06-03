@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -14,7 +15,7 @@ final haxe = Language(
   aliases: ["hx"],
   keywords: {
     "keyword":
-        "break case cast catch continue default do dynamic else enum extern for function here if import in inline never new override package private get set public return static super switch this throw trace try typedef untyped using var while Int Float String Bool Dynamic Void Array ",
+        "abstract break case cast catch continue default do dynamic else enum extern final for function here if import in inline is macro never new override package private get set public return static super switch this throw trace try typedef untyped using var while Int Float String Bool Dynamic Void Array ",
     "built_in": "trace this",
     "literal": "true false null _",
   },
@@ -32,8 +33,14 @@ final haxe = Language(
     QUOTE_STRING_MODE,
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
-    C_NUMBER_MODE,
-    Mode(className: "meta", begin: "@:", end: "\$"),
+    Mode(
+      className: "number",
+      begin:
+          "(-?)(\\b0[xX][a-fA-F0-9_]+|(\\b\\d+(\\.[\\d_]*)?|\\.[\\d_]+)(([eE][-+]?\\d+)|i32|u32|i64|f64)?)",
+      relevance: 0,
+    ),
+    Mode(className: "variable", begin: "\\\$[a-zA-Z_\$][a-zA-Z0-9_\$]*"),
+    Mode(className: "meta", begin: "@:?", end: "\\(|\$", excludeEnd: true),
     Mode(
       className: "meta",
       begin: "#",
@@ -42,35 +49,35 @@ final haxe = Language(
     ),
     Mode(
       className: "type",
-      begin: ":[ \t]*",
-      end: "[^A-Za-z0-9_ \t\\->]",
+      begin: ":[ \\t]*",
+      end: "[^A-Za-z0-9_ \\t\\->]",
       excludeBegin: true,
       excludeEnd: true,
       relevance: 0,
     ),
     Mode(
       className: "type",
-      begin: ":[ \t]*",
+      begin: ":[ \\t]*",
       end: "\\W",
       excludeBegin: true,
       excludeEnd: true,
     ),
     Mode(
       className: "type",
-      begin: "new *",
+      beginKeywords: "new",
       end: "\\W",
       excludeBegin: true,
       excludeEnd: true,
     ),
     Mode(
-      className: "class",
+      className: "title.class",
       beginKeywords: "enum",
       end: "\\{",
       contains: [TITLE_MODE],
     ),
     Mode(
-      className: "class",
-      beginKeywords: "abstract",
+      className: "title.class",
+      begin: "\\babstract\\b(?=\\s*[a-zA-Z]\\w*\\s*\\()",
       end: "[\\{\$]",
       contains: [
         Mode(
@@ -99,7 +106,7 @@ final haxe = Language(
       keywords: {"keyword": "abstract from to"},
     ),
     Mode(
-      className: "class",
+      className: "title.class",
       begin: "\\b(class|interface) +",
       end: "[\\{\$]",
       excludeEnd: true,
@@ -117,7 +124,7 @@ final haxe = Language(
       ],
     ),
     Mode(
-      className: "function",
+      className: "title.function",
       beginKeywords: "function",
       end: "\\(",
       excludeEnd: true,
