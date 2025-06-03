@@ -17,14 +17,32 @@ void shebangOnBegin(JsStyleRegExpMatch m, Response resp) {
   if (m.index != 0) resp.ignoreMatch();
 }
 
+bool hasClosingTag(JsStyleRegExpMatch match, {required int after}) {
+  final tag = '</${match[0]!.substring(1)}';
+  final pos = match.input.indexOf(tag, after);
+  return pos != -1;
+}
+
 // ignore: non_constant_identifier_names
-void language_mathematica_contains_0_variants_0_onBegin(
-  JsStyleRegExpMatch m,
-  Response resp,
+void language_g_code_iso_6983_contains_1_variants_0_onBegin(
+  JsStyleRegExpMatch match,
+  Response response,
 ) {
-  if (!SYSTEM_SYMBOLS.contains(m[0])) {
-    resp.ignoreMatch();
+  if (match.index == 0) {
+    return;
   }
+
+  final charBeforeMatch = match.input[match.index - 1];
+  if (charBeforeMatch.compareTo('0') >= 0 &&
+      charBeforeMatch.compareTo('9') <= 0) {
+    return;
+  }
+
+  if (charBeforeMatch == '_') {
+    return;
+  }
+
+  response.ignoreMatch();
 }
 
 // ignore: non_constant_identifier_names
@@ -85,10 +103,14 @@ void language_javascript_contains_0_contains_0_variants_0_onBegin(
   }
 }
 
-bool hasClosingTag(JsStyleRegExpMatch match, {required int after}) {
-  final tag = '</${match[0]!.substring(1)}';
-  final pos = match.input.indexOf(tag, after);
-  return pos != -1;
+// ignore: non_constant_identifier_names
+void language_mathematica_contains_0_variants_0_onBegin(
+  JsStyleRegExpMatch m,
+  Response resp,
+) {
+  if (!SYSTEM_SYMBOLS.contains(m[0])) {
+    resp.ignoreMatch();
+  }
 }
 
 // php

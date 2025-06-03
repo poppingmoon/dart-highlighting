@@ -1,6 +1,7 @@
 import hljs, { Language, Mode, ModeCallback } from "highlight.js";
-import mathematica from "highlight.js/lib/languages/mathematica";
+import gcode from "highlight.js/lib/languages/gcode";
 import javascript from "highlight.js/lib/languages/javascript";
+import mathematica from "highlight.js/lib/languages/mathematica";
 import php from "highlight.js/lib/languages/php";
 import _ from "lodash";
 
@@ -50,7 +51,9 @@ class LanguageCallbackParser {
     // TODO: Use just name when that is fixed.
     this.iterate(
       language,
-      `language_${(language.name || "undefined").toLowerCase()}`,
+      `language_${(
+        language.name?.replace(/[ -]/g, "_").replace(/[()]/g, "") || "undefined"
+      ).toLowerCase()}`,
     );
   }
 
@@ -119,8 +122,9 @@ class LanguageCallbackParser {
 
 export const callbackDictionary = new Map<string, string>([
   ...new LanguagesCallbackParser([
-    mathematica(hljs),
+    gcode(hljs),
     javascript(hljs),
+    mathematica(hljs),
     php(hljs),
   ]).entries,
 

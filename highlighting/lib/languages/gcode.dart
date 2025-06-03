@@ -104,44 +104,12 @@ final gcode = Language(
         Mode(match: "\\b[GM]\\s*\\d+(\\.\\d+)?"),
         Mode(
           begin: "[GM]\\s*\\d+(\\.\\d+)?",
-          onBegin: throw Exception(r'''
-Callback not ported: function LETTER_BOUNDARY_CALLBACK(matchdata, response) {
-    if (matchdata.index === 0) {
-      return;
-    }
-
-    const charBeforeMatch = matchdata.input[matchdata.index - 1];
-    if (charBeforeMatch >= '0' && charBeforeMatch <= '9') {
-      return;
-    }
-
-    if (charBeforeMatch === '_') {
-      return;
-    }
-
-    response.ignoreMatch();
-  }, add its language to callbackDictionary.'''),
+          onBegin: language_g_code_iso_6983_contains_1_variants_0_onBegin,
         ),
         Mode(match: "\\bT\\s*\\d+"),
         Mode(
           begin: "T\\s*\\d+",
-          onBegin: throw Exception(r'''
-Callback not ported: function LETTER_BOUNDARY_CALLBACK(matchdata, response) {
-    if (matchdata.index === 0) {
-      return;
-    }
-
-    const charBeforeMatch = matchdata.input[matchdata.index - 1];
-    if (charBeforeMatch >= '0' && charBeforeMatch <= '9') {
-      return;
-    }
-
-    if (charBeforeMatch === '_') {
-      return;
-    }
-
-    response.ignoreMatch();
-  }, add its language to callbackDictionary.'''),
+          onBegin: language_g_code_iso_6983_contains_1_variants_0_onBegin,
         ),
       ],
     ),
@@ -151,44 +119,12 @@ Callback not ported: function LETTER_BOUNDARY_CALLBACK(matchdata, response) {
         Mode(match: "\\bO\\s*\\d+"),
         Mode(
           begin: "O\\s*\\d+",
-          onBegin: throw Exception(r'''
-Callback not ported: function LETTER_BOUNDARY_CALLBACK(matchdata, response) {
-    if (matchdata.index === 0) {
-      return;
-    }
-
-    const charBeforeMatch = matchdata.input[matchdata.index - 1];
-    if (charBeforeMatch >= '0' && charBeforeMatch <= '9') {
-      return;
-    }
-
-    if (charBeforeMatch === '_') {
-      return;
-    }
-
-    response.ignoreMatch();
-  }, add its language to callbackDictionary.'''),
+          onBegin: language_g_code_iso_6983_contains_1_variants_0_onBegin,
         ),
         Mode(match: "\\bO<.+>"),
         Mode(
           begin: "O<.+>",
-          onBegin: throw Exception(r'''
-Callback not ported: function LETTER_BOUNDARY_CALLBACK(matchdata, response) {
-    if (matchdata.index === 0) {
-      return;
-    }
-
-    const charBeforeMatch = matchdata.input[matchdata.index - 1];
-    if (charBeforeMatch >= '0' && charBeforeMatch <= '9') {
-      return;
-    }
-
-    if (charBeforeMatch === '_') {
-      return;
-    }
-
-    response.ignoreMatch();
-  }, add its language to callbackDictionary.'''),
+          onBegin: language_g_code_iso_6983_contains_1_variants_0_onBegin,
         ),
         Mode(match: "\\*\\s*\\d+\\s*\$"),
       ],
@@ -201,23 +137,7 @@ Callback not ported: function LETTER_BOUNDARY_CALLBACK(matchdata, response) {
         Mode(match: "\\b[ABCUVWXYZ]\\s*[+-]?((\\.\\d+)|(\\d+)(\\.\\d*)?)"),
         Mode(
           begin: "[ABCUVWXYZ]\\s*[+-]?((\\.\\d+)|(\\d+)(\\.\\d*)?)",
-          onBegin: throw Exception(r'''
-Callback not ported: function LETTER_BOUNDARY_CALLBACK(matchdata, response) {
-    if (matchdata.index === 0) {
-      return;
-    }
-
-    const charBeforeMatch = matchdata.input[matchdata.index - 1];
-    if (charBeforeMatch >= '0' && charBeforeMatch <= '9') {
-      return;
-    }
-
-    if (charBeforeMatch === '_') {
-      return;
-    }
-
-    response.ignoreMatch();
-  }, add its language to callbackDictionary.'''),
+          onBegin: language_g_code_iso_6983_contains_1_variants_0_onBegin,
         ),
       ],
     ),
@@ -227,23 +147,7 @@ Callback not ported: function LETTER_BOUNDARY_CALLBACK(matchdata, response) {
         Mode(match: "\\b[FHIJKPQRS]\\s*[+-]?((\\.\\d+)|(\\d+)(\\.\\d*)?)"),
         Mode(
           begin: "[FHIJKPQRS]\\s*[+-]?((\\.\\d+)|(\\d+)(\\.\\d*)?)",
-          onBegin: throw Exception(r'''
-Callback not ported: function LETTER_BOUNDARY_CALLBACK(matchdata, response) {
-    if (matchdata.index === 0) {
-      return;
-    }
-
-    const charBeforeMatch = matchdata.input[matchdata.index - 1];
-    if (charBeforeMatch >= '0' && charBeforeMatch <= '9') {
-      return;
-    }
-
-    if (charBeforeMatch === '_') {
-      return;
-    }
-
-    response.ignoreMatch();
-  }, add its language to callbackDictionary.'''),
+          onBegin: language_g_code_iso_6983_contains_1_variants_0_onBegin,
         ),
       ],
     ),
