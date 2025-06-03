@@ -10,10 +10,7 @@ import '../src/language_definition_common.dart';
 final swift = Language(
   id: "swift",
   refs: {
-    '~contains~2~contains~2': Mode(
-      match: "\\s+",
-      relevance: 0,
-    ),
+    '~contains~2~contains~2': Mode(match: "\\s+", relevance: 0),
     '~contains~2~contains~1~contains~14': Mode(
       begin: "\\(",
       end: "\\)",
@@ -115,9 +112,9 @@ final swift = Language(
           "#selector",
           "#sourceLocation",
           "#warn_unqualified_access",
-          "#warning"
+          "#warning",
         ],
-        "literal": ["false", "nil", "true"]
+        "literal": ["false", "nil", "true"],
       },
       contains: [
         ModeSelfReference(),
@@ -130,35 +127,50 @@ final swift = Language(
         C_LINE_COMMENT_MODE,
         ModeReference('~contains~1'),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~2',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~3',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~4',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~6'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~6',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~7'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~7',
+        ),
         ModeReference('~contains~2~contains~0~contains~2'),
       ],
     ),
@@ -262,9 +274,9 @@ final swift = Language(
           "#selector",
           "#sourceLocation",
           "#warn_unqualified_access",
-          "#warning"
+          "#warning",
         ],
-        "literal": ["false", "nil", "true"]
+        "literal": ["false", "nil", "true"],
       },
       contains: [
         Mode(
@@ -273,10 +285,7 @@ final swift = Language(
           end: ":",
           relevance: 0,
           contains: [
-            Mode(
-              className: "keyword",
-              match: "\\b_\\b",
-            ),
+            Mode(className: "keyword", match: "\\b_\\b"),
             Mode(
               className: "params",
               match:
@@ -287,25 +296,35 @@ final swift = Language(
         C_LINE_COMMENT_MODE,
         ModeReference('~contains~1'),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~2',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~3',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~4',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~5'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~5',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~6'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~6',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~7'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~7',
+        ),
         ModeReference('~contains~2~contains~0~contains~2'),
         ModeReference('~contains~2~contains~1~contains~14'),
       ],
@@ -324,34 +343,30 @@ final swift = Language(
     ),
     '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9':
         Mode(
-      match:
-          "`(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])(?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*`",
-    ),
+          match:
+              "`(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])(?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*`",
+        ),
     '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4':
         Mode(
-      className: "built_in",
-      match:
-          "\\b(?:abs|all|any|assert|assertionFailure|debugPrint|dump|fatalError|getVaList|isKnownUniquelyReferenced|max|min|numericCast|pointwiseMax|pointwiseMin|precondition|preconditionFailure|print|readLine|repeatElement|sequence|stride|swap|swift_unboxFromSwiftValueWithType|transcode|type|unsafeBitCast|unsafeDowncast|withExtendedLifetime|withUnsafeMutablePointer|withUnsafePointer|withVaList|withoutActuallyEscaping|zip)(?=\\()",
-    ),
+          className: "built_in",
+          match:
+              "\\b(?:abs|all|any|assert|assertionFailure|debugPrint|dump|fatalError|getVaList|isKnownUniquelyReferenced|max|min|numericCast|pointwiseMax|pointwiseMin|precondition|preconditionFailure|print|readLine|repeatElement|sequence|stride|swap|swift_unboxFromSwiftValueWithType|transcode|type|unsafeBitCast|unsafeDowncast|withExtendedLifetime|withUnsafeMutablePointer|withUnsafePointer|withVaList|withoutActuallyEscaping|zip)(?=\\()",
+        ),
     '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3':
         Mode(
-      match:
-          "\\.(?:abs|all|any|assert|assertionFailure|debugPrint|dump|fatalError|getVaList|isKnownUniquelyReferenced|max|min|numericCast|pointwiseMax|pointwiseMin|precondition|preconditionFailure|print|readLine|repeatElement|sequence|stride|swap|swift_unboxFromSwiftValueWithType|transcode|type|unsafeBitCast|unsafeDowncast|withExtendedLifetime|withUnsafeMutablePointer|withUnsafePointer|withVaList|withoutActuallyEscaping|zip)",
-      relevance: 0,
-    ),
+          match:
+              "\\.(?:abs|all|any|assert|assertionFailure|debugPrint|dump|fatalError|getVaList|isKnownUniquelyReferenced|max|min|numericCast|pointwiseMax|pointwiseMin|precondition|preconditionFailure|print|readLine|repeatElement|sequence|stride|swap|swift_unboxFromSwiftValueWithType|transcode|type|unsafeBitCast|unsafeDowncast|withExtendedLifetime|withUnsafeMutablePointer|withUnsafePointer|withVaList|withoutActuallyEscaping|zip)",
+          relevance: 0,
+        ),
     '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11':
         Mode(
-      className: "variable",
-      match:
-          "\\\$(?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])+",
-    ),
+          className: "variable",
+          match:
+              "\\\$(?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])+",
+        ),
     '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10':
-        Mode(
-      className: "variable",
-      match: "\\\$\\d+",
-    ),
-    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3':
-        Mode(
+        Mode(className: "variable", match: "\\\$\\d+"),
+    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3': Mode(
       className: "string",
       variants: [
         Mode(
@@ -361,18 +376,11 @@ final swift = Language(
             Mode(
               className: "subst",
               variants: [
-                Mode(
-                  match: "\\\\[0\\\\tnr\"']",
-                ),
-                Mode(
-                  match: "\\\\u\\{[0-9a-fA-F]{1,8}\\}",
-                ),
+                Mode(match: "\\\\[0\\\\tnr\"']"),
+                Mode(match: "\\\\u\\{[0-9a-fA-F]{1,8}\\}"),
               ],
             ),
-            Mode(
-              className: "subst",
-              match: "\\\\[\\t ]*(?:[\\r\\n]|\\r\\n)",
-            ),
+            Mode(className: "subst", match: "\\\\[\\t ]*(?:[\\r\\n]|\\r\\n)"),
             Mode(
               className: "subst",
               label: "interpol",
@@ -475,64 +483,88 @@ final swift = Language(
                   "#selector",
                   "#sourceLocation",
                   "#warn_unqualified_access",
-                  "#warning"
+                  "#warning",
                 ],
-                "literal": ["false", "nil", "true"]
+                "literal": ["false", "nil", "true"],
               },
               contains: [
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                ),
                 Mode(
                   begin: "\\(",
                   end: "\\)",
                   contains: [
                     ModeSelfReference(),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                    ),
                   ],
                 ),
               ],
@@ -546,18 +578,11 @@ final swift = Language(
             Mode(
               className: "subst",
               variants: [
-                Mode(
-                  match: "\\\\#[0\\\\tnr\"']",
-                ),
-                Mode(
-                  match: "\\\\#u\\{[0-9a-fA-F]{1,8}\\}",
-                ),
+                Mode(match: "\\\\#[0\\\\tnr\"']"),
+                Mode(match: "\\\\#u\\{[0-9a-fA-F]{1,8}\\}"),
               ],
             ),
-            Mode(
-              className: "subst",
-              match: "\\\\#[\\t ]*(?:[\\r\\n]|\\r\\n)",
-            ),
+            Mode(className: "subst", match: "\\\\#[\\t ]*(?:[\\r\\n]|\\r\\n)"),
             Mode(
               className: "subst",
               label: "interpol",
@@ -660,64 +685,88 @@ final swift = Language(
                   "#selector",
                   "#sourceLocation",
                   "#warn_unqualified_access",
-                  "#warning"
+                  "#warning",
                 ],
-                "literal": ["false", "nil", "true"]
+                "literal": ["false", "nil", "true"],
               },
               contains: [
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                ),
                 Mode(
                   begin: "\\(",
                   end: "\\)",
                   contains: [
                     ModeSelfReference(),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                    ),
                   ],
                 ),
               ],
@@ -731,18 +780,11 @@ final swift = Language(
             Mode(
               className: "subst",
               variants: [
-                Mode(
-                  match: "\\\\##[0\\\\tnr\"']",
-                ),
-                Mode(
-                  match: "\\\\##u\\{[0-9a-fA-F]{1,8}\\}",
-                ),
+                Mode(match: "\\\\##[0\\\\tnr\"']"),
+                Mode(match: "\\\\##u\\{[0-9a-fA-F]{1,8}\\}"),
               ],
             ),
-            Mode(
-              className: "subst",
-              match: "\\\\##[\\t ]*(?:[\\r\\n]|\\r\\n)",
-            ),
+            Mode(className: "subst", match: "\\\\##[\\t ]*(?:[\\r\\n]|\\r\\n)"),
             Mode(
               className: "subst",
               label: "interpol",
@@ -845,64 +887,88 @@ final swift = Language(
                   "#selector",
                   "#sourceLocation",
                   "#warn_unqualified_access",
-                  "#warning"
+                  "#warning",
                 ],
-                "literal": ["false", "nil", "true"]
+                "literal": ["false", "nil", "true"],
               },
               contains: [
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                ),
                 Mode(
                   begin: "\\(",
                   end: "\\)",
                   contains: [
                     ModeSelfReference(),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                    ),
                   ],
                 ),
               ],
@@ -916,12 +982,8 @@ final swift = Language(
             Mode(
               className: "subst",
               variants: [
-                Mode(
-                  match: "\\\\###[0\\\\tnr\"']",
-                ),
-                Mode(
-                  match: "\\\\###u\\{[0-9a-fA-F]{1,8}\\}",
-                ),
+                Mode(match: "\\\\###[0\\\\tnr\"']"),
+                Mode(match: "\\\\###u\\{[0-9a-fA-F]{1,8}\\}"),
               ],
             ),
             Mode(
@@ -1030,64 +1092,88 @@ final swift = Language(
                   "#selector",
                   "#sourceLocation",
                   "#warn_unqualified_access",
-                  "#warning"
+                  "#warning",
                 ],
-                "literal": ["false", "nil", "true"]
+                "literal": ["false", "nil", "true"],
               },
               contains: [
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                ),
                 Mode(
                   begin: "\\(",
                   end: "\\)",
                   contains: [
                     ModeSelfReference(),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                    ),
                   ],
                 ),
               ],
@@ -1101,12 +1187,8 @@ final swift = Language(
             Mode(
               className: "subst",
               variants: [
-                Mode(
-                  match: "\\\\[0\\\\tnr\"']",
-                ),
-                Mode(
-                  match: "\\\\u\\{[0-9a-fA-F]{1,8}\\}",
-                ),
+                Mode(match: "\\\\[0\\\\tnr\"']"),
+                Mode(match: "\\\\u\\{[0-9a-fA-F]{1,8}\\}"),
               ],
             ),
             Mode(
@@ -1211,64 +1293,88 @@ final swift = Language(
                   "#selector",
                   "#sourceLocation",
                   "#warn_unqualified_access",
-                  "#warning"
+                  "#warning",
                 ],
-                "literal": ["false", "nil", "true"]
+                "literal": ["false", "nil", "true"],
               },
               contains: [
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                ),
                 Mode(
                   begin: "\\(",
                   end: "\\)",
                   contains: [
                     ModeSelfReference(),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                    ),
                   ],
                 ),
               ],
@@ -1282,12 +1388,8 @@ final swift = Language(
             Mode(
               className: "subst",
               variants: [
-                Mode(
-                  match: "\\\\#[0\\\\tnr\"']",
-                ),
-                Mode(
-                  match: "\\\\#u\\{[0-9a-fA-F]{1,8}\\}",
-                ),
+                Mode(match: "\\\\#[0\\\\tnr\"']"),
+                Mode(match: "\\\\#u\\{[0-9a-fA-F]{1,8}\\}"),
               ],
             ),
             Mode(
@@ -1392,64 +1494,88 @@ final swift = Language(
                   "#selector",
                   "#sourceLocation",
                   "#warn_unqualified_access",
-                  "#warning"
+                  "#warning",
                 ],
-                "literal": ["false", "nil", "true"]
+                "literal": ["false", "nil", "true"],
               },
               contains: [
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                ),
                 Mode(
                   begin: "\\(",
                   end: "\\)",
                   contains: [
                     ModeSelfReference(),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                    ),
                   ],
                 ),
               ],
@@ -1463,12 +1589,8 @@ final swift = Language(
             Mode(
               className: "subst",
               variants: [
-                Mode(
-                  match: "\\\\##[0\\\\tnr\"']",
-                ),
-                Mode(
-                  match: "\\\\##u\\{[0-9a-fA-F]{1,8}\\}",
-                ),
+                Mode(match: "\\\\##[0\\\\tnr\"']"),
+                Mode(match: "\\\\##u\\{[0-9a-fA-F]{1,8}\\}"),
               ],
             ),
             Mode(
@@ -1573,64 +1695,88 @@ final swift = Language(
                   "#selector",
                   "#sourceLocation",
                   "#warn_unqualified_access",
-                  "#warning"
+                  "#warning",
                 ],
-                "literal": ["false", "nil", "true"]
+                "literal": ["false", "nil", "true"],
               },
               contains: [
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                ),
                 Mode(
                   begin: "\\(",
                   end: "\\)",
                   contains: [
                     ModeSelfReference(),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                    ),
                   ],
                 ),
               ],
@@ -1644,12 +1790,8 @@ final swift = Language(
             Mode(
               className: "subst",
               variants: [
-                Mode(
-                  match: "\\\\###[0\\\\tnr\"']",
-                ),
-                Mode(
-                  match: "\\\\###u\\{[0-9a-fA-F]{1,8}\\}",
-                ),
+                Mode(match: "\\\\###[0\\\\tnr\"']"),
+                Mode(match: "\\\\###u\\{[0-9a-fA-F]{1,8}\\}"),
               ],
             ),
             Mode(
@@ -1754,64 +1896,88 @@ final swift = Language(
                   "#selector",
                   "#sourceLocation",
                   "#warn_unqualified_access",
-                  "#warning"
+                  "#warning",
                 ],
-                "literal": ["false", "nil", "true"]
+                "literal": ["false", "nil", "true"],
               },
               contains: [
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                ),
                 ModeReference(
-                    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                ),
                 Mode(
                   begin: "\\(",
                   end: "\\)",
                   contains: [
                     ModeSelfReference(),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+                    ),
                     ModeReference(
-                        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+                      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+                    ),
                   ],
                 ),
               ],
@@ -1822,26 +1988,22 @@ final swift = Language(
     ),
     '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2':
         Mode(
-      className: "number",
-      relevance: 0,
-      variants: [
-        Mode(
-          match: "\\b(([0-9]_*)+)(\\.(([0-9]_*)+))?([eE][+-]?(([0-9]_*)+))?\\b",
+          className: "number",
+          relevance: 0,
+          variants: [
+            Mode(
+              match:
+                  "\\b(([0-9]_*)+)(\\.(([0-9]_*)+))?([eE][+-]?(([0-9]_*)+))?\\b",
+            ),
+            Mode(
+              match:
+                  "\\b0x(([0-9a-fA-F]_*)+)(\\.(([0-9a-fA-F]_*)+))?([pP][+-]?(([0-9]_*)+))?\\b",
+            ),
+            Mode(match: "\\b0o([0-7]_*)+\\b"),
+            Mode(match: "\\b0b([01]_*)+\\b"),
+          ],
         ),
-        Mode(
-          match:
-              "\\b0x(([0-9a-fA-F]_*)+)(\\.(([0-9a-fA-F]_*)+))?([pP][+-]?(([0-9]_*)+))?\\b",
-        ),
-        Mode(
-          match: "\\b0o([0-7]_*)+\\b",
-        ),
-        Mode(
-          match: "\\b0b([01]_*)+\\b",
-        ),
-      ],
-    ),
-    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1':
-        Mode(
+    '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1': Mode(
       className: "operator",
       relevance: 0,
       variants: [
@@ -1856,10 +2018,7 @@ final swift = Language(
       ],
     ),
     '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0':
-        Mode(
-      match: "->",
-      relevance: 0,
-    ),
+        Mode(match: "->", relevance: 0),
     '~contains~2~contains~0~contains~2~contains~5~contains~5': Mode(
       match: "(@|#(un)?)available",
       className: "keyword",
@@ -1879,17 +2038,21 @@ final swift = Language(
               "watchOSApplicationExtension",
               "tvOS",
               "tvOSApplicationExtension",
-              "swift"
+              "swift",
             ],
             contains: [
               ModeReference(
-                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+                '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+              ),
               ModeReference(
-                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+                '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+              ),
               ModeReference(
-                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+                '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+              ),
               ModeReference(
-                  '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+                '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+              ),
             ],
           ),
         ],
@@ -1928,14 +2091,8 @@ final swift = Language(
               "[A-Z](?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*",
           relevance: 0,
         ),
-        Mode(
-          match: "[?!]+",
-          relevance: 0,
-        ),
-        Mode(
-          match: "\\.\\.\\.",
-          relevance: 0,
-        ),
+        Mode(match: "[?!]+", relevance: 0),
+        Mode(match: "\\.\\.\\.", relevance: 0),
         Mode(
           match:
               "\\s+&\\s+(?=[A-Z](?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*)",
@@ -2041,27 +2198,34 @@ final swift = Language(
               "#selector",
               "#sourceLocation",
               "#warn_unqualified_access",
-              "#warning"
+              "#warning",
             ],
-            "literal": ["false", "nil", "true"]
+            "literal": ["false", "nil", "true"],
           },
           contains: [
             C_LINE_COMMENT_MODE,
             ModeReference('~contains~1'),
             ModeReference(
-                '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+              '~contains~2~contains~0~contains~2~contains~5~contains~2',
+            ),
             ModeReference(
-                '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+              '~contains~2~contains~0~contains~2~contains~5~contains~3',
+            ),
             ModeReference(
-                '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+              '~contains~2~contains~0~contains~2~contains~5~contains~4',
+            ),
             ModeReference(
-                '~contains~2~contains~0~contains~2~contains~5~contains~5'),
+              '~contains~2~contains~0~contains~2~contains~5~contains~5',
+            ),
             ModeReference(
-                '~contains~2~contains~0~contains~2~contains~5~contains~6'),
+              '~contains~2~contains~0~contains~2~contains~5~contains~6',
+            ),
             ModeReference(
-                '~contains~2~contains~0~contains~2~contains~5~contains~7'),
+              '~contains~2~contains~0~contains~2~contains~5~contains~7',
+            ),
             ModeReference(
-                '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+              '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+            ),
             ModeReference('~contains~2~contains~0~contains~2'),
           ],
         ),
@@ -2194,9 +2358,9 @@ final swift = Language(
       "#selector",
       "#sourceLocation",
       "#warn_unqualified_access",
-      "#warning"
+      "#warning",
     ],
-    "literal": ["false", "nil", "true"]
+    "literal": ["false", "nil", "true"],
   },
   contains: [
     C_LINE_COMMENT_MODE,
@@ -2205,7 +2369,7 @@ final swift = Language(
       match: [
         "func",
         "\\s+",
-        "(?:`(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])(?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*`|(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])(?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*|(?:[/=\\-+!*%<>&|^\\x7e?]|[\\u00A1-\\u00A7]|[\\u00A9\\u00AB]|[\\u00AC\\u00AE]|[\\u00B0\\u00B1]|[\\u00B6\\u00BB\\u00BF\\u00D7\\u00F7]|[\\u2016-\\u2017]|[\\u2020-\\u2027]|[\\u2030-\\u203E]|[\\u2041-\\u2053]|[\\u2055-\\u205E]|[\\u2190-\\u23FF]|[\\u2500-\\u2775]|[\\u2794-\\u2BFF]|[\\u2E00-\\u2E7F]|[\\u3001-\\u3003]|[\\u3008-\\u3020]|[\\u3030])(?:(?:[/=\\-+!*%<>&|^~?]|[\\u00A1-\\u00A7]|[\\u00A9\\u00AB]|[\\u00AC\\u00AE]|[\\u00B0\\u00B1]|[\\u00B6\\u00BB\\u00BF\\u00D7\\u00F7]|[\\u2016-\\u2017]|[\\u2020-\\u2027]|[\\u2030-\\u203E]|[\\u2041-\\u2053]|[\\u2055-\\u205E]|[\\u2190-\\u23FF]|[\\u2500-\\u2775]|[\\u2794-\\u2BFF]|[\\u2E00-\\u2E7F]|[\\u3001-\\u3003]|[\\u3008-\\u3020]|[\\u3030])|[\\u0300-\\u036F]|[\\u1DC0-\\u1DFF]|[\\u20D0-\\u20FF]|[\\uFE00-\\uFE0F]|[\\uFE20-\\uFE2F])*)"
+        "(?:`(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])(?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*`|(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])(?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*|(?:[/=\\-+!*%<>&|^\\x7e?]|[\\u00A1-\\u00A7]|[\\u00A9\\u00AB]|[\\u00AC\\u00AE]|[\\u00B0\\u00B1]|[\\u00B6\\u00BB\\u00BF\\u00D7\\u00F7]|[\\u2016-\\u2017]|[\\u2020-\\u2027]|[\\u2030-\\u203E]|[\\u2041-\\u2053]|[\\u2055-\\u205E]|[\\u2190-\\u23FF]|[\\u2500-\\u2775]|[\\u2794-\\u2BFF]|[\\u2E00-\\u2E7F]|[\\u3001-\\u3003]|[\\u3008-\\u3020]|[\\u3030])(?:(?:[/=\\-+!*%<>&|^~?]|[\\u00A1-\\u00A7]|[\\u00A9\\u00AB]|[\\u00AC\\u00AE]|[\\u00B0\\u00B1]|[\\u00B6\\u00BB\\u00BF\\u00D7\\u00F7]|[\\u2016-\\u2017]|[\\u2020-\\u2027]|[\\u2030-\\u203E]|[\\u2041-\\u2053]|[\\u2055-\\u205E]|[\\u2190-\\u23FF]|[\\u2500-\\u2775]|[\\u2794-\\u2BFF]|[\\u2E00-\\u2E7F]|[\\u3001-\\u3003]|[\\u3008-\\u3020]|[\\u3030])|[\\u0300-\\u036F]|[\\u1DC0-\\u1DFF]|[\\u20D0-\\u20FF]|[\\uFE00-\\uFE0F]|[\\uFE20-\\uFE2F])*)",
       ],
       className: {"1": "keyword", "3": "title.function"},
       contains: [
@@ -2326,9 +2490,9 @@ final swift = Language(
           "#selector",
           "#sourceLocation",
           "#warn_unqualified_access",
-          "#warning"
+          "#warning",
         ],
-        "literal": ["false", "nil", "true"]
+        "literal": ["false", "nil", "true"],
       },
       contains: [
         Mode(
@@ -2338,18 +2502,21 @@ final swift = Language(
           className: "title.class",
         ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~2'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~2',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~3'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~3',
+        ),
         ModeReference(
-            '~contains~2~contains~0~contains~2~contains~5~contains~4'),
+          '~contains~2~contains~0~contains~2~contains~5~contains~4',
+        ),
       ],
     ),
     Mode(
       match: [
         "operator",
         "\\s+",
-        "(?:[/=\\-+!*%<>&|^\\x7e?]|[\\u00A1-\\u00A7]|[\\u00A9\\u00AB]|[\\u00AC\\u00AE]|[\\u00B0\\u00B1]|[\\u00B6\\u00BB\\u00BF\\u00D7\\u00F7]|[\\u2016-\\u2017]|[\\u2020-\\u2027]|[\\u2030-\\u203E]|[\\u2041-\\u2053]|[\\u2055-\\u205E]|[\\u2190-\\u23FF]|[\\u2500-\\u2775]|[\\u2794-\\u2BFF]|[\\u2E00-\\u2E7F]|[\\u3001-\\u3003]|[\\u3008-\\u3020]|[\\u3030])(?:(?:[/=\\-+!*%<>&|^~?]|[\\u00A1-\\u00A7]|[\\u00A9\\u00AB]|[\\u00AC\\u00AE]|[\\u00B0\\u00B1]|[\\u00B6\\u00BB\\u00BF\\u00D7\\u00F7]|[\\u2016-\\u2017]|[\\u2020-\\u2027]|[\\u2030-\\u203E]|[\\u2041-\\u2053]|[\\u2055-\\u205E]|[\\u2190-\\u23FF]|[\\u2500-\\u2775]|[\\u2794-\\u2BFF]|[\\u2E00-\\u2E7F]|[\\u3001-\\u3003]|[\\u3008-\\u3020]|[\\u3030])|[\\u0300-\\u036F]|[\\u1DC0-\\u1DFF]|[\\u20D0-\\u20FF]|[\\uFE00-\\uFE0F]|[\\uFE20-\\uFE2F])*"
+        "(?:[/=\\-+!*%<>&|^\\x7e?]|[\\u00A1-\\u00A7]|[\\u00A9\\u00AB]|[\\u00AC\\u00AE]|[\\u00B0\\u00B1]|[\\u00B6\\u00BB\\u00BF\\u00D7\\u00F7]|[\\u2016-\\u2017]|[\\u2020-\\u2027]|[\\u2030-\\u203E]|[\\u2041-\\u2053]|[\\u2055-\\u205E]|[\\u2190-\\u23FF]|[\\u2500-\\u2775]|[\\u2794-\\u2BFF]|[\\u2E00-\\u2E7F]|[\\u3001-\\u3003]|[\\u3008-\\u3020]|[\\u3030])(?:(?:[/=\\-+!*%<>&|^~?]|[\\u00A1-\\u00A7]|[\\u00A9\\u00AB]|[\\u00AC\\u00AE]|[\\u00B0\\u00B1]|[\\u00B6\\u00BB\\u00BF\\u00D7\\u00F7]|[\\u2016-\\u2017]|[\\u2020-\\u2027]|[\\u2030-\\u203E]|[\\u2041-\\u2053]|[\\u2055-\\u205E]|[\\u2190-\\u23FF]|[\\u2500-\\u2775]|[\\u2794-\\u2BFF]|[\\u2E00-\\u2E7F]|[\\u3001-\\u3003]|[\\u3008-\\u3020]|[\\u3030])|[\\u0300-\\u036F]|[\\u1DC0-\\u1DFF]|[\\u20D0-\\u20FF]|[\\uFE00-\\uFE0F]|[\\uFE20-\\uFE2F])*",
       ],
       className: {"1": "keyword", "3": "title"},
     ),
@@ -2357,12 +2524,10 @@ final swift = Language(
       begin: [
         "precedencegroup",
         "\\s+",
-        "[A-Z](?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*"
+        "[A-Z](?:(?:[a-zA-Z_]|[\\u00A8\\u00AA\\u00AD\\u00AF\\u00B2-\\u00B5\\u00B7-\\u00BA]|[\\u00BC-\\u00BE\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF]|[\\u0100-\\u02FF\\u0370-\\u167F\\u1681-\\u180D\\u180F-\\u1DBF]|[\\u1E00-\\u1FFF]|[\\u200B-\\u200D\\u202A-\\u202E\\u203F-\\u2040\\u2054\\u2060-\\u206F]|[\\u2070-\\u20CF\\u2100-\\u218F\\u2460-\\u24FF\\u2776-\\u2793]|[\\u2C00-\\u2DFF\\u2E80-\\u2FFF]|[\\u3004-\\u3007\\u3021-\\u302F\\u3031-\\u303F\\u3040-\\uD7FF]|[\\uF900-\\uFD3D\\uFD40-\\uFDCF\\uFDF0-\\uFE1F\\uFE30-\\uFE44]|[\\uFE47-\\uFEFE\\uFF00-\\uFFFD])|\\d|[\\u0300-\\u036F\\u1DC0-\\u1DFF\\u20D0-\\u20FF\\uFE20-\\uFE2F])*",
       ],
       className: {"1": "keyword", "3": "title"},
-      contains: [
-        ModeReference('~contains~2~contains~0~contains~2'),
-      ],
+      contains: [ModeReference('~contains~2~contains~0~contains~2')],
       keywords: [
         "assignment",
         "associativity",
@@ -2373,40 +2538,46 @@ final swift = Language(
         "right",
         "false",
         "nil",
-        "true"
+        "true",
       ],
       end: "}",
     ),
     Mode(
       beginKeywords: "import",
       end: "\$",
-      contains: [
-        C_LINE_COMMENT_MODE,
-        ModeReference('~contains~1'),
-      ],
+      contains: [C_LINE_COMMENT_MODE, ModeReference('~contains~1')],
       relevance: 0,
     ),
     ModeReference('~contains~2~contains~0~contains~2~contains~5~contains~2'),
     ModeReference('~contains~2~contains~0~contains~2~contains~5~contains~3'),
     ModeReference('~contains~2~contains~0~contains~2~contains~5~contains~4'),
     ModeReference(
-        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3'),
+      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~3',
+    ),
     ModeReference(
-        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4'),
+      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~4',
+    ),
     ModeReference(
-        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0'),
+      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~0',
+    ),
     ModeReference(
-        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1'),
+      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~1',
+    ),
     ModeReference(
-        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2'),
+      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~2',
+    ),
     ModeReference(
-        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3'),
+      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3',
+    ),
     ModeReference(
-        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9'),
+      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~9',
+    ),
     ModeReference(
-        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10'),
+      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~10',
+    ),
     ModeReference(
-        '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11'),
+      '~contains~2~contains~0~contains~2~contains~5~contains~5~starts~contains~0~contains~3~variants~0~contains~2~contains~11',
+    ),
     ModeReference('~contains~2~contains~0~contains~2~contains~5~contains~5'),
     ModeReference('~contains~2~contains~0~contains~2~contains~5~contains~6'),
     ModeReference('~contains~2~contains~0~contains~2~contains~5~contains~7'),

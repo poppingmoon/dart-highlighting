@@ -13,7 +13,6 @@ final graphql = Language(
   name: "GraphQL",
   aliases: ["gql"],
   case_insensitive: true,
-  disableAutodetect: false,
   keywords: {
     "keyword": [
       "query",
@@ -28,19 +27,15 @@ final graphql = Language(
       "scalar",
       "fragment",
       "enum",
-      "on"
+      "on",
     ],
-    "literal": ["true", "false", "null"]
+    "literal": ["true", "false", "null"],
   },
   contains: [
     HASH_COMMENT_MODE,
     QUOTE_STRING_MODE,
     NUMBER_MODE,
-    Mode(
-      scope: "punctuation",
-      match: "[.]{3}",
-      relevance: 0,
-    ),
+    Mode(scope: "punctuation", match: "[.]{3}", relevance: 0),
     Mode(
       scope: "punctuation",
       begin: "[\\!\\(\\)\\:\\=\\[\\]\\{\\|\\}]{1}",
@@ -53,11 +48,7 @@ final graphql = Language(
       excludeEnd: true,
       relevance: 0,
     ),
-    Mode(
-      scope: "meta",
-      match: "@\\w+",
-      excludeEnd: true,
-    ),
+    Mode(scope: "meta", match: "@\\w+", excludeEnd: true),
     Mode(
       scope: "symbol",
       begin: "[_A-Za-z][_0-9A-Za-z]*(?=\\s*:)",

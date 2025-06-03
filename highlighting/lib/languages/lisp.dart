@@ -21,9 +21,7 @@ final lisp = Language(
               begin: "[a-zA-Z_\\-+\\*\\/<=>&#][a-zA-Z0-9_\\-+*\\/<=>&#!]*",
               relevance: 0,
             ),
-            Mode(
-              begin: "\\|[^]*?\\|",
-            ),
+            Mode(begin: "\\|[^]*?\\|"),
           ],
         ),
         Mode(
@@ -39,9 +37,7 @@ final lisp = Language(
             ModeReference('~contains~4'),
             ModeReference('~contains~5~contains~2'),
             ModeReference('~contains~5~contains~3'),
-            Mode(
-              begin: "\\|[^]*?\\|",
-            ),
+            Mode(begin: "\\|[^]*?\\|"),
             ModeReference('~contains~5~contains~4~contains~4'),
           ],
         ),
@@ -49,9 +45,7 @@ final lisp = Language(
     ),
     '~contains~6': Mode(
       variants: [
-        Mode(
-          begin: "'[a-zA-Z_\\-+\\*\\/<=>&#][a-zA-Z0-9_\\-+*\\/<=>&#!]*",
-        ),
+        Mode(begin: "'[a-zA-Z_\\-+\\*\\/<=>&#][a-zA-Z0-9_\\-+*\\/<=>&#!]*"),
         Mode(
           begin:
               "#'[a-zA-Z_\\-+\\*\\/<=>&#][a-zA-Z0-9_\\-+*\\/<=>&#!]*(::[a-zA-Z_\\-+\\*\\/<=>&#][a-zA-Z0-9_\\-+*\\/<=>&#!]*)*",
@@ -66,10 +60,7 @@ final lisp = Language(
       className: "symbol",
       begin: "[:&][a-zA-Z_\\-+\\*\\/<=>&#][a-zA-Z0-9_\\-+*\\/<=>&#!]*",
     ),
-    '~contains~5~contains~2': Mode(
-      begin: "\\*",
-      end: "\\*",
-    ),
+    '~contains~5~contains~2': Mode(begin: "\\*", end: "\\*"),
     '~contains~5': Mode(
       contains: [
         ModeReference('~contains~0'),
@@ -90,18 +81,9 @@ final lisp = Language(
         ModeReference('~contains~5~contains~4~contains~4'),
       ],
       variants: [
-        Mode(
-          begin: "['`]\\(",
-          end: "\\)",
-        ),
-        Mode(
-          begin: "\\(quote ",
-          end: "\\)",
-          keywords: {"name": "quote"},
-        ),
-        Mode(
-          begin: "'\\|[^]*?\\|",
-        ),
+        Mode(begin: "['`]\\(", end: "\\)"),
+        Mode(begin: "\\(quote ", end: "\\)", keywords: {"name": "quote"}),
+        Mode(begin: "'\\|[^]*?\\|"),
       ],
     ),
     '~contains~4': Mode(
@@ -127,15 +109,9 @@ final lisp = Language(
       scope: "string",
       begin: "\"",
       end: "\"",
-      illegal: null,
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
-    '~contains~2': Mode(
-      className: "literal",
-      begin: "\\b(t{1}|nil)\\b",
-    ),
+    '~contains~2': Mode(className: "literal", begin: "\\b(t{1}|nil)\\b"),
     '~contains~0': Mode(
       className: "number",
       variants: [
@@ -144,15 +120,9 @@ final lisp = Language(
               "(-|\\+)?\\d+(\\.\\d+|\\/\\d+)?((d|e|f|l|s|D|E|F|L|S)(\\+|-)?\\d+)?",
           relevance: 0,
         ),
-        Mode(
-          begin: "#(b|B)[0-1]+(/[0-1]+)?",
-        ),
-        Mode(
-          begin: "#(o|O)[0-7]+(/[0-7]+)?",
-        ),
-        Mode(
-          begin: "#(x|X)[0-9a-fA-F]+(/[0-9a-fA-F]+)?",
-        ),
+        Mode(begin: "#(b|B)[0-1]+(/[0-1]+)?"),
+        Mode(begin: "#(o|O)[0-7]+(/[0-7]+)?"),
+        Mode(begin: "#(x|X)[0-9a-fA-F]+(/[0-9a-fA-F]+)?"),
         Mode(
           begin:
               "#(c|C)\\((-|\\+)?\\d+(\\.\\d+|\\/\\d+)?((d|e|f|l|s|D|E|F|L|S)(\\+|-)?\\d+)? +(-|\\+)?\\d+(\\.\\d+|\\/\\d+)?((d|e|f|l|s|D|E|F|L|S)(\\+|-)?\\d+)?",

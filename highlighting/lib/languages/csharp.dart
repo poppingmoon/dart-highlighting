@@ -14,9 +14,7 @@ final csharp = Language(
       begin: "<",
       end: ">",
       contains: [
-        Mode(
-          beginKeywords: "in out",
-        ),
+        Mode(beginKeywords: "in out"),
         ModeReference('~contains~6~contains~1'),
       ],
     ),
@@ -31,15 +29,14 @@ final csharp = Language(
       end: "\"",
       contains: [
         ModeReference(
-            '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~2~contains~0'),
+          '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~2~contains~0',
+        ),
       ],
     ),
     '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5': Mode(
       className: "number",
       variants: [
-        Mode(
-          begin: "\\b(0b[01']+)",
-        ),
+        Mode(begin: "\\b(0b[01']+)"),
         Mode(
           begin:
               "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)(u|U|l|L|ul|UL|f|F|b|B)",
@@ -52,9 +49,7 @@ final csharp = Language(
       relevance: 0,
     ),
     '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~2~contains~0':
-        Mode(
-      begin: "\"\"",
-    ),
+        Mode(begin: "\"\""),
     '~contains~4~variants~0~contains~3~contains~1~contains~3': Mode(
       className: "subst",
       begin: "\\{",
@@ -151,7 +146,7 @@ final csharp = Language(
           "when",
           "where",
           "with",
-          "yield"
+          "yield",
         ],
         "built_in": [
           "bool",
@@ -173,9 +168,9 @@ final csharp = Language(
           "string",
           "ulong",
           "uint",
-          "ushort"
+          "ushort",
         ],
-        "literal": ["default", "false", "null", "true"]
+        "literal": ["default", "false", "null", "true"],
       },
       illegal: "\\n",
       contains: [
@@ -184,17 +179,12 @@ final csharp = Language(
           begin: "\\\$@\"",
           end: "\"",
           contains: [
-            Mode(
-              begin: "\\{\\{",
-            ),
-            Mode(
-              begin: "\\}\\}",
-            ),
-            Mode(
-              begin: "\"\"",
-            ),
+            Mode(begin: "\\{\\{"),
+            Mode(begin: "\\}\\}"),
+            Mode(begin: "\"\""),
             ModeReference(
-                '~contains~4~variants~0~contains~3~contains~1~contains~3'),
+              '~contains~4~variants~0~contains~3~contains~1~contains~3',
+            ),
           ],
           illegal: "\\n",
         ),
@@ -205,14 +195,16 @@ final csharp = Language(
           end: "\"",
           contains: [
             ModeReference(
-                '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~2~contains~0'),
+              '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~2~contains~0',
+            ),
           ],
           illegal: "\\n",
         ),
         APOS_STRING_MODE,
         QUOTE_STRING_MODE,
         ModeReference(
-            '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5'),
+          '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5',
+        ),
         Mode(
           scope: "comment",
           begin: "/\\*",
@@ -240,15 +232,12 @@ final csharp = Language(
       end: "\"",
       illegal: "\\n",
       contains: [
-        Mode(
-          begin: "\\{\\{",
-        ),
-        Mode(
-          begin: "\\}\\}",
-        ),
+        Mode(begin: "\\{\\{"),
+        Mode(begin: "\\}\\}"),
         BACKSLASH_ESCAPE,
         ModeReference(
-            '~contains~4~variants~0~contains~3~contains~1~contains~3'),
+          '~contains~4~variants~0~contains~3~contains~1~contains~3',
+        ),
       ],
     ),
     '~contains~4~variants~0': Mode(
@@ -256,15 +245,9 @@ final csharp = Language(
       begin: "\\\$@\"",
       end: "\"",
       contains: [
-        Mode(
-          begin: "\\{\\{",
-        ),
-        Mode(
-          begin: "\\}\\}",
-        ),
-        Mode(
-          begin: "\"\"",
-        ),
+        Mode(begin: "\\{\\{"),
+        Mode(begin: "\\}\\}"),
+        Mode(begin: "\"\""),
         Mode(
           className: "subst",
           begin: "\\{",
@@ -361,7 +344,7 @@ final csharp = Language(
               "when",
               "where",
               "with",
-              "yield"
+              "yield",
             ],
             "built_in": [
               "bool",
@@ -383,9 +366,9 @@ final csharp = Language(
               "string",
               "ulong",
               "uint",
-              "ushort"
+              "ushort",
             ],
-            "literal": ["default", "false", "null", "true"]
+            "literal": ["default", "false", "null", "true"],
           },
           contains: [
             ModeReference('~contains~4~variants~0'),
@@ -394,7 +377,8 @@ final csharp = Language(
             APOS_STRING_MODE,
             QUOTE_STRING_MODE,
             ModeReference(
-                '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5'),
+              '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5',
+            ),
             C_BLOCK_COMMENT_MODE,
           ],
         ),
@@ -504,7 +488,7 @@ final csharp = Language(
       "when",
       "where",
       "with",
-      "yield"
+      "yield",
     ],
     "built_in": [
       "bool",
@@ -526,9 +510,9 @@ final csharp = Language(
       "string",
       "ulong",
       "uint",
-      "ushort"
+      "ushort",
     ],
-    "literal": ["default", "false", "null", "true"]
+    "literal": ["default", "false", "null", "true"],
   },
   illegal: "::",
   contains: [
@@ -540,17 +524,9 @@ final csharp = Language(
         Mode(
           className: "doctag",
           variants: [
-            Mode(
-              begin: "///",
-              relevance: 0,
-            ),
-            Mode(
-              begin: "<!--|-->",
-            ),
-            Mode(
-              begin: "</?",
-              end: ">",
-            ),
+            Mode(begin: "///", relevance: 0),
+            Mode(begin: "<!--|-->"),
+            Mode(begin: "</?", end: ">"),
           ],
         ),
         Mode(
@@ -575,21 +551,20 @@ final csharp = Language(
       end: "\$",
       keywords: {
         "keyword":
-            "if else elif endif define undef warning error line region endregion pragma checksum"
+            "if else elif endif define undef warning error line region endregion pragma checksum",
       },
     ),
     ModeReference('~contains~4'),
     ModeReference(
-        '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5'),
+      '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5',
+    ),
     Mode(
       beginKeywords: "class interface",
       relevance: 0,
       end: "[{;=]",
       illegal: "[^\\s:,]",
       contains: [
-        Mode(
-          beginKeywords: "where class",
-        ),
+        Mode(beginKeywords: "where class"),
         ModeReference('~contains~6~contains~1'),
         ModeReference('~contains~6~contains~2'),
         C_LINE_COMMENT_MODE,
@@ -625,18 +600,9 @@ final csharp = Language(
       excludeBegin: true,
       end: "\\]",
       excludeEnd: true,
-      contains: [
-        Mode(
-          className: "string",
-          begin: "\"",
-          end: "\"",
-        ),
-      ],
+      contains: [Mode(className: "string", begin: "\"", end: "\"")],
     ),
-    Mode(
-      beginKeywords: "new return throw await else",
-      relevance: 0,
-    ),
+    Mode(beginKeywords: "new return throw await else", relevance: 0),
     Mode(
       className: "function",
       begin:
@@ -736,7 +702,7 @@ final csharp = Language(
           "when",
           "where",
           "with",
-          "yield"
+          "yield",
         ],
         "built_in": [
           "bool",
@@ -758,9 +724,9 @@ final csharp = Language(
           "string",
           "ulong",
           "uint",
-          "ushort"
+          "ushort",
         ],
-        "literal": ["default", "false", "null", "true"]
+        "literal": ["default", "false", "null", "true"],
       },
       contains: [
         Mode(
@@ -771,15 +737,10 @@ final csharp = Language(
         Mode(
           begin: "[a-zA-Z]\\w*\\s*(<[^=]+>\\s*)?\\(",
           returnBegin: true,
-          contains: [
-            TITLE_MODE,
-            ModeReference('~contains~6~contains~2'),
-          ],
+          contains: [TITLE_MODE, ModeReference('~contains~6~contains~2')],
           relevance: 0,
         ),
-        Mode(
-          match: "\\(\\)",
-        ),
+        Mode(match: "\\(\\)"),
         Mode(
           className: "params",
           begin: "\\(",
@@ -878,7 +839,7 @@ final csharp = Language(
               "when",
               "where",
               "with",
-              "yield"
+              "yield",
             ],
             "built_in": [
               "bool",
@@ -900,15 +861,16 @@ final csharp = Language(
               "string",
               "ulong",
               "uint",
-              "ushort"
+              "ushort",
             ],
-            "literal": ["default", "false", "null", "true"]
+            "literal": ["default", "false", "null", "true"],
           },
           relevance: 0,
           contains: [
             ModeReference('~contains~4'),
             ModeReference(
-                '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5'),
+              '~contains~4~variants~0~contains~3~contains~1~contains~3~contains~5',
+            ),
             C_BLOCK_COMMENT_MODE,
           ],
         ),
@@ -916,9 +878,6 @@ final csharp = Language(
         C_BLOCK_COMMENT_MODE,
       ],
     ),
-    Mode(
-      begin: "@[a-zA-Z]\\w*",
-      relevance: 0,
-    ),
+    Mode(begin: "@[a-zA-Z]\\w*", relevance: 0),
   ],
 );

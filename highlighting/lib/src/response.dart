@@ -5,9 +5,7 @@ class Response {
   bool isMatchIgnored = false;
   Map<String, dynamic> data = {};
 
-  Response({
-    required this.mode,
-  }) {
+  Response({required this.mode}) {
     mode.data ??= {};
     data = mode.data!;
   }

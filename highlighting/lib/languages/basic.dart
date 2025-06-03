@@ -192,8 +192,8 @@ final basic = Language(
       "WIDTH",
       "WINDOW",
       "WRITE",
-      "XOR"
-    ]
+      "XOR",
+    ],
   },
   contains: [
     QUOTE_STRING_MODE,
@@ -235,23 +235,13 @@ final basic = Language(
       ],
       relevance: 0,
     ),
-    Mode(
-      className: "symbol",
-      begin: "^[0-9]+ ",
-      relevance: 10,
-    ),
+    Mode(className: "symbol", begin: "^[0-9]+ ", relevance: 10),
     Mode(
       className: "number",
       begin: "\\b\\d+(\\.\\d+)?([edED]\\d+)?[#!]?",
       relevance: 0,
     ),
-    Mode(
-      className: "number",
-      begin: "(&[hH][0-9a-fA-F]{1,4})",
-    ),
-    Mode(
-      className: "number",
-      begin: "(&[oO][0-7]{1,6})",
-    ),
+    Mode(className: "number", begin: "(&[hH][0-9a-fA-F]{1,4})"),
+    Mode(className: "number", begin: "(&[oO][0-7]{1,6})"),
   ],
 );

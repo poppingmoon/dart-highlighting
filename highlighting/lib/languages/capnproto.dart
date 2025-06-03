@@ -30,7 +30,7 @@ final capnproto = Language(
       "as",
       "with",
       "from",
-      "fixed"
+      "fixed",
     ],
     "type": [
       "Void",
@@ -50,31 +50,20 @@ final capnproto = Language(
       "AnyPointer",
       "AnyStruct",
       "Capability",
-      "List"
+      "List",
     ],
-    "literal": ["true", "false"]
+    "literal": ["true", "false"],
   },
   contains: [
     QUOTE_STRING_MODE,
     NUMBER_MODE,
     HASH_COMMENT_MODE,
-    Mode(
-      className: "meta",
-      begin: "@0x[\\w\\d]{16};",
-      illegal: "\\n",
-    ),
-    Mode(
-      className: "symbol",
-      begin: "@\\d+\\b",
-    ),
+    Mode(className: "meta", begin: "@0x[\\w\\d]{16};", illegal: "\\n"),
+    Mode(className: "symbol", begin: "@\\d+\\b"),
     Mode(
       variants: [
-        Mode(
-          match: ["(struct|enum|interface)", "\\s+", "[a-zA-Z]\\w*"],
-        ),
-        Mode(
-          match: ["extends", "\\s*\\(", "[a-zA-Z]\\w*", "\\s*\\)"],
-        ),
+        Mode(match: ["(struct|enum|interface)", "\\s+", "[a-zA-Z]\\w*"]),
+        Mode(match: ["extends", "\\s*\\(", "[a-zA-Z]\\w*", "\\s*\\)"]),
       ],
       scope: {"1": "keyword", "3": "title.class"},
     ),

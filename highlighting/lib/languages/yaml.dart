@@ -10,14 +10,8 @@ import '../src/language_definition_common.dart';
 final yaml = Language(
   id: "yaml",
   refs: {
-    '~contains~9': Mode(
-      className: "meta",
-      begin: "\\*[a-zA-Z_]\\w*\$",
-    ),
-    '~contains~8': Mode(
-      className: "meta",
-      begin: "&[a-zA-Z_]\\w*\$",
-    ),
+    '~contains~9': Mode(className: "meta", begin: "\\*[a-zA-Z_]\\w*\$"),
+    '~contains~8': Mode(className: "meta", begin: "&[a-zA-Z_]\\w*\$"),
     '~contains~7': Mode(
       className: "type",
       begin: "!![\\w#;/?:@&=+\$,.\\x7e*'()[\\]]+",
@@ -49,22 +43,14 @@ final yaml = Language(
     '~contains~15~contains~0~contains~17~contains~1': Mode(
       className: "template-variable",
       variants: [
-        Mode(
-          begin: "\\{\\{",
-          end: "\\}\\}",
-        ),
-        Mode(
-          begin: "%\\{",
-          end: "\\}",
-        ),
+        Mode(begin: "\\{\\{", end: "\\}\\}"),
+        Mode(begin: "%\\{", end: "\\}"),
       ],
     ),
     '~contains~15~contains~0~contains~16': Mode(
       begin: "\\[",
       end: "\\]",
-      contains: [
-        ModeReference('~contains~15~contains~0'),
-      ],
+      contains: [ModeReference('~contains~15~contains~0')],
       illegal: "\\n",
       relevance: 0,
     ),
@@ -96,17 +82,9 @@ final yaml = Language(
           className: "string",
           relevance: 0,
           variants: [
-            Mode(
-              begin: "'",
-              end: "'",
-            ),
-            Mode(
-              begin: "\"",
-              end: "\"",
-            ),
-            Mode(
-              begin: "[^\\s,{}[\\]]+",
-            ),
+            Mode(begin: "'", end: "'"),
+            Mode(begin: "\"", end: "\""),
+            Mode(begin: "[^\\s,{}[\\]]+"),
           ],
           contains: [
             BACKSLASH_ESCAPE,
@@ -118,9 +96,7 @@ final yaml = Language(
     '~contains~15': Mode(
       begin: "\\{",
       end: "\\}",
-      contains: [
-        ModeReference('~contains~15~contains~0'),
-      ],
+      contains: [ModeReference('~contains~15~contains~0')],
       illegal: "\\n",
       relevance: 0,
     ),
@@ -144,23 +120,13 @@ final yaml = Language(
       begin: "-(?=[ ]|\$)",
       relevance: 0,
     ),
-    '~contains~1': Mode(
-      className: "meta",
-      begin: "^---\\s*\$",
-      relevance: 10,
-    ),
+    '~contains~1': Mode(className: "meta", begin: "^---\\s*\$", relevance: 10),
     '~contains~0': Mode(
       className: "attr",
       variants: [
-        Mode(
-          begin: "\\w[\\w :\\/.-]*:(?=[ \t]|\$)",
-        ),
-        Mode(
-          begin: "\"\\w[\\w :\\/.-]*\":(?=[ \t]|\$)",
-        ),
-        Mode(
-          begin: "'\\w[\\w :\\/.-]*':(?=[ \t]|\$)",
-        ),
+        Mode(begin: "\\w[\\w :\\/.-]*:(?=[ \t]|\$)"),
+        Mode(begin: "\"\\w[\\w :\\/.-]*\":(?=[ \t]|\$)"),
+        Mode(begin: "'\\w[\\w :\\/.-]*':(?=[ \t]|\$)"),
       ],
     ),
   },
@@ -189,17 +155,9 @@ final yaml = Language(
       className: "string",
       relevance: 0,
       variants: [
-        Mode(
-          begin: "'",
-          end: "'",
-        ),
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
-        Mode(
-          begin: "\\S+",
-        ),
+        Mode(begin: "'", end: "'"),
+        Mode(begin: "\"", end: "\""),
+        Mode(begin: "\\S+"),
       ],
       contains: [
         BACKSLASH_ESCAPE,

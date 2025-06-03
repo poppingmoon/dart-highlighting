@@ -18,10 +18,7 @@ final openscad = Language(
       scope: "string",
       begin: "\"",
       end: "\"",
-      illegal: null,
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     '~contains~2': Mode(
       className: "number",
@@ -35,7 +32,7 @@ final openscad = Language(
     "keyword": "function module include use for intersection_for if else \\%",
     "literal": "false true PI undef",
     "built_in":
-        "circle square polygon text sphere cube cylinder polyhedron translate rotate scale resize mirror multmatrix color offset hull minkowski union difference intersection abs sign sin cos tan acos asin atan atan2 floor round ceil ln log pow sqrt exp rands min max concat lookup str chr search version version_num norm cross parent_module echo import import_dxf dxf_linear_extrude linear_extrude rotate_extrude surface projection render children dxf_cross dxf_dim let assign"
+        "circle square polygon text sphere cube cylinder polyhedron translate rotate scale resize mirror multmatrix color offset hull minkowski union difference intersection abs sign sin cos tan acos asin atan atan2 floor round ceil ln log pow sqrt exp rands min max concat lookup str chr search version version_num norm cross parent_module echo import import_dxf dxf_linear_extrude linear_extrude rotate_extrude surface projection render children dxf_cross dxf_dim let assign",
   },
   contains: [
     C_LINE_COMMENT_MODE,
@@ -49,10 +46,7 @@ final openscad = Language(
     ),
     ModeReference('~contains~4'),
     ModeReference('~contains~5'),
-    Mode(
-      begin: "[*!#%]",
-      relevance: 0,
-    ),
+    Mode(begin: "[*!#%]", relevance: 0),
     Mode(
       className: "function",
       beginKeywords: "module function",
@@ -67,10 +61,7 @@ final openscad = Language(
             ModeReference('~contains~2'),
             ModeReference('~contains~4'),
             ModeReference('~contains~5'),
-            Mode(
-              className: "literal",
-              begin: "false|true|PI|undef",
-            ),
+            Mode(className: "literal", begin: "false|true|PI|undef"),
           ],
         ),
         UNDERSCORE_TITLE_MODE,

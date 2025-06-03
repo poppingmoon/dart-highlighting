@@ -28,17 +28,11 @@ final abnf = Language(
     "OCTET",
     "SP",
     "VCHAR",
-    "WSP"
+    "WSP",
   ],
   contains: [
-    Mode(
-      scope: "operator",
-      match: "=\\/?",
-    ),
-    Mode(
-      scope: "attribute",
-      match: "^[a-zA-Z][a-zA-Z0-9-]*(?=\\s*=)",
-    ),
+    Mode(scope: "operator", match: "=\\/?"),
+    Mode(scope: "attribute", match: "^[a-zA-Z][a-zA-Z0-9-]*(?=\\s*=)"),
     Mode(
       scope: "comment",
       begin: ";",
@@ -57,22 +51,10 @@ final abnf = Language(
         ),
       ],
     ),
-    Mode(
-      scope: "symbol",
-      match: "%b[0-1]+(-[0-1]+|(\\.[0-1]+)+)?",
-    ),
-    Mode(
-      scope: "symbol",
-      match: "%d[0-9]+(-[0-9]+|(\\.[0-9]+)+)?",
-    ),
-    Mode(
-      scope: "symbol",
-      match: "%x[0-9A-F]+(-[0-9A-F]+|(\\.[0-9A-F]+)+)?",
-    ),
-    Mode(
-      scope: "symbol",
-      match: "%[si](?=\".*\")",
-    ),
+    Mode(scope: "symbol", match: "%b[0-1]+(-[0-1]+|(\\.[0-1]+)+)?"),
+    Mode(scope: "symbol", match: "%d[0-9]+(-[0-9]+|(\\.[0-9]+)+)?"),
+    Mode(scope: "symbol", match: "%x[0-9A-F]+(-[0-9A-F]+|(\\.[0-9A-F]+)+)?"),
+    Mode(scope: "symbol", match: "%[si](?=\".*\")"),
     QUOTE_STRING_MODE,
     NUMBER_MODE,
   ],

@@ -304,7 +304,7 @@ final sql = Language(
       "final",
       "first",
       "last",
-      "view"
+      "view",
     ],
     "literal": ["true", "false", "unknown"],
     "type": [
@@ -334,7 +334,7 @@ final sql = Language(
       "timestamp",
       "varchar",
       "varying",
-      "varbinary"
+      "varbinary",
     ],
     "built_in": [
       "current_catalog",
@@ -351,8 +351,8 @@ final sql = Language(
       "current_time",
       "localtime",
       "current_timestamp",
-      "localtimestamp"
-    ]
+      "localtimestamp",
+    ],
   },
   contains: [
     Mode(
@@ -666,7 +666,7 @@ final sql = Language(
           "nulls first",
           "nulls last",
           "depth first",
-          "breadth first"
+          "breadth first",
         ],
         "literal": ["true", "false", "unknown"],
         "type": [
@@ -696,8 +696,8 @@ final sql = Language(
           "timestamp",
           "varchar",
           "varying",
-          "varbinary"
-        ]
+          "varbinary",
+        ],
       },
     ),
     Mode(
@@ -794,36 +794,25 @@ final sql = Language(
           "value_of",
           "var_pop",
           "var_samp",
-          "width_bucket"
-        ]
+          "width_bucket",
+        ],
       },
     ),
-    Mode(
-      className: "variable",
-      begin: "@[a-z0-9][a-z0-9_]*",
-    ),
+    Mode(className: "variable", begin: "@[a-z0-9][a-z0-9_]*"),
     Mode(
       className: "string",
       variants: [
         Mode(
           begin: "'",
           end: "'",
-          contains: [
-            Mode(
-              begin: "''",
-            ),
-          ],
+          contains: [Mode(begin: "''")],
         ),
       ],
     ),
     Mode(
       begin: "\"",
       end: "\"",
-      contains: [
-        Mode(
-          begin: "\"\"",
-        ),
-      ],
+      contains: [Mode(begin: "\"\"")],
     ),
     C_NUMBER_MODE,
     C_BLOCK_COMMENT_MODE,

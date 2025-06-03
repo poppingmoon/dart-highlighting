@@ -3,12 +3,16 @@
 import 'package:flutter/painting.dart';
 
 const nordTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff2e3440), color: Color(0xffd8dee9)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff2e3440),
+    color: Color(0xffd8dee9),
+  ),
   'subst': TextStyle(color: Color(0xffd8dee9)),
   'selector-tag': TextStyle(color: Color(0xff81a1c1)),
-  'selector-id':
-      TextStyle(color: Color(0xff8fbcbb), fontWeight: FontWeight.w700),
+  'selector-id': TextStyle(
+    color: Color(0xff8fbcbb),
+    fontWeight: FontWeight.w700,
+  ),
   'selector-attr': TextStyle(color: Color(0xff8fbcbb)),
   'selector-class': TextStyle(color: Color(0xff8fbcbb)),
   'property': TextStyle(color: Color(0xff88c0d0)),

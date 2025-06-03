@@ -7,11 +7,12 @@ typedef KeywordDict = Map<String, Tuple2<String, double>>;
 
 KeywordDict compileKeywords(
   dynamic rawKeywords,
+  // ignore: avoid_positional_boolean_parameters
   bool caseInsensitive, {
   String scopeName = kDefaultKeywordScope,
 }) {
   // ignore: omit_local_variable_types
-  KeywordDict compiledKeywords = {};
+  final KeywordDict compiledKeywords = {};
 
   bool commonKeyword(String keyword) {
     return kCommonKeywords.contains(keyword.toLowerCase());
@@ -25,8 +26,7 @@ KeywordDict compileKeywords(
       score = double.tryParse(providedScore);
     }
 
-    score ??= commonKeyword(keyword) ? 0 : 1;
-    return score;
+    return score ?? (commonKeyword(keyword) ? 0 : 1);
   }
 
   void compileList({
@@ -38,31 +38,29 @@ KeywordDict compileKeywords(
       keywordList = keywordList.map((x) => x.toLowerCase()).toList();
     }
 
-    keywordList.forEach((keyword) {
+    for (final keyword in keywordList) {
       final pair = keyword.split('|');
       compiledKeywords[pair[0]] = Tuple2(
         scopeName,
-        scoreForKeyword(
-          pair[0],
-          pair.length > 1 ? pair[1] : null,
-        ),
+        scoreForKeyword(pair[0], pair.length > 1 ? pair[1] : null),
       );
-    });
+    }
   }
 
   if (rawKeywords is String) {
     compileList(
       scopeName: scopeName,
-      keywordList: rawKeywords.split(" "),
+      keywordList: rawKeywords.split(' '),
       caseInsensitive: caseInsensitive,
     );
   } else if (rawKeywords is List<String>) {
     compileList(
-        scopeName: scopeName,
-        keywordList: rawKeywords,
-        caseInsensitive: caseInsensitive);
+      scopeName: scopeName,
+      keywordList: rawKeywords,
+      caseInsensitive: caseInsensitive,
+    );
   } else if (rawKeywords is Map) {
-    rawKeywords.keys.forEach((scopeName) {
+    for (final scopeName in rawKeywords.keys) {
       final result = compileKeywords(
         rawKeywords[scopeName],
         caseInsensitive,
@@ -74,7 +72,7 @@ KeywordDict compileKeywords(
           compiledKeywords[key] = result[key]!;
         }
       }
-    });
+    }
   }
 
   return compiledKeywords;

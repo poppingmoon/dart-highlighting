@@ -43,10 +43,10 @@ final clean = Language(
       "derive",
       "infix",
       "infixl",
-      "infixr"
+      "infixr",
     ],
     "built_in": "Int Real Char Bool",
-    "literal": "True False"
+    "literal": "True False",
   },
   contains: [
     C_LINE_COMMENT_MODE,
@@ -54,8 +54,6 @@ final clean = Language(
     APOS_STRING_MODE,
     QUOTE_STRING_MODE,
     C_NUMBER_MODE,
-    Mode(
-      begin: "->|<-[|:]?|#!?|>>=|\\{\\||\\|\\}|:==|=:|<>",
-    ),
+    Mode(begin: "->|<-[|:]?|#!?|>>=|\\{\\||\\|\\}|:==|=:|<>"),
   ],
 );

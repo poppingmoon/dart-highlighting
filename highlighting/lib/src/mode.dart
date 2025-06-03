@@ -15,8 +15,6 @@ class Mode {
   List<Mode?>? variants;
   Mode? starts;
 
-  List<Mode>? cachedVariants;
-
   /// `String | Map<String, String>`
   dynamic get className =>
       _className == overwritingNullString ? null : _className;
@@ -43,7 +41,7 @@ class Mode {
 
   Map<String, dynamic>? data;
 
-  dynamic beforeBegin;
+  void Function(JsStyleRegExpMatch match, Response response)? beforeBegin;
 
   List<String> subLanguage;
   bool? excludeBegin;
@@ -58,8 +56,8 @@ class Mode {
   RegExp? beginRe;
   RegExp? endRe;
   RegExp? illegalRe;
-  String? terminator_end;
-  List<Mode>? cached_variants;
+  String? terminatorEnd;
+  List<Mode>? cachedVariants;
   RegExp? terminators;
 
   /// `String | List<String>`
@@ -130,10 +128,10 @@ class Mode {
     this.parent,
     dynamic className,
     dynamic scope,
-  })  : _className = className,
-        _scope = scope;
+  }) : _className = className,
+       _scope = scope;
 
-  static Mode inherit(Mode a, [Mode? b]) {
+  factory Mode.inherit(Mode a, [Mode? b]) {
     b ??= Mode();
     final result = Mode()
       ..beforeMatch = b.beforeMatch ?? a.beforeMatch
@@ -142,7 +140,7 @@ class Mode {
       ..beginRe = b.beginRe ?? a.beginRe
       ..beginScope = b.beginScope ?? a.beginScope
       ..binary = b.binary ?? a.binary
-      ..cached_variants = b.cached_variants ?? a.cached_variants
+      ..cachedVariants = b.cachedVariants ?? a.cachedVariants
       ..className = b.className ?? a.className
       ..compiled = b.compiled ?? a.compiled
       ..contains = b.contains ?? a.contains
@@ -174,7 +172,7 @@ class Mode {
       ..skip = b.skip ?? a.skip
       ..starts = b.starts ?? a.starts
       ..subLanguage = b.subLanguage.isNotEmpty ? b.subLanguage : a.subLanguage
-      ..terminator_end = b.terminator_end ?? a.terminator_end
+      ..terminatorEnd = b.terminatorEnd ?? a.terminatorEnd
       ..terminators = b.terminators ?? a.terminators
       ..variants = b.variants ?? a.variants;
 

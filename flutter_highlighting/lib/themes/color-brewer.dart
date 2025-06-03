@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const colorBrewerTheme = {
-  'root':
-      TextStyle(color: Color(0xff000000), backgroundColor: Color(0xffffffff)),
+  'root': TextStyle(
+    color: Color(0xff000000),
+    backgroundColor: Color(0xffffffff),
+  ),
   'addition': TextStyle(color: Color(0xff756bb1)),
   'meta': TextStyle(color: Color(0xff756bb1)),
   'string': TextStyle(color: Color(0xff756bb1)),

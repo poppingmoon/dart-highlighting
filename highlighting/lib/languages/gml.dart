@@ -11,7 +11,6 @@ final gml = Language(
   id: "gml",
   refs: {},
   name: "GML",
-  case_insensitive: false,
   keywords: {
     "keyword": [
       "#endregion",
@@ -46,7 +45,7 @@ final gml = Language(
       "var",
       "while",
       "with",
-      "xor"
+      "xor",
     ],
     "built_in": [
       "abs",
@@ -1886,7 +1885,7 @@ final gml = Language(
       "winphone_tile_small_icon_image",
       "winphone_tile_title",
       "winphone_tile_wide_content",
-      "zip_unzip"
+      "zip_unzip",
     ],
     "literal": [
       "all",
@@ -1895,7 +1894,7 @@ final gml = Language(
       "pointer_invalid",
       "pointer_null",
       "true",
-      "undefined"
+      "undefined",
     ],
     "symbol": [
       "ANSI_CHARSET",
@@ -2602,7 +2601,7 @@ final gml = Language(
       "vk_space",
       "vk_subtract",
       "vk_tab",
-      "vk_up"
+      "vk_up",
     ],
     "variable.language": [
       "alarm",
@@ -2794,8 +2793,8 @@ final gml = Language(
       "x|0",
       "yprevious",
       "ystart",
-      "y|0"
-    ]
+      "y|0",
+    ],
   },
   contains: [
     C_LINE_COMMENT_MODE,

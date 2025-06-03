@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const devibeansTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff000000), color: Color(0xffa39e9b)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff000000),
+    color: Color(0xffa39e9b),
+  ),
   'attr': TextStyle(color: Color(0xff8787d7)),
   'template-tag': TextStyle(color: Color(0xff8787d7)),
   'comment': TextStyle(color: Color(0xff339966)),

@@ -21,9 +21,7 @@ final cpp = Language(
     '~contains~0~contains~5': Mode(
       className: "number",
       variants: [
-        Mode(
-          begin: "\\b(0b[01']+)",
-        ),
+        Mode(begin: "\\b(0b[01']+)"),
         Mode(
           begin:
               "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)",
@@ -44,9 +42,7 @@ final cpp = Language(
       begin: "//",
       end: "\$",
       contains: [
-        Mode(
-          begin: "\\\\\\n",
-        ),
+        Mode(begin: "\\\\\\n"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -76,9 +72,7 @@ final cpp = Language(
       begin: "(u8?|U|L)?\"",
       end: "\"",
       illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     '~contains~0~contains~1': Mode(
       className: "meta",
@@ -86,13 +80,10 @@ final cpp = Language(
       end: "\$",
       keywords: {
         "keyword":
-            "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include"
+            "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include",
       },
       contains: [
-        Mode(
-          begin: "\\\\\\n",
-          relevance: 0,
-        ),
+        Mode(begin: "\\\\\\n", relevance: 0),
         Mode(
           className: "string",
           variants: [
@@ -101,10 +92,7 @@ final cpp = Language(
             ModeReference('~contains~0~contains~1~contains~1~variants~2'),
           ],
         ),
-        Mode(
-          className: "string",
-          begin: "<.*?>",
-        ),
+        Mode(className: "string", begin: "<.*?>"),
         ModeReference('~contains~0~contains~1~contains~3'),
         C_BLOCK_COMMENT_MODE,
       ],
@@ -213,8 +201,8 @@ final cpp = Language(
           "vfprintf",
           "visit",
           "vprintf",
-          "vsprintf"
-        ]
+          "vsprintf",
+        ],
       },
       begin:
           "\\b(?!decltype)(?!if)(?!for)(?!switch)(?!while)[a-zA-Z]\\w*(?=(<[^<>]+>|)\\s*\\()",
@@ -239,7 +227,7 @@ final cpp = Language(
       "unsigned",
       "signed",
       "const",
-      "static"
+      "static",
     ],
     "keyword": [
       "alignas",
@@ -328,7 +316,7 @@ final cpp = Language(
       "volatile",
       "while",
       "xor",
-      "xor_eq"
+      "xor_eq",
     ],
     "literal": ["NULL", "false", "nullopt", "nullptr", "true"],
     "built_in": ["_Pragma"],
@@ -387,26 +375,17 @@ final cpp = Language(
       "vector",
       "weak_ptr",
       "wstring",
-      "wstring_view"
-    ]
+      "wstring_view",
+    ],
   },
   illegal: "</",
   classNameAliases: {"function.dispatch": "built_in"},
   contains: [
     Mode(
       variants: [
-        Mode(
-          begin: "=",
-          end: ";",
-        ),
-        Mode(
-          begin: "\\(",
-          end: "\\)",
-        ),
-        Mode(
-          beginKeywords: "new throw return else",
-          end: ";",
-        ),
+        Mode(begin: "=", end: ";"),
+        Mode(begin: "\\(", end: "\\)"),
+        Mode(beginKeywords: "new throw return else", end: ";"),
       ],
       keywords: {
         "type": [
@@ -425,7 +404,7 @@ final cpp = Language(
           "unsigned",
           "signed",
           "const",
-          "static"
+          "static",
         ],
         "keyword": [
           "alignas",
@@ -514,7 +493,7 @@ final cpp = Language(
           "volatile",
           "while",
           "xor",
-          "xor_eq"
+          "xor_eq",
         ],
         "literal": ["NULL", "false", "nullopt", "nullptr", "true"],
         "built_in": ["_Pragma"],
@@ -573,8 +552,8 @@ final cpp = Language(
           "vector",
           "weak_ptr",
           "wstring",
-          "wstring_view"
-        ]
+          "wstring_view",
+        ],
       },
       contains: [
         ModeReference('~contains~0~contains~0'),
@@ -604,7 +583,7 @@ final cpp = Language(
               "unsigned",
               "signed",
               "const",
-              "static"
+              "static",
             ],
             "keyword": [
               "alignas",
@@ -693,7 +672,7 @@ final cpp = Language(
               "volatile",
               "while",
               "xor",
-              "xor_eq"
+              "xor_eq",
             ],
             "literal": ["NULL", "false", "nullopt", "nullptr", "true"],
             "built_in": ["_Pragma"],
@@ -752,8 +731,8 @@ final cpp = Language(
               "vector",
               "weak_ptr",
               "wstring",
-              "wstring_view"
-            ]
+              "wstring_view",
+            ],
           },
           contains: [
             ModeReference('~contains~0~contains~0'),
@@ -794,7 +773,7 @@ final cpp = Language(
           "unsigned",
           "signed",
           "const",
-          "static"
+          "static",
         ],
         "keyword": [
           "alignas",
@@ -883,7 +862,7 @@ final cpp = Language(
           "volatile",
           "while",
           "xor",
-          "xor_eq"
+          "xor_eq",
         ],
         "literal": ["NULL", "false", "nullopt", "nullptr", "true"],
         "built_in": ["_Pragma"],
@@ -942,8 +921,8 @@ final cpp = Language(
           "vector",
           "weak_ptr",
           "wstring",
-          "wstring_view"
-        ]
+          "wstring_view",
+        ],
       },
       illegal: "[^\\w\\s\\*&:<>.]",
       contains: [
@@ -966,7 +945,7 @@ final cpp = Language(
               "unsigned",
               "signed",
               "const",
-              "static"
+              "static",
             ],
             "keyword": [
               "alignas",
@@ -1055,7 +1034,7 @@ final cpp = Language(
               "volatile",
               "while",
               "xor",
-              "xor_eq"
+              "xor_eq",
             ],
             "literal": ["NULL", "false", "nullopt", "nullptr", "true"],
             "built_in": ["_Pragma"],
@@ -1114,8 +1093,8 @@ final cpp = Language(
               "vector",
               "weak_ptr",
               "wstring",
-              "wstring_view"
-            ]
+              "wstring_view",
+            ],
           },
           relevance: 0,
         ),
@@ -1131,10 +1110,7 @@ final cpp = Language(
           ],
           relevance: 0,
         ),
-        Mode(
-          begin: "::",
-          relevance: 0,
-        ),
+        Mode(begin: "::", relevance: 0),
         Mode(
           begin: ":",
           endsWithParent: true,
@@ -1143,10 +1119,7 @@ final cpp = Language(
             ModeReference('~contains~0~contains~5'),
           ],
         ),
-        Mode(
-          relevance: 0,
-          match: ",",
-        ),
+        Mode(relevance: 0, match: ","),
         Mode(
           className: "params",
           begin: "\\(",
@@ -1168,7 +1141,7 @@ final cpp = Language(
               "unsigned",
               "signed",
               "const",
-              "static"
+              "static",
             ],
             "keyword": [
               "alignas",
@@ -1257,7 +1230,7 @@ final cpp = Language(
               "volatile",
               "while",
               "xor",
-              "xor_eq"
+              "xor_eq",
             ],
             "literal": ["NULL", "false", "nullopt", "nullptr", "true"],
             "built_in": ["_Pragma"],
@@ -1316,8 +1289,8 @@ final cpp = Language(
               "vector",
               "weak_ptr",
               "wstring",
-              "wstring_view"
-            ]
+              "wstring_view",
+            ],
           },
           relevance: 0,
           contains: [
@@ -1346,7 +1319,7 @@ final cpp = Language(
                   "unsigned",
                   "signed",
                   "const",
-                  "static"
+                  "static",
                 ],
                 "keyword": [
                   "alignas",
@@ -1435,7 +1408,7 @@ final cpp = Language(
                   "volatile",
                   "while",
                   "xor",
-                  "xor_eq"
+                  "xor_eq",
                 ],
                 "literal": ["NULL", "false", "nullopt", "nullptr", "true"],
                 "built_in": ["_Pragma"],
@@ -1494,8 +1467,8 @@ final cpp = Language(
                   "vector",
                   "weak_ptr",
                   "wstring",
-                  "wstring_view"
-                ]
+                  "wstring_view",
+                ],
               },
               relevance: 0,
               contains: [
@@ -1545,7 +1518,7 @@ final cpp = Language(
           "unsigned",
           "signed",
           "const",
-          "static"
+          "static",
         ],
         "keyword": [
           "alignas",
@@ -1634,7 +1607,7 @@ final cpp = Language(
           "volatile",
           "while",
           "xor",
-          "xor_eq"
+          "xor_eq",
         ],
         "literal": ["NULL", "false", "nullopt", "nullptr", "true"],
         "built_in": ["_Pragma"],
@@ -1693,13 +1666,10 @@ final cpp = Language(
           "vector",
           "weak_ptr",
           "wstring",
-          "wstring_view"
-        ]
+          "wstring_view",
+        ],
       },
-      contains: [
-        ModeSelfReference(),
-        ModeReference('~contains~0~contains~2'),
-      ],
+      contains: [ModeSelfReference(), ModeReference('~contains~0~contains~2')],
     ),
     Mode(
       begin: "[a-zA-Z]\\w*::",
@@ -1720,7 +1690,7 @@ final cpp = Language(
           "unsigned",
           "signed",
           "const",
-          "static"
+          "static",
         ],
         "keyword": [
           "alignas",
@@ -1809,7 +1779,7 @@ final cpp = Language(
           "volatile",
           "while",
           "xor",
-          "xor_eq"
+          "xor_eq",
         ],
         "literal": ["NULL", "false", "nullopt", "nullptr", "true"],
         "built_in": ["_Pragma"],
@@ -1868,15 +1838,15 @@ final cpp = Language(
           "vector",
           "weak_ptr",
           "wstring",
-          "wstring_view"
-        ]
+          "wstring_view",
+        ],
       },
     ),
     Mode(
       match: [
         "\\b(?:enum(?:\\s+(?:class|struct))?|class|struct|union)",
         "\\s+",
-        "\\w+"
+        "\\w+",
       ],
       className: {"1": "keyword", "3": "title.class"},
     ),

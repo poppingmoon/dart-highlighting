@@ -12,10 +12,7 @@ final http = Language(
   refs: {
     '~contains~0~starts~contains~1': Mode(
       begin: "\\n\\n",
-      starts: Mode(
-        subLanguage: [],
-        endsWithParent: true,
-      ),
+      starts: Mode(subLanguage: [], endsWithParent: true),
     ),
     '~contains~0~starts~contains~0~starts': Mode(
       contains: [
@@ -23,10 +20,7 @@ final http = Language(
           className: "punctuation",
           begin: ": ",
           relevance: 0,
-          starts: Mode(
-            end: "\$",
-            relevance: 0,
-          ),
+          starts: Mode(end: "\$", relevance: 0),
         ),
       ],
     ),
@@ -44,14 +38,8 @@ final http = Language(
       begin: "^(?=HTTP/([32]|1\\.[01]) \\d{3})",
       end: "\$",
       contains: [
-        Mode(
-          className: "meta",
-          begin: "HTTP/([32]|1\\.[01])",
-        ),
-        Mode(
-          className: "number",
-          begin: "\\b\\d{3}\\b",
-        ),
+        Mode(className: "meta", begin: "HTTP/([32]|1\\.[01])"),
+        Mode(className: "number", begin: "\\b\\d{3}\\b"),
       ],
       starts: Mode(
         end: "\\b\\B",
@@ -73,14 +61,8 @@ final http = Language(
           excludeBegin: true,
           excludeEnd: true,
         ),
-        Mode(
-          className: "meta",
-          begin: "HTTP/([32]|1\\.[01])",
-        ),
-        Mode(
-          className: "keyword",
-          begin: "[A-Z]+",
-        ),
+        Mode(className: "meta", begin: "HTTP/([32]|1\\.[01])"),
+        Mode(className: "keyword", begin: "[A-Z]+"),
       ],
       starts: Mode(
         end: "\\b\\B",

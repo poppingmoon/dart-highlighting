@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const solarizedDarkTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff002b36), color: Color(0xff839496)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff002b36),
+    color: Color(0xff839496),
+  ),
   'comment': TextStyle(color: Color(0xff586e75)),
   'quote': TextStyle(color: Color(0xff586e75)),
   'keyword': TextStyle(color: Color(0xff859900)),

@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const atelierCaveLightTheme = {
@@ -28,12 +30,18 @@ const atelierCaveLightTheme = {
   'section': TextStyle(color: Color(0xff576ddb)),
   'keyword': TextStyle(color: Color(0xff955ae7)),
   'selector-tag': TextStyle(color: Color(0xff955ae7)),
-  'deletion':
-      TextStyle(color: Color(0xff19171c), backgroundColor: Color(0xffbe4678)),
-  'addition':
-      TextStyle(color: Color(0xff19171c), backgroundColor: Color(0xff2a9292)),
-  'root':
-      TextStyle(backgroundColor: Color(0xffefecf4), color: Color(0xff585260)),
+  'deletion': TextStyle(
+    color: Color(0xff19171c),
+    backgroundColor: Color(0xffbe4678),
+  ),
+  'addition': TextStyle(
+    color: Color(0xff19171c),
+    backgroundColor: Color(0xff2a9292),
+  ),
+  'root': TextStyle(
+    backgroundColor: Color(0xffefecf4),
+    color: Color(0xff585260),
+  ),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'strong': TextStyle(fontWeight: FontWeight.bold),
 };

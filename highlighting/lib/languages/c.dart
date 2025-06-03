@@ -21,9 +21,7 @@ final c = Language(
     '~contains~0~contains~4': Mode(
       className: "number",
       variants: [
-        Mode(
-          begin: "\\b(0b[01']+)",
-        ),
+        Mode(begin: "\\b(0b[01']+)"),
         Mode(
           begin:
               "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)",
@@ -38,12 +36,8 @@ final c = Language(
     '~contains~0~contains~1': Mode(
       className: "type",
       variants: [
-        Mode(
-          begin: "\\b[a-z\\d_]*_t\\b",
-        ),
-        Mode(
-          match: "\\batomic_[a-z]{3,6}\\b",
-        ),
+        Mode(begin: "\\b[a-z\\d_]*_t\\b"),
+        Mode(match: "\\batomic_[a-z]{3,6}\\b"),
       ],
     ),
     '~contains~0~contains~0~contains~3': Mode(
@@ -51,9 +45,7 @@ final c = Language(
       begin: "//",
       end: "\$",
       contains: [
-        Mode(
-          begin: "\\\\\\n",
-        ),
+        Mode(begin: "\\\\\\n"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -83,9 +75,7 @@ final c = Language(
       begin: "(u8?|U|L)?\"",
       end: "\"",
       illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     '~contains~0~contains~0': Mode(
       className: "meta",
@@ -93,13 +83,10 @@ final c = Language(
       end: "\$",
       keywords: {
         "keyword":
-            "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include"
+            "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include",
       },
       contains: [
-        Mode(
-          begin: "\\\\\\n",
-          relevance: 0,
-        ),
+        Mode(begin: "\\\\\\n", relevance: 0),
         Mode(
           className: "string",
           variants: [
@@ -108,10 +95,7 @@ final c = Language(
             ModeReference('~contains~0~contains~0~contains~1~variants~2'),
           ],
         ),
-        Mode(
-          className: "string",
-          begin: "<.*?>",
-        ),
+        Mode(className: "string", begin: "<.*?>"),
         ModeReference('~contains~0~contains~0~contains~3'),
         C_BLOCK_COMMENT_MODE,
       ],
@@ -158,7 +142,7 @@ final c = Language(
       "noreturn",
       "static_assert",
       "thread_local",
-      "_Pragma"
+      "_Pragma",
     ],
     "type": [
       "float",
@@ -180,29 +164,20 @@ final c = Language(
       "static",
       "complex",
       "bool",
-      "imaginary"
+      "imaginary",
     ],
     "literal": "true false NULL",
     "built_in":
-        "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr"
+        "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr",
   },
   disableAutodetect: true,
   illegal: "</",
   contains: [
     Mode(
       variants: [
-        Mode(
-          begin: "=",
-          end: ";",
-        ),
-        Mode(
-          begin: "\\(",
-          end: "\\)",
-        ),
-        Mode(
-          beginKeywords: "new throw return else",
-          end: ";",
-        ),
+        Mode(begin: "=", end: ";"),
+        Mode(begin: "\\(", end: "\\)"),
+        Mode(beginKeywords: "new throw return else", end: ";"),
       ],
       keywords: {
         "keyword": [
@@ -243,7 +218,7 @@ final c = Language(
           "noreturn",
           "static_assert",
           "thread_local",
-          "_Pragma"
+          "_Pragma",
         ],
         "type": [
           "float",
@@ -265,11 +240,11 @@ final c = Language(
           "static",
           "complex",
           "bool",
-          "imaginary"
+          "imaginary",
         ],
         "literal": "true false NULL",
         "built_in":
-            "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr"
+            "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr",
       },
       contains: [
         ModeReference('~contains~0~contains~0'),
@@ -320,7 +295,7 @@ final c = Language(
               "noreturn",
               "static_assert",
               "thread_local",
-              "_Pragma"
+              "_Pragma",
             ],
             "type": [
               "float",
@@ -342,11 +317,11 @@ final c = Language(
               "static",
               "complex",
               "bool",
-              "imaginary"
+              "imaginary",
             ],
             "literal": "true false NULL",
             "built_in":
-                "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr"
+                "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr",
           },
           contains: [
             ModeReference('~contains~0~contains~0'),
@@ -407,7 +382,7 @@ final c = Language(
           "noreturn",
           "static_assert",
           "thread_local",
-          "_Pragma"
+          "_Pragma",
         ],
         "type": [
           "float",
@@ -429,11 +404,11 @@ final c = Language(
           "static",
           "complex",
           "bool",
-          "imaginary"
+          "imaginary",
         ],
         "literal": "true false NULL",
         "built_in":
-            "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr"
+            "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr",
       },
       illegal: "[^\\w\\s\\*&:<>.]",
       contains: [
@@ -478,7 +453,7 @@ final c = Language(
               "noreturn",
               "static_assert",
               "thread_local",
-              "_Pragma"
+              "_Pragma",
             ],
             "type": [
               "float",
@@ -500,11 +475,11 @@ final c = Language(
               "static",
               "complex",
               "bool",
-              "imaginary"
+              "imaginary",
             ],
             "literal": "true false NULL",
             "built_in":
-                "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr"
+                "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr",
           },
           relevance: 0,
         ),
@@ -520,10 +495,7 @@ final c = Language(
           ],
           relevance: 0,
         ),
-        Mode(
-          relevance: 0,
-          match: ",",
-        ),
+        Mode(relevance: 0, match: ","),
         Mode(
           className: "params",
           begin: "\\(",
@@ -567,7 +539,7 @@ final c = Language(
               "noreturn",
               "static_assert",
               "thread_local",
-              "_Pragma"
+              "_Pragma",
             ],
             "type": [
               "float",
@@ -589,11 +561,11 @@ final c = Language(
               "static",
               "complex",
               "bool",
-              "imaginary"
+              "imaginary",
             ],
             "literal": "true false NULL",
             "built_in":
-                "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr"
+                "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr",
           },
           relevance: 0,
           contains: [
@@ -644,7 +616,7 @@ final c = Language(
                   "noreturn",
                   "static_assert",
                   "thread_local",
-                  "_Pragma"
+                  "_Pragma",
                 ],
                 "type": [
                   "float",
@@ -666,11 +638,11 @@ final c = Language(
                   "static",
                   "complex",
                   "bool",
-                  "imaginary"
+                  "imaginary",
                 ],
                 "literal": "true false NULL",
                 "built_in":
-                    "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr"
+                    "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr",
               },
               relevance: 0,
               contains: [
@@ -738,7 +710,7 @@ final c = Language(
           "noreturn",
           "static_assert",
           "thread_local",
-          "_Pragma"
+          "_Pragma",
         ],
         "type": [
           "float",
@@ -760,11 +732,11 @@ final c = Language(
           "static",
           "complex",
           "bool",
-          "imaginary"
+          "imaginary",
         ],
         "literal": "true false NULL",
         "built_in":
-            "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr"
+            "std string wstring cin cout cerr clog stdin stdout stderr stringstream istringstream ostringstream auto_ptr deque list queue stack vector map set pair bitset multiset multimap unordered_set unordered_map unordered_multiset unordered_multimap priority_queue make_pair array shared_ptr abort terminate abs acos asin atan2 atan calloc ceil cosh cos exit exp fabs floor fmod fprintf fputs free frexp fscanf future isalnum isalpha iscntrl isdigit isgraph islower isprint ispunct isspace isupper isxdigit tolower toupper labs ldexp log10 log malloc realloc memchr memcmp memcpy memset modf pow printf putchar puts scanf sinh sin snprintf sprintf sqrt sscanf strcat strchr strcmp strcpy strcspn strlen strncat strncmp strncpy strpbrk strrchr strspn strstr tanh tan vfprintf vprintf vsprintf endl initializer_list unique_ptr",
       },
     ),
     Mode(
@@ -772,9 +744,7 @@ final c = Language(
       beginKeywords: "enum class struct union",
       end: "[{;:<>=]",
       contains: [
-        Mode(
-          beginKeywords: "final class struct",
-        ),
+        Mode(beginKeywords: "final class struct"),
         TITLE_MODE,
       ],
     ),

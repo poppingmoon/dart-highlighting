@@ -21,7 +21,7 @@ final stan = Language(
       "parameters",
       "quantities",
       "transformed",
-      "generated"
+      "generated",
     ],
     "type": [
       "array",
@@ -39,7 +39,7 @@ final stan = Language(
       "cholesky_factor_cov|10",
       "corr_matrix|10",
       "cov_matrix|10",
-      "void"
+      "void",
     ],
     "keyword": [
       "for",
@@ -49,7 +49,7 @@ final stan = Language(
       "while",
       "break",
       "continue",
-      "return"
+      "return",
     ],
     "built_in": [
       "Phi",
@@ -284,8 +284,8 @@ final stan = Language(
       "variance",
       "zeros_array",
       "zeros_int_array",
-      "zeros_row_vector"
-    ]
+      "zeros_row_vector",
+    ],
   },
   contains: [
     C_LINE_COMMENT_MODE,
@@ -294,10 +294,7 @@ final stan = Language(
       begin: "#include\\b",
       end: "\$",
       contains: [
-        Mode(
-          match: "[a-z][a-z-._]+",
-          scope: "string",
-        ),
+        Mode(match: "[a-z][a-z-._]+", scope: "string"),
         C_LINE_COMMENT_MODE,
       ],
     ),
@@ -307,10 +304,7 @@ final stan = Language(
       begin: "\\/\\*",
       end: "\\*\\/",
       contains: [
-        Mode(
-          scope: "doctag",
-          match: "@(return|param)",
-        ),
+        Mode(scope: "doctag", match: "@(return|param)"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -334,16 +328,13 @@ final stan = Language(
       match: "[<,]\\s*(?:lower|upper|offset|multiplier)\\s*=",
       keywords: ["lower", "upper", "offset", "multiplier"],
     ),
-    Mode(
-      scope: "keyword",
-      match: "\\btarget(?=\\s*\\+=)",
-    ),
+    Mode(scope: "keyword", match: "\\btarget(?=\\s*\\+=)"),
     Mode(
       match: [
         "\\x7e\\s*",
         "(?:bernoulli|bernoulli_logit|bernoulli_logit_glm|beta|beta_binomial|beta_proportion|binomial|binomial_logit|categorical|categorical_logit|categorical_logit_glm|cauchy|chi_square|dirichlet|discrete_range|double_exponential|exp_mod_normal|exponential|frechet|gamma|gaussian_dlm_obs|gumbel|hmm_latent|hypergeometric|inv_chi_square|inv_gamma|inv_wishart|lkj_corr|lkj_corr_cholesky|logistic|lognormal|multi_gp|multi_gp_cholesky|multi_normal|multi_normal_cholesky|multi_normal_prec|multi_student_t|multinomial|multinomial_logit|neg_binomial|neg_binomial_2|neg_binomial_2_log|neg_binomial_2_log_glm|normal|normal_id_glm|ordered_logistic|ordered_logistic_glm|ordered_probit|pareto|pareto_type_2|poisson|poisson_log|poisson_log_glm|rayleigh|scaled_inv_chi_square|skew_double_exponential|skew_normal|std_normal|student_t|uniform|von_mises|weibull|wiener|wishart)",
         "(?:\\(\\))",
-        "\\s*T(?=\\s*\\[)"
+        "\\s*T(?=\\s*\\[)",
       ],
       scope: {"2": "built_in", "4": "keyword"},
     ),
@@ -413,7 +404,7 @@ final stan = Language(
         "von_mises",
         "weibull",
         "wiener",
-        "wishart"
+        "wishart",
       ],
       begin:
           "\\w*(?:bernoulli|bernoulli_logit|bernoulli_logit_glm|beta|beta_binomial|beta_proportion|binomial|binomial_logit|categorical|categorical_logit|categorical_logit_glm|cauchy|chi_square|dirichlet|discrete_range|double_exponential|exp_mod_normal|exponential|frechet|gamma|gaussian_dlm_obs|gumbel|hmm_latent|hypergeometric|inv_chi_square|inv_gamma|inv_wishart|lkj_corr|lkj_corr_cholesky|logistic|lognormal|multi_gp|multi_gp_cholesky|multi_normal|multi_normal_cholesky|multi_normal_prec|multi_student_t|multinomial|multinomial_logit|neg_binomial|neg_binomial_2|neg_binomial_2_log|neg_binomial_2_log_glm|normal|normal_id_glm|ordered_logistic|ordered_logistic_glm|ordered_probit|pareto|pareto_type_2|poisson|poisson_log|poisson_log_glm|rayleigh|scaled_inv_chi_square|skew_double_exponential|skew_normal|std_normal|student_t|uniform|von_mises|weibull|wiener|wishart)(_lpdf|_lupdf|_lpmf|_cdf|_lcdf|_lccdf|_qf)(?=\\s*[\\(.*\\)])",
@@ -422,7 +413,7 @@ final stan = Language(
       begin: [
         "\\x7e",
         "\\s*",
-        "(?:bernoulli|bernoulli_logit|bernoulli_logit_glm|beta|beta_binomial|beta_proportion|binomial|binomial_logit|categorical|categorical_logit|categorical_logit_glm|cauchy|chi_square|dirichlet|discrete_range|double_exponential|exp_mod_normal|exponential|frechet|gamma|gaussian_dlm_obs|gumbel|hmm_latent|hypergeometric|inv_chi_square|inv_gamma|inv_wishart|lkj_corr|lkj_corr_cholesky|logistic|lognormal|multi_gp|multi_gp_cholesky|multi_normal|multi_normal_cholesky|multi_normal_prec|multi_student_t|multinomial|multinomial_logit|neg_binomial|neg_binomial_2|neg_binomial_2_log|neg_binomial_2_log_glm|normal|normal_id_glm|ordered_logistic|ordered_logistic_glm|ordered_probit|pareto|pareto_type_2|poisson|poisson_log|poisson_log_glm|rayleigh|scaled_inv_chi_square|skew_double_exponential|skew_normal|std_normal|student_t|uniform|von_mises|weibull|wiener|wishart)(?=\\s*[\\(.*\\)])"
+        "(?:bernoulli|bernoulli_logit|bernoulli_logit_glm|beta|beta_binomial|beta_proportion|binomial|binomial_logit|categorical|categorical_logit|categorical_logit_glm|cauchy|chi_square|dirichlet|discrete_range|double_exponential|exp_mod_normal|exponential|frechet|gamma|gaussian_dlm_obs|gumbel|hmm_latent|hypergeometric|inv_chi_square|inv_gamma|inv_wishart|lkj_corr|lkj_corr_cholesky|logistic|lognormal|multi_gp|multi_gp_cholesky|multi_normal|multi_normal_cholesky|multi_normal_prec|multi_student_t|multinomial|multinomial_logit|neg_binomial|neg_binomial_2|neg_binomial_2_log|neg_binomial_2_log_glm|normal|normal_id_glm|ordered_logistic|ordered_logistic_glm|ordered_probit|pareto|pareto_type_2|poisson|poisson_log|poisson_log_glm|rayleigh|scaled_inv_chi_square|skew_double_exponential|skew_normal|std_normal|student_t|uniform|von_mises|weibull|wiener|wishart)(?=\\s*[\\(.*\\)])",
       ],
       scope: {"3": "built_in"},
     ),
@@ -430,7 +421,7 @@ final stan = Language(
       begin: [
         "\\x7e",
         "\\s*\\w+(?=\\s*[\\(.*\\)])",
-        "(?!.*/\b((?:bernoulli|bernoulli_logit|bernoulli_logit_glm|beta|beta_binomial|beta_proportion|binomial|binomial_logit|categorical|categorical_logit|categorical_logit_glm|cauchy|chi_square|dirichlet|discrete_range|double_exponential|exp_mod_normal|exponential|frechet|gamma|gaussian_dlm_obs|gumbel|hmm_latent|hypergeometric|inv_chi_square|inv_gamma|inv_wishart|lkj_corr|lkj_corr_cholesky|logistic|lognormal|multi_gp|multi_gp_cholesky|multi_normal|multi_normal_cholesky|multi_normal_prec|multi_student_t|multinomial|multinomial_logit|neg_binomial|neg_binomial_2|neg_binomial_2_log|neg_binomial_2_log_glm|normal|normal_id_glm|ordered_logistic|ordered_logistic_glm|ordered_probit|pareto|pareto_type_2|poisson|poisson_log|poisson_log_glm|rayleigh|scaled_inv_chi_square|skew_double_exponential|skew_normal|std_normal|student_t|uniform|von_mises|weibull|wiener|wishart))\b)"
+        "(?!.*/\b((?:bernoulli|bernoulli_logit|bernoulli_logit_glm|beta|beta_binomial|beta_proportion|binomial|binomial_logit|categorical|categorical_logit|categorical_logit_glm|cauchy|chi_square|dirichlet|discrete_range|double_exponential|exp_mod_normal|exponential|frechet|gamma|gaussian_dlm_obs|gumbel|hmm_latent|hypergeometric|inv_chi_square|inv_gamma|inv_wishart|lkj_corr|lkj_corr_cholesky|logistic|lognormal|multi_gp|multi_gp_cholesky|multi_normal|multi_normal_cholesky|multi_normal_prec|multi_student_t|multinomial|multinomial_logit|neg_binomial|neg_binomial_2|neg_binomial_2_log|neg_binomial_2_log_glm|normal|normal_id_glm|ordered_logistic|ordered_logistic_glm|ordered_probit|pareto|pareto_type_2|poisson|poisson_log|poisson_log_glm|rayleigh|scaled_inv_chi_square|skew_double_exponential|skew_normal|std_normal|student_t|uniform|von_mises|weibull|wiener|wishart))\b)",
       ],
       scope: {"2": "title.function"},
     ),
@@ -444,10 +435,6 @@ final stan = Language(
           "(?:\\b\\d+(?:_\\d+)*(?:\\.(?:\\d+(?:_\\d+)*)?)?|\\B\\.\\d+(?:_\\d+)*)(?:[eE][+-]?\\d+(?:_\\d+)*)?i?(?!\\w)",
       relevance: 0,
     ),
-    Mode(
-      scope: "string",
-      begin: "\"",
-      end: "\"",
-    ),
+    Mode(scope: "string", begin: "\"", end: "\""),
   ],
 );

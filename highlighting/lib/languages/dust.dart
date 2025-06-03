@@ -27,9 +27,7 @@ final dust = Language(
           starts: Mode(
             endsWithParent: true,
             relevance: 0,
-            contains: [
-              QUOTE_STRING_MODE,
-            ],
+            contains: [QUOTE_STRING_MODE],
           ),
         ),
       ],

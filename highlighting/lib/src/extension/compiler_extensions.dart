@@ -29,10 +29,10 @@ void beginKeywords(Mode mode, Mode? parent) {
   // for languages with keywords that include non-word characters checking for
   // a word boundary is not sufficient, so instead we check for a word boundary
   // or whitespace - this does no harm in any case since our keyword engine
-  // doesn't allow spaces in keywords anyways and we still check for the boundary
-  // first
+  // doesn't allow spaces in keywords anyways and we still check for the
+  // boundary first
   mode.begin =
-      '\\b(' + mode.beginKeywords!.split(' ').join('|') + ')(?!\\.)(?=\\b|\\s)';
+      '\\b(${mode.beginKeywords!.split(' ').join('|')})(?!\\.)(?=\\b|\\s)';
   mode.beforeBegin = skipIfHasPrecedingDot;
   mode.keywords = mode.keywords ?? mode.beginKeywords;
   mode.beginKeywords = null;
@@ -44,9 +44,9 @@ void beginKeywords(Mode mode, Mode? parent) {
 }
 
 void compileIllegal(Mode mode, [Mode? parent]) {
-  if (mode.illegal is! List) return;
-  final illegal = mode.illegal as List;
-  mode.illegal = either(illegal);
+  if (mode.illegal case final List illegal) {
+    mode.illegal = either(illegal.whereType());
+  }
 }
 
 void compileMatch(Mode mode, [Mode? parent]) {
@@ -63,10 +63,7 @@ void compileRelevance(Mode mode, Mode? parent) {
   mode.relevance ??= 1;
 }
 
-Mode replaceRef(
-  ModeReference self, {
-  required Map<String, Mode> refs,
-}) {
+Mode replaceRef(ModeReference self, {required Map<String, Mode> refs}) {
   if (refs[self.ref] == null) {
     throw Exception('The language definition is incorrect! Check "refs" field');
   }

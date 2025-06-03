@@ -26,10 +26,10 @@ final thrift = Language(
       "list",
       "map",
       "required",
-      "optional"
+      "optional",
     ],
     "type": ["bool", "byte", "i16", "i32", "i64", "double", "string", "binary"],
-    "literal": "true false"
+    "literal": "true false",
   },
   contains: [
     QUOTE_STRING_MODE,
@@ -46,10 +46,7 @@ final thrift = Language(
           scope: "title",
           begin: "[a-zA-Z]\\w*",
           relevance: 0,
-          starts: Mode(
-            endsWithParent: true,
-            excludeEnd: true,
-          ),
+          starts: Mode(endsWithParent: true, excludeEnd: true),
         ),
       ],
     ),
@@ -67,13 +64,11 @@ final thrift = Language(
           "binary",
           "set",
           "list",
-          "map"
-        ]
+          "map",
+        ],
       },
       end: ">",
-      contains: [
-        ModeSelfReference(),
-      ],
+      contains: [ModeSelfReference()],
     ),
   ],
 );

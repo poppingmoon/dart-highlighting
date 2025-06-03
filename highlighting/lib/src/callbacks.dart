@@ -37,20 +37,20 @@ void language_javascript_contains_0_contains_0_variants_0_onBegin(
       ? match.input[afterMatchIndex]
       : null;
   if (
-      // HTML should not include another raw `<` inside a tag
-      // nested type?
-      // `<Array<Array<number>>`, etc.
-      nextChar == "<" ||
-          // the , gives away that this is not HTML
-          // `<T, A extends keyof T, V>`
-          nextChar == ",") {
+  // HTML should not include another raw `<` inside a tag
+  // nested type?
+  // `<Array<Array<number>>`, etc.
+  nextChar == '<' ||
+      // the , gives away that this is not HTML
+      // `<T, A extends keyof T, V>`
+      nextChar == ',') {
     response.ignoreMatch();
     return;
   }
 
   // `<something>`
   // Quite possibly a tag, lets look for a matching closing tag...
-  if (nextChar == ">") {
+  if (nextChar == '>') {
     // if we cannot find a matching closing tag, then we
     // will ignore it
     if (!hasClosingTag(match, after: afterMatchIndex)) {
@@ -85,11 +85,8 @@ void language_javascript_contains_0_contains_0_variants_0_onBegin(
   }
 }
 
-bool hasClosingTag(
-  JsStyleRegExpMatch match, {
-  required int after,
-}) {
-  final tag = "</" + match[0]!.substring(1);
+bool hasClosingTag(JsStyleRegExpMatch match, {required int after}) {
+  final tag = '</${match[0]!.substring(1)}';
   final pos = match.input.indexOf(tag, after);
   return pos != -1;
 }

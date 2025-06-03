@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const googlecodeTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xffffffff), color: Color(0xff000000)),
+  'root': TextStyle(
+    backgroundColor: Color(0xffffffff),
+    color: Color(0xff000000),
+  ),
   'comment': TextStyle(color: Color(0xff880000)),
   'quote': TextStyle(color: Color(0xff880000)),
   'keyword': TextStyle(color: Color(0xff000088)),
@@ -32,7 +34,9 @@ const googlecodeTheme = {
   'attribute': TextStyle(color: Color(0xff000000)),
   'subst': TextStyle(color: Color(0xff000000)),
   'formula': TextStyle(
-      backgroundColor: Color(0xffeeeeee), fontStyle: FontStyle.italic),
+    backgroundColor: Color(0xffeeeeee),
+    fontStyle: FontStyle.italic,
+  ),
   'selector-class': TextStyle(color: Color(0xff9b703f)),
   'selector-id': TextStyle(color: Color(0xff9b703f)),
   'addition': TextStyle(backgroundColor: Color(0xffbaeeba)),

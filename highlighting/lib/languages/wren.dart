@@ -44,8 +44,8 @@ final wren = Language(
           "Range",
           "Sequence",
           "String",
-          "System"
-        ]
+          "System",
+        ],
       },
     ),
     '~contains~2': Mode(
@@ -69,18 +69,10 @@ final wren = Language(
         Mode(
           scope: "char.escape",
           variants: [
-            Mode(
-              match: "\\\\\\\\|\\\\[\"0%abefnrtv]",
-            ),
-            Mode(
-              match: "\\\\x[0-9A-F]{2}",
-            ),
-            Mode(
-              match: "\\\\u[0-9A-F]{4}",
-            ),
-            Mode(
-              match: "\\\\U[0-9A-F]{8}",
-            ),
+            Mode(match: "\\\\\\\\|\\\\[\"0%abefnrtv]"),
+            Mode(match: "\\\\x[0-9A-F]{2}"),
+            Mode(match: "\\\\u[0-9A-F]{4}"),
+            Mode(match: "\\\\U[0-9A-F]{8}"),
           ],
         ),
       ],
@@ -104,10 +96,10 @@ final wren = Language(
       "return",
       "static",
       "var",
-      "while"
+      "while",
     ],
     "variable.language": ["this", "super"],
-    "literal": ["true", "false", "null"]
+    "literal": ["true", "false", "null"],
   },
   contains: [
     Mode(
@@ -117,34 +109,23 @@ final wren = Language(
           begin: ["#!?", "[A-Za-z_]+(?=\\()"],
           beginScope: {},
           keywords: {
-            "literal": ["true", "false", "null"]
+            "literal": ["true", "false", "null"],
           },
           contains: [],
           end: "\\)",
         ),
-        Mode(
-          begin: ["#!?", "[A-Za-z_]+"],
-          beginScope: {},
-          end: "\$",
-        ),
+        Mode(begin: ["#!?", "[A-Za-z_]+"], beginScope: {}, end: "\$"),
       ],
     ),
     C_NUMBER_MODE,
     ModeReference('~contains~2'),
-    Mode(
-      className: "string",
-      begin: "\"\"\"",
-      end: "\"\"\"",
-    ),
+    Mode(className: "string", begin: "\"\"\"", end: "\"\"\""),
     Mode(
       scope: "comment",
       begin: "\\/\\*\\*",
       end: "\\*\\/",
       contains: [
-        Mode(
-          match: "@[a-z]+",
-          scope: "doctag",
-        ),
+        Mode(match: "@[a-z]+", scope: "doctag"),
         ModeSelfReference(),
         Mode(
           scope: "doctag",
@@ -167,9 +148,7 @@ final wren = Language(
         Mode(
           match: ["class\\s+", "[a-zA-Z]\\w*", "\\s+is\\s+", "[a-zA-Z]\\w*"],
         ),
-        Mode(
-          match: ["class\\s+", "[a-zA-Z]\\w*"],
-        ),
+        Mode(match: ["class\\s+", "[a-zA-Z]\\w*"]),
       ],
       scope: {"2": "title.class", "4": "title.class.inherited"},
       keywords: [
@@ -188,7 +167,7 @@ final wren = Language(
         "return",
         "static",
         "var",
-        "while"
+        "while",
       ],
     ),
     Mode(
@@ -199,7 +178,7 @@ final wren = Language(
         "\\s*",
         "\\(",
         "[a-zA-Z]\\w*",
-        "\\)\\s*\\{"
+        "\\)\\s*\\{",
       ],
       scope: {"1": "title.function", "3": "operator", "6": "params"},
     ),
@@ -213,11 +192,7 @@ final wren = Language(
             begin: "\\(",
             end: "\\)",
             contains: [
-              Mode(
-                relevance: 0,
-                scope: "params",
-                match: "[a-zA-Z]\\w*",
-              ),
+              Mode(relevance: 0, scope: "params", match: "[a-zA-Z]\\w*"),
             ],
           ),
         ],

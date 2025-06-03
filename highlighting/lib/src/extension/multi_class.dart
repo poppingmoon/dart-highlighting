@@ -2,17 +2,12 @@ import '../const/literals.dart';
 import '../mode.dart';
 import 'reg_exp.dart';
 
-final MultiClassError = Exception('MultiClass Error');
-
 /// [regexes] -- A list of [RegExp] or strings to be compiled to [RegExp].
 /// [key] - `"beginScope" | "endScope"`
-void remapScopeNames(
-  Mode mode,
-  List<Pattern> regexes,
-  String key,
-) {
+void remapScopeNames(Mode mode, List<Pattern> regexes, String key) {
   var offset = 0;
-  final scopeNames = key == $beginScope ? mode.beginScope : mode.endScope;
+  final scopeNames =
+      (key == $beginScope ? mode.beginScope : mode.endScope) as Map;
   final emit = <int, bool>{};
   final positions = <String, dynamic>{};
 
@@ -35,14 +30,15 @@ void beginMultiClass(Mode mode) {
     return;
   }
 
-  if (mode.skip == true ||
-      mode.excludeBegin == true ||
-      mode.returnBegin == true ||
+  if ((mode.skip ?? false) ||
+      (mode.excludeBegin ?? false) ||
+      (mode.returnBegin ?? false) ||
       mode.skip != null ||
       mode.excludeBegin != null ||
       mode.returnBegin != null) {
     throw Exception(
-        'skip, excludeBegin, returnBegin not compatible with beginScope: {}');
+      'skip, excludeBegin, returnBegin not compatible with beginScope: {}',
+    );
   }
 
   if (mode.beginScope == null || mode.beginScope is! Map) {
@@ -63,15 +59,16 @@ void endMultiClass(Mode mode) {
       mode.excludeEnd != null ||
       mode.returnEnd != null) {
     throw Exception(
-        "skip, excludeEnd, returnEnd not compatible with endScope: {}");
+      'skip, excludeEnd, returnEnd not compatible with endScope: {}',
+    );
   }
 
   if (mode.endScope == null || mode.endScope is! Map) {
-    throw Exception("endScope must be object");
+    throw Exception('endScope must be object');
   }
 
   remapScopeNames(mode, mode.end, $endScope);
-  mode.end = rewriteBackReferences(mode.end, joinWith: "");
+  mode.end = rewriteBackReferences(mode.end, joinWith: '');
 }
 
 void scopeSugar(Mode mode) {
@@ -85,15 +82,11 @@ void multiClass(Mode mode, [Mode? parent]) {
   scopeSugar(mode);
 
   if (mode.beginScope is String) {
-    mode.beginScope = {
-      $wrap: mode.beginScope,
-    };
+    mode.beginScope = {$wrap: mode.beginScope};
   }
 
   if (mode.endScope is String) {
-    mode.endScope = {
-      $wrap: mode.endScope,
-    };
+    mode.endScope = {$wrap: mode.endScope};
   }
 
   beginMultiClass(mode);

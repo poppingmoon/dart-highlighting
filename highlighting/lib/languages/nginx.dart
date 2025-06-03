@@ -26,22 +26,10 @@ final nginx = Language(
         ModeReference('~contains~1~contains~1~contains~1'),
       ],
       variants: [
-        Mode(
-          begin: "\\s\\^",
-          end: "\\s|\\{|;",
-          returnEnd: true,
-        ),
-        Mode(
-          begin: "\\x7e\\*?\\s+",
-          end: "\\s|\\{|;",
-          returnEnd: true,
-        ),
-        Mode(
-          begin: "\\*(\\.[a-z\\-]+)+",
-        ),
-        Mode(
-          begin: "([a-z\\-]+\\.)+\\*",
-        ),
+        Mode(begin: "\\s\\^", end: "\\s|\\{|;", returnEnd: true),
+        Mode(begin: "\\x7e\\*?\\s+", end: "\\s|\\{|;", returnEnd: true),
+        Mode(begin: "\\*(\\.[a-z\\-]+)+"),
+        Mode(begin: "([a-z\\-]+\\.)+\\*"),
       ],
     ),
     '~contains~1~contains~2': Mode(
@@ -49,22 +37,14 @@ final nginx = Language(
       end: "\\s",
       endsWithParent: true,
       excludeEnd: true,
-      contains: [
-        ModeReference('~contains~1~contains~1~contains~1'),
-      ],
+      contains: [ModeReference('~contains~1~contains~1~contains~1')],
     ),
     '~contains~1~contains~1~contains~1': Mode(
       className: "variable",
       variants: [
-        Mode(
-          begin: "\\\$\\d+",
-        ),
-        Mode(
-          begin: "\\\$\\{\\w+\\}",
-        ),
-        Mode(
-          begin: "[\$@][a-zA-Z_]\\w*",
-        ),
+        Mode(begin: "\\\$\\d+"),
+        Mode(begin: "\\\$\\{\\w+\\}"),
+        Mode(begin: "[\$@][a-zA-Z_]\\w*"),
       ],
     ),
     '~contains~1~contains~1': Mode(
@@ -74,14 +54,8 @@ final nginx = Language(
         ModeReference('~contains~1~contains~1~contains~1'),
       ],
       variants: [
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
-        Mode(
-          begin: "'",
-          end: "'",
-        ),
+        Mode(begin: "\"", end: "\""),
+        Mode(begin: "'", end: "'"),
       ],
     ),
   },
@@ -103,11 +77,7 @@ final nginx = Language(
       ],
       keywords: {"section": "upstream location"},
     ),
-    Mode(
-      className: "section",
-      begin: "[a-zA-Z_]\\w*(?=\\s+\\{)",
-      relevance: 0,
-    ),
+    Mode(className: "section", begin: "[a-zA-Z_]\\w*(?=\\s+\\{)", relevance: 0),
     Mode(
       begin: "(?=[a-zA-Z_]\\w*\\s)",
       end: ";|\\{",
@@ -143,8 +113,8 @@ final nginx = Language(
                 "rtsig",
                 "epoll",
                 "poll",
-                "/dev/poll"
-              ]
+                "/dev/poll",
+              ],
             },
             relevance: 0,
             illegal: "=>",

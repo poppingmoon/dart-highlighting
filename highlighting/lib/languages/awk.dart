@@ -13,54 +13,26 @@ final awk = Language(
   name: "Awk",
   keywords: {
     "keyword":
-        "BEGIN END if else while do for in break continue delete next nextfile function func exit|10"
+        "BEGIN END if else while do for in break continue delete next nextfile function func exit|10",
   },
   contains: [
     Mode(
       className: "variable",
       variants: [
-        Mode(
-          begin: "\\\$[\\w\\d#@][\\w\\d_]*",
-        ),
-        Mode(
-          begin: "\\\$\\{(.*?)\\}",
-        ),
+        Mode(begin: "\\\$[\\w\\d#@][\\w\\d_]*"),
+        Mode(begin: "\\\$\\{(.*?)\\}"),
       ],
     ),
     Mode(
       className: "string",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       variants: [
-        Mode(
-          begin: "(u|b)?r?'''",
-          end: "'''",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "(u|b)?r?\"\"\"",
-          end: "\"\"\"",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "(u|r|ur)'",
-          end: "'",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "(u|r|ur)\"",
-          end: "\"",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "(b|br)'",
-          end: "'",
-        ),
-        Mode(
-          begin: "(b|br)\"",
-          end: "\"",
-        ),
+        Mode(begin: "(u|b)?r?'''", end: "'''", relevance: 10),
+        Mode(begin: "(u|b)?r?\"\"\"", end: "\"\"\"", relevance: 10),
+        Mode(begin: "(u|r|ur)'", end: "'", relevance: 10),
+        Mode(begin: "(u|r|ur)\"", end: "\"", relevance: 10),
+        Mode(begin: "(b|br)'", end: "'"),
+        Mode(begin: "(b|br)\"", end: "\""),
         APOS_STRING_MODE,
         QUOTE_STRING_MODE,
       ],

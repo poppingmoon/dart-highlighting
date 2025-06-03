@@ -11,34 +11,23 @@ final zephir = Language(
   id: "zephir",
   refs: {
     '~contains~4~contains~1~contains~3': Mode(
-      variants: [
-        BINARY_NUMBER_MODE,
-        C_NUMBER_MODE,
-      ],
+      variants: [BINARY_NUMBER_MODE, C_NUMBER_MODE],
     ),
     '~contains~4~contains~1~contains~2': Mode(
       className: "string",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       variants: [
         Mode(
           scope: "string",
           begin: "'",
           end: "'",
-          illegal: null,
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
         Mode(
           scope: "string",
           begin: "\"",
           end: "\"",
-          illegal: null,
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
       ],
     ),
@@ -54,10 +43,7 @@ final zephir = Language(
       begin: "\\/\\*",
       end: "\\*\\/",
       contains: [
-        Mode(
-          className: "doctag",
-          begin: "@[A-Za-z]+",
-        ),
+        Mode(className: "doctag", begin: "@[A-Za-z]+"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -75,13 +61,9 @@ final zephir = Language(
       className: "string",
       begin: "<<<['\"]?\\w+['\"]?\$",
       end: "^\\w+;",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
-    Mode(
-      begin: "(::|->)+[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*",
-    ),
+    Mode(begin: "(::|->)+[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*"),
     Mode(
       className: "function",
       beginKeywords: "function fn",
@@ -112,9 +94,7 @@ final zephir = Language(
       excludeEnd: true,
       illegal: "[:(\$\"]",
       contains: [
-        Mode(
-          beginKeywords: "extends implements",
-        ),
+        Mode(beginKeywords: "extends implements"),
         UNDERSCORE_TITLE_MODE,
       ],
     ),
@@ -122,20 +102,10 @@ final zephir = Language(
       beginKeywords: "namespace",
       end: ";",
       illegal: "[.']",
-      contains: [
-        UNDERSCORE_TITLE_MODE,
-      ],
+      contains: [UNDERSCORE_TITLE_MODE],
     ),
-    Mode(
-      beginKeywords: "use",
-      end: ";",
-      contains: [
-        UNDERSCORE_TITLE_MODE,
-      ],
-    ),
-    Mode(
-      begin: "=>",
-    ),
+    Mode(beginKeywords: "use", end: ";", contains: [UNDERSCORE_TITLE_MODE]),
+    Mode(begin: "=>"),
     ModeReference('~contains~4~contains~1~contains~2'),
     ModeReference('~contains~4~contains~1~contains~3'),
   ],

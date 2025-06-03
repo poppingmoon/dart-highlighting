@@ -32,10 +32,7 @@ final applescript = Language(
       scope: "string",
       begin: "\"",
       end: "\"",
-      illegal: null,
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
   },
   name: "AppleScript",
@@ -46,7 +43,7 @@ final applescript = Language(
     "literal":
         "AppleScript false linefeed return pi quote result space tab true",
     "built_in":
-        "alias application boolean class constant date file integer list number real record string text activate beep count delay launch log offset read round run say summarize write character characters contents day frontmost id item length month name|0 paragraph paragraphs rest reverse running time version weekday word words year"
+        "alias application boolean class constant date file integer list number real record string text activate beep count delay launch log offset read round run say summarize write character characters contents day frontmost id item length month name|0 paragraph paragraphs rest reverse running time version weekday word words year",
   },
   contains: [
     ModeReference('~contains~0'),
@@ -56,10 +53,7 @@ final applescript = Language(
       begin:
           "\\b(?:clipboard info|the clipboard|info for|list (disks|folder)|mount volume|path to|(close|open for) access|(get|set) eof|current date|do shell script|get volume settings|random number|set volume|system attribute|system info|time to GMT|(load|run|store) script|scripting components|ASCII (character|number)|localized string|choose (application|color|file|file name|folder|from list|remote application|URL)|display (alert|dialog))\\b",
     ),
-    Mode(
-      className: "built_in",
-      begin: "^\\s*return\\b",
-    ),
+    Mode(className: "built_in", begin: "^\\s*return\\b"),
     Mode(
       className: "literal",
       begin: "\\b(text item delimiters|current application|missing value)\\b",

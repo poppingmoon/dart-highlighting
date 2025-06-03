@@ -53,7 +53,7 @@ final javascript = Language(
           "import",
           "from",
           "export",
-          "extends"
+          "extends",
         ],
         "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
         "built_in": [
@@ -120,7 +120,7 @@ final javascript = Language(
           "ReferenceError",
           "SyntaxError",
           "TypeError",
-          "URIError"
+          "URIError",
         ],
         "variable.language": [
           "arguments",
@@ -132,8 +132,8 @@ final javascript = Language(
           "localStorage",
           "sessionStorage",
           "module",
-          "global"
-        ]
+          "global",
+        ],
       },
       contains: [
         ModeSelfReference(),
@@ -141,15 +141,20 @@ final javascript = Language(
         QUOTE_STRING_MODE,
         ModeReference('~exports~PARAMS_CONTAINS~3'),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7',
+        ),
       ],
     ),
     '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7': Mode(
@@ -163,21 +168,11 @@ final javascript = Language(
           begin:
               "\\b(0|[1-9](_?[0-9])*|0[0-7]*[89][0-9]*)\\b((\\.([0-9](_?[0-9])*))\\b|\\.)?|(\\.([0-9](_?[0-9])*))\\b",
         ),
-        Mode(
-          begin: "\\b(0|[1-9](_?[0-9])*)n\\b",
-        ),
-        Mode(
-          begin: "\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*n?\\b",
-        ),
-        Mode(
-          begin: "\\b0[bB][0-1](_?[0-1])*n?\\b",
-        ),
-        Mode(
-          begin: "\\b0[oO][0-7](_?[0-7])*n?\\b",
-        ),
-        Mode(
-          begin: "\\b0[0-7]+n?\\b",
-        ),
+        Mode(begin: "\\b(0|[1-9](_?[0-9])*)n\\b"),
+        Mode(begin: "\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*n?\\b"),
+        Mode(begin: "\\b0[bB][0-1](_?[0-1])*n?\\b"),
+        Mode(begin: "\\b0[oO][0-7](_?[0-7])*n?\\b"),
+        Mode(begin: "\\b0[0-7]+n?\\b"),
       ],
       relevance: 0,
     ),
@@ -263,7 +258,7 @@ final javascript = Language(
           "import",
           "from",
           "export",
-          "extends"
+          "extends",
         ],
         "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
         "built_in": [
@@ -330,7 +325,7 @@ final javascript = Language(
           "ReferenceError",
           "SyntaxError",
           "TypeError",
-          "URIError"
+          "URIError",
         ],
         "variable.language": [
           "arguments",
@@ -342,25 +337,31 @@ final javascript = Language(
           "localStorage",
           "sessionStorage",
           "module",
-          "global"
-        ]
+          "global",
+        ],
       },
       contains: [
         APOS_STRING_MODE,
         QUOTE_STRING_MODE,
         ModeReference('~exports~PARAMS_CONTAINS~3'),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~8'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~8',
+        ),
       ],
     ),
     '~exports~PARAMS_CONTAINS~3': Mode(
@@ -419,7 +420,7 @@ final javascript = Language(
           "import",
           "from",
           "export",
-          "extends"
+          "extends",
         ],
         "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
         "built_in": [
@@ -486,7 +487,7 @@ final javascript = Language(
           "ReferenceError",
           "SyntaxError",
           "TypeError",
-          "URIError"
+          "URIError",
         ],
         "variable.language": [
           "arguments",
@@ -498,8 +499,8 @@ final javascript = Language(
           "localStorage",
           "sessionStorage",
           "module",
-          "global"
-        ]
+          "global",
+        ],
       },
       contains: [
         ModeSelfReference(),
@@ -508,17 +509,23 @@ final javascript = Language(
         QUOTE_STRING_MODE,
         ModeReference('~exports~PARAMS_CONTAINS~3'),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~8'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~8',
+        ),
       ],
     ),
     '~exports~PARAMS_CONTAINS~0': Mode(
@@ -533,10 +540,7 @@ final javascript = Language(
               begin: "(?=@[A-Za-z]+)",
               relevance: 0,
               contains: [
-                Mode(
-                  className: "doctag",
-                  begin: "@[A-Za-z]+",
-                ),
+                Mode(className: "doctag", begin: "@[A-Za-z]+"),
                 Mode(
                   className: "type",
                   begin: "\\{",
@@ -551,10 +555,7 @@ final javascript = Language(
                   endsParent: true,
                   relevance: 0,
                 ),
-                Mode(
-                  begin: "(?=[^\\n])\\s",
-                  relevance: 0,
-                ),
+                Mode(begin: "(?=[^\\n])\\s", relevance: 0),
               ],
             ),
             Mode(
@@ -628,8 +629,8 @@ final javascript = Language(
           "ReferenceError",
           "SyntaxError",
           "TypeError",
-          "URIError"
-        ]
+          "URIError",
+        ],
       },
     ),
     '~contains~13~contains~0': Mode(
@@ -678,7 +679,7 @@ final javascript = Language(
           "import",
           "from",
           "export",
-          "extends"
+          "extends",
         ],
         "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
         "built_in": [
@@ -745,7 +746,7 @@ final javascript = Language(
           "ReferenceError",
           "SyntaxError",
           "TypeError",
-          "URIError"
+          "URIError",
         ],
         "variable.language": [
           "arguments",
@@ -757,8 +758,8 @@ final javascript = Language(
           "localStorage",
           "sessionStorage",
           "module",
-          "global"
-        ]
+          "global",
+        ],
       },
       contains: [
         ModeReference('~exports~PARAMS_CONTAINS~0'),
@@ -766,17 +767,23 @@ final javascript = Language(
         QUOTE_STRING_MODE,
         ModeReference('~exports~PARAMS_CONTAINS~3'),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7',
+        ),
         ModeReference(
-            '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~8'),
+          '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~8',
+        ),
         ModeReference('~exports~PARAMS_CONTAINS~10'),
       ],
     ),
@@ -823,7 +830,7 @@ final javascript = Language(
       "import",
       "from",
       "export",
-      "extends"
+      "extends",
     ],
     "literal": ["true", "false", "null", "undefined", "NaN", "Infinity"],
     "built_in": [
@@ -890,7 +897,7 @@ final javascript = Language(
       "ReferenceError",
       "SyntaxError",
       "TypeError",
-      "URIError"
+      "URIError",
     ],
     "variable.language": [
       "arguments",
@@ -902,8 +909,8 @@ final javascript = Language(
       "localStorage",
       "sessionStorage",
       "module",
-      "global"
-    ]
+      "global",
+    ],
   },
   illegal: "#(?![\$_A-z])",
   contains: [
@@ -928,9 +935,7 @@ final javascript = Language(
     ModeReference('~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4'),
     ModeReference('~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5'),
     ModeReference('~exports~PARAMS_CONTAINS~0'),
-    Mode(
-      match: "\\\$\\d+",
-    ),
+    Mode(match: "\\\$\\d+"),
     ModeReference('~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7'),
     ModeReference('~exports~CLASS_REFERENCE'),
     Mode(
@@ -946,13 +951,11 @@ final javascript = Language(
         "\\s*",
         "=\\s*",
         "(async\\s*)?",
-        "(?=(\\([^()]*(\\([^()]*(\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)|[a-zA-Z_]\\w*)\\s*=>)"
+        "(?=(\\([^()]*(\\([^()]*(\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)|[a-zA-Z_]\\w*)\\s*=>)",
       ],
       keywords: "async",
       className: {"1": "keyword", "3": "title.function"},
-      contains: [
-        ModeReference('~contains~13~contains~0'),
-      ],
+      contains: [ModeReference('~contains~13~contains~0')],
     ),
     Mode(
       begin:
@@ -972,10 +975,7 @@ final javascript = Language(
             Mode(
               className: "params",
               variants: [
-                Mode(
-                  begin: "[a-zA-Z_]\\w*",
-                  relevance: 0,
-                ),
+                Mode(begin: "[a-zA-Z_]\\w*", relevance: 0),
                 Mode(
                   className: overwritingNullString,
                   begin: "\\(\\s*\\)",
@@ -1026,7 +1026,7 @@ final javascript = Language(
                       "import",
                       "from",
                       "export",
-                      "extends"
+                      "extends",
                     ],
                     "literal": [
                       "true",
@@ -1034,7 +1034,7 @@ final javascript = Language(
                       "null",
                       "undefined",
                       "NaN",
-                      "Infinity"
+                      "Infinity",
                     ],
                     "built_in": [
                       "setInterval",
@@ -1100,7 +1100,7 @@ final javascript = Language(
                       "ReferenceError",
                       "SyntaxError",
                       "TypeError",
-                      "URIError"
+                      "URIError",
                     ],
                     "variable.language": [
                       "arguments",
@@ -1112,8 +1112,8 @@ final javascript = Language(
                       "localStorage",
                       "sessionStorage",
                       "module",
-                      "global"
-                    ]
+                      "global",
+                    ],
                   },
                   contains: [
                     ModeReference('~exports~PARAMS_CONTAINS~0'),
@@ -1121,17 +1121,23 @@ final javascript = Language(
                     QUOTE_STRING_MODE,
                     ModeReference('~exports~PARAMS_CONTAINS~3'),
                     ModeReference(
-                        '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3'),
+                      '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~3',
+                    ),
                     ModeReference(
-                        '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4'),
+                      '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~4',
+                    ),
                     ModeReference(
-                        '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5'),
+                      '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~5',
+                    ),
                     ModeReference(
-                        '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6'),
+                      '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~6',
+                    ),
                     ModeReference(
-                        '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7'),
+                      '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~7',
+                    ),
                     ModeReference(
-                        '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~8'),
+                      '~exports~PARAMS_CONTAINS~3~starts~contains~1~contains~8',
+                    ),
                     ModeReference('~exports~PARAMS_CONTAINS~10'),
                   ],
                 ),
@@ -1139,23 +1145,12 @@ final javascript = Language(
             ),
           ],
         ),
-        Mode(
-          begin: ",",
-          relevance: 0,
-        ),
-        Mode(
-          match: "\\s+",
-          relevance: 0,
-        ),
+        Mode(begin: ",", relevance: 0),
+        Mode(match: "\\s+", relevance: 0),
         Mode(
           variants: [
-            Mode(
-              begin: "<>",
-              end: "</>",
-            ),
-            Mode(
-              match: "<[A-Za-z0-9\\\\._:-]+\\s*\\/>",
-            ),
+            Mode(begin: "<>", end: "</>"),
+            Mode(match: "<[A-Za-z0-9\\\\._:-]+\\s*\\/>"),
             Mode(
               begin: "<[A-Za-z0-9\\\\._:-]+",
               onBegin:
@@ -1169,9 +1164,7 @@ final javascript = Language(
               begin: "<[A-Za-z0-9\\\\._:-]+",
               end: "\\/[A-Za-z0-9\\\\._:-]+>|\\/>",
               skip: true,
-              contains: [
-                ModeSelfReference(),
-              ],
+              contains: [ModeSelfReference()],
             ),
           ],
         ),
@@ -1184,23 +1177,17 @@ final javascript = Language(
             "function",
             "\\s+",
             "[A-Za-z\$_][0-9A-Za-z\$_]*",
-            "(?=\\s*\\()"
+            "(?=\\s*\\()",
           ],
         ),
-        Mode(
-          match: ["function", "\\s*(?=\\()"],
-        ),
+        Mode(match: ["function", "\\s*(?=\\()"]),
       ],
       className: {"1": "keyword", "3": "title.function"},
       label: "func.def",
-      contains: [
-        ModeReference('~contains~13~contains~0'),
-      ],
+      contains: [ModeReference('~contains~13~contains~0')],
       illegal: "%",
     ),
-    Mode(
-      beginKeywords: "while if switch catch for",
-    ),
+    Mode(beginKeywords: "while if switch catch for"),
     Mode(
       begin:
           "\\b(?!function)[a-zA-Z_]\\w*\\([^()]*(\\([^()]*(\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)\\s*\\{",
@@ -1216,10 +1203,7 @@ final javascript = Language(
         ),
       ],
     ),
-    Mode(
-      match: "\\.\\.\\.",
-      relevance: 0,
-    ),
+    Mode(match: "\\.\\.\\.", relevance: 0),
     Mode(
       begin: "\\.(?=[A-Za-z\$_][0-9A-Za-z\$_]*(?![0-9A-Za-z\$_(]))",
       end: "[A-Za-z\$_][0-9A-Za-z\$_]*",
@@ -1228,16 +1212,11 @@ final javascript = Language(
       className: "property",
       relevance: 0,
     ),
-    Mode(
-      match: "\\\$[A-Za-z\$_][0-9A-Za-z\$_]*",
-      relevance: 0,
-    ),
+    Mode(match: "\\\$[A-Za-z\$_][0-9A-Za-z\$_]*", relevance: 0),
     Mode(
       match: ["\\bconstructor(?=\\s*\\()"],
       className: {"1": "title.function"},
-      contains: [
-        ModeReference('~contains~13~contains~0'),
-      ],
+      contains: [ModeReference('~contains~13~contains~0')],
     ),
     Mode(
       match:
@@ -1260,13 +1239,13 @@ final javascript = Language(
             "\\s+",
             "extends",
             "\\s+",
-            "[A-Za-z\$_][0-9A-Za-z\$_]*(\\.[A-Za-z\$_][0-9A-Za-z\$_]*)*"
+            "[A-Za-z\$_][0-9A-Za-z\$_]*(\\.[A-Za-z\$_][0-9A-Za-z\$_]*)*",
           ],
           scope: {
             "1": "keyword",
             "3": "title.class",
             "5": "keyword",
-            "7": "title.class.inherited"
+            "7": "title.class.inherited",
           },
         ),
         Mode(
@@ -1279,14 +1258,10 @@ final javascript = Language(
       match: ["get|set", "\\s+", "[A-Za-z\$_][0-9A-Za-z\$_]*", "(?=\\()"],
       className: {"1": "keyword", "3": "title.function"},
       contains: [
-        Mode(
-          begin: "\\(\\)",
-        ),
+        Mode(begin: "\\(\\)"),
         ModeReference('~contains~13~contains~0'),
       ],
     ),
-    Mode(
-      match: "\\\$[(.]",
-    ),
+    Mode(match: "\\\$[(.]"),
   ],
 );

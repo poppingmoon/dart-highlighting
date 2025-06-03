@@ -11,7 +11,6 @@ final csp = Language(
   id: "csp",
   refs: {},
   name: "CSP",
-  case_insensitive: false,
   keywords: {
     "\$pattern": "[a-zA-Z][a-zA-Z0-9_-]*",
     "keyword": [
@@ -34,20 +33,11 @@ final csp = Language(
       "style-src",
       "trusted-types",
       "unsafe-hashes",
-      "worker-src"
-    ]
+      "worker-src",
+    ],
   },
   contains: [
-    Mode(
-      className: "string",
-      begin: "'",
-      end: "'",
-    ),
-    Mode(
-      className: "attribute",
-      begin: "^Content",
-      end: ":",
-      excludeEnd: true,
-    ),
+    Mode(className: "string", begin: "'", end: "'"),
+    Mode(className: "attribute", begin: "^Content", end: ":", excludeEnd: true),
   ],
 );

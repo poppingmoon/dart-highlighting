@@ -58,7 +58,7 @@ final monkey = Language(
       "or",
       "shl",
       "shr",
-      "mod"
+      "mod",
     ],
     "built_in": [
       "DebugLog",
@@ -98,9 +98,9 @@ final monkey = Language(
       "Seed",
       "PI",
       "HALFPI",
-      "TWOPI"
+      "TWOPI",
     ],
-    "literal": ["true", "false", "null"]
+    "literal": ["true", "false", "null"],
   },
   illegal: "\\/\\*",
   contains: [
@@ -143,9 +143,7 @@ final monkey = Language(
     ),
     Mode(
       variants: [
-        Mode(
-          match: ["(function|method)", "\\s+", "[a-zA-Z_]\\w*"],
-        ),
+        Mode(match: ["(function|method)", "\\s+", "[a-zA-Z_]\\w*"]),
       ],
       scope: {"1": "keyword", "3": "title.function"},
     ),
@@ -155,41 +153,27 @@ final monkey = Language(
           match: [
             "(class|interface|extends|implements)",
             "\\s+",
-            "[a-zA-Z_]\\w*"
+            "[a-zA-Z_]\\w*",
           ],
         ),
       ],
       scope: {"1": "keyword", "3": "title.class"},
     ),
-    Mode(
-      className: "variable.language",
-      begin: "\\b(self|super)\\b",
-    ),
+    Mode(className: "variable.language", begin: "\\b(self|super)\\b"),
     Mode(
       className: "meta",
       begin: "\\s*#",
       end: "\$",
       keywords: {"keyword": "if else elseif endif end then"},
     ),
-    Mode(
-      match: ["^\\s*", "strict\\b"],
-      scope: {"2": "meta"},
-    ),
-    Mode(
-      beginKeywords: "alias",
-      end: "=",
-      contains: [
-        UNDERSCORE_TITLE_MODE,
-      ],
-    ),
+    Mode(match: ["^\\s*", "strict\\b"], scope: {"2": "meta"}),
+    Mode(beginKeywords: "alias", end: "=", contains: [UNDERSCORE_TITLE_MODE]),
     QUOTE_STRING_MODE,
     Mode(
       className: "number",
       relevance: 0,
       variants: [
-        Mode(
-          begin: "[\$][a-fA-F0-9]+",
-        ),
+        Mode(begin: "[\$][a-fA-F0-9]+"),
         NUMBER_MODE,
       ],
     ),

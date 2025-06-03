@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const githubGistTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xffffffff), color: Color(0xff333333)),
+  'root': TextStyle(
+    backgroundColor: Color(0xffffffff),
+    color: Color(0xff333333),
+  ),
   'comment': TextStyle(color: Color(0xff969896)),
   'meta': TextStyle(color: Color(0xff969896)),
   'variable': TextStyle(color: Color(0xffdf5000)),
@@ -28,10 +32,14 @@ const githubGistTheme = {
   'selector-class': TextStyle(color: Color(0xff6f42c1)),
   'selector-attr': TextStyle(color: Color(0xff6f42c1)),
   'selector-pseudo': TextStyle(color: Color(0xff6f42c1)),
-  'addition':
-      TextStyle(color: Color(0xff55a532), backgroundColor: Color(0xffeaffea)),
-  'deletion':
-      TextStyle(color: Color(0xffbd2c00), backgroundColor: Color(0xffffecec)),
+  'addition': TextStyle(
+    color: Color(0xff55a532),
+    backgroundColor: Color(0xffeaffea),
+  ),
+  'deletion': TextStyle(
+    color: Color(0xffbd2c00),
+    backgroundColor: Color(0xffffecec),
+  ),
   'number': TextStyle(color: Color(0xff005cc5)),
   'string': TextStyle(color: Color(0xff032f62)),
 };

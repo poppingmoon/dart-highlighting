@@ -7,7 +7,7 @@ class JsStyleRegExpMatch {
   final int startIndex;
   int position = 0;
   Mode? rule;
-  List<String?> _matchGroups = [];
+  final List<String?> _matchGroups = [];
 
   /// 'begin' | 'end' | 'illegal' -> see constants
   String? matchType;
@@ -47,6 +47,8 @@ class JsStyleRegExpMatch {
 
   void splice(int start, int end) {
     _matchGroups.removeRange(
-        start + 1, end + (end >= _matchGroups.length ? 0 : 1));
+      start + 1,
+      end + (end >= _matchGroups.length ? 0 : 1),
+    );
   }
 }

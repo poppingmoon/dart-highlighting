@@ -12,7 +12,7 @@ final json = Language(
   refs: {},
   name: "JSON",
   keywords: {
-    "literal": ["true", "false", "null"]
+    "literal": ["true", "false", "null"],
   },
   contains: [
     Mode(
@@ -20,16 +20,9 @@ final json = Language(
       begin: "\"(\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)",
       relevance: 1.01,
     ),
-    Mode(
-      match: "[{}[\\],:]",
-      className: "punctuation",
-      relevance: 0,
-    ),
+    Mode(match: "[{}[\\],:]", className: "punctuation", relevance: 0),
     QUOTE_STRING_MODE,
-    Mode(
-      scope: "literal",
-      beginKeywords: "true false null",
-    ),
+    Mode(scope: "literal", beginKeywords: "true false null"),
     C_NUMBER_MODE,
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,

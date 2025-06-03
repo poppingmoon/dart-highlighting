@@ -174,7 +174,7 @@ final gradle = Language(
     "withWriter",
     "withWriterAppend",
     "write",
-    "writeLine"
+    "writeLine",
   ],
   contains: [
     C_LINE_COMMENT_MODE,

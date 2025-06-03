@@ -7238,5 +7238,5 @@ final SYSTEM_SYMBOLS = {
   r"$VoiceStyles",
   r"$WolframDocumentsDirectory",
   r"$WolframID",
-  r"$WolframUUID"
+  r"$WolframUUID",
 };

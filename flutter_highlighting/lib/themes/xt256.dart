@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const xt256Theme = {
-  'root':
-      TextStyle(color: Color(0xffeaeaea), backgroundColor: Color(0xff000000)),
+  'root': TextStyle(
+    color: Color(0xffeaeaea),
+    backgroundColor: Color(0xff000000),
+  ),
   'subst': TextStyle(color: Color(0xffeaeaea)),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'strong': TextStyle(fontWeight: FontWeight.w700),
@@ -16,8 +18,10 @@ const xt256Theme = {
   'comment': TextStyle(color: Color(0xff969896)),
   'quote': TextStyle(color: Color(0xff00ffff)),
   'selector-id': TextStyle(color: Color(0xff00ffff)),
-  'template-variable':
-      TextStyle(color: Color(0xff00ffff), fontWeight: FontWeight.w700),
+  'template-variable': TextStyle(
+    color: Color(0xff00ffff),
+    fontWeight: FontWeight.w700,
+  ),
   'title': TextStyle(color: Color(0xff00ffff), fontWeight: FontWeight.w700),
   'variable': TextStyle(color: Color(0xff00ffff), fontWeight: FontWeight.w700),
   'keyword': TextStyle(color: Color(0xfffff000)),
@@ -27,8 +31,10 @@ const xt256Theme = {
   'string': TextStyle(color: Color(0xff00ff00)),
   'section': TextStyle(color: Color(0xff000fff)),
   'tag': TextStyle(color: Color(0xff000fff)),
-  'selector-tag':
-      TextStyle(color: Color(0xff000fff), fontWeight: FontWeight.w700),
+  'selector-tag': TextStyle(
+    color: Color(0xff000fff),
+    fontWeight: FontWeight.w700,
+  ),
   'attribute': TextStyle(color: Color(0xffff00ff)),
   'built_in': TextStyle(color: Color(0xffff00ff)),
   'link': TextStyle(color: Color(0xffff00ff)),

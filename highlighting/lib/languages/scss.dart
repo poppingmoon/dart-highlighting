@@ -37,25 +37,14 @@ final scss = Language(
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
     ModeReference('~contains~2'),
-    Mode(
-      className: "selector-id",
-      begin: "#[A-Za-z0-9_-]+",
-      relevance: 0,
-    ),
-    Mode(
-      className: "selector-class",
-      begin: "\\.[A-Za-z0-9_-]+",
-      relevance: 0,
-    ),
+    Mode(className: "selector-id", begin: "#[A-Za-z0-9_-]+", relevance: 0),
+    Mode(className: "selector-class", begin: "\\.[A-Za-z0-9_-]+", relevance: 0),
     Mode(
       scope: "selector-attr",
       begin: "\\[",
       end: "\\]",
       illegal: "\$",
-      contains: [
-        APOS_STRING_MODE,
-        QUOTE_STRING_MODE,
-      ],
+      contains: [APOS_STRING_MODE, QUOTE_STRING_MODE],
     ),
     Mode(
       className: "selector-tag",
@@ -74,17 +63,8 @@ final scss = Language(
           ":(:)?(after|backdrop|before|cue|cue-region|first-letter|first-line|grammar-error|marker|part|placeholder|selection|slotted|spelling-error)",
     ),
     ModeReference('~contains~9'),
-    Mode(
-      begin: "\\(",
-      end: "\\)",
-      contains: [
-        ModeReference('~contains~2'),
-      ],
-    ),
-    Mode(
-      className: "attr",
-      begin: "--[A-Za-z][A-Za-z0-9_-]*",
-    ),
+    Mode(begin: "\\(", end: "\\)", contains: [ModeReference('~contains~2')]),
+    Mode(className: "attr", begin: "--[A-Za-z][A-Za-z0-9_-]*"),
     Mode(
       className: "attribute",
       begin:
@@ -105,10 +85,7 @@ final scss = Language(
         ModeReference('~contains~2'),
         QUOTE_STRING_MODE,
         APOS_STRING_MODE,
-        Mode(
-          scope: "meta",
-          begin: "!important",
-        ),
+        Mode(scope: "meta", begin: "!important"),
         ModeReference('~contains~14~contains~7'),
       ],
     ),
@@ -124,17 +101,11 @@ final scss = Language(
         "\$pattern": "[a-z-]+",
         "keyword": "and or not only",
         "attribute":
-            "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height"
+            "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height",
       },
       contains: [
-        Mode(
-          begin: "@[a-z-]+",
-          className: "keyword",
-        ),
-        Mode(
-          begin: "[a-z-]+(?=:)",
-          className: "attribute",
-        ),
+        Mode(begin: "@[a-z-]+", className: "keyword"),
+        Mode(begin: "[a-z-]+(?=:)", className: "attribute"),
         ModeReference('~contains~9'),
         QUOTE_STRING_MODE,
         APOS_STRING_MODE,

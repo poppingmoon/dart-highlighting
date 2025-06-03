@@ -2,21 +2,22 @@
 ///
 /// RangeError: Value not in range
 String substring(String input, int startIndex, [int? endIndex]) {
-  endIndex ??= input.length;
+  int start = startIndex;
+  int end = endIndex ?? input.length;
 
-  if (startIndex > endIndex) {
-    var tmp = startIndex;
-    startIndex = endIndex;
+  if (start > end) {
+    final tmp = start;
+    start = end;
     endIndex = tmp;
   }
 
-  if (startIndex < 0 || startIndex > input.length) {
-    startIndex = 0;
+  if (start < 0 || start > input.length) {
+    start = 0;
   }
 
-  if (endIndex < 0 || endIndex > input.length) {
-    endIndex = input.length;
+  if (end < 0 || end > input.length) {
+    end = input.length;
   }
 
-  return input.substring(startIndex, endIndex);
+  return input.substring(start, end);
 }

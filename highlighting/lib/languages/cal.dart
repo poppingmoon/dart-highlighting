@@ -10,19 +10,12 @@ import '../src/language_definition_common.dart';
 final cal = Language(
   id: "cal",
   refs: {
-    '~contains~2': Mode(
-      className: "string",
-      begin: "(#\\d+)+",
-    ),
+    '~contains~2': Mode(className: "string", begin: "(#\\d+)+"),
     '~contains~1': Mode(
       className: "string",
       begin: "'",
       end: "'",
-      contains: [
-        Mode(
-          begin: "''",
-        ),
-      ],
+      contains: [Mode(begin: "''")],
     ),
   },
   name: "C/AL",
@@ -54,29 +47,17 @@ final cal = Language(
       "until",
       "while",
       "with",
-      "var"
+      "var",
     ],
-    "literal": "false true"
+    "literal": "false true",
   },
   illegal: "\\/\\*",
   contains: [
-    Mode(
-      match: "[\\w]+(?=\\=)",
-      scope: "attribute",
-      relevance: 0,
-    ),
+    Mode(match: "[\\w]+(?=\\=)", scope: "attribute", relevance: 0),
     ModeReference('~contains~1'),
     ModeReference('~contains~2'),
-    Mode(
-      className: "number",
-      begin: "\\b\\d+(\\.\\d+)?(DT|D|T)",
-      relevance: 0,
-    ),
-    Mode(
-      className: "string",
-      begin: "\"",
-      end: "\"",
-    ),
+    Mode(className: "number", begin: "\\b\\d+(\\.\\d+)?(DT|D|T)", relevance: 0),
+    Mode(className: "string", begin: "\"", end: "\""),
     NUMBER_MODE,
     Mode(
       match: [
@@ -87,7 +68,7 @@ final cal = Language(
         "\\d+",
         "\\s+(?=[^\\s])",
         ".*",
-        "\$"
+        "\$",
       ],
       relevance: 3,
       scope: {"1": "keyword", "3": "type", "5": "number", "7": "title"},
@@ -126,7 +107,7 @@ final cal = Language(
             "until",
             "while",
             "with",
-            "var"
+            "var",
           ],
           contains: [
             ModeReference('~contains~1'),

@@ -31,25 +31,17 @@ final flix = Language(
       "switch",
       "type",
       "yield",
-      "with"
+      "with",
     ],
-    "literal": ["true", "false"]
+    "literal": ["true", "false"],
   },
   contains: [
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
+    Mode(className: "string", begin: "'(.|\\\\[xXuU][a-zA-Z0-9]+)'"),
     Mode(
       className: "string",
-      begin: "'(.|\\\\[xXuU][a-zA-Z0-9]+)'",
-    ),
-    Mode(
-      className: "string",
-      variants: [
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
-      ],
+      variants: [Mode(begin: "\"", end: "\"")],
     ),
     Mode(
       className: "function",

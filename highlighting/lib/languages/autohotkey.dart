@@ -9,11 +9,7 @@ import '../src/language_definition_common.dart';
 
 final autohotkey = Language(
   id: "autohotkey",
-  refs: {
-    '~contains~0': Mode(
-      begin: "`[\\s\\S]",
-    ),
-  },
+  refs: {'~contains~0': Mode(begin: "`[\\s\\S]")},
   name: "AutoHotkey",
   case_insensitive: true,
   aliases: ["ahk"],
@@ -21,7 +17,7 @@ final autohotkey = Language(
     "keyword":
         "Break Continue Critical Exit ExitApp Gosub Goto New OnExit Pause return SetBatchLines SetTimer Suspend Thread Throw Until ahk_id ahk_class ahk_pid ahk_exe ahk_group",
     "literal": "true false NOT AND OR",
-    "built_in": "ComSpec Clipboard ClipboardAll ErrorLevel"
+    "built_in": "ComSpec Clipboard ClipboardAll ErrorLevel",
   },
   contains: [
     ModeReference('~contains~0'),
@@ -30,9 +26,7 @@ final autohotkey = Language(
       begin: "\"",
       end: "\"",
       illegal: "\\n",
-      contains: [
-        ModeReference('~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0')],
     ),
     Mode(
       scope: "comment",
@@ -54,43 +48,18 @@ final autohotkey = Language(
       relevance: 0,
     ),
     C_BLOCK_COMMENT_MODE,
-    Mode(
-      className: "number",
-      begin: "\\b\\d+(\\.\\d+)?",
-      relevance: 0,
-    ),
-    Mode(
-      className: "variable",
-      begin: "%[a-zA-Z0-9#_\$@]+%",
-    ),
-    Mode(
-      className: "built_in",
-      begin: "^\\s*\\w+\\s*(,|%)",
-    ),
+    Mode(className: "number", begin: "\\b\\d+(\\.\\d+)?", relevance: 0),
+    Mode(className: "variable", begin: "%[a-zA-Z0-9#_\$@]+%"),
+    Mode(className: "built_in", begin: "^\\s*\\w+\\s*(,|%)"),
     Mode(
       className: "title",
       variants: [
-        Mode(
-          begin: "^[^\\n\";]+::(?!=)",
-        ),
-        Mode(
-          begin: "^[^\\n\";]+:(?!=)",
-          relevance: 0,
-        ),
+        Mode(begin: "^[^\\n\";]+::(?!=)"),
+        Mode(begin: "^[^\\n\";]+:(?!=)", relevance: 0),
       ],
     ),
-    Mode(
-      className: "meta",
-      begin: "^\\s*#\\w+",
-      end: "\$",
-      relevance: 0,
-    ),
-    Mode(
-      className: "built_in",
-      begin: "A_[a-zA-Z0-9]+",
-    ),
-    Mode(
-      begin: ",\\s*,",
-    ),
+    Mode(className: "meta", begin: "^\\s*#\\w+", end: "\$", relevance: 0),
+    Mode(className: "built_in", begin: "A_[a-zA-Z0-9]+"),
+    Mode(begin: ",\\s*,"),
   ],
 );

@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
-import 'package:highlighting/src/html_renderer.dart';
 
-import 'node.dart';
+import 'html_renderer.dart';
 import 'mode.dart';
+import 'node.dart';
 
 class Result {
   double relevance;
@@ -87,9 +87,9 @@ class Result {
       builder.addText(node.value!);
     } else {
       builder.openNode(node);
-      node.children.forEach((element) {
+      for (final element in node.children) {
         _walk(builder, element);
-      });
+      }
       builder.closeNode(node);
     }
 

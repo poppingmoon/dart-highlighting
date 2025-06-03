@@ -23,7 +23,7 @@ final moonscript = Language(
                 "if then not for in while do return else elseif break continue switch and or unless when class extends super local import export from using",
             "literal": "true false nil",
             "built_in":
-                "_G _VERSION assert collectgarbage dofile error getfenv getmetatable ipairs load loadfile loadstring module next pairs pcall print rawequal rawget rawset require select setfenv setmetatable tonumber tostring type unpack xpcall coroutine debug io math os package string table"
+                "_G _VERSION assert collectgarbage dofile error getfenv getmetatable ipairs load loadfile loadstring module next pairs pcall print rawequal rawget rawset require select setfenv setmetatable tonumber tostring type unpack xpcall coroutine debug io math os package string table",
           },
           contains: [
             ModeSelfReference(),
@@ -54,13 +54,7 @@ final moonscript = Language(
     '~contains~1': Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "'",
-          end: "'",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
-        ),
+        Mode(begin: "'", end: "'", contains: [BACKSLASH_ESCAPE]),
         Mode(
           begin: "\"",
           end: "\"",
@@ -75,7 +69,7 @@ final moonscript = Language(
                     "if then not for in while do return else elseif break continue switch and or unless when class extends super local import export from using",
                 "literal": "true false nil",
                 "built_in":
-                    "_G _VERSION assert collectgarbage dofile error getfenv getmetatable ipairs load loadfile loadstring module next pairs pcall print rawequal rawget rawset require select setfenv setmetatable tonumber tostring type unpack xpcall coroutine debug io math os package string table"
+                    "_G _VERSION assert collectgarbage dofile error getfenv getmetatable ipairs load loadfile loadstring module next pairs pcall print rawequal rawget rawset require select setfenv setmetatable tonumber tostring type unpack xpcall coroutine debug io math os package string table",
               },
               contains: [
                 ModeReference('~contains~0'),
@@ -94,10 +88,7 @@ final moonscript = Language(
       begin:
           "(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",
       relevance: 0,
-      starts: Mode(
-        end: "(\\s*/)?",
-        relevance: 0,
-      ),
+      starts: Mode(end: "(\\s*/)?", relevance: 0),
     ),
   },
   name: "MoonScript",
@@ -107,7 +98,7 @@ final moonscript = Language(
         "if then not for in while do return else elseif break continue switch and or unless when class extends super local import export from using",
     "literal": "true false nil",
     "built_in":
-        "_G _VERSION assert collectgarbage dofile error getfenv getmetatable ipairs load loadfile loadstring module next pairs pcall print rawequal rawget rawset require select setfenv setmetatable tonumber tostring type unpack xpcall coroutine debug io math os package string table"
+        "_G _VERSION assert collectgarbage dofile error getfenv getmetatable ipairs load loadfile loadstring module next pairs pcall print rawequal rawget rawset require select setfenv setmetatable tonumber tostring type unpack xpcall coroutine debug io math os package string table",
   },
   illegal: "\\/\\*",
   contains: [
@@ -153,9 +144,7 @@ final moonscript = Language(
           begin: "(\\(.*\\)\\s*)?\\B[-=]>",
           end: "[-=]>",
           returnBegin: true,
-          contains: [
-            ModeReference('~contains~6~contains~1'),
-          ],
+          contains: [ModeReference('~contains~6~contains~1')],
         ),
       ],
     ),
@@ -169,9 +158,7 @@ final moonscript = Language(
           beginKeywords: "extends",
           endsWithParent: true,
           illegal: "[:=\"\\[\\]]",
-          contains: [
-            ModeReference('~contains~6~contains~0'),
-          ],
+          contains: [ModeReference('~contains~6~contains~0')],
         ),
         ModeReference('~contains~6~contains~0'),
       ],

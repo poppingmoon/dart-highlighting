@@ -34,12 +34,8 @@ final nestedtext = Language(
     ),
     Mode(
       variants: [
-        Mode(
-          match: ["^\\s*", "-", "[ ]", ".*\$"],
-        ),
-        Mode(
-          match: ["^\\s*", "-\$"],
-        ),
+        Mode(match: ["^\\s*", "-", "[ ]", ".*\$"]),
+        Mode(match: ["^\\s*", "-\$"]),
       ],
       className: {"2": "bullet", "4": "string"},
     ),

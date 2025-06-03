@@ -63,7 +63,7 @@ final coffeescript = Language(
               "or",
               "is",
               "isnt",
-              "not"
+              "not",
             ],
             "literal": [
               "true",
@@ -75,7 +75,7 @@ final coffeescript = Language(
               "yes",
               "no",
               "on",
-              "off"
+              "off",
             ],
             "built_in": [
               "setInterval",
@@ -143,8 +143,8 @@ final coffeescript = Language(
               "TypeError",
               "URIError",
               "npm",
-              "print"
-            ]
+              "print",
+            ],
           },
           contains: [
             ModeSelfReference(),
@@ -163,14 +163,8 @@ final coffeescript = Language(
       excludeBegin: true,
       excludeEnd: true,
       variants: [
-        Mode(
-          begin: "```",
-          end: "```",
-        ),
-        Mode(
-          begin: "`",
-          end: "`",
-        ),
+        Mode(begin: "```", end: "```"),
+        Mode(begin: "`", end: "`"),
       ],
     ),
     '~contains~2~variants~2~contains~1~contains~4': Mode(
@@ -187,13 +181,8 @@ final coffeescript = Language(
             HASH_COMMENT_MODE,
           ],
         ),
-        Mode(
-          begin: "//[gim]{0,3}(?=\\W)",
-          relevance: 0,
-        ),
-        Mode(
-          begin: "\\/(?![ *]).*?(?![\\\\]).\\/[gim]{0,3}(?=\\W)",
-        ),
+        Mode(begin: "//[gim]{0,3}(?=\\W)", relevance: 0),
+        Mode(begin: "\\/(?![ *]).*?(?![\\\\]).\\/[gim]{0,3}(?=\\W)"),
       ],
     ),
     '~contains~2~variants~2~contains~1': Mode(
@@ -245,7 +234,7 @@ final coffeescript = Language(
           "or",
           "is",
           "isnt",
-          "not"
+          "not",
         ],
         "literal": [
           "true",
@@ -257,7 +246,7 @@ final coffeescript = Language(
           "yes",
           "no",
           "on",
-          "off"
+          "off",
         ],
         "built_in": [
           "setInterval",
@@ -325,8 +314,8 @@ final coffeescript = Language(
           "TypeError",
           "URIError",
           "npm",
-          "print"
-        ]
+          "print",
+        ],
       },
       contains: [
         BINARY_NUMBER_MODE,
@@ -340,20 +329,8 @@ final coffeescript = Language(
     '~contains~2': Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "'''",
-          end: "'''",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
-        ),
-        Mode(
-          begin: "'",
-          end: "'",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
-        ),
+        Mode(begin: "'''", end: "'''", contains: [BACKSLASH_ESCAPE]),
+        Mode(begin: "'", end: "'", contains: [BACKSLASH_ESCAPE]),
         Mode(
           begin: "\"\"\"",
           end: "\"\"\"",
@@ -377,10 +354,7 @@ final coffeescript = Language(
       begin:
           "(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",
       relevance: 0,
-      starts: Mode(
-        end: "(\\s*/)?",
-        relevance: 0,
-      ),
+      starts: Mode(end: "(\\s*/)?", relevance: 0),
     ),
   },
   name: "CoffeeScript",
@@ -430,7 +404,7 @@ final coffeescript = Language(
       "or",
       "is",
       "isnt",
-      "not"
+      "not",
     ],
     "literal": [
       "true",
@@ -442,7 +416,7 @@ final coffeescript = Language(
       "yes",
       "no",
       "on",
-      "off"
+      "off",
     ],
     "built_in": [
       "setInterval",
@@ -510,8 +484,8 @@ final coffeescript = Language(
       "TypeError",
       "URIError",
       "npm",
-      "print"
-    ]
+      "print",
+    ],
   },
   illegal: "\\/\\*",
   contains: [
@@ -546,11 +520,7 @@ final coffeescript = Language(
       end: "[-=]>",
       returnBegin: true,
       contains: [
-        Mode(
-          scope: "title",
-          begin: "[A-Za-z\$_][0-9A-Za-z\$_]*",
-          relevance: 0,
-        ),
+        Mode(scope: "title", begin: "[A-Za-z\$_][0-9A-Za-z\$_]*", relevance: 0),
         ModeReference('~contains~8~contains~1'),
       ],
     ),
@@ -563,9 +533,7 @@ final coffeescript = Language(
           begin: "(\\(.*\\)\\s*)?\\B[-=]>",
           end: "[-=]>",
           returnBegin: true,
-          contains: [
-            ModeReference('~contains~8~contains~1'),
-          ],
+          contains: [ModeReference('~contains~8~contains~1')],
         ),
       ],
     ),
@@ -576,12 +544,10 @@ final coffeescript = Language(
             "class\\s+",
             "[A-Za-z\$_][0-9A-Za-z\$_]*",
             "\\s+extends\\s+",
-            "[A-Za-z\$_][0-9A-Za-z\$_]*"
+            "[A-Za-z\$_][0-9A-Za-z\$_]*",
           ],
         ),
-        Mode(
-          match: ["class\\s+", "[A-Za-z\$_][0-9A-Za-z\$_]*"],
-        ),
+        Mode(match: ["class\\s+", "[A-Za-z\$_][0-9A-Za-z\$_]*"]),
       ],
       scope: {"2": "title.class", "4": "title.class.inherited"},
       keywords: {
@@ -629,7 +595,7 @@ final coffeescript = Language(
           "or",
           "is",
           "isnt",
-          "not"
+          "not",
         ],
         "literal": [
           "true",
@@ -641,7 +607,7 @@ final coffeescript = Language(
           "yes",
           "no",
           "on",
-          "off"
+          "off",
         ],
         "built_in": [
           "setInterval",
@@ -709,8 +675,8 @@ final coffeescript = Language(
           "TypeError",
           "URIError",
           "npm",
-          "print"
-        ]
+          "print",
+        ],
       },
     ),
     Mode(

@@ -16,10 +16,7 @@ final shell = Language(
     Mode(
       className: "meta.prompt",
       begin: "^\\s{0,3}[/\\x7e\\w\\d[\\]()@-]*[>%\$#][ ]?",
-      starts: Mode(
-        end: "[^\\\\](?=\\s*\$)",
-        subLanguage: ["bash"],
-      ),
+      starts: Mode(end: "[^\\\\](?=\\s*\$)", subLanguage: ["bash"]),
     ),
   ],
 );

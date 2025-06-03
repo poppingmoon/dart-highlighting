@@ -17,14 +17,8 @@ final twig = Language(
     '~contains~1~contains~1~contains~0~contains~0': Mode(
       scope: "string",
       variants: [
-        Mode(
-          begin: "'",
-          end: "'",
-        ),
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
+        Mode(begin: "'", end: "'"),
+        Mode(begin: "\"", end: "\""),
       ],
     ),
     '~contains~1~contains~1': Mode(
@@ -70,8 +64,8 @@ final twig = Language(
           "render_esi",
           "source",
           "template_from_string",
-          "url|0"
-        ]
+          "url|0",
+        ],
       },
       relevance: 0,
       contains: [
@@ -163,7 +157,7 @@ final twig = Language(
             "upper",
             "url_encode",
             "yaml_dump",
-            "yaml_encode"
+            "yaml_encode",
           ],
         ),
       ],
@@ -199,7 +193,7 @@ final twig = Language(
       begin: [
         "\\{%",
         "\\s*",
-        "(?:apply|autoescape|block|cache|deprecated|do|embed|extends|filter|flush|for|form_theme|from|if|import|include|macro|sandbox|set|stopwatch|trans|trans_default_domain|transchoice|use|verbatim|with|endapply|endautoescape|endblock|endcache|enddeprecated|enddo|endembed|endextends|endfilter|endflush|endfor|endform_theme|endfrom|endif|endimport|endinclude|endmacro|endsandbox|endset|endstopwatch|endtrans|endtrans_default_domain|endtranschoice|enduse|endverbatim|endwith)"
+        "(?:apply|autoescape|block|cache|deprecated|do|embed|extends|filter|flush|for|form_theme|from|if|import|include|macro|sandbox|set|stopwatch|trans|trans_default_domain|transchoice|use|verbatim|with|endapply|endautoescape|endblock|endcache|enddeprecated|enddo|endembed|endextends|endfilter|endflush|endfor|endform_theme|endfrom|endif|endimport|endinclude|endmacro|endsandbox|endset|endstopwatch|endtrans|endtrans_default_domain|endtranschoice|enduse|endverbatim|endwith)",
       ],
       end: "%\\}",
       keywords: "in",

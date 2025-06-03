@@ -12,47 +12,21 @@ final dart = Language(
   refs: {
     '~contains~0~variants~4~contains~2': Mode(
       className: "subst",
-      variants: [
-        Mode(
-          begin: "\\\$\\{",
-          end: "\\}",
-        ),
-      ],
+      variants: [Mode(begin: "\\\$\\{", end: "\\}")],
       keywords: "true false null this is new super",
-      contains: [
-        C_NUMBER_MODE,
-        ModeReference('~contains~0'),
-      ],
+      contains: [C_NUMBER_MODE, ModeReference('~contains~0')],
     ),
     '~contains~0~variants~4~contains~1': Mode(
       className: "subst",
-      variants: [
-        Mode(
-          begin: "\\\$[A-Za-z0-9_]+",
-        ),
-      ],
+      variants: [Mode(begin: "\\\$[A-Za-z0-9_]+")],
     ),
     '~contains~0': Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "r'''",
-          end: "'''",
-        ),
-        Mode(
-          begin: "r\"\"\"",
-          end: "\"\"\"",
-        ),
-        Mode(
-          begin: "r'",
-          end: "'",
-          illegal: "\\n",
-        ),
-        Mode(
-          begin: "r\"",
-          end: "\"",
-          illegal: "\\n",
-        ),
+        Mode(begin: "r'''", end: "'''"),
+        Mode(begin: "r\"\"\"", end: "\"\"\""),
+        Mode(begin: "r'", end: "'", illegal: "\\n"),
+        Mode(begin: "r\"", end: "\"", illegal: "\\n"),
         Mode(
           begin: "'''",
           end: "'''",
@@ -162,7 +136,7 @@ final dart = Language(
       "when",
       "while",
       "with",
-      "yield"
+      "yield",
     ],
     "built_in": [
       "Comparable",
@@ -224,9 +198,9 @@ final dart = Language(
       "document",
       "querySelector",
       "querySelectorAll",
-      "window"
+      "window",
     ],
-    "\$pattern": "[A-Za-z][A-Za-z0-9_]*\\??"
+    "\$pattern": "[A-Za-z][A-Za-z0-9_]*\\??",
   },
   contains: [
     ModeReference('~contains~0'),
@@ -255,12 +229,7 @@ final dart = Language(
       begin: "\\/{3,} ?",
       end: "\$",
       contains: [
-        Mode(
-          subLanguage: ["markdown"],
-          begin: ".",
-          end: "\$",
-          relevance: 0,
-        ),
+        Mode(subLanguage: ["markdown"], begin: ".", end: "\$", relevance: 0),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -282,19 +251,12 @@ final dart = Language(
       end: "\\{",
       excludeEnd: true,
       contains: [
-        Mode(
-          beginKeywords: "extends implements",
-        ),
+        Mode(beginKeywords: "extends implements"),
         UNDERSCORE_TITLE_MODE,
       ],
     ),
     C_NUMBER_MODE,
-    Mode(
-      className: "meta",
-      begin: "@[A-Za-z]+",
-    ),
-    Mode(
-      begin: "=>",
-    ),
+    Mode(className: "meta", begin: "@[A-Za-z]+"),
+    Mode(begin: "=>"),
   ],
 );

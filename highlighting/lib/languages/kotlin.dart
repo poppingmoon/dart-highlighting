@@ -12,10 +12,7 @@ final kotlin = Language(
   refs: {
     '~contains~7~contains~2~contains~0~contains~0': Mode(
       variants: [
-        Mode(
-          className: "type",
-          begin: "[a-zA-Z_]\\w*",
-        ),
+        Mode(className: "type", begin: "[a-zA-Z_]\\w*"),
         Mode(
           begin: "\\(",
           end: "\\)",
@@ -27,34 +24,36 @@ final kotlin = Language(
     ),
     '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~2':
         Mode(
-      begin: "\"",
-      end: "\"",
-      illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-        ModeReference(
-            '~contains~6~contains~0~contains~0~variants~0~contains~0'),
-        ModeReference(
-            '~contains~6~contains~0~contains~0~variants~0~contains~1'),
-      ],
-    ),
+          begin: "\"",
+          end: "\"",
+          illegal: "\\n",
+          contains: [
+            BACKSLASH_ESCAPE,
+            ModeReference(
+              '~contains~6~contains~0~contains~0~variants~0~contains~0',
+            ),
+            ModeReference(
+              '~contains~6~contains~0~contains~0~variants~0~contains~1',
+            ),
+          ],
+        ),
     '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~1':
         Mode(
-      begin: "'",
-      end: "'",
-      illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
-    ),
+          begin: "'",
+          end: "'",
+          illegal: "\\n",
+          contains: [BACKSLASH_ESCAPE],
+        ),
     '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1': Mode(
       className: "string",
       variants: [
         ModeReference('~contains~6~contains~0~contains~0~variants~0'),
         ModeReference(
-            '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~1'),
+          '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~1',
+        ),
         ModeReference(
-            '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~2'),
+          '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~2',
+        ),
       ],
     ),
     '~contains~6~contains~0~contains~0~variants~0~contains~1': Mode(
@@ -64,7 +63,8 @@ final kotlin = Language(
       contains: [
         C_NUMBER_MODE,
         ModeReference(
-            '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1'),
+          '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1',
+        ),
       ],
     ),
     '~contains~6~contains~0~contains~0~variants~0~contains~0': Mode(
@@ -76,9 +76,11 @@ final kotlin = Language(
       end: "\"\"\"(?=[^\"])",
       contains: [
         ModeReference(
-            '~contains~6~contains~0~contains~0~variants~0~contains~0'),
+          '~contains~6~contains~0~contains~0~variants~0~contains~0',
+        ),
         ModeReference(
-            '~contains~6~contains~0~contains~0~variants~0~contains~1'),
+          '~contains~6~contains~0~contains~0~variants~0~contains~1',
+        ),
       ],
     ),
     '~contains~6': Mode(
@@ -94,9 +96,11 @@ final kotlin = Language(
               variants: [
                 ModeReference('~contains~6~contains~0~contains~0~variants~0'),
                 ModeReference(
-                    '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~1'),
+                  '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~1',
+                ),
                 ModeReference(
-                    '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~2'),
+                  '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1~variants~2',
+                ),
               ],
             ),
             ModeSelfReference(),
@@ -136,7 +140,7 @@ final kotlin = Language(
         "abstract as val var vararg get set class object open private protected public noinline crossinline dynamic final enum if else do while for when throw try catch finally import package is in fun override companion reified inline lateinit init interface annotation data sealed internal infix operator out by constructor super tailrec where const inner suspend typealias external expect actual",
     "built_in":
         "Byte Short Char Int Long Boolean Float Double Void Unit Nothing",
-    "literal": "true false null"
+    "literal": "true false null",
   },
   contains: [
     Mode(
@@ -144,10 +148,7 @@ final kotlin = Language(
       begin: "/\\*\\*",
       end: "\\*/",
       contains: [
-        Mode(
-          className: "doctag",
-          begin: "@[A-Za-z]+",
-        ),
+        Mode(className: "doctag", begin: "@[A-Za-z]+"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -168,18 +169,10 @@ final kotlin = Language(
       className: "keyword",
       begin: "\\b(break|continue|return|this)\\b",
       starts: Mode(
-        contains: [
-          Mode(
-            className: "symbol",
-            begin: "@\\w+",
-          ),
-        ],
+        contains: [Mode(className: "symbol", begin: "@\\w+")],
       ),
     ),
-    Mode(
-      className: "symbol",
-      begin: "[a-zA-Z_]\\w*@",
-    ),
+    Mode(className: "symbol", begin: "[a-zA-Z_]\\w*@"),
     ModeReference('~contains~5'),
     ModeReference('~contains~6'),
     Mode(
@@ -193,7 +186,7 @@ final kotlin = Language(
             "abstract as val var vararg get set class object open private protected public noinline crossinline dynamic final enum if else do while for when throw try catch finally import package is in fun override companion reified inline lateinit init interface annotation data sealed internal infix operator out by constructor super tailrec where const inner suspend typealias external expect actual",
         "built_in":
             "Byte Short Char Int Long Boolean Float Double Void Unit Nothing",
-        "literal": "true false null"
+        "literal": "true false null",
       },
       relevance: 5,
       contains: [
@@ -201,9 +194,7 @@ final kotlin = Language(
           begin: "[a-zA-Z_]\\w*\\s*\\(",
           returnBegin: true,
           relevance: 0,
-          contains: [
-            UNDERSCORE_TITLE_MODE,
-          ],
+          contains: [UNDERSCORE_TITLE_MODE],
         ),
         Mode(
           className: "type",
@@ -222,7 +213,7 @@ final kotlin = Language(
                 "abstract as val var vararg get set class object open private protected public noinline crossinline dynamic final enum if else do while for when throw try catch finally import package is in fun override companion reified inline lateinit init interface annotation data sealed internal infix operator out by constructor super tailrec where const inner suspend typealias external expect actual",
             "built_in":
                 "Byte Short Char Int Long Boolean Float Double Void Unit Nothing",
-            "literal": "true false null"
+            "literal": "true false null",
           },
           relevance: 0,
           contains: [
@@ -242,7 +233,8 @@ final kotlin = Language(
             ModeReference('~contains~5'),
             ModeReference('~contains~6'),
             ModeReference(
-                '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1'),
+              '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1',
+            ),
             C_NUMBER_MODE,
           ],
         ),
@@ -257,9 +249,7 @@ final kotlin = Language(
       excludeEnd: true,
       illegal: "extends implements",
       contains: [
-        Mode(
-          beginKeywords: "public protected internal private constructor",
-        ),
+        Mode(beginKeywords: "public protected internal private constructor"),
         UNDERSCORE_TITLE_MODE,
         Mode(
           className: "type",
@@ -281,13 +271,9 @@ final kotlin = Language(
       ],
     ),
     ModeReference(
-        '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1'),
-    Mode(
-      className: "meta",
-      begin: "^#!/usr/bin/env",
-      end: "\$",
-      illegal: "\n",
+      '~contains~6~contains~0~contains~0~variants~0~contains~1~contains~1',
     ),
+    Mode(className: "meta", begin: "^#!/usr/bin/env", end: "\$", illegal: "\n"),
     Mode(
       className: "number",
       variants: [
@@ -299,28 +285,16 @@ final kotlin = Language(
           begin:
               "\\b([0-9](_*[0-9])*)((\\.([0-9](_*[0-9])*))[fFdD]?\\b|\\.([fFdD]\\b)?)",
         ),
-        Mode(
-          begin: "(\\.([0-9](_*[0-9])*))[fFdD]?\\b",
-        ),
-        Mode(
-          begin: "\\b([0-9](_*[0-9])*)[fFdD]\\b",
-        ),
+        Mode(begin: "(\\.([0-9](_*[0-9])*))[fFdD]?\\b"),
+        Mode(begin: "\\b([0-9](_*[0-9])*)[fFdD]\\b"),
         Mode(
           begin:
               "\\b0[xX](([0-9a-fA-F](_*[0-9a-fA-F])*)\\.?|([0-9a-fA-F](_*[0-9a-fA-F])*)?\\.([0-9a-fA-F](_*[0-9a-fA-F])*))[pP][+-]?([0-9](_*[0-9])*)[fFdD]?\\b",
         ),
-        Mode(
-          begin: "\\b(0|[1-9](_*[0-9])*)[lL]?\\b",
-        ),
-        Mode(
-          begin: "\\b0[xX]([0-9a-fA-F](_*[0-9a-fA-F])*)[lL]?\\b",
-        ),
-        Mode(
-          begin: "\\b0(_*[0-7])*[lL]?\\b",
-        ),
-        Mode(
-          begin: "\\b0[bB][01](_*[01])*[lL]?\\b",
-        ),
+        Mode(begin: "\\b(0|[1-9](_*[0-9])*)[lL]?\\b"),
+        Mode(begin: "\\b0[xX]([0-9a-fA-F](_*[0-9a-fA-F])*)[lL]?\\b"),
+        Mode(begin: "\\b0(_*[0-7])*[lL]?\\b"),
+        Mode(begin: "\\b0[bB][01](_*[01])*[lL]?\\b"),
       ],
       relevance: 0,
     ),

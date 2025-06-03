@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const xcodeTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xffffffff), color: Color(0xff000000)),
+  'root': TextStyle(
+    backgroundColor: Color(0xffffffff),
+    color: Color(0xff000000),
+  ),
   'comment': TextStyle(color: Color(0xff007400)),
   'quote': TextStyle(color: Color(0xff007400)),
   'attribute': TextStyle(color: Color(0xffaa0d91)),
@@ -32,7 +34,9 @@ const xcodeTheme = {
   'attr': TextStyle(color: Color(0xff836c28)),
   'subst': TextStyle(color: Color(0xff000000)),
   'formula': TextStyle(
-      backgroundColor: Color(0xffeeeeee), fontStyle: FontStyle.italic),
+    backgroundColor: Color(0xffeeeeee),
+    fontStyle: FontStyle.italic,
+  ),
   'addition': TextStyle(backgroundColor: Color(0xffbaeeba)),
   'deletion': TextStyle(backgroundColor: Color(0xffffc8bd)),
   'selector-class': TextStyle(color: Color(0xff9b703f)),

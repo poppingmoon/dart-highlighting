@@ -26,18 +26,13 @@ final apache = Language(
       end: ">",
       contains: [
         ModeReference('~contains~1~contains~0'),
-        Mode(
-          className: "number",
-          begin: ":\\d{1,5}",
-        ),
+        Mode(className: "number", begin: ":\\d{1,5}"),
         Mode(
           scope: "string",
           begin: "\"",
           end: "\"",
           illegal: "\\n",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
           relevance: 0,
         ),
       ],
@@ -63,36 +58,26 @@ final apache = Language(
           "header",
           "listen",
           "serverroot",
-          "servername"
-        ]
+          "servername",
+        ],
       },
       starts: Mode(
         end: "\$",
         relevance: 0,
         keywords: {"literal": "on off all deny allow"},
         contains: [
-          Mode(
-            className: "meta",
-            begin: "\\s\\[",
-            end: "\\]\$",
-          ),
+          Mode(className: "meta", begin: "\\s\\[", end: "\\]\$"),
           Mode(
             className: "variable",
             begin: "[\\\$%]\\{",
             end: "\\}",
             contains: [
               ModeSelfReference(),
-              Mode(
-                className: "number",
-                begin: "[\$%]\\d+",
-              ),
+              Mode(className: "number", begin: "[\$%]\\d+"),
             ],
           ),
           ModeReference('~contains~1~contains~0'),
-          Mode(
-            className: "number",
-            begin: "\\b\\d+",
-          ),
+          Mode(className: "number", begin: "\\b\\d+"),
           QUOTE_STRING_MODE,
         ],
       ),

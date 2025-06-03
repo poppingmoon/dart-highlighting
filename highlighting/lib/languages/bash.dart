@@ -21,19 +21,14 @@ final bash = Language(
           className: "subst",
           begin: "\\\$\\(",
           end: "\\)",
-          contains: [
-            BACKSLASH_ESCAPE,
-            ModeReference('~contains~7'),
-          ],
+          contains: [BACKSLASH_ESCAPE, ModeReference('~contains~7')],
         ),
       ],
     ),
     '~contains~3~contains~2': Mode(
       className: "variable",
       variants: [
-        Mode(
-          begin: "\\\$[\\w\\d#@][\\w\\d_]*(?![\\w\\d])(?![\$])",
-        ),
+        Mode(begin: "\\\$[\\w\\d#@][\\w\\d_]*(?![\\w\\d])(?![\$])"),
         Mode(
           begin: "\\\$\\{",
           end: "\\}",
@@ -41,9 +36,7 @@ final bash = Language(
             ModeSelfReference(),
             Mode(
               begin: ":-",
-              contains: [
-                ModeReference('~contains~3~contains~2'),
-              ],
+              contains: [ModeReference('~contains~3~contains~2')],
             ),
           ],
         ),
@@ -69,7 +62,7 @@ final bash = Language(
       "case",
       "esac",
       "function",
-      "select"
+      "select",
     ],
     "literal": ["true", "false"],
     "built_in": [
@@ -282,8 +275,8 @@ final bash = Language(
       "users",
       "who",
       "whoami",
-      "yes"
-    ]
+      "yes",
+    ],
   },
   contains: [
     Mode(
@@ -304,23 +297,14 @@ final bash = Language(
       className: "function",
       begin: "\\w[\\w\\d_]*\\s*\\(\\s*\\)\\s*\\{",
       returnBegin: true,
-      contains: [
-        Mode(
-          scope: "title",
-          begin: "\\w[\\w\\d_]*",
-          relevance: 0,
-        ),
-      ],
+      contains: [Mode(scope: "title", begin: "\\w[\\w\\d_]*", relevance: 0)],
       relevance: 0,
     ),
     Mode(
       begin: "\\\$?\\(\\(",
       end: "\\)\\)",
       contains: [
-        Mode(
-          begin: "\\d+#[0-9a-f]+",
-          className: "number",
-        ),
+        Mode(begin: "\\d+#[0-9a-f]+", className: "number"),
         NUMBER_MODE,
         ModeReference('~contains~3~contains~2'),
       ],
@@ -340,19 +324,10 @@ final bash = Language(
         ],
       ),
     ),
-    Mode(
-      match: "(\\/[a-z._-]+)+",
-    ),
+    Mode(match: "(\\/[a-z._-]+)+"),
     ModeReference('~contains~7'),
-    Mode(
-      className: overwritingNullString,
-      begin: "\\\\\"",
-    ),
-    Mode(
-      className: "string",
-      begin: "'",
-      end: "'",
-    ),
+    Mode(className: overwritingNullString, begin: "\\\\\""),
+    Mode(className: "string", begin: "'", end: "'"),
     ModeReference('~contains~3~contains~2'),
   ],
 );

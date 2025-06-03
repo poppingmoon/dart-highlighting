@@ -24,13 +24,8 @@ final scala = Language(
     '~contains~2~variants~2~contains~1': Mode(
       className: "subst",
       variants: [
-        Mode(
-          begin: "\\\$[A-Za-z0-9_]+",
-        ),
-        Mode(
-          begin: "\\\$\\{",
-          end: "\\}",
-        ),
+        Mode(begin: "\\\$[A-Za-z0-9_]+"),
+        Mode(begin: "\\\$\\{", end: "\\}"),
       ],
     ),
   },
@@ -38,7 +33,7 @@ final scala = Language(
   keywords: {
     "literal": "true false null",
     "keyword":
-        "type yield lazy override def with val var sealed abstract private trait object if then forSome for while do throw finally protected extends import final return else break new catch super class case package default try this match continue throws implicit export enum given transparent"
+        "type yield lazy override def with val var sealed abstract private trait object if then forSome for while do throw finally protected extends import final return else break new catch super class case package default try this match continue throws implicit export enum given transparent",
   },
   contains: [
     C_LINE_COMMENT_MODE,
@@ -46,17 +41,12 @@ final scala = Language(
     Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "\"\"\"",
-          end: "\"\"\"",
-        ),
+        Mode(begin: "\"\"\"", end: "\"\"\""),
         Mode(
           begin: "\"",
           end: "\"",
           illegal: "\\n",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
         Mode(
           begin: "[a-z]+\"",
@@ -71,9 +61,7 @@ final scala = Language(
           className: "string",
           begin: "[a-z]+\"\"\"",
           end: "\"\"\"",
-          contains: [
-            ModeReference('~contains~2~variants~2~contains~1'),
-          ],
+          contains: [ModeReference('~contains~2~variants~2~contains~1')],
           relevance: 10,
         ),
       ],
@@ -83,9 +71,7 @@ final scala = Language(
       className: "function",
       beginKeywords: "def",
       end: "(?=[:={\\[(\\n;])",
-      contains: [
-        ModeReference('~contains~4~contains~0'),
-      ],
+      contains: [ModeReference('~contains~4~contains~0')],
     ),
     Mode(
       className: "class",
@@ -95,19 +81,14 @@ final scala = Language(
       contains: [
         C_LINE_COMMENT_MODE,
         C_BLOCK_COMMENT_MODE,
-        Mode(
-          beginKeywords: "extends with",
-          relevance: 10,
-        ),
+        Mode(beginKeywords: "extends with", relevance: 10),
         Mode(
           begin: "\\[",
           end: "\\]",
           excludeBegin: true,
           excludeEnd: true,
           relevance: 0,
-          contains: [
-            ModeReference('~contains~3'),
-          ],
+          contains: [ModeReference('~contains~3')],
         ),
         Mode(
           className: "params",
@@ -116,9 +97,7 @@ final scala = Language(
           excludeBegin: true,
           excludeEnd: true,
           relevance: 0,
-          contains: [
-            ModeReference('~contains~3'),
-          ],
+          contains: [ModeReference('~contains~3')],
         ),
         ModeReference('~contains~4~contains~0'),
       ],
@@ -132,20 +111,12 @@ final scala = Language(
       begin: ["^\\s*", "end", "\\s+", "(extension\\b)?"],
       beginScope: {"2": "keyword", "4": "keyword"},
     ),
-    Mode(
-      match: "\\.inline\\b",
-    ),
-    Mode(
-      begin: "\\binline(?=\\s)",
-      keywords: "inline",
-    ),
+    Mode(match: "\\.inline\\b"),
+    Mode(begin: "\\binline(?=\\s)", keywords: "inline"),
     Mode(
       begin: ["\\(\\s*", "using", "\\s+(?!\\))"],
       beginScope: {"2": "keyword"},
     ),
-    Mode(
-      className: "meta",
-      begin: "@[A-Za-z]+",
-    ),
+    Mode(className: "meta", begin: "@[A-Za-z]+"),
   ],
 );

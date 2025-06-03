@@ -113,7 +113,7 @@ final axapta = Language(
       "validtimestate",
       "void",
       "where",
-      "while"
+      "while",
     ],
     "built_in": [
       "anytype",
@@ -132,9 +132,9 @@ final axapta = Language(
       "short",
       "str",
       "utcdatetime",
-      "var"
+      "var",
     ],
-    "literal": ["default", "false", "null", "true"]
+    "literal": ["default", "false", "null", "true"],
   },
   contains: [
     C_LINE_COMMENT_MODE,
@@ -142,11 +142,7 @@ final axapta = Language(
     APOS_STRING_MODE,
     QUOTE_STRING_MODE,
     C_NUMBER_MODE,
-    Mode(
-      className: "meta",
-      begin: "#",
-      end: "\$",
-    ),
+    Mode(className: "meta", begin: "#", end: "\$"),
     Mode(
       variants: [
         Mode(
@@ -154,12 +150,10 @@ final axapta = Language(
             "(class|interface)\\s+",
             "[a-zA-Z_]\\w*",
             "\\s+(extends|implements)\\s+",
-            "[a-zA-Z_]\\w*"
+            "[a-zA-Z_]\\w*",
           ],
         ),
-        Mode(
-          match: ["class\\s+", "[a-zA-Z_]\\w*"],
-        ),
+        Mode(match: ["class\\s+", "[a-zA-Z_]\\w*"]),
       ],
       scope: {"2": "title.class", "4": "title.class.inherited"},
       keywords: {
@@ -263,7 +257,7 @@ final axapta = Language(
           "validtimestate",
           "void",
           "where",
-          "while"
+          "while",
         ],
         "built_in": [
           "anytype",
@@ -282,9 +276,9 @@ final axapta = Language(
           "short",
           "str",
           "utcdatetime",
-          "var"
+          "var",
         ],
-        "literal": ["default", "false", "null", "true"]
+        "literal": ["default", "false", "null", "true"],
       },
     ),
   ],

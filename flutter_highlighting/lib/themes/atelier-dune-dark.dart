@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const atelierDuneDarkTheme = {
@@ -28,8 +30,10 @@ const atelierDuneDarkTheme = {
   'section': TextStyle(color: Color(0xff6684e1)),
   'keyword': TextStyle(color: Color(0xffb854d4)),
   'selector-tag': TextStyle(color: Color(0xffb854d4)),
-  'root':
-      TextStyle(backgroundColor: Color(0xff20201d), color: Color(0xffa6a28c)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff20201d),
+    color: Color(0xffa6a28c),
+  ),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'strong': TextStyle(fontWeight: FontWeight.bold),
 };

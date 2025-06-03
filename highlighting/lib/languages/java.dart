@@ -21,28 +21,16 @@ final java = Language(
           begin:
               "\\b([0-9](_*[0-9])*)((\\.([0-9](_*[0-9])*))[fFdD]?\\b|\\.([fFdD]\\b)?)",
         ),
-        Mode(
-          begin: "(\\.([0-9](_*[0-9])*))[fFdD]?\\b",
-        ),
-        Mode(
-          begin: "\\b([0-9](_*[0-9])*)[fFdD]\\b",
-        ),
+        Mode(begin: "(\\.([0-9](_*[0-9])*))[fFdD]?\\b"),
+        Mode(begin: "\\b([0-9](_*[0-9])*)[fFdD]\\b"),
         Mode(
           begin:
               "\\b0[xX](([0-9a-fA-F](_*[0-9a-fA-F])*)\\.?|([0-9a-fA-F](_*[0-9a-fA-F])*)?\\.([0-9a-fA-F](_*[0-9a-fA-F])*))[pP][+-]?([0-9](_*[0-9])*)[fFdD]?\\b",
         ),
-        Mode(
-          begin: "\\b(0|[1-9](_*[0-9])*)[lL]?\\b",
-        ),
-        Mode(
-          begin: "\\b0[xX]([0-9a-fA-F](_*[0-9a-fA-F])*)[lL]?\\b",
-        ),
-        Mode(
-          begin: "\\b0(_*[0-7])*[lL]?\\b",
-        ),
-        Mode(
-          begin: "\\b0[bB][01](_*[01])*[lL]?\\b",
-        ),
+        Mode(begin: "\\b(0|[1-9](_*[0-9])*)[lL]?\\b"),
+        Mode(begin: "\\b0[xX]([0-9a-fA-F](_*[0-9a-fA-F])*)[lL]?\\b"),
+        Mode(begin: "\\b0(_*[0-7])*[lL]?\\b"),
+        Mode(begin: "\\b0[bB][01](_*[01])*[lL]?\\b"),
       ],
       relevance: 0,
     ),
@@ -50,13 +38,7 @@ final java = Language(
       className: "meta",
       begin: "@[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*",
       contains: [
-        Mode(
-          begin: "\\(",
-          end: "\\)",
-          contains: [
-            ModeSelfReference(),
-          ],
-        ),
+        Mode(begin: "\\(", end: "\\)", contains: [ModeSelfReference()]),
       ],
     ),
   },
@@ -105,7 +87,7 @@ final java = Language(
       "do",
       "sealed",
       "yield",
-      "permits"
+      "permits",
     ],
     "literal": ["false", "true", "null"],
     "type": [
@@ -116,9 +98,9 @@ final java = Language(
       "int",
       "byte",
       "short",
-      "double"
+      "double",
     ],
-    "built_in": ["super", "this"]
+    "built_in": ["super", "this"],
   },
   illegal: "<\\/|#",
   contains: [
@@ -127,14 +109,8 @@ final java = Language(
       begin: "/\\*\\*",
       end: "\\*/",
       contains: [
-        Mode(
-          begin: "\\w+@",
-          relevance: 0,
-        ),
-        Mode(
-          className: "doctag",
-          begin: "@[A-Za-z]+",
-        ),
+        Mode(begin: "\\w+@", relevance: 0),
+        Mode(className: "doctag", begin: "@[A-Za-z]+"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -149,20 +125,14 @@ final java = Language(
       ],
       relevance: 0,
     ),
-    Mode(
-      begin: "import java\\.[a-z]+\\.",
-      keywords: "import",
-      relevance: 2,
-    ),
+    Mode(begin: "import java\\.[a-z]+\\.", keywords: "import", relevance: 2),
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
     Mode(
       begin: "\"\"\"",
       end: "\"\"\"",
       className: "string",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     APOS_STRING_MODE,
     QUOTE_STRING_MODE,
@@ -170,21 +140,18 @@ final java = Language(
       match: [
         "\\b(?:class|interface|enum|extends|implements|new)",
         "\\s+",
-        "[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*"
+        "[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*",
       ],
       className: {"1": "keyword", "3": "title.class"},
     ),
-    Mode(
-      match: "non-sealed",
-      scope: "keyword",
-    ),
+    Mode(match: "non-sealed", scope: "keyword"),
     Mode(
       begin: [
         "(?!else)[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*",
         "\\s+",
         "[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*",
         "\\s+",
-        "=(?!=)"
+        "=(?!=)",
       ],
       className: {"1": "type", "3": "variable", "5": "operator"},
     ),
@@ -239,7 +206,7 @@ final java = Language(
               "do",
               "sealed",
               "yield",
-              "permits"
+              "permits",
             ],
             "literal": ["false", "true", "null"],
             "type": [
@@ -250,29 +217,24 @@ final java = Language(
               "int",
               "byte",
               "short",
-              "double"
+              "double",
             ],
-            "built_in": ["super", "this"]
+            "built_in": ["super", "this"],
           },
           relevance: 0,
-          contains: [
-            C_BLOCK_COMMENT_MODE,
-          ],
+          contains: [C_BLOCK_COMMENT_MODE],
           endsParent: true,
         ),
         C_LINE_COMMENT_MODE,
         C_BLOCK_COMMENT_MODE,
       ],
     ),
-    Mode(
-      beginKeywords: "new throw return else",
-      relevance: 0,
-    ),
+    Mode(beginKeywords: "new throw return else", relevance: 0),
     Mode(
       begin: [
         "(?:[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:<[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:<[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:<[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:\\s*,\\s*[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*)*>)?(?:\\s*,\\s*[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:<[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:\\s*,\\s*[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*)*>)?)*>)?(?:\\s*,\\s*[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:<[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:<[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:\\s*,\\s*[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*)*>)?(?:\\s*,\\s*[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:<[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*(?:\\s*,\\s*[À-ʸa-zA-Z_\$][À-ʸa-zA-Z_\$0-9]*)*>)?)*>)?)*>)?\\s+)",
         "[a-zA-Z_]\\w*",
-        "\\s*(?=\\()"
+        "\\s*(?=\\()",
       ],
       className: {"2": "title.function"},
       keywords: {
@@ -318,7 +280,7 @@ final java = Language(
           "do",
           "sealed",
           "yield",
-          "permits"
+          "permits",
         ],
         "literal": ["false", "true", "null"],
         "type": [
@@ -329,9 +291,9 @@ final java = Language(
           "int",
           "byte",
           "short",
-          "double"
+          "double",
         ],
-        "built_in": ["super", "this"]
+        "built_in": ["super", "this"],
       },
       contains: [
         Mode(
@@ -381,7 +343,7 @@ final java = Language(
               "do",
               "sealed",
               "yield",
-              "permits"
+              "permits",
             ],
             "literal": ["false", "true", "null"],
             "type": [
@@ -392,9 +354,9 @@ final java = Language(
               "int",
               "byte",
               "short",
-              "double"
+              "double",
             ],
-            "built_in": ["super", "this"]
+            "built_in": ["super", "this"],
           },
           relevance: 0,
           contains: [

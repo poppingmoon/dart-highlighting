@@ -21,7 +21,6 @@ final haml = Language(
     Mode(
       scope: "comment",
       begin: "^\\s*(!=#|=#|-#|/).*\$",
-      end: null,
       contains: [
         Mode(
           scope: "doctag",
@@ -48,18 +47,9 @@ final haml = Language(
       className: "tag",
       begin: "^\\s*%",
       contains: [
-        Mode(
-          className: "selector-tag",
-          begin: "\\w+",
-        ),
-        Mode(
-          className: "selector-id",
-          begin: "#[\\w-]+",
-        ),
-        Mode(
-          className: "selector-class",
-          begin: "\\.[\\w-]+",
-        ),
+        Mode(className: "selector-tag", begin: "\\w+"),
+        Mode(className: "selector-id", begin: "#[\\w-]+"),
+        Mode(className: "selector-class", begin: "\\.[\\w-]+"),
         Mode(
           begin: "\\{\\s*",
           end: "\\s*\\}",
@@ -70,16 +60,10 @@ final haml = Language(
               returnBegin: true,
               endsWithParent: true,
               contains: [
-                Mode(
-                  className: "attr",
-                  begin: ":\\w+",
-                ),
+                Mode(className: "attr", begin: ":\\w+"),
                 APOS_STRING_MODE,
                 QUOTE_STRING_MODE,
-                Mode(
-                  begin: "\\w+",
-                  relevance: 0,
-                ),
+                Mode(begin: "\\w+", relevance: 0),
               ],
             ),
           ],
@@ -95,26 +79,17 @@ final haml = Language(
               returnBegin: true,
               endsWithParent: true,
               contains: [
-                Mode(
-                  className: "attr",
-                  begin: "\\w+",
-                  relevance: 0,
-                ),
+                Mode(className: "attr", begin: "\\w+", relevance: 0),
                 APOS_STRING_MODE,
                 QUOTE_STRING_MODE,
-                Mode(
-                  begin: "\\w+",
-                  relevance: 0,
-                ),
+                Mode(begin: "\\w+", relevance: 0),
               ],
             ),
           ],
         ),
       ],
     ),
-    Mode(
-      begin: "^\\s*[=\\x7e]\\s*",
-    ),
+    Mode(begin: "^\\s*[=\\x7e]\\s*"),
     Mode(
       begin: "#\\{",
       end: "\\}",

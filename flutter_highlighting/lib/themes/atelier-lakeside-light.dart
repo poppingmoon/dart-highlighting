@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const atelierLakesideLightTheme = {
@@ -28,8 +30,10 @@ const atelierLakesideLightTheme = {
   'section': TextStyle(color: Color(0xff257fad)),
   'keyword': TextStyle(color: Color(0xff6b6bb8)),
   'selector-tag': TextStyle(color: Color(0xff6b6bb8)),
-  'root':
-      TextStyle(backgroundColor: Color(0xffebf8ff), color: Color(0xff516d7b)),
+  'root': TextStyle(
+    backgroundColor: Color(0xffebf8ff),
+    color: Color(0xff516d7b),
+  ),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'strong': TextStyle(fontWeight: FontWeight.bold),
 };

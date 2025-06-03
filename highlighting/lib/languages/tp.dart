@@ -10,10 +10,7 @@ import '../src/language_definition_common.dart';
 final tp = Language(
   id: "tp",
   refs: {
-    '~contains~0~contains~2': Mode(
-      className: "symbol",
-      begin: ":[^\\]]+",
-    ),
+    '~contains~0~contains~2': Mode(className: "symbol", begin: ":[^\\]]+"),
     '~contains~0~contains~1': Mode(
       className: "number",
       begin: "[1-9][0-9]*",
@@ -90,7 +87,7 @@ final tp = Language(
       "PROG",
       "ATTR",
       "MN",
-      "POS"
+      "POS",
     ],
     "literal": [
       "ON",
@@ -102,8 +99,8 @@ final tp = Language(
       "DISABLE",
       "START",
       "STOP",
-      "RESET"
-    ]
+      "RESET",
+    ],
   },
   contains: [
     Mode(
@@ -128,14 +125,8 @@ final tp = Language(
         ModeReference('~contains~0~contains~2'),
       ],
     ),
-    Mode(
-      className: "keyword",
-      begin: "/(PROG|ATTR|MN|POS|END)\\b",
-    ),
-    Mode(
-      className: "keyword",
-      begin: "(CALL|RUN|POINT_LOGIC|LBL)\\b",
-    ),
+    Mode(className: "keyword", begin: "/(PROG|ATTR|MN|POS|END)\\b"),
+    Mode(className: "keyword", begin: "(CALL|RUN|POINT_LOGIC|LBL)\\b"),
     Mode(
       className: "keyword",
       begin: "\\b(ACC|CNT|Skip|Offset|PSPD|RT_LD|AP_LD|Tool_Offset)",
@@ -200,15 +191,8 @@ final tp = Language(
       ],
     ),
     QUOTE_STRING_MODE,
-    Mode(
-      className: "string",
-      begin: "'",
-      end: "'",
-    ),
+    Mode(className: "string", begin: "'", end: "'"),
     C_NUMBER_MODE,
-    Mode(
-      className: "variable",
-      begin: "\\\$[A-Za-z0-9_]+",
-    ),
+    Mode(className: "variable", begin: "\\\$[A-Za-z0-9_]+"),
   ],
 );

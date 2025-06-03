@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const pandaSyntaxLightTheme = {
-  'root':
-      TextStyle(color: Color(0xff2a2c2d), backgroundColor: Color(0xffe6e6e6)),
+  'root': TextStyle(
+    color: Color(0xff2a2c2d),
+    backgroundColor: Color(0xffe6e6e6),
+  ),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'strong': TextStyle(fontWeight: FontWeight.w700),
   'comment': TextStyle(color: Color(0xff676b79), fontStyle: FontStyle.italic),

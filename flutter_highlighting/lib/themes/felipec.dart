@@ -3,10 +3,14 @@
 import 'package:flutter/painting.dart';
 
 const felipecTheme = {
-  'root':
-      TextStyle(color: Color(0xffdddde1), backgroundColor: Color(0xff1e1e22)),
-  '.hljs::selection':
-      TextStyle(color: Color(0xff1e1e22), backgroundColor: Color(0xffbf8fef)),
+  'root': TextStyle(
+    color: Color(0xffdddde1),
+    backgroundColor: Color(0xff1e1e22),
+  ),
+  '.hljs::selection': TextStyle(
+    color: Color(0xff1e1e22),
+    backgroundColor: Color(0xffbf8fef),
+  ),
   'code': TextStyle(color: Color(0xff888896)),
   'comment': TextStyle(color: Color(0xff888896)),
   'quote': TextStyle(color: Color(0xff888896)),

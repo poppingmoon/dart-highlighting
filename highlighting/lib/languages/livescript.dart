@@ -82,7 +82,7 @@ final livescript = Language(
           "__extends",
           "__slice",
           "__bind",
-          "__indexOf"
+          "__indexOf",
         ],
         "literal": [
           "true",
@@ -97,7 +97,7 @@ final livescript = Language(
           "off",
           "it",
           "that",
-          "void"
+          "void",
         ],
         "built_in": [
           "setInterval",
@@ -165,8 +165,8 @@ final livescript = Language(
           "TypeError",
           "URIError",
           "npm",
-          "print"
-        ]
+          "print",
+        ],
       },
     ),
     '~contains~2~variants~2~contains~1~contains~5': Mode(
@@ -190,9 +190,7 @@ final livescript = Language(
             HASH_COMMENT_MODE,
           ],
         ),
-        Mode(
-          begin: "\\/(?![ *])(\\\\.|[^\\\\\\n])*?\\/[gim]*(?=\\W)",
-        ),
+        Mode(begin: "\\/(?![ *])(\\\\.|[^\\\\\\n])*?\\/[gim]*(?=\\W)"),
       ],
     ),
     '~contains~2~variants~2~contains~1': Mode(
@@ -267,7 +265,7 @@ final livescript = Language(
           "__extends",
           "__slice",
           "__bind",
-          "__indexOf"
+          "__indexOf",
         ],
         "literal": [
           "true",
@@ -282,7 +280,7 @@ final livescript = Language(
           "off",
           "it",
           "that",
-          "void"
+          "void",
         ],
         "built_in": [
           "setInterval",
@@ -350,8 +348,8 @@ final livescript = Language(
           "TypeError",
           "URIError",
           "npm",
-          "print"
-        ]
+          "print",
+        ],
       },
       contains: [
         BINARY_NUMBER_MODE,
@@ -365,20 +363,8 @@ final livescript = Language(
     '~contains~2': Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "'''",
-          end: "'''",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
-        ),
-        Mode(
-          begin: "'",
-          end: "'",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
-        ),
+        Mode(begin: "'''", end: "'''", contains: [BACKSLASH_ESCAPE]),
+        Mode(begin: "'", end: "'", contains: [BACKSLASH_ESCAPE]),
         Mode(
           begin: "\"\"\"",
           end: "\"\"\"",
@@ -397,11 +383,7 @@ final livescript = Language(
             ModeReference('~contains~2~variants~2~contains~2'),
           ],
         ),
-        Mode(
-          begin: "\\\\",
-          end: "(\\s|\$)",
-          excludeEnd: true,
-        ),
+        Mode(begin: "\\\\", end: "(\\s|\$)", excludeEnd: true),
       ],
     ),
     '~contains~1': Mode(
@@ -409,10 +391,7 @@ final livescript = Language(
       begin:
           "(\\b0[xX][a-fA-F0-9_]+)|(\\b\\d(\\d|_\\d)*(\\.(\\d(\\d|_\\d)*)?)?(_*[eE]([-+]\\d(_\\d|\\d)*)?)?[_a-z]*)",
       relevance: 0,
-      starts: Mode(
-        end: "(\\s*/)?",
-        relevance: 0,
-      ),
+      starts: Mode(end: "(\\s*/)?", relevance: 0),
     ),
   },
   name: "LiveScript",
@@ -485,7 +464,7 @@ final livescript = Language(
       "__extends",
       "__slice",
       "__bind",
-      "__indexOf"
+      "__indexOf",
     ],
     "literal": [
       "true",
@@ -500,7 +479,7 @@ final livescript = Language(
       "off",
       "it",
       "that",
-      "void"
+      "void",
     ],
     "built_in": [
       "setInterval",
@@ -568,8 +547,8 @@ final livescript = Language(
       "TypeError",
       "URIError",
       "npm",
-      "print"
-    ]
+      "print",
+    ],
   },
   illegal: "\\/\\*",
   contains: [
@@ -598,9 +577,7 @@ final livescript = Language(
       ],
     ),
     HASH_COMMENT_MODE,
-    Mode(
-      begin: "(#=>|=>|\\|>>|-?->|!->)",
-    ),
+    Mode(begin: "(#=>|=>|\\|>>|-?->|!->)"),
     Mode(
       className: "function",
       contains: [
@@ -685,7 +662,7 @@ final livescript = Language(
                   "__extends",
                   "__slice",
                   "__bind",
-                  "__indexOf"
+                  "__indexOf",
                 ],
                 "literal": [
                   "true",
@@ -700,7 +677,7 @@ final livescript = Language(
                   "off",
                   "it",
                   "that",
-                  "void"
+                  "void",
                 ],
                 "built_in": [
                   "setInterval",
@@ -768,8 +745,8 @@ final livescript = Language(
                   "TypeError",
                   "URIError",
                   "npm",
-                  "print"
-                ]
+                  "print",
+                ],
               },
               contains: [
                 ModeSelfReference(),
@@ -810,13 +787,13 @@ final livescript = Language(
             "class\\s+",
             "[A-Za-z\$_](?:-[0-9A-Za-z\$_]|[0-9A-Za-z\$_])*",
             "\\s+extends\\s+",
-            "[A-Za-z\$_](?:-[0-9A-Za-z\$_]|[0-9A-Za-z\$_])*"
+            "[A-Za-z\$_](?:-[0-9A-Za-z\$_]|[0-9A-Za-z\$_])*",
           ],
         ),
         Mode(
           match: [
             "class\\s+",
-            "[A-Za-z\$_](?:-[0-9A-Za-z\$_]|[0-9A-Za-z\$_])*"
+            "[A-Za-z\$_](?:-[0-9A-Za-z\$_]|[0-9A-Za-z\$_])*",
           ],
         ),
       ],
@@ -889,7 +866,7 @@ final livescript = Language(
           "__extends",
           "__slice",
           "__bind",
-          "__indexOf"
+          "__indexOf",
         ],
         "literal": [
           "true",
@@ -904,7 +881,7 @@ final livescript = Language(
           "off",
           "it",
           "that",
-          "void"
+          "void",
         ],
         "built_in": [
           "setInterval",
@@ -972,8 +949,8 @@ final livescript = Language(
           "TypeError",
           "URIError",
           "npm",
-          "print"
-        ]
+          "print",
+        ],
       },
     ),
     Mode(

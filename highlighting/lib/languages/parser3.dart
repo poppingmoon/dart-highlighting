@@ -79,18 +79,9 @@ final parser3 = Language(
       className: "title",
       begin: "@[\\w\\-]+\\[[\\w^;\\-]*\\](?:\\[[\\w^;\\-]*\\])?(?:.*)\$",
     ),
-    Mode(
-      className: "variable",
-      begin: "\\\$\\{?[\\w\\-.:]+\\}?",
-    ),
-    Mode(
-      className: "keyword",
-      begin: "\\^[\\w\\-.:]+",
-    ),
-    Mode(
-      className: "number",
-      begin: "\\^#[0-9a-fA-F]+",
-    ),
+    Mode(className: "variable", begin: "\\\$\\{?[\\w\\-.:]+\\}?"),
+    Mode(className: "keyword", begin: "\\^[\\w\\-.:]+"),
+    Mode(className: "number", begin: "\\^#[0-9a-fA-F]+"),
     C_NUMBER_MODE,
   ],
 );

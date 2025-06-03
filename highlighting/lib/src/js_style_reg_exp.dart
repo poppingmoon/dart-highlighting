@@ -2,7 +2,6 @@ import 'package:collection/collection.dart';
 
 import 'extension/reg_exp.dart';
 import 'js_style_reg_exp_match.dart';
-import 'utils.dart';
 
 /// A regular expression that is optionally stateful if [global] is true.
 class JsStyleRegExp {
@@ -11,13 +10,12 @@ class JsStyleRegExp {
 
   /// Global flag means that when exec is called continuously,
   /// if it returns non-null result, it will store the last index of the match,
-  /// and the next calls of the exec will be performed on input starting from the lastIndex.
+  /// and the next calls of the exec will be performed on input starting from
+  /// the lastIndex.
   final bool global;
 
-  JsStyleRegExp(
-    RegExp regex, {
-    this.global = false,
-  }) : regex = surroundGroupIfNeeded(regex);
+  JsStyleRegExp(RegExp regex, {this.global = false})
+    : regex = surroundGroupIfNeeded(regex);
 
   JsStyleRegExpMatch? exec(String input) {
     final match = regex.allMatches(input, lastIndex).firstOrNull;

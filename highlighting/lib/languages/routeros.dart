@@ -10,20 +10,12 @@ import '../src/language_definition_common.dart';
 final routeros = Language(
   id: "routeros",
   refs: {
-    '~contains~3': Mode(
-      className: "string",
-      begin: "'",
-      end: "'",
-    ),
+    '~contains~3': Mode(className: "string", begin: "'", end: "'"),
     '~contains~2~contains~1': Mode(
       className: "variable",
       variants: [
-        Mode(
-          begin: "\\\$[\\w\\d#@][\\w\\d_]*",
-        ),
-        Mode(
-          begin: "\\\$\\{(.*?)\\}",
-        ),
+        Mode(begin: "\\\$[\\w\\d#@][\\w\\d_]*"),
+        Mode(begin: "\\\$\\{(.*?)\\}"),
       ],
     ),
     '~contains~2': Mode(
@@ -37,9 +29,7 @@ final routeros = Language(
           className: "variable",
           begin: "\\\$\\(",
           end: "\\)",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
       ],
     ),
@@ -51,23 +41,14 @@ final routeros = Language(
     "\$pattern": ":?[\\w-]+",
     "literal": "true false yes no nothing nil null",
     "keyword":
-        "foreach do while for if from to step else on-error and or not in :foreach :do :while :for :if :from :to :step :else :on-error :and :or :not :in :global :local :beep :delay :put :len :typeof :pick :log :time :set :find :environment :terminal :error :execute :parse :resolve :toarray :tobool :toid :toip :toip6 :tonum :tostr :totime"
+        "foreach do while for if from to step else on-error and or not in :foreach :do :while :for :if :from :to :step :else :on-error :and :or :not :in :global :local :beep :delay :put :len :typeof :pick :log :time :set :find :environment :terminal :error :execute :parse :resolve :toarray :tobool :toid :toip :toip6 :tonum :tostr :totime",
   },
   contains: [
     Mode(
       variants: [
-        Mode(
-          begin: "\\/\\*",
-          end: "\\*\\/",
-        ),
-        Mode(
-          begin: "\\/\\/",
-          end: "\$",
-        ),
-        Mode(
-          begin: "<\\/",
-          end: ">",
-        ),
+        Mode(begin: "\\/\\*", end: "\\*\\/"),
+        Mode(begin: "\\/\\/", end: "\$"),
+        Mode(begin: "<\\/", end: ">"),
       ],
       illegal: ".",
     ),
@@ -97,10 +78,7 @@ final routeros = Language(
       relevance: 0,
       returnBegin: true,
       contains: [
-        Mode(
-          className: "attribute",
-          begin: "[^=]+",
-        ),
+        Mode(className: "attribute", begin: "[^=]+"),
         Mode(
           begin: "=",
           endsWithParent: true,
@@ -113,27 +91,17 @@ final routeros = Language(
               className: "literal",
               begin: "\\b(true|false|yes|no|nothing|nil|null)\\b",
             ),
-            Mode(
-              begin: "(\"[^\"]*\"|[^\\s{}[\\]]+)",
-            ),
+            Mode(begin: "(\"[^\"]*\"|[^\\s{}[\\]]+)"),
           ],
         ),
       ],
     ),
-    Mode(
-      className: "number",
-      begin: "\\*[0-9a-fA-F]+",
-    ),
+    Mode(className: "number", begin: "\\*[0-9a-fA-F]+"),
     Mode(
       begin:
           "\\b(add|remove|enable|disable|set|get|print|export|edit|find|run|debug|error|info|warning)([\\s[(\\]|])",
       returnBegin: true,
-      contains: [
-        Mode(
-          className: "built_in",
-          begin: "\\w+",
-        ),
-      ],
+      contains: [Mode(className: "built_in", begin: "\\w+")],
     ),
     Mode(
       className: "built_in",
@@ -142,10 +110,7 @@ final routeros = Language(
           begin:
               "(\\.\\./|/|\\s)((traffic-flow|traffic-generator|firewall|scheduler|aaa|accounting|address-list|address|align|area|bandwidth-server|bfd|bgp|bridge|client|clock|community|config|connection|console|customer|default|dhcp-client|dhcp-server|discovery|dns|e-mail|ethernet|filter|firmware|gps|graphing|group|hardware|health|hotspot|identity|igmp-proxy|incoming|instance|interface|ip|ipsec|ipv6|irq|l2tp-server|lcd|ldp|logging|mac-server|mac-winbox|mangle|manual|mirror|mme|mpls|nat|nd|neighbor|network|note|ntp|ospf|ospf-v3|ovpn-server|page|peer|pim|ping|policy|pool|port|ppp|pppoe-client|pptp-server|prefix|profile|proposal|proxy|queue|radius|resource|rip|ripng|route|routing|screen|script|security-profiles|server|service|service-port|settings|shares|smb|sms|sniffer|snmp|snooper|socks|sstp-server|system|tool|tracking|type|upgrade|upnp|user-manager|users|user|vlan|secret|vrrp|watchdog|web-access|wireless|pptp|pppoe|lan|wan|layer7-protocol|lease|simple|raw);?\\s)+",
         ),
-        Mode(
-          begin: "\\.\\.",
-          relevance: 0,
-        ),
+        Mode(begin: "\\.\\.", relevance: 0),
       ],
     ),
   ],

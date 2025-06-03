@@ -27,9 +27,7 @@ final profile = Language(
     Mode(
       begin: "function calls",
       end: "\$",
-      contains: [
-        C_NUMBER_MODE,
-      ],
+      contains: [C_NUMBER_MODE],
       relevance: 10,
     ),
     APOS_STRING_MODE,

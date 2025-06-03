@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const anOldHopeTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff1c1d21), color: Color(0xffc0c5ce)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff1c1d21),
+    color: Color(0xffc0c5ce),
+  ),
   'comment': TextStyle(color: Color(0xffb6b18b)),
   'quote': TextStyle(color: Color(0xffb6b18b)),
   'deletion': TextStyle(color: Color(0xffeb3c54)),

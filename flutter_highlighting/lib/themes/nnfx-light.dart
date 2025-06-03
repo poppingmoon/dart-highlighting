@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const nnfxLightTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xffffffff), color: Color(0xff000000)),
+  'root': TextStyle(
+    backgroundColor: Color(0xffffffff),
+    color: Color(0xff000000),
+  ),
   'comment': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff007700)),
   'quote': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff007700)),
   'built_in': TextStyle(color: Color(0xff880088)),
@@ -21,28 +25,39 @@ const nnfxLightTheme = {
   'template-variable': TextStyle(color: Color(0xffff4400)),
   'title': TextStyle(color: Color(0xffff4400)),
   'variable': TextStyle(color: Color(0xffff4400)),
-  'title.class_':
-      TextStyle(fontWeight: FontWeight.w700, color: Color(0xff663399)),
+  'title.class_': TextStyle(
+    fontWeight: FontWeight.w700,
+    color: Color(0xff663399),
+  ),
   'type': TextStyle(fontWeight: FontWeight.w700, color: Color(0xff663399)),
   'subst': TextStyle(color: Color(0xff000000)),
   'tag': TextStyle(color: Color(0xff000000)),
   'title.function_': TextStyle(color: Color(0xff000000)),
   'formula': TextStyle(
-      backgroundColor: Color(0xffeeeeee), fontStyle: FontStyle.italic),
+    backgroundColor: Color(0xffeeeeee),
+    fontStyle: FontStyle.italic,
+  ),
   'addition': TextStyle(backgroundColor: Color(0xffbbeebb)),
   'deletion': TextStyle(backgroundColor: Color(0xffffbbbb)),
   'meta': TextStyle(color: Color(0xff226699)),
   'section': TextStyle(fontWeight: FontWeight.w700, color: Color(0xff4488bb)),
-  'selector-class':
-      TextStyle(fontWeight: FontWeight.w700, color: Color(0xff4488bb)),
-  'selector-id':
-      TextStyle(fontWeight: FontWeight.w700, color: Color(0xff4488bb)),
+  'selector-class': TextStyle(
+    fontWeight: FontWeight.w700,
+    color: Color(0xff4488bb),
+  ),
+  'selector-id': TextStyle(
+    fontWeight: FontWeight.w700,
+    color: Color(0xff4488bb),
+  ),
   'selector-pseudo': TextStyle(
-      fontWeight: FontWeight.w700,
-      color: Color(0xff4488bb),
-      fontStyle: FontStyle.italic),
-  'selector-tag':
-      TextStyle(fontWeight: FontWeight.w700, color: Color(0xff4488bb)),
+    fontWeight: FontWeight.w700,
+    color: Color(0xff4488bb),
+    fontStyle: FontStyle.italic,
+  ),
+  'selector-tag': TextStyle(
+    fontWeight: FontWeight.w700,
+    color: Color(0xff4488bb),
+  ),
   'doctag': TextStyle(fontWeight: FontWeight.w700),
   'strong': TextStyle(fontWeight: FontWeight.w700),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),

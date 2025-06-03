@@ -10,14 +10,8 @@ import '../src/language_definition_common.dart';
 final smalltalk = Language(
   id: "smalltalk",
   refs: {
-    '~contains~6': Mode(
-      className: "string",
-      begin: "\\\$.{1}",
-    ),
-    '~contains~5': Mode(
-      className: "symbol",
-      begin: "#[a-zA-Z_]\\w*",
-    ),
+    '~contains~6': Mode(className: "string", begin: "\\\$.{1}"),
+    '~contains~5': Mode(className: "symbol", begin: "#[a-zA-Z_]\\w*"),
   },
   name: "Smalltalk",
   aliases: ["st"],
@@ -42,15 +36,8 @@ final smalltalk = Language(
       ],
     ),
     APOS_STRING_MODE,
-    Mode(
-      className: "type",
-      begin: "\\b[A-Z][A-Za-z0-9_]*",
-      relevance: 0,
-    ),
-    Mode(
-      begin: "[a-z][a-zA-Z0-9_]*:",
-      relevance: 0,
-    ),
+    Mode(className: "type", begin: "\\b[A-Z][A-Za-z0-9_]*", relevance: 0),
+    Mode(begin: "[a-z][a-zA-Z0-9_]*:", relevance: 0),
     C_NUMBER_MODE,
     ModeReference('~contains~5'),
     ModeReference('~contains~6'),
@@ -59,11 +46,7 @@ final smalltalk = Language(
       returnBegin: true,
       end: "\\|",
       illegal: "\\S",
-      contains: [
-        Mode(
-          begin: "(\\|[ ]*)?[a-z][a-zA-Z0-9_]*",
-        ),
-      ],
+      contains: [Mode(begin: "(\\|[ ]*)?[a-z][a-zA-Z0-9_]*")],
     ),
     Mode(
       begin: "#\\(",

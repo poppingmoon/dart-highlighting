@@ -12,10 +12,7 @@ final tcl = Language(
   refs: {
     '~contains~3~variants~1~contains~0': Mode(
       className: "number",
-      variants: [
-        BINARY_NUMBER_MODE,
-        C_NUMBER_MODE,
-      ],
+      variants: [BINARY_NUMBER_MODE, C_NUMBER_MODE],
     ),
   },
   name: "Tcl",
@@ -138,7 +135,7 @@ final tcl = Language(
     "upvar",
     "variable",
     "vwait",
-    "while"
+    "while",
   ],
   contains: [
     Mode(
@@ -200,26 +197,19 @@ final tcl = Language(
         Mode(
           begin: "\\\$\\{(::)?[a-zA-Z_]((::)?[a-zA-Z0-9_])*",
           end: "\\}",
-          contains: [
-            ModeReference('~contains~3~variants~1~contains~0'),
-          ],
+          contains: [ModeReference('~contains~3~variants~1~contains~0')],
         ),
       ],
     ),
     Mode(
       className: "string",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       variants: [
         Mode(
           scope: "string",
           begin: "\"",
           end: "\"",
-          illegal: null,
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
       ],
     ),

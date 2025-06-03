@@ -13,9 +13,7 @@ final angelscript = Language(
     '~contains~8~contains~0~contains~1': Mode(
       className: "symbol",
       begin: "[a-zA-Z0-9_]+@",
-      contains: [
-        ModeReference('~contains~8~contains~0'),
-      ],
+      contains: [ModeReference('~contains~8~contains~0')],
     ),
     '~contains~8~contains~0': Mode(
       className: "keyword",
@@ -30,9 +28,7 @@ final angelscript = Language(
       className: "built_in",
       begin:
           "\\b(void|bool|int8|int16|int32|int64|int|uint8|uint16|uint32|uint64|uint|string|ref|array|double|float|auto|dictionary)",
-      contains: [
-        ModeReference('~contains~8~contains~0'),
-      ],
+      contains: [ModeReference('~contains~8~contains~0')],
     ),
   },
   name: "AngelScript",
@@ -83,7 +79,7 @@ final angelscript = Language(
     "catch",
     "protected",
     "explicit",
-    "property"
+    "property",
   ],
   illegal: "(^using\\s+[A-Za-z0-9_\\.]+;\$|\\bfunction\\s*[^\\(])",
   contains: [
@@ -92,43 +88,26 @@ final angelscript = Language(
       begin: "'",
       end: "'",
       illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       relevance: 0,
     ),
-    Mode(
-      className: "string",
-      begin: "\"\"\"",
-      end: "\"\"\"",
-    ),
+    Mode(className: "string", begin: "\"\"\"", end: "\"\"\""),
     Mode(
       className: "string",
       begin: "\"",
       end: "\"",
       illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       relevance: 0,
     ),
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
-    Mode(
-      className: "string",
-      begin: "^\\s*\\[",
-      end: "\\]",
-    ),
+    Mode(className: "string", begin: "^\\s*\\[", end: "\\]"),
     Mode(
       beginKeywords: "interface namespace",
       end: "\\{",
       illegal: "[;.\\-]",
-      contains: [
-        Mode(
-          className: "symbol",
-          begin: "[a-zA-Z0-9_]+",
-        ),
-      ],
+      contains: [Mode(className: "symbol", begin: "[a-zA-Z0-9_]+")],
     ),
     Mode(
       beginKeywords: "class",
@@ -141,12 +120,7 @@ final angelscript = Language(
           contains: [
             Mode(
               begin: "[:,]\\s*",
-              contains: [
-                Mode(
-                  className: "symbol",
-                  begin: "[a-zA-Z0-9_]+",
-                ),
-              ],
+              contains: [Mode(className: "symbol", begin: "[a-zA-Z0-9_]+")],
             ),
           ],
         ),
@@ -154,10 +128,7 @@ final angelscript = Language(
     ),
     ModeReference('~contains~8'),
     ModeReference('~contains~8~contains~0~contains~1'),
-    Mode(
-      className: "literal",
-      begin: "\\b(null|true|false)",
-    ),
+    Mode(className: "literal", begin: "\\b(null|true|false)"),
     Mode(
       className: "number",
       relevance: 0,

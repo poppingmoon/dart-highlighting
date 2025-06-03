@@ -493,8 +493,8 @@ final excel = Language(
       "YIELDDISC",
       "YIELDMAT",
       "Z.TEST",
-      "ZTEST"
-    ]
+      "ZTEST",
+    ],
   },
   contains: [
     Mode(
@@ -518,11 +518,7 @@ final excel = Language(
     ),
     BACKSLASH_ESCAPE,
     QUOTE_STRING_MODE,
-    Mode(
-      className: "number",
-      begin: "\\b\\d+(\\.\\d+)?(%)?",
-      relevance: 0,
-    ),
+    Mode(className: "number", begin: "\\b\\d+(\\.\\d+)?(%)?", relevance: 0),
     Mode(
       scope: "comment",
       begin: "\\bN\\(",

@@ -20,15 +20,12 @@ final reasonml = Language(
             "and as asr assert begin class constraint do done downto else end exception external for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new nonrec object of open or private rec sig struct then to try type val virtual when while with",
         "built_in":
             "array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ",
-        "literal": "true false"
+        "literal": "true false",
       },
       contains: [
         QUOTE_STRING_MODE,
         ModeReference('~contains~4~contains~1'),
-        Mode(
-          className: "params",
-          begin: "\\b\\x7e?[a-z\$_][0-9a-zA-Z\$_]*",
-        ),
+        Mode(className: "params", begin: "\\b\\x7e?[a-z\$_][0-9a-zA-Z\$_]*"),
       ],
     ),
     '~contains~4~contains~2': Mode(
@@ -58,19 +55,19 @@ final reasonml = Language(
     ),
     '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1~variants~1~contains~4':
         Mode(
-      className: "module",
-      begin: "\\b`?[A-Z\$_][0-9a-zA-Z\$_]*",
-      returnBegin: true,
-      relevance: 0,
-      end: ".",
-      contains: [
-        Mode(
-          className: "identifier",
-          begin: "`?[A-Z\$_][0-9a-zA-Z\$_]*",
+          className: "module",
+          begin: "\\b`?[A-Z\$_][0-9a-zA-Z\$_]*",
+          returnBegin: true,
           relevance: 0,
+          end: ".",
+          contains: [
+            Mode(
+              className: "identifier",
+              begin: "`?[A-Z\$_][0-9a-zA-Z\$_]*",
+              relevance: 0,
+            ),
+          ],
         ),
-      ],
-    ),
     '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1': Mode(
       className: "module-access",
       keywords: {
@@ -78,7 +75,7 @@ final reasonml = Language(
             "and as asr assert begin class constraint do done downto else end exception external for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new nonrec object of open or private rec sig struct then to try type val virtual when while with",
         "built_in":
             "array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ",
-        "literal": "true false"
+        "literal": "true false",
       },
       returnBegin: true,
       variants: [
@@ -92,29 +89,23 @@ final reasonml = Language(
           returnBegin: true,
           contains: [
             ModeReference('~contains~11'),
-            Mode(
-              begin: "\\(",
-              end: "\\)",
-              relevance: 0,
-              skip: true,
-            ),
+            Mode(begin: "\\(", end: "\\)", relevance: 0, skip: true),
             QUOTE_STRING_MODE,
             ModeReference('~contains~4~contains~1'),
             ModeReference(
-                '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1~variants~1~contains~4'),
+              '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1~variants~1~contains~4',
+            ),
             ModeReference('~contains~11'),
           ],
         ),
-        Mode(
-          begin: "\\b(`?[A-Z\$_][0-9a-zA-Z\$_]*\\.)+\\{",
-          end: "\\}",
-        ),
+        Mode(begin: "\\b(`?[A-Z\$_][0-9a-zA-Z\$_]*\\.)+\\{", end: "\\}"),
       ],
       contains: [
         QUOTE_STRING_MODE,
         ModeReference('~contains~4~contains~1'),
         ModeReference(
-            '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1~variants~1~contains~4'),
+          '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1~variants~1~contains~4',
+        ),
         ModeReference('~contains~11'),
       ],
     ),
@@ -126,7 +117,7 @@ final reasonml = Language(
             "and as asr assert begin class constraint do done downto else end exception external for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new nonrec object of open or private rec sig struct then to try type val virtual when while with",
         "built_in":
             "array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ",
-        "literal": "true false"
+        "literal": "true false",
       },
       variants: [
         Mode(
@@ -138,16 +129,12 @@ final reasonml = Language(
             Mode(
               className: "params",
               variants: [
-                Mode(
-                  begin: "\\x7e?[a-z\$_][0-9a-zA-Z\$_]*",
-                ),
+                Mode(begin: "\\x7e?[a-z\$_][0-9a-zA-Z\$_]*"),
                 Mode(
                   begin:
                       "\\x7e?[a-z\$_][0-9a-zA-Z\$_]*(\\s*:\\s*[a-z\$_][0-9a-z\$_]*(\\(\\s*('?[a-z\$_][0-9a-z\$_]*\\s*(,'?[a-z\$_][0-9a-z\$_]*\\s*)*)?\\))?){0,2}",
                 ),
-                Mode(
-                  begin: "\\(\\s*\\)",
-                ),
+                Mode(begin: "\\(\\s*\\)"),
               ],
             ),
           ],
@@ -190,7 +177,8 @@ final reasonml = Language(
                           ],
                         ),
                         ModeReference(
-                            '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1'),
+                          '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1',
+                        ),
                       ],
                     ),
                   ],
@@ -199,9 +187,7 @@ final reasonml = Language(
             ),
           ],
         ),
-        Mode(
-          begin: "\\(\\.\\s\\x7e?[a-z\$_][0-9a-zA-Z\$_]*\\)\\s*=>",
-        ),
+        Mode(begin: "\\(\\.\\s\\x7e?[a-z\$_][0-9a-zA-Z\$_]*\\)\\s*=>"),
       ],
     ),
   },
@@ -212,7 +198,7 @@ final reasonml = Language(
         "and as asr assert begin class constraint do done downto else end exception external for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new nonrec object of open or private rec sig struct then to try type val virtual when while with",
     "built_in":
         "array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ",
-    "literal": "true false"
+    "literal": "true false",
   },
   illegal: "(:-|:=|\\\$\\{|\\+=)",
   contains: [
@@ -242,11 +228,7 @@ final reasonml = Language(
       relevance: 0,
     ),
     QUOTE_STRING_MODE,
-    Mode(
-      className: "literal",
-      begin: "\\(\\)",
-      relevance: 0,
-    ),
+    Mode(className: "literal", begin: "\\(\\)", relevance: 0),
     Mode(
       className: "literal",
       begin: "\\[\\|",
@@ -288,7 +270,7 @@ final reasonml = Language(
             "and as asr assert begin class constraint do done downto else end exception external for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new nonrec object of open or private rec sig struct then to try type val virtual when while with",
         "built_in":
             "array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ",
-        "literal": "true false"
+        "literal": "true false",
       },
       end: "=>",
       relevance: 0,
@@ -314,7 +296,7 @@ final reasonml = Language(
             "and as asr assert begin class constraint do done downto else end exception external for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new nonrec object of open or private rec sig struct then to try type val virtual when while with",
         "built_in":
             "array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ",
-        "literal": "true false"
+        "literal": "true false",
       },
       relevance: 0,
       contains: [
@@ -323,20 +305,17 @@ final reasonml = Language(
           relevance: 0,
           begin: "`?[A-Z\$_][0-9a-zA-Z\$_]*",
         ),
-        Mode(
-          begin: "\\{",
-          end: "\\}",
-          relevance: 0,
-          skip: true,
-        ),
+        Mode(begin: "\\{", end: "\\}", relevance: 0, skip: true),
         QUOTE_STRING_MODE,
         ModeReference('~contains~4~contains~1'),
         ModeReference(
-            '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1~variants~1~contains~4'),
+          '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1~variants~1~contains~4',
+        ),
         ModeReference('~contains~11'),
       ],
     ),
     ModeReference(
-        '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1'),
+      '~contains~11~variants~1~contains~0~variants~0~contains~1~contains~1',
+    ),
   ],
 );

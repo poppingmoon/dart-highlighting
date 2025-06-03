@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -33,11 +33,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildMenuContent(String text) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12),
-      child: Row(children: <Widget>[
-        Text(text, style: TextStyle(fontSize: 16)),
-        Icon(Icons.arrow_drop_down)
-      ]),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: Row(
+        children: <Widget>[
+          Text(text, style: const TextStyle(fontSize: 16)),
+          const Icon(Icons.arrow_drop_down),
+        ],
+      ),
     );
   }
 
@@ -45,21 +47,22 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_title),
+        title: const Text(_title),
         actions: <Widget>[
           IconButton(
-              onPressed: () {
-                setState(() {});
-              },
-              icon: Icon(Icons.format_color_text)),
+            onPressed: () {
+              setState(() {});
+            },
+            icon: const Icon(Icons.format_color_text),
+          ),
           PopupMenuButton<String>(
             child: _buildMenuContent(languageId),
             itemBuilder: (context) {
               return builtinLanguages.keys.map((key) {
                 return CheckedPopupMenuItem(
                   value: key,
-                  child: Text(key),
                   checked: languageId == key,
+                  child: Text(key),
                 );
               }).toList();
             },
@@ -76,8 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
               return themeMap.keys.map((key) {
                 return CheckedPopupMenuItem(
                   value: key,
-                  child: Text(key),
                   checked: theme == key,
+                  child: Text(key),
                 );
               }).toList();
             },
@@ -92,10 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: ListView(
           children: <Widget>[
-            TextField(
-              controller: controller,
-              maxLines: null,
-            ),
+            TextField(controller: controller, maxLines: null),
             const SizedBox(height: 20),
             HighlightView(
               controller.text.isEmpty
@@ -103,8 +103,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   : controller.text,
               languageId: languageId,
               theme: themeMap[theme]!,
-              padding: EdgeInsets.all(12),
-              textStyle: TextStyle(
+              padding: const EdgeInsets.all(12),
+              textStyle: const TextStyle(
                 fontFamily:
                     'SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace',
               ),

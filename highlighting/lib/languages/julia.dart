@@ -10,9 +10,7 @@ import '../src/language_definition_common.dart';
 final julia = Language(
   id: "julia",
   refs: {
-    '~contains~2~contains~1~contains~8': Mode(
-      begin: "<:",
-    ),
+    '~contains~2~contains~1~contains~8': Mode(begin: "<:"),
     '~contains~2~contains~1~contains~7': Mode(
       className: "keyword",
       begin: "\\b(((abstract|primitive)\\s+)type|(mutable\\s+)?struct)\\b",
@@ -20,15 +18,8 @@ final julia = Language(
     '~contains~2~contains~1~contains~5': Mode(
       className: "comment",
       variants: [
-        Mode(
-          begin: "#=",
-          end: "=#",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "#",
-          end: "\$",
-        ),
+        Mode(begin: "#=", end: "=#", relevance: 10),
+        Mode(begin: "#", end: "\$"),
       ],
     ),
     '~contains~2~contains~1~contains~4': Mode(
@@ -87,7 +78,7 @@ final julia = Language(
           "try",
           "using",
           "where",
-          "while"
+          "while",
         ],
         "literal": [
           "ARGS",
@@ -128,7 +119,7 @@ final julia = Language(
           "true",
           "undef",
           "π",
-          "ℯ"
+          "ℯ",
         ],
         "built_in": [
           "AbstractArray",
@@ -316,8 +307,8 @@ final julia = Language(
           "Vector",
           "VersionNumber",
           "WeakKeyDict",
-          "WeakRef"
-        ]
+          "WeakRef",
+        ],
       },
       contains: [
         ModeReference('~contains~0'),
@@ -339,15 +330,8 @@ final julia = Language(
         ModeReference('~contains~2~contains~1~contains~3~contains~2'),
       ],
       variants: [
-        Mode(
-          begin: "\\w*\"\"\"",
-          end: "\"\"\"\\w*",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "\\w*\"",
-          end: "\"\\w*",
-        ),
+        Mode(begin: "\\w*\"\"\"", end: "\"\"\"\\w*", relevance: 10),
+        Mode(begin: "\\w*\"", end: "\"\\w*"),
       ],
     ),
     '~contains~1': Mode(
@@ -395,7 +379,7 @@ final julia = Language(
       "try",
       "using",
       "where",
-      "while"
+      "while",
     ],
     "literal": [
       "ARGS",
@@ -436,7 +420,7 @@ final julia = Language(
       "true",
       "undef",
       "π",
-      "ℯ"
+      "ℯ",
     ],
     "built_in": [
       "AbstractArray",
@@ -624,8 +608,8 @@ final julia = Language(
       "Vector",
       "VersionNumber",
       "WeakKeyDict",
-      "WeakRef"
-    ]
+      "WeakRef",
+    ],
   },
   illegal: "<\\/",
   name: "Julia",

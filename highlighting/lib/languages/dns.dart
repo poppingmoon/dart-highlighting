@@ -50,7 +50,7 @@ final dns = Language(
     "TKEY",
     "TLSA",
     "TSIG",
-    "TXT"
+    "TXT",
   ],
   contains: [
     Mode(
@@ -72,10 +72,7 @@ final dns = Language(
       ],
       relevance: 0,
     ),
-    Mode(
-      className: "meta",
-      begin: "^\\\$(TTL|GENERATE|INCLUDE|ORIGIN)\\b",
-    ),
+    Mode(className: "meta", begin: "^\\\$(TTL|GENERATE|INCLUDE|ORIGIN)\\b"),
     Mode(
       className: "number",
       begin:
@@ -86,10 +83,6 @@ final dns = Language(
       begin:
           "((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]).){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\b",
     ),
-    Mode(
-      scope: "number",
-      begin: "\\b\\d+[dhwm]?",
-      relevance: 0,
-    ),
+    Mode(scope: "number", begin: "\\b\\d+[dhwm]?", relevance: 0),
   ],
 );

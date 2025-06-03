@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const atomOneDarkReasonableTheme = {
-  'root':
-      TextStyle(color: Color(0xffabb2bf), backgroundColor: Color(0xff282c34)),
+  'root': TextStyle(
+    color: Color(0xffabb2bf),
+    backgroundColor: Color(0xff282c34),
+  ),
   'keyword': TextStyle(color: Color(0xfff92672)),
   'operator': TextStyle(color: Color(0xfff92672)),
   'pattern-match': TextStyle(color: Color(0xfff92672)),

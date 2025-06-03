@@ -11,5 +11,5 @@ const kCommonKeywords = [
   'then',
   'parent', // common variable name
   'list', // common variable name
-  'value' // common variable name
+  'value', // common variable name
 ];

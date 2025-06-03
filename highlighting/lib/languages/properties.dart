@@ -36,12 +36,8 @@ final properties = Language(
     Mode(
       returnBegin: true,
       variants: [
-        Mode(
-          begin: "([^\\\\:= \\t\\f\\n]|\\\\.)+[ \\t\\f]*[:=][ \\t\\f]*",
-        ),
-        Mode(
-          begin: "([^\\\\:= \\t\\f\\n]|\\\\.)+[ \\t\\f]+",
-        ),
+        Mode(begin: "([^\\\\:= \\t\\f\\n]|\\\\.)+[ \\t\\f]*[:=][ \\t\\f]*"),
+        Mode(begin: "([^\\\\:= \\t\\f\\n]|\\\\.)+[ \\t\\f]+"),
       ],
       contains: [
         Mode(
@@ -58,19 +54,12 @@ final properties = Language(
           end: "\$",
           relevance: 0,
           contains: [
-            Mode(
-              begin: "\\\\\\\\",
-            ),
-            Mode(
-              begin: "\\\\\\n",
-            ),
+            Mode(begin: "\\\\\\\\"),
+            Mode(begin: "\\\\\\n"),
           ],
         ),
       ),
     ),
-    Mode(
-      className: "attr",
-      begin: "([^\\\\:= \\t\\f\\n]|\\\\.)+[ \\t\\f]*\$",
-    ),
+    Mode(className: "attr", begin: "([^\\\\:= \\t\\f\\n]|\\\\.)+[ \\t\\f]*\$"),
   ],
 );

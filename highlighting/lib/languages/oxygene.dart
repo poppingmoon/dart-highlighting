@@ -10,19 +10,12 @@ import '../src/language_definition_common.dart';
 final oxygene = Language(
   id: "oxygene",
   refs: {
-    '~contains~4': Mode(
-      className: "string",
-      begin: "(#\\d+)+",
-    ),
+    '~contains~4': Mode(className: "string", begin: "(#\\d+)+"),
     '~contains~3': Mode(
       className: "string",
       begin: "'",
       end: "'",
-      contains: [
-        Mode(
-          begin: "''",
-        ),
-      ],
+      contains: [Mode(begin: "''")],
     ),
     '~contains~1': Mode(
       scope: "comment",
@@ -68,7 +61,7 @@ final oxygene = Language(
   keywords: {
     "\$pattern": "\\.?\\w+",
     "keyword":
-        "abstract add and array as asc aspect assembly async begin break block by case class concat const copy constructor continue create default delegate desc distinct div do downto dynamic each else empty end ensure enum equals event except exit extension external false final finalize finalizer finally flags for forward from function future global group has if implementation implements implies in index inherited inline interface into invariants is iterator join locked locking loop matching method mod module namespace nested new nil not notify nullable of old on operator or order out override parallel params partial pinned private procedure property protected public queryable raise read readonly record reintroduce remove repeat require result reverse sealed select self sequence set shl shr skip static step soft take then to true try tuple type union unit unsafe until uses using var virtual raises volatile where while with write xor yield await mapped deprecated stdcall cdecl pascal register safecall overload library platform reference packed strict published autoreleasepool selector strong weak unretained"
+        "abstract add and array as asc aspect assembly async begin break block by case class concat const copy constructor continue create default delegate desc distinct div do downto dynamic each else empty end ensure enum equals event except exit extension external false final finalize finalizer finally flags for forward from function future global group has if implementation implements implies in index inherited inline interface into invariants is iterator join locked locking loop matching method mod module namespace nested new nil not notify nullable of old on operator or order out override parallel params partial pinned private procedure property protected public queryable raise read readonly record reintroduce remove repeat require result reverse sealed select self sequence set shl shr skip static step soft take then to true try tuple type union unit unsafe until uses using var virtual raises volatile where while with write xor yield await mapped deprecated stdcall cdecl pascal register safecall overload library platform reference packed strict published autoreleasepool selector strong weak unretained",
   },
   illegal: "(\"|\\\$[G-Zg-z]|\\/\\*|</|=>|->)",
   contains: [
@@ -83,11 +76,7 @@ final oxygene = Language(
       end: "[:;]",
       keywords: "function constructor|10 destructor|10 procedure|10 method|10",
       contains: [
-        Mode(
-          scope: "title.function",
-          begin: "[a-zA-Z]\\w*",
-          relevance: 0,
-        ),
+        Mode(scope: "title.function", begin: "[a-zA-Z]\\w*", relevance: 0),
         Mode(
           className: "params",
           begin: "\\(",
@@ -95,7 +84,7 @@ final oxygene = Language(
           keywords: {
             "\$pattern": "\\.?\\w+",
             "keyword":
-                "abstract add and array as asc aspect assembly async begin break block by case class concat const copy constructor continue create default delegate desc distinct div do downto dynamic each else empty end ensure enum equals event except exit extension external false final finalize finalizer finally flags for forward from function future global group has if implementation implements implies in index inherited inline interface into invariants is iterator join locked locking loop matching method mod module namespace nested new nil not notify nullable of old on operator or order out override parallel params partial pinned private procedure property protected public queryable raise read readonly record reintroduce remove repeat require result reverse sealed select self sequence set shl shr skip static step soft take then to true try tuple type union unit unsafe until uses using var virtual raises volatile where while with write xor yield await mapped deprecated stdcall cdecl pascal register safecall overload library platform reference packed strict published autoreleasepool selector strong weak unretained"
+                "abstract add and array as asc aspect assembly async begin break block by case class concat const copy constructor continue create default delegate desc distinct div do downto dynamic each else empty end ensure enum equals event except exit extension external false final finalize finalizer finally flags for forward from function future global group has if implementation implements implies in index inherited inline interface into invariants is iterator join locked locking loop matching method mod module namespace nested new nil not notify nullable of old on operator or order out override parallel params partial pinned private procedure property protected public queryable raise read readonly record reintroduce remove repeat require result reverse sealed select self sequence set shl shr skip static step soft take then to true try tuple type union unit unsafe until uses using var virtual raises volatile where while with write xor yield await mapped deprecated stdcall cdecl pascal register safecall overload library platform reference packed strict published autoreleasepool selector strong weak unretained",
           },
           contains: [
             ModeReference('~contains~3'),
@@ -106,10 +95,6 @@ final oxygene = Language(
         ModeReference('~contains~1'),
       ],
     ),
-    Mode(
-      scope: "punctuation",
-      match: ";",
-      relevance: 0,
-    ),
+    Mode(scope: "punctuation", match: ";", relevance: 0),
   ],
 );

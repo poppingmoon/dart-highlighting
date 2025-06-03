@@ -71,7 +71,7 @@ final vbscript = Language(
       "byref",
       "step",
       "resume",
-      "goto"
+      "goto",
     ],
     "built_in": [
       "server",
@@ -80,9 +80,9 @@ final vbscript = Language(
       "scriptengine",
       "scriptenginebuildversion",
       "scriptengineminorversion",
-      "scriptenginemajorversion"
+      "scriptenginemajorversion",
     ],
-    "literal": ["true", "false", "null", "nothing", "empty"]
+    "literal": ["true", "false", "null", "nothing", "empty"],
   },
   illegal: "//",
   contains: [
@@ -187,8 +187,8 @@ final vbscript = Language(
           "chrw",
           "regexp",
           "cstr",
-          "err"
-        ]
+          "err",
+        ],
       },
     ),
     Mode(
@@ -196,11 +196,7 @@ final vbscript = Language(
       begin: "\"",
       end: "\"",
       illegal: "\\n",
-      contains: [
-        Mode(
-          begin: "\"\"",
-        ),
-      ],
+      contains: [Mode(begin: "\"\"")],
     ),
     Mode(
       scope: "comment",

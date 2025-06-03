@@ -12,12 +12,7 @@ final smali = Language(
   refs: {},
   name: "Smali",
   contains: [
-    Mode(
-      className: "string",
-      begin: "\"",
-      end: "\"",
-      relevance: 0,
-    ),
+    Mode(className: "string", begin: "\"", end: "\"", relevance: 0),
     Mode(
       scope: "comment",
       begin: "#",
@@ -40,17 +35,9 @@ final smali = Language(
     Mode(
       className: "keyword",
       variants: [
-        Mode(
-          begin: "\\s*\\.end\\s[a-zA-Z0-9]*",
-        ),
-        Mode(
-          begin: "^[ ]*\\.[a-zA-Z]*",
-          relevance: 0,
-        ),
-        Mode(
-          begin: "\\s:[a-zA-Z_0-9]*",
-          relevance: 0,
-        ),
+        Mode(begin: "\\s*\\.end\\s[a-zA-Z0-9]*"),
+        Mode(begin: "^[ ]*\\.[a-zA-Z]*", relevance: 0),
+        Mode(begin: "\\s:[a-zA-Z_0-9]*", relevance: 0),
         Mode(
           begin:
               "\\s(transient|constructor|abstract|final|synthetic|public|private|protected|static|bridge|system)",
@@ -76,13 +63,7 @@ final smali = Language(
         ),
       ],
     ),
-    Mode(
-      className: "class",
-      begin: "L[^(;:\n]*;",
-      relevance: 0,
-    ),
-    Mode(
-      begin: "[vp][0-9]+",
-    ),
+    Mode(className: "class", begin: "L[^(;:\n]*;", relevance: 0),
+    Mode(begin: "[vp][0-9]+"),
   ],
 );

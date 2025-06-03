@@ -33,16 +33,8 @@ final dsconfig = Language(
       end: "\\s",
       excludeEnd: true,
     ),
-    Mode(
-      className: "string",
-      begin: "\"",
-      end: "\"",
-    ),
-    Mode(
-      className: "string",
-      begin: "'",
-      end: "'",
-    ),
+    Mode(className: "string", begin: "\"", end: "\""),
+    Mode(className: "string", begin: "'", end: "'"),
     Mode(
       className: "string",
       begin: "[\\w\\-?]+:\\w+",

@@ -63,9 +63,9 @@ final actionscript = Language(
       "var",
       "void",
       "while",
-      "with"
+      "with",
     ],
-    "literal": ["true", "false", "null", "undefined"]
+    "literal": ["true", "false", "null", "undefined"],
   },
   contains: [
     APOS_STRING_MODE,
@@ -77,7 +77,7 @@ final actionscript = Language(
       match: [
         "\\bpackage",
         "\\s+",
-        "[a-zA-Z_\$][a-zA-Z0-9_\$]*(\\.[a-zA-Z_\$][a-zA-Z0-9_\$]*)*"
+        "[a-zA-Z_\$][a-zA-Z0-9_\$]*(\\.[a-zA-Z_\$][a-zA-Z0-9_\$]*)*",
       ],
       className: {"1": "keyword", "3": "title.class"},
     ),
@@ -85,7 +85,7 @@ final actionscript = Language(
       match: [
         "\\b(?:class|interface|extends|implements)",
         "\\s+",
-        "[a-zA-Z_\$][a-zA-Z0-9_\$]*"
+        "[a-zA-Z_\$][a-zA-Z0-9_\$]*",
       ],
       className: {"1": "keyword", "3": "title.class"},
     ),
@@ -124,9 +124,7 @@ final actionscript = Language(
             ),
           ],
         ),
-        Mode(
-          begin: ":\\s*([*]|[a-zA-Z_\$][a-zA-Z0-9_\$]*)",
-        ),
+        Mode(begin: ":\\s*([*]|[a-zA-Z_\$][a-zA-Z0-9_\$]*)"),
       ],
     ),
     METHOD_GUARD,

@@ -36,7 +36,7 @@ final rust = Language(
       "Option",
       "Result",
       "String",
-      "Vec"
+      "Vec",
     ],
     "keyword": [
       "abstract",
@@ -89,7 +89,7 @@ final rust = Language(
       "virtual",
       "where",
       "while",
-      "yield"
+      "yield",
     ],
     "literal": ["true", "false", "Some", "None", "Ok", "Err"],
     "built_in": [
@@ -154,8 +154,8 @@ final rust = Language(
       "writeln!",
       "macro_rules!",
       "assert_ne!",
-      "debug_assert_ne!"
-    ]
+      "debug_assert_ne!",
+    ],
   },
   illegal: "</",
   contains: [
@@ -183,35 +183,21 @@ final rust = Language(
       scope: "string",
       begin: "b?\"",
       end: "\"",
-      illegal: null,
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "b?r(#*)\"(.|\\n)*?\"\\1(?!#)",
-        ),
-        Mode(
-          begin: "b?'\\\\?(x\\w{2}|u\\w{4}|U\\w{8}|.)'",
-        ),
+        Mode(begin: "b?r(#*)\"(.|\\n)*?\"\\1(?!#)"),
+        Mode(begin: "b?'\\\\?(x\\w{2}|u\\w{4}|U\\w{8}|.)'"),
       ],
     ),
-    Mode(
-      className: "symbol",
-      begin: "'[a-zA-Z_][a-zA-Z0-9_]*",
-    ),
+    Mode(className: "symbol", begin: "'[a-zA-Z_][a-zA-Z0-9_]*"),
     Mode(
       className: "number",
       variants: [
-        Mode(
-          begin: "\\b0b([01_]+)([ui](8|16|32|64|128|size)|f(32|64))?",
-        ),
-        Mode(
-          begin: "\\b0o([0-7_]+)([ui](8|16|32|64|128|size)|f(32|64))?",
-        ),
+        Mode(begin: "\\b0b([01_]+)([ui](8|16|32|64|128|size)|f(32|64))?"),
+        Mode(begin: "\\b0o([0-7_]+)([ui](8|16|32|64|128|size)|f(32|64))?"),
         Mode(
           begin: "\\b0x([A-Fa-f0-9_]+)([ui](8|16|32|64|128|size)|f(32|64))?",
         ),
@@ -230,13 +216,7 @@ final rust = Language(
       className: "meta",
       begin: "#!?\\[",
       end: "\\]",
-      contains: [
-        Mode(
-          className: "string",
-          begin: "\"",
-          end: "\"",
-        ),
-      ],
+      contains: [Mode(className: "string", begin: "\"", end: "\"")],
     ),
     Mode(
       begin: ["let", "\\s+", "(?:mut\\s+)?", "[a-zA-Z_]\\w*"],
@@ -320,7 +300,7 @@ final rust = Language(
           "writeln!",
           "macro_rules!",
           "assert_ne!",
-          "debug_assert_ne!"
+          "debug_assert_ne!",
         ],
         "type": [
           "i8",
@@ -344,14 +324,11 @@ final rust = Language(
           "Option",
           "Result",
           "String",
-          "Vec"
-        ]
+          "Vec",
+        ],
       },
     ),
-    Mode(
-      className: "punctuation",
-      begin: "->",
-    ),
+    Mode(className: "punctuation", begin: "->"),
     Mode(
       className: "title.function.invoke",
       relevance: 0,

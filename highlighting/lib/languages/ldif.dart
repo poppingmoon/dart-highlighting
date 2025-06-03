@@ -12,19 +12,9 @@ final ldif = Language(
   refs: {},
   name: "LDIF",
   contains: [
-    Mode(
-      className: "attribute",
-      match: "^dn(?=:)",
-      relevance: 10,
-    ),
-    Mode(
-      className: "attribute",
-      match: "^\\w+(?=:)",
-    ),
-    Mode(
-      className: "literal",
-      match: "^-",
-    ),
+    Mode(className: "attribute", match: "^dn(?=:)", relevance: 10),
+    Mode(className: "attribute", match: "^\\w+(?=:)"),
+    Mode(className: "literal", match: "^-"),
     HASH_COMMENT_MODE,
   ],
 );

@@ -24,10 +24,7 @@ final brainfuck = Language(
       begin: "[^\\[\\]\\.,\\+\\-<> \\r\\n]",
       end: "[\\[\\]\\.,\\+\\-<> \\r\\n]",
       contains: [
-        Mode(
-          match: "[ ]+[^\\[\\]\\.,\\+\\-<> \\r\\n]",
-          relevance: 0,
-        ),
+        Mode(match: "[ ]+[^\\[\\]\\.,\\+\\-<> \\r\\n]", relevance: 0),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -43,21 +40,11 @@ final brainfuck = Language(
       returnEnd: true,
       relevance: 0,
     ),
-    Mode(
-      className: "title",
-      begin: "[\\[\\]]",
-      relevance: 0,
-    ),
-    Mode(
-      className: "string",
-      begin: "[\\.,]",
-      relevance: 0,
-    ),
+    Mode(className: "title", begin: "[\\[\\]]", relevance: 0),
+    Mode(className: "string", begin: "[\\.,]", relevance: 0),
     Mode(
       begin: "(?=\\+\\+|--)",
-      contains: [
-        ModeReference('~contains~3~contains~0'),
-      ],
+      contains: [ModeReference('~contains~3~contains~0')],
     ),
     ModeReference('~contains~3~contains~0'),
   ],

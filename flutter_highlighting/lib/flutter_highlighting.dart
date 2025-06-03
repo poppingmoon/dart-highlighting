@@ -33,37 +33,38 @@ class HighlightView extends StatelessWidget {
     this.theme = const {},
     this.padding,
     this.textStyle,
+    // ignore: flutter_style_todos
     int tabSize = 8, // TODO: https://github.com/flutter/flutter/issues/50087
   }) : source = input.replaceAll('\t', ' ' * tabSize);
 
   List<TextSpan> _convert(List<Node> nodes) {
-    List<TextSpan> spans = [];
+    final spans = <TextSpan>[];
     var currentSpans = spans;
-    List<List<TextSpan>> stack = [];
+    final stack = <List<TextSpan>>[];
 
-    _traverse(Node node) {
+    void traverse(Node node) {
       if (node.value != null) {
-        currentSpans.add(node.className == null
-            ? TextSpan(text: node.value)
-            : TextSpan(text: node.value, style: theme[node.className]));
+        currentSpans.add(
+          node.className == null
+              ? TextSpan(text: node.value)
+              : TextSpan(text: node.value, style: theme[node.className]),
+        );
       } else {
-        List<TextSpan> tmp = [];
+        final tmp = <TextSpan>[];
         currentSpans.add(TextSpan(children: tmp, style: theme[node.className]));
         stack.add(currentSpans);
         currentSpans = tmp;
 
-        node.children.forEach((n) {
-          _traverse(n);
+        for (final n in node.children) {
+          traverse(n);
           if (n == node.children.last) {
             currentSpans = stack.isEmpty ? spans : stack.removeLast();
           }
-        });
+        }
       }
     }
 
-    for (var node in nodes) {
-      _traverse(node);
-    }
+    nodes.forEach(traverse);
 
     return spans;
   }
@@ -72,6 +73,7 @@ class HighlightView extends StatelessWidget {
   static const _defaultFontColor = Color(0xff000000);
   static const _defaultBackgroundColor = Color(0xffffffff);
 
+  // ignore: flutter_style_todos
   // TODO: dart:io is not available at web platform currently
   // See: https://github.com/flutter/flutter/issues/39998
   // So we just use monospace here for now
@@ -79,12 +81,12 @@ class HighlightView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _textStyle = TextStyle(
+    var textStyle = TextStyle(
       fontFamily: _defaultFontFamily,
       color: theme[_rootKey]?.color ?? _defaultFontColor,
     );
-    if (textStyle != null) {
-      _textStyle = _textStyle.merge(textStyle);
+    if (this.textStyle != null) {
+      textStyle = textStyle.merge(this.textStyle);
     }
 
     return Container(
@@ -92,7 +94,7 @@ class HighlightView extends StatelessWidget {
       padding: padding,
       child: RichText(
         text: TextSpan(
-          style: _textStyle,
+          style: textStyle,
           children: _convert(
             highlight.highlight(languageId ?? '', source, true).nodes ?? [],
           ),

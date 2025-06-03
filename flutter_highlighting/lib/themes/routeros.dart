@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const routerosTheme = {
-  'root':
-      TextStyle(color: Color(0xff444444), backgroundColor: Color(0xfff0f0f0)),
+  'root': TextStyle(
+    color: Color(0xff444444),
+    backgroundColor: Color(0xfff0f0f0),
+  ),
   'subst': TextStyle(color: Color(0xff444444)),
   'comment': TextStyle(color: Color(0xff888888)),
   'doctag': TextStyle(fontWeight: FontWeight.w700),

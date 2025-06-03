@@ -75,7 +75,7 @@ final ceylon = Language(
             "super",
             "is",
             "exists",
-            "nonempty"
+            "nonempty",
           ],
           relevance: 10,
           contains: [
@@ -153,9 +153,9 @@ final ceylon = Language(
       "sealed",
       "annotation",
       "suppressWarnings",
-      "small"
+      "small",
     ],
-    "meta": ["doc", "by", "license", "see", "throws", "tagged"]
+    "meta": ["doc", "by", "license", "see", "throws", "tagged"],
   },
   illegal: "\\\$[^01]|#[^0-9a-fA-F]",
   contains: [
@@ -179,10 +179,7 @@ final ceylon = Language(
         ),
       ],
     ),
-    Mode(
-      className: "meta",
-      begin: "@[a-z]\\w*(?::\"[^\"]*\")?",
-    ),
+    Mode(className: "meta", begin: "@[a-z]\\w*(?::\"[^\"]*\")?"),
     ModeReference('~contains~3'),
     ModeReference('~contains~4'),
     ModeReference('~contains~4~contains~0~contains~2'),

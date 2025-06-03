@@ -34,6 +34,7 @@ void main() async {
 
         for (final file in fileList) {
           final path = file.path;
+          // ignore: flutter_style_todos
           // TODO: Delete 'expected' when this land: https://github.com/highlightjs/highlight.js/pull/3738
           if (file is! File ||
               path.endsWith('.expect$_extension') ||
@@ -52,10 +53,7 @@ void main() async {
           final input = file.readAsStringSync();
 
           test(testName, () {
-            final highlighted = highlight.parse(
-              input,
-              languageId: language,
-            );
+            final highlighted = highlight.parse(input, languageId: language);
 
             final actual = highlighted.toHtml();
 

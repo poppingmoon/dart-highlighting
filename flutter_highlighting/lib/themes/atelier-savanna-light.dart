@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const atelierSavannaLightTheme = {
@@ -28,12 +30,18 @@ const atelierSavannaLightTheme = {
   'section': TextStyle(color: Color(0xff478c90)),
   'keyword': TextStyle(color: Color(0xff55859b)),
   'selector-tag': TextStyle(color: Color(0xff55859b)),
-  'deletion':
-      TextStyle(color: Color(0xff171c19), backgroundColor: Color(0xffb16139)),
-  'addition':
-      TextStyle(color: Color(0xff171c19), backgroundColor: Color(0xff489963)),
-  'root':
-      TextStyle(backgroundColor: Color(0xffecf4ee), color: Color(0xff526057)),
+  'deletion': TextStyle(
+    color: Color(0xff171c19),
+    backgroundColor: Color(0xffb16139),
+  ),
+  'addition': TextStyle(
+    color: Color(0xff171c19),
+    backgroundColor: Color(0xff489963),
+  ),
+  'root': TextStyle(
+    backgroundColor: Color(0xffecf4ee),
+    color: Color(0xff526057),
+  ),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'strong': TextStyle(fontWeight: FontWeight.bold),
 };

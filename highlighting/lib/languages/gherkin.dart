@@ -15,36 +15,16 @@ final gherkin = Language(
   keywords:
       "Feature Background Ability Business Need Scenario Scenarios Scenario Outline Scenario Template Examples Given And Then But When",
   contains: [
-    Mode(
-      className: "symbol",
-      begin: "\\*",
-      relevance: 0,
-    ),
-    Mode(
-      className: "meta",
-      begin: "@[^@\\s]+",
-    ),
+    Mode(className: "symbol", begin: "\\*", relevance: 0),
+    Mode(className: "meta", begin: "@[^@\\s]+"),
     Mode(
       begin: "\\|",
       end: "\\|\\w*\$",
-      contains: [
-        Mode(
-          className: "string",
-          begin: "[^|]+",
-        ),
-      ],
+      contains: [Mode(className: "string", begin: "[^|]+")],
     ),
-    Mode(
-      className: "variable",
-      begin: "<",
-      end: ">",
-    ),
+    Mode(className: "variable", begin: "<", end: ">"),
     HASH_COMMENT_MODE,
-    Mode(
-      className: "string",
-      begin: "\"\"\"",
-      end: "\"\"\"",
-    ),
+    Mode(className: "string", begin: "\"\"\"", end: "\"\"\""),
     QUOTE_STRING_MODE,
   ],
 );

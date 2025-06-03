@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const intellijLightTheme = {
-  'root':
-      TextStyle(color: Color(0xff000000), backgroundColor: Color(0xffffffff)),
+  'root': TextStyle(
+    color: Color(0xff000000),
+    backgroundColor: Color(0xffffffff),
+  ),
   'subst': TextStyle(fontWeight: FontWeight.w400, color: Color(0xff000000)),
   'title': TextStyle(fontWeight: FontWeight.w400, color: Color(0xff000000)),
   'title.function_': TextStyle(color: Color(0xff7a7a43)),

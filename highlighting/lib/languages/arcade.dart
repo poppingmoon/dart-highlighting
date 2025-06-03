@@ -13,12 +13,8 @@ final arcade = Language(
     '~contains~2~contains~1~contains~3': Mode(
       className: "number",
       variants: [
-        Mode(
-          begin: "\\b(0[bB][01]+)",
-        ),
-        Mode(
-          begin: "\\b(0[oO][0-7]+)",
-        ),
+        Mode(begin: "\\b(0[bB][01]+)"),
+        Mode(begin: "\\b(0[oO][0-7]+)"),
         Mode(
           begin:
               "(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",
@@ -48,7 +44,7 @@ final arcade = Language(
               "return",
               "void",
               "else",
-              "break"
+              "break",
             ],
             "literal": [
               "BackSlash",
@@ -64,7 +60,7 @@ final arcade = Language(
               "Tab",
               "TextFormatting",
               "true",
-              "undefined"
+              "undefined",
             ],
             "built_in": [
               "Abs",
@@ -252,8 +248,8 @@ final arcade = Language(
               "Weekday",
               "When",
               "Within",
-              "Year"
-            ]
+              "Year",
+            ],
           },
           contains: [
             APOS_STRING_MODE,
@@ -280,7 +276,7 @@ final arcade = Language(
       "return",
       "void",
       "else",
-      "break"
+      "break",
     ],
     "literal": [
       "BackSlash",
@@ -296,7 +292,7 @@ final arcade = Language(
       "Tab",
       "TextFormatting",
       "true",
-      "undefined"
+      "undefined",
     ],
     "built_in": [
       "Abs",
@@ -484,8 +480,8 @@ final arcade = Language(
       "Weekday",
       "When",
       "Within",
-      "Year"
-    ]
+      "Year",
+    ],
   },
   contains: [
     APOS_STRING_MODE,
@@ -534,12 +530,8 @@ final arcade = Language(
             Mode(
               className: "params",
               variants: [
-                Mode(
-                  begin: "[A-Za-z_][0-9A-Za-z_]*",
-                ),
-                Mode(
-                  begin: "\\(\\s*\\)",
-                ),
+                Mode(begin: "[A-Za-z_][0-9A-Za-z_]*"),
+                Mode(begin: "\\(\\s*\\)"),
                 Mode(
                   begin: "\\(",
                   end: "\\)",
@@ -557,7 +549,7 @@ final arcade = Language(
                       "return",
                       "void",
                       "else",
-                      "break"
+                      "break",
                     ],
                     "literal": [
                       "BackSlash",
@@ -573,7 +565,7 @@ final arcade = Language(
                       "Tab",
                       "TextFormatting",
                       "true",
-                      "undefined"
+                      "undefined",
                     ],
                     "built_in": [
                       "Abs",
@@ -761,8 +753,8 @@ final arcade = Language(
                       "Weekday",
                       "When",
                       "Within",
-                      "Year"
-                    ]
+                      "Year",
+                    ],
                   },
                   contains: [
                     APOS_STRING_MODE,
@@ -811,9 +803,7 @@ final arcade = Language(
       ],
       illegal: "\\[|%",
     ),
-    Mode(
-      begin: "\\\$[(.]",
-    ),
+    Mode(begin: "\\\$[(.]"),
   ],
   illegal: "#(?!!)",
 );

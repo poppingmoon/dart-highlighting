@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const lioshiTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff303030), color: Color(0xffc5c8c6)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff303030),
+    color: Color(0xffc5c8c6),
+  ),
   'comment': TextStyle(color: Color(0xff8d8d8d)),
   'quote': TextStyle(color: Color(0xffb3c7d8)),
   'deletion': TextStyle(color: Color(0xffcc6666)),

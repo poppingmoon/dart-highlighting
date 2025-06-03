@@ -58,17 +58,14 @@ final golo = Language(
       "set",
       "vector",
       "list",
-      "array"
+      "array",
     ],
-    "literal": ["true", "false", "null"]
+    "literal": ["true", "false", "null"],
   },
   contains: [
     HASH_COMMENT_MODE,
     QUOTE_STRING_MODE,
     C_NUMBER_MODE,
-    Mode(
-      className: "meta",
-      begin: "@[A-Za-z]+",
-    ),
+    Mode(className: "meta", begin: "@[A-Za-z]+"),
   ],
 );

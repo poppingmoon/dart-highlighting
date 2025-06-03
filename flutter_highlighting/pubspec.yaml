@@ -5,8 +5,8 @@ publish_to: "none"
 homepage: https://github.com/akvelon/dart-highlighting
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=3.0.0"
+  sdk: ">=3.8.0 <4.0.0"
+  flutter: ">=3.32.0"
 
 dependencies:
   flutter: { sdk: flutter }
@@ -17,8 +17,8 @@ dependencies:
       path: highlighting
 
 dev_dependencies:
-  total_lints: ^2.19.0
+  total_lints: ^3.4.0
 
-#dependency_overrides:
-#  highlighting:
-#    path: ../highlighting
+dependency_overrides:
+  highlighting:
+    path: ../highlighting

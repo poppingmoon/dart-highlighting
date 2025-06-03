@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const githubDarkTheme = {
-  'root':
-      TextStyle(color: Color(0xffc9d1d9), backgroundColor: Color(0xff0d1117)),
+  'root': TextStyle(
+    color: Color(0xffc9d1d9),
+    backgroundColor: Color(0xff0d1117),
+  ),
   'doctag': TextStyle(color: Color(0xffff7b72)),
   'keyword': TextStyle(color: Color(0xffff7b72)),
   'template-tag': TextStyle(color: Color(0xffff7b72)),
@@ -41,8 +45,12 @@ const githubDarkTheme = {
   'bullet': TextStyle(color: Color(0xfff2cc60)),
   'emphasis': TextStyle(color: Color(0xffc9d1d9), fontStyle: FontStyle.italic),
   'strong': TextStyle(color: Color(0xffc9d1d9), fontWeight: FontWeight.w700),
-  'addition':
-      TextStyle(color: Color(0xffaff5b4), backgroundColor: Color(0xff033a16)),
-  'deletion':
-      TextStyle(color: Color(0xffffdcd7), backgroundColor: Color(0xff67060c)),
+  'addition': TextStyle(
+    color: Color(0xffaff5b4),
+    backgroundColor: Color(0xff033a16),
+  ),
+  'deletion': TextStyle(
+    color: Color(0xffffdcd7),
+    backgroundColor: Color(0xff67060c),
+  ),
 };

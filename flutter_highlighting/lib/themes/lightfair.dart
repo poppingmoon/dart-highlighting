@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const lightfairTheme = {
-  'root':
-      TextStyle(color: Color(0xff444444), backgroundColor: Color(0xffffffff)),
+  'root': TextStyle(
+    color: Color(0xff444444),
+    backgroundColor: Color(0xffffffff),
+  ),
   'name': TextStyle(color: Color(0xff01a3a3), fontWeight: FontWeight.w700),
   'meta': TextStyle(color: Color(0xff778899)),
   'tag': TextStyle(color: Color(0xff778899)),

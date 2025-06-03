@@ -3,19 +3,19 @@ import 'package:collection/collection.dart';
 import '../const/regexes.dart';
 import '../utils.dart';
 
-String lookahead(re) {
+String lookahead(Pattern re) {
   return concat(['(?=', re, ')']);
 }
 
-String anyNumberOfTimes(dynamic re) {
+String anyNumberOfTimes(Pattern re) {
   return concat(['(?:', re, ')*']);
 }
 
-String optional(dynamic re) {
+String optional(Pattern re) {
   return concat(['(?:', re, ')?']);
 }
 
-String? source(dynamic pattern) {
+String? source(Pattern? pattern) {
   if (pattern is String) {
     return pattern;
   }
@@ -26,26 +26,23 @@ String? source(dynamic pattern) {
   return null;
 }
 
-String concat(List<dynamic> args) {
-  return args.map((e) => source(e)).join('');
+String concat(List<Pattern> args) {
+  return args.map(source).join();
 }
 
 /// List<String | RegExp>
-String either(List<dynamic> args) {
-  final joined = '(' '?:' + args.map((x) => source(x)).join("|") + ")";
+String either(Iterable<Pattern> args) {
+  final joined = '(?:${args.map(source).join('|')})';
   return joined;
 }
 
 extension RegExpExtension on RegExp {
   int countMatchGroups() {
-    return RegExp(pattern + '|').firstMatch('')?.groupCount ?? 0;
+    return RegExp('$pattern|').firstMatch('')?.groupCount ?? 0;
   }
 }
 
-String rewriteBackReferences(
-  List<dynamic> re, {
-  String joinWith = '|',
-}) {
+String rewriteBackReferences(List<dynamic> re, {String joinWith = '|'}) {
   var numCaptures = 0;
 
   return re
@@ -54,29 +51,29 @@ String rewriteBackReferences(
         final offset = numCaptures;
 
         var re = source(regex);
-        var out = '';
+        final out = StringBuffer();
 
         while (re != null && re.isNotEmpty) {
           final matches = kBackRefRe.allMatches(re).firstOrNull;
           if (matches == null) {
-            out += re;
+            out.write(re);
             break;
           }
 
-          out += substring(re, 0, matches.start);
+          out.write(substring(re, 0, matches.start));
           re = substring(re, matches.end);
 
-          if (matches.group(0)?[0] == '\\' && matches.group(1) != null) {
-            out += '\\' + (int.parse(matches.group(1)!) + offset).toString();
+          if (matches.group(0)?[0] == r'\' && matches.group(1) != null) {
+            out.write('\\${int.parse(matches.group(1)!) + offset}');
           } else {
-            out += matches.group(0)!;
+            out.write(matches.group(0));
             if (matches.group(0) == '(') {
               numCaptures++;
             }
           }
         }
 
-        return out;
+        return out.toString();
       })
       .map((re) => '($re)')
       .join(joinWith);

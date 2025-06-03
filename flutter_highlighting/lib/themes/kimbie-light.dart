@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const kimbieLightTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xfffbebd4), color: Color(0xff84613d)),
+  'root': TextStyle(
+    backgroundColor: Color(0xfffbebd4),
+    color: Color(0xff84613d),
+  ),
   'comment': TextStyle(color: Color(0xffa57a4c)),
   'quote': TextStyle(color: Color(0xffa57a4c)),
   'meta': TextStyle(color: Color(0xffdc3958)),

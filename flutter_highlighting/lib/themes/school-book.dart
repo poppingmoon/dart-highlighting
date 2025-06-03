@@ -1,14 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const schoolBookTheme = {
-  'root':
-      TextStyle(color: Color(0xff3e5915), backgroundColor: Color(0xfff6f5b2)),
+  'root': TextStyle(
+    color: Color(0xff3e5915),
+    backgroundColor: Color(0xfff6f5b2),
+  ),
   'keyword': TextStyle(color: Color(0xff005599), fontWeight: FontWeight.w700),
   'literal': TextStyle(color: Color(0xff005599), fontWeight: FontWeight.w700),
-  'selector-tag':
-      TextStyle(color: Color(0xff005599), fontWeight: FontWeight.w700),
+  'selector-tag': TextStyle(
+    color: Color(0xff005599),
+    fontWeight: FontWeight.w700,
+  ),
   'subst': TextStyle(color: Color(0xff3e5915)),
   'addition': TextStyle(color: Color(0xff2c009f)),
   'attribute': TextStyle(color: Color(0xff2c009f)),

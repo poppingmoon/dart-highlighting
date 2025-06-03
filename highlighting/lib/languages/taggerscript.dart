@@ -17,37 +17,21 @@ final taggerscript = Language(
       begin: "\\\$noop\\(",
       end: "\\)",
       contains: [
-        Mode(
-          begin: "\\\\[()]",
-        ),
+        Mode(begin: "\\\\[()]"),
         Mode(
           begin: "\\(",
           end: "\\)",
           contains: [
-            Mode(
-              begin: "\\\\[()]",
-            ),
+            Mode(begin: "\\\\[()]"),
             ModeSelfReference(),
           ],
         ),
       ],
       relevance: 10,
     ),
-    Mode(
-      className: "keyword",
-      begin: "\\\$[_a-zA-Z0-9]+(?=\\()",
-    ),
-    Mode(
-      className: "variable",
-      begin: "%[_a-zA-Z0-9:]+%",
-    ),
-    Mode(
-      className: "symbol",
-      begin: "\\\\[\\\\nt\$%,()]",
-    ),
-    Mode(
-      className: "symbol",
-      begin: "\\\\u[a-fA-F0-9]{4}",
-    ),
+    Mode(className: "keyword", begin: "\\\$[_a-zA-Z0-9]+(?=\\()"),
+    Mode(className: "variable", begin: "%[_a-zA-Z0-9:]+%"),
+    Mode(className: "symbol", begin: "\\\\[\\\\nt\$%,()]"),
+    Mode(className: "symbol", begin: "\\\\u[a-fA-F0-9]{4}"),
   ],
 );

@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const monokaiSublimeTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff23241f), color: Color(0xfff8f8f2)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff23241f),
+    color: Color(0xfff8f8f2),
+  ),
   'subst': TextStyle(color: Color(0xfff8f8f2)),
   'tag': TextStyle(color: Color(0xfff8f8f2)),
   'emphasis': TextStyle(color: Color(0xffa8a8a2), fontStyle: FontStyle.italic),

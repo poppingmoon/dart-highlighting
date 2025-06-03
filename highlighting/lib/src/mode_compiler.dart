@@ -24,18 +24,15 @@ Mode compileLanguage(Language language) {
   return compileMode(language, language: language, refs: language.refs);
 }
 
-ResumableMultiRegex buildModeRegex(
-  Mode mode, {
-  required Language language,
-}) {
+ResumableMultiRegex buildModeRegex(Mode mode, {required Language language}) {
   final mm = ResumableMultiRegex(language: language);
 
   mode.contains?.forEach((term) {
     mm.addRule(term.beginRe!, RuleOptions(rule: term, type: $begin));
   });
 
-  if (mode.terminator_end != null) {
-    mm.addRule(RegExp(mode.terminator_end!), RuleOptions(type: $end));
+  if (mode.terminatorEnd != null) {
+    mm.addRule(RegExp(mode.terminatorEnd!), RuleOptions(type: $end));
   }
 
   if (mode.illegal != null) {
@@ -54,107 +51,110 @@ Mode compileMode(
   if (mode.isCompiled) {
     return mode;
   }
+  Mode result = mode;
 
-  if (mode is ModeReference) {
-    mode = replaceRef(mode, refs: refs);
+  if (result is ModeReference) {
+    result = replaceRef(result, refs: refs);
   }
 
-  final starts = mode.starts;
+  final starts = result.starts;
   if (starts is ModeReference) {
-    mode.starts = replaceRef(starts, refs: refs);
+    result.starts = replaceRef(starts, refs: refs);
   }
 
-  scopeClassName(mode);
-  compileMatch(mode, parent);
-  multiClass(mode, parent);
-  beforeMatchExt(mode, parent);
+  scopeClassName(result);
+  compileMatch(result, parent);
+  multiClass(result, parent);
+  beforeMatchExt(result, parent);
 
-  language.compilerExtensions.forEach((ext) => ext?.call(mode, parent));
+  // for (final ext in language.compilerExtensions) {
+  //   ext?.call(result, parent);
+  // }
 
-  mode.beforeBegin = null;
+  result.beforeBegin = null;
 
-  beginKeywords(mode, parent);
-  compileIllegal(mode, parent);
-  compileRelevance(mode, parent);
+  beginKeywords(result, parent);
+  compileIllegal(result, parent);
+  compileRelevance(result, parent);
 
-  mode.isCompiled = true;
+  result.isCompiled = true;
 
   dynamic keywordPattern;
 
-  if (mode.keywords is Map && mode.keywords[$pattern] != null) {
-    mode.keywords = Map.from(mode.keywords);
-    keywordPattern = mode.keywords[$pattern];
-    mode.keywords.remove($pattern);
+  if (result.keywords case {$pattern: final pattern?}) {
+    keywordPattern = pattern;
+    result.keywords = Map.from(result.keywords)..remove($pattern);
   }
 
   keywordPattern ??= RegExp(r'(\w+)', multiLine: true);
 
-  if (mode.keywords != null) {
-    mode.keywords = compileKeywords(
-      mode.keywords,
-      language.case_insensitive == true,
+  if (result.keywords != null) {
+    result.keywords = compileKeywords(
+      result.keywords,
+      language.case_insensitive,
     );
   }
 
-  mode.keywordPatternRe = JsStyleRegExp(
+  result.keywordPatternRe = JsStyleRegExp(
     langRe(keywordPattern, true, language),
     global: true,
   );
 
   if (parent != null) {
-    mode.begin ??= r'\B|\b';
-    mode.beginRe = langRe(mode.begin, false, language);
-    if (mode.endsWithParent != true) {
-      mode.end ??= RegExp(r'\B|\b');
+    result.begin ??= r'\B|\b';
+    result.beginRe = langRe(result.begin, false, language);
+    if (result.endsWithParent != true) {
+      result.end ??= RegExp(r'\B|\b');
     }
-    if (mode.end != null) {
-      mode.endRe = langRe(mode.end, false, language);
+    if (result.end != null) {
+      result.endRe = langRe(result.end, false, language);
     }
 
-    mode.terminator_end = source(mode.end);
+    result.terminatorEnd = source(result.end);
 
-    if (mode.endsWithParent == true && parent.terminator_end != null) {
-      mode.terminator_end = (mode.terminator_end ?? '') +
-          (mode.end != null ? '|' : '') +
-          parent.terminator_end!;
+    if ((result.endsWithParent ?? false) && parent.terminatorEnd != null) {
+      result.terminatorEnd =
+          (result.terminatorEnd ?? '') +
+          (result.end != null ? '|' : '') +
+          parent.terminatorEnd!;
     }
   }
 
-  if (mode.illegal != null) {
-    mode.illegalRe = langRe(mode.illegal, false, language);
+  if (result.illegal != null) {
+    result.illegalRe = langRe(result.illegal, false, language);
   }
-  mode.contains ??= [];
+  result.contains ??= [];
 
-  var newList = <Mode>[];
-  mode.contains!.forEach((element) {
+  final newList = <Mode>[];
+  for (var element in result.contains!) {
     if (element is ModeReference) {
       element = replaceRef(element, refs: refs);
     }
     newList.addAll(
       expandOrCloneMode(
-        element is ModeSelfReference ? mode : element,
+        element is ModeSelfReference ? result : element,
         refs: refs,
       ),
     );
-  });
-  mode.contains = newList;
-  for (final element in mode.contains!) {
-    compileMode(element, parent: mode, language: language, refs: refs);
+  }
+  result.contains = newList;
+  for (final element in result.contains!) {
+    compileMode(element, parent: result, language: language, refs: refs);
   }
 
-  if (mode.starts != null) {
-    compileMode(mode.starts!, parent: parent, language: language, refs: refs);
+  if (result.starts != null) {
+    compileMode(result.starts!, parent: parent, language: language, refs: refs);
   }
 
-  mode.matcher = buildModeRegex(mode, language: language);
+  result.matcher = buildModeRegex(result, language: language);
 
-  return mode;
+  return result;
 }
 
 bool dependencyOnParent(Mode? mode) {
   if (mode == null) return false;
 
-  return mode.endsWithParent == true || dependencyOnParent(mode.starts);
+  return (mode.endsWithParent ?? false) || dependencyOnParent(mode.starts);
 }
 
 List<Mode> expandOrCloneMode(Mode mode, {required Map<String, Mode> refs}) {
@@ -184,10 +184,8 @@ List<Mode> expandOrCloneMode(Mode mode, {required Map<String, Mode> refs}) {
     return [
       Mode.inherit(
         mode,
-        Mode(
-          starts: mode.starts != null ? Mode.inherit(mode.starts!) : null,
-        ),
-      )
+        Mode(starts: mode.starts != null ? Mode.inherit(mode.starts!) : null),
+      ),
     ];
   }
 

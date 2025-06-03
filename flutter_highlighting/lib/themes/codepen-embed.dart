@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const codepenEmbedTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff222222), color: Color(0xffffffff)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff222222),
+    color: Color(0xffffffff),
+  ),
   'comment': TextStyle(color: Color(0xff777777)),
   'quote': TextStyle(color: Color(0xff777777)),
   'built_in': TextStyle(color: Color(0xffab875d)),

@@ -18,17 +18,23 @@ final latex = Language(
       contains: [
         ModeReference('~contains~2~starts~starts~contains~0~contains~0'),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~1'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~1',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~2'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~2',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~3'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~3',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~4'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~4',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~5'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~5',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~6'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~6',
+        ),
       ],
     ),
     '~contains~2~starts~starts~contains~0~contains~0~contains~6': Mode(
@@ -64,17 +70,23 @@ final latex = Language(
     '~contains~2~starts~starts~contains~0~contains~0~contains~3': Mode(
       variants: [
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~0'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~0',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~1'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~1',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~2'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~2',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~3'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~3',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~4'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~4',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~5'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~5',
+        ),
       ],
     ),
     '~contains~2~starts~starts~contains~0~contains~0~contains~2': Mode(
@@ -83,29 +95,17 @@ final latex = Language(
       begin: "#+\\d?",
     ),
     '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~5':
-        Mode(
-      begin: "\\^{2}[\\u0000-\\u007f]",
-    ),
+        Mode(begin: "\\^{2}[\\u0000-\\u007f]"),
     '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~4':
-        Mode(
-      begin: "\\^{2}[0-9a-f]{2}",
-    ),
+        Mode(begin: "\\^{2}[0-9a-f]{2}"),
     '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~3':
-        Mode(
-      begin: "\\^{3}[0-9a-f]{3}",
-    ),
+        Mode(begin: "\\^{3}[0-9a-f]{3}"),
     '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~2':
-        Mode(
-      begin: "\\^{4}[0-9a-f]{4}",
-    ),
+        Mode(begin: "\\^{4}[0-9a-f]{4}"),
     '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~1':
-        Mode(
-      begin: "\\^{5}[0-9a-f]{5}",
-    ),
+        Mode(begin: "\\^{5}[0-9a-f]{5}"),
     '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~0':
-        Mode(
-      begin: "\\^{6}[0-9a-f]{6}",
-    ),
+        Mode(begin: "\\^{6}[0-9a-f]{6}"),
     '~contains~2~starts~starts~contains~0~contains~0~contains~1': Mode(
       className: "keyword",
       begin: "\\\\",
@@ -125,29 +125,31 @@ final latex = Language(
           endsParent: true,
           variants: [
             ModeReference(
-                '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~0'),
+              '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~0',
+            ),
             ModeReference(
-                '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~1'),
+              '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~1',
+            ),
             ModeReference(
-                '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~2'),
+              '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~2',
+            ),
             ModeReference(
-                '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~3'),
+              '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~3',
+            ),
             ModeReference(
-                '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~4'),
+              '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~4',
+            ),
             ModeReference(
-                '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~5'),
+              '~contains~2~starts~starts~contains~0~contains~0~contains~1~contains~2~variants~5',
+            ),
           ],
         ),
         Mode(
           endsParent: true,
           relevance: 0,
           variants: [
-            Mode(
-              begin: "[a-zA-Z@]+",
-            ),
-            Mode(
-              begin: "[^a-zA-Z@]?",
-            ),
+            Mode(begin: "[a-zA-Z@]+"),
+            Mode(begin: "[^a-zA-Z@]?"),
           ],
         ),
       ],
@@ -159,17 +161,23 @@ final latex = Language(
       contains: [
         ModeSelfReference(),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~1'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~1',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~2'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~2',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~3'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~3',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~4'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~4',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~5'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~5',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~6'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~6',
+        ),
       ],
     ),
     '~contains~2~starts~starts~contains~0': Mode(
@@ -179,24 +187,27 @@ final latex = Language(
       contains: [
         ModeReference('~contains~2~starts~starts~contains~0~contains~0'),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~1'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~1',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~2'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~2',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~3'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~3',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~4'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~4',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~5'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~5',
+        ),
         ModeReference(
-            '~contains~2~starts~starts~contains~0~contains~0~contains~6'),
+          '~contains~2~starts~starts~contains~0~contains~0~contains~6',
+        ),
       ],
       endsParent: true,
     ),
-    '~contains~0~contains~0': Mode(
-      begin: "\\s+",
-      relevance: 0,
-    ),
+    '~contains~0~contains~0': Mode(begin: "\\s+", relevance: 0),
   },
   name: "LaTeX",
   aliases: ["tex"],
@@ -205,9 +216,7 @@ final latex = Language(
       begin: "\\\\verb(?![a-zA-Z@:_])",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\verb"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         contains: [
           Mode(
@@ -227,9 +236,7 @@ final latex = Language(
       begin: "\\\\lstinline(?![a-zA-Z@:_])",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\lstinline"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         contains: [
           Mode(
@@ -249,18 +256,12 @@ final latex = Language(
       begin: "\\\\mint(?![a-zA-Z@:_])",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\mint"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
-        contains: [
-          ModeReference('~contains~0~contains~0'),
-        ],
+        contains: [ModeReference('~contains~0~contains~0')],
         starts: Mode(
           relevance: 0,
-          contains: [
-            ModeReference('~contains~2~starts~starts~contains~0'),
-          ],
+          contains: [ModeReference('~contains~2~starts~starts~contains~0')],
           starts: Mode(
             contains: [
               Mode(
@@ -282,18 +283,12 @@ final latex = Language(
       begin: "\\\\mintinline(?![a-zA-Z@:_])",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\mintinline"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
-        contains: [
-          ModeReference('~contains~0~contains~0'),
-        ],
+        contains: [ModeReference('~contains~0~contains~0')],
         starts: Mode(
           relevance: 0,
-          contains: [
-            ModeReference('~contains~2~starts~starts~contains~0'),
-          ],
+          contains: [ModeReference('~contains~2~starts~starts~contains~0')],
           starts: Mode(
             contains: [
               Mode(
@@ -311,9 +306,7 @@ final latex = Language(
                           begin: "\\{",
                           end: "\\}",
                           relevance: 0,
-                          contains: [
-                            ModeSelfReference(),
-                          ],
+                          contains: [ModeSelfReference()],
                         ),
                       ],
                     ),
@@ -339,9 +332,7 @@ final latex = Language(
       begin: "\\\\url(?![a-zA-Z@:_])",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\url"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         contains: [
           Mode(
@@ -359,9 +350,7 @@ final latex = Language(
                       begin: "\\{",
                       end: "\\}",
                       relevance: 0,
-                      contains: [
-                        ModeSelfReference(),
-                      ],
+                      contains: [ModeSelfReference()],
                     ),
                   ],
                 ),
@@ -383,9 +372,7 @@ final latex = Language(
                       begin: "\\{",
                       end: "\\}",
                       relevance: 0,
-                      contains: [
-                        ModeSelfReference(),
-                      ],
+                      contains: [ModeSelfReference()],
                     ),
                   ],
                 ),
@@ -399,9 +386,7 @@ final latex = Language(
       begin: "\\\\hyperref(?![a-zA-Z@:_])",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\hyperref"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         contains: [
           Mode(
@@ -419,9 +404,7 @@ final latex = Language(
                       begin: "\\{",
                       end: "\\}",
                       relevance: 0,
-                      contains: [
-                        ModeSelfReference(),
-                      ],
+                      contains: [ModeSelfReference()],
                     ),
                   ],
                 ),
@@ -435,18 +418,12 @@ final latex = Language(
       begin: "\\\\href(?![a-zA-Z@:_])",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\href"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
-        contains: [
-          ModeReference('~contains~0~contains~0'),
-        ],
+        contains: [ModeReference('~contains~0~contains~0')],
         starts: Mode(
           relevance: 0,
-          contains: [
-            ModeReference('~contains~6~starts~starts~contains~0'),
-          ],
+          contains: [ModeReference('~contains~6~starts~starts~contains~0')],
           starts: Mode(
             contains: [
               Mode(
@@ -464,9 +441,7 @@ final latex = Language(
                           begin: "\\{",
                           end: "\\}",
                           relevance: 0,
-                          contains: [
-                            ModeSelfReference(),
-                          ],
+                          contains: [ModeSelfReference()],
                         ),
                       ],
                     ),
@@ -482,41 +457,26 @@ final latex = Language(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{verbatim\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
-        starts: Mode(
-          className: "string",
-          end: "(?=\\\\end\\{verbatim\\})",
-        ),
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
+        starts: Mode(className: "string", end: "(?=\\\\end\\{verbatim\\})"),
       ),
     ),
     Mode(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{filecontents\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
         starts: Mode(
-          contains: [
-            ModeReference('~contains~0~contains~0'),
-          ],
+          contains: [ModeReference('~contains~0~contains~0')],
           starts: Mode(
             relevance: 0,
-            contains: [
-              ModeReference('~contains~2~starts~starts~contains~0'),
-            ],
+            contains: [ModeReference('~contains~2~starts~starts~contains~0')],
             starts: Mode(
               className: "string",
               end: "(?=\\\\end\\{filecontents\\})",
@@ -529,27 +489,16 @@ final latex = Language(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{Verbatim\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
         starts: Mode(
-          contains: [
-            ModeReference('~contains~0~contains~0'),
-          ],
+          contains: [ModeReference('~contains~0~contains~0')],
           starts: Mode(
             relevance: 0,
-            contains: [
-              ModeReference('~contains~6~starts~starts~contains~0'),
-            ],
-            starts: Mode(
-              className: "string",
-              end: "(?=\\\\end\\{Verbatim\\})",
-            ),
+            contains: [ModeReference('~contains~6~starts~starts~contains~0')],
+            starts: Mode(className: "string", end: "(?=\\\\end\\{Verbatim\\})"),
           ),
         ),
       ),
@@ -558,23 +507,15 @@ final latex = Language(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{BVerbatim\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
         starts: Mode(
-          contains: [
-            ModeReference('~contains~0~contains~0'),
-          ],
+          contains: [ModeReference('~contains~0~contains~0')],
           starts: Mode(
             relevance: 0,
-            contains: [
-              ModeReference('~contains~6~starts~starts~contains~0'),
-            ],
+            contains: [ModeReference('~contains~6~starts~starts~contains~0')],
             starts: Mode(
               className: "string",
               end: "(?=\\\\end\\{BVerbatim\\})",
@@ -587,23 +528,15 @@ final latex = Language(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{LVerbatim\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
         starts: Mode(
-          contains: [
-            ModeReference('~contains~0~contains~0'),
-          ],
+          contains: [ModeReference('~contains~0~contains~0')],
           starts: Mode(
             relevance: 0,
-            contains: [
-              ModeReference('~contains~6~starts~starts~contains~0'),
-            ],
+            contains: [ModeReference('~contains~6~starts~starts~contains~0')],
             starts: Mode(
               className: "string",
               end: "(?=\\\\end\\{LVerbatim\\})",
@@ -616,41 +549,26 @@ final latex = Language(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{verbatim\\*\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
-        starts: Mode(
-          className: "string",
-          end: "(?=\\\\end\\{verbatim\\*\\})",
-        ),
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
+        starts: Mode(className: "string", end: "(?=\\\\end\\{verbatim\\*\\})"),
       ),
     ),
     Mode(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{filecontents\\*\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
         starts: Mode(
-          contains: [
-            ModeReference('~contains~0~contains~0'),
-          ],
+          contains: [ModeReference('~contains~0~contains~0')],
           starts: Mode(
             relevance: 0,
-            contains: [
-              ModeReference('~contains~2~starts~starts~contains~0'),
-            ],
+            contains: [ModeReference('~contains~2~starts~starts~contains~0')],
             starts: Mode(
               className: "string",
               end: "(?=\\\\end\\{filecontents\\*\\})",
@@ -663,23 +581,15 @@ final latex = Language(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{Verbatim\\*\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
         starts: Mode(
-          contains: [
-            ModeReference('~contains~0~contains~0'),
-          ],
+          contains: [ModeReference('~contains~0~contains~0')],
           starts: Mode(
             relevance: 0,
-            contains: [
-              ModeReference('~contains~6~starts~starts~contains~0'),
-            ],
+            contains: [ModeReference('~contains~6~starts~starts~contains~0')],
             starts: Mode(
               className: "string",
               end: "(?=\\\\end\\{Verbatim\\*\\})",
@@ -692,23 +602,15 @@ final latex = Language(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{BVerbatim\\*\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
         starts: Mode(
-          contains: [
-            ModeReference('~contains~0~contains~0'),
-          ],
+          contains: [ModeReference('~contains~0~contains~0')],
           starts: Mode(
             relevance: 0,
-            contains: [
-              ModeReference('~contains~6~starts~starts~contains~0'),
-            ],
+            contains: [ModeReference('~contains~6~starts~starts~contains~0')],
             starts: Mode(
               className: "string",
               end: "(?=\\\\end\\{BVerbatim\\*\\})",
@@ -721,23 +623,15 @@ final latex = Language(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{LVerbatim\\*\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
         starts: Mode(
-          contains: [
-            ModeReference('~contains~0~contains~0'),
-          ],
+          contains: [ModeReference('~contains~0~contains~0')],
           starts: Mode(
             relevance: 0,
-            contains: [
-              ModeReference('~contains~6~starts~starts~contains~0'),
-            ],
+            contains: [ModeReference('~contains~6~starts~starts~contains~0')],
             starts: Mode(
               className: "string",
               end: "(?=\\\\end\\{LVerbatim\\*\\})",
@@ -750,27 +644,17 @@ final latex = Language(
       begin: "\\\\begin(?=[ \t]*(\\r?\\n[ \t]*)?\\{minted\\})",
       keywords: {"\$pattern": "\\\\[a-zA-Z]+", "keyword": "\\begin"},
       relevance: 0,
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0')],
       starts: Mode(
         relevance: 0,
-        contains: [
-          ModeReference('~contains~2~starts~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~2~starts~starts~contains~0')],
         starts: Mode(
-          contains: [
-            ModeReference('~contains~0~contains~0'),
-          ],
+          contains: [ModeReference('~contains~0~contains~0')],
           starts: Mode(
             relevance: 0,
-            contains: [
-              ModeReference('~contains~6~starts~starts~contains~0'),
-            ],
+            contains: [ModeReference('~contains~6~starts~starts~contains~0')],
             starts: Mode(
-              contains: [
-                ModeReference('~contains~0~contains~0'),
-              ],
+              contains: [ModeReference('~contains~0~contains~0')],
               starts: Mode(
                 relevance: 0,
                 contains: [

@@ -38,7 +38,7 @@ final go = Language(
       "struct",
       "switch",
       "type",
-      "var"
+      "var",
     ],
     "type": [
       "bool",
@@ -60,7 +60,7 @@ final go = Language(
       "int",
       "uint",
       "uintptr",
-      "rune"
+      "rune",
     ],
     "literal": ["true", "false", "iota", "nil"],
     "built_in": [
@@ -78,8 +78,8 @@ final go = Language(
       "println",
       "real",
       "recover",
-      "delete"
-    ]
+      "delete",
+    ],
   },
   illegal: "</",
   contains: [
@@ -90,10 +90,7 @@ final go = Language(
       variants: [
         QUOTE_STRING_MODE,
         APOS_STRING_MODE,
-        Mode(
-          begin: "`",
-          end: "`",
-        ),
+        Mode(begin: "`", end: "`"),
       ],
     ),
     Mode(
@@ -107,9 +104,7 @@ final go = Language(
         C_NUMBER_MODE,
       ],
     ),
-    Mode(
-      begin: ":=",
-    ),
+    Mode(begin: ":="),
     Mode(
       className: "function",
       beginKeywords: "func",
@@ -148,7 +143,7 @@ final go = Language(
               "struct",
               "switch",
               "type",
-              "var"
+              "var",
             ],
             "type": [
               "bool",
@@ -170,7 +165,7 @@ final go = Language(
               "int",
               "uint",
               "uintptr",
-              "rune"
+              "rune",
             ],
             "literal": ["true", "false", "iota", "nil"],
             "built_in": [
@@ -188,8 +183,8 @@ final go = Language(
               "println",
               "real",
               "recover",
-              "delete"
-            ]
+              "delete",
+            ],
           },
           illegal: "[\"']",
         ),

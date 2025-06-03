@@ -10,35 +10,18 @@ import '../src/language_definition_common.dart';
 final groovy = Language(
   id: "groovy",
   refs: {
-    '~contains~4': Mode(
-      variants: [
-        BINARY_NUMBER_MODE,
-        C_NUMBER_MODE,
-      ],
-    ),
+    '~contains~4': Mode(variants: [BINARY_NUMBER_MODE, C_NUMBER_MODE]),
     '~contains~3': Mode(
       className: "regexp",
       begin: "\\x7e?\\/[^\\/\\n]+\\/",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     '~contains~2': Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "\"\"\"",
-          end: "\"\"\"",
-        ),
-        Mode(
-          begin: "'''",
-          end: "'''",
-        ),
-        Mode(
-          begin: "\\\$/",
-          end: "/\\\$",
-          relevance: 10,
-        ),
+        Mode(begin: "\"\"\"", end: "\"\"\""),
+        Mode(begin: "'''", end: "'''"),
+        Mode(begin: "\\\$/", end: "/\\\$", relevance: 10),
         APOS_STRING_MODE,
         QUOTE_STRING_MODE,
       ],
@@ -52,14 +35,8 @@ final groovy = Language(
           begin: "/\\*\\*",
           end: "\\*/",
           contains: [
-            Mode(
-              begin: "\\w+@",
-              relevance: 0,
-            ),
-            Mode(
-              className: "doctag",
-              begin: "@[A-Za-z]+",
-            ),
+            Mode(begin: "\\w+@", relevance: 0),
+            Mode(className: "doctag", begin: "@[A-Za-z]+"),
             Mode(
               scope: "doctag",
               begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -90,7 +67,7 @@ final groovy = Language(
       "boolean",
       "float",
       "double",
-      "void"
+      "void",
     ],
     "keyword": [
       "def",
@@ -130,8 +107,8 @@ final groovy = Language(
       "import",
       "package",
       "return",
-      "instanceof"
-    ]
+      "instanceof",
+    ],
   },
   contains: [
     Mode(
@@ -149,20 +126,12 @@ final groovy = Language(
       match: [
         "(class|interface|trait|enum|extends|implements)",
         "\\s+",
-        "[a-zA-Z_]\\w*"
+        "[a-zA-Z_]\\w*",
       ],
       scope: {"1": "keyword", "3": "title.class"},
     ),
-    Mode(
-      className: "meta",
-      begin: "@[A-Za-z]+",
-      relevance: 0,
-    ),
-    Mode(
-      className: "attr",
-      begin: "[A-Za-z0-9_\$]+[ \t]*:",
-      relevance: 0,
-    ),
+    Mode(className: "meta", begin: "@[A-Za-z]+", relevance: 0),
+    Mode(className: "attr", begin: "[A-Za-z0-9_\$]+[ \t]*:", relevance: 0),
     Mode(
       begin: "\\?",
       end: ":",

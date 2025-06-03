@@ -53,7 +53,7 @@ final dos = Language(
       "lss",
       "leq",
       "gtr",
-      "geq"
+      "geq",
     ],
     "built_in": [
       "prn",
@@ -143,14 +143,11 @@ final dos = Language(
       "taskkill",
       "xcopy",
       "ren",
-      "del"
-    ]
+      "del",
+    ],
   },
   contains: [
-    Mode(
-      className: "variable",
-      begin: "%%[^ ]|%[^ ]+?%|![^ ]+?!",
-    ),
+    Mode(className: "variable", begin: "%%[^ ]|%[^ ]+?%|![^ ]+?!"),
     Mode(
       className: "function",
       begin: "^\\s*[A-Za-z._?][A-Za-z0-9_\$#@\\x7e.?]*(:|\\s+label)",
@@ -164,11 +161,7 @@ final dos = Language(
         ModeReference('~contains~1~contains~1'),
       ],
     ),
-    Mode(
-      className: "number",
-      begin: "\\b\\d+",
-      relevance: 0,
-    ),
+    Mode(className: "number", begin: "\\b\\d+", relevance: 0),
     ModeReference('~contains~1~contains~1'),
   ],
 );

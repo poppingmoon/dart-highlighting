@@ -51,29 +51,16 @@ final delphi = Language(
     '~contains~5~contains~1~contains~2': Mode(
       className: "meta",
       variants: [
-        Mode(
-          begin: "\\{\\\$",
-          end: "\\}",
-        ),
-        Mode(
-          begin: "\\(\\*\\\$",
-          end: "\\*\\)",
-        ),
+        Mode(begin: "\\{\\\$", end: "\\}"),
+        Mode(begin: "\\(\\*\\\$", end: "\\*\\)"),
       ],
     ),
-    '~contains~1': Mode(
-      className: "string",
-      begin: "(#\\d+)+",
-    ),
+    '~contains~1': Mode(className: "string", begin: "(#\\d+)+"),
     '~contains~0': Mode(
       className: "string",
       begin: "'",
       end: "'",
-      contains: [
-        Mode(
-          begin: "''",
-        ),
-      ],
+      contains: [Mode(begin: "''")],
     ),
   },
   name: "Delphi",
@@ -206,7 +193,7 @@ final delphi = Language(
     "specialize",
     "strict",
     "unaligned",
-    "varargs"
+    "varargs",
   ],
   illegal: "\"|\\\$[G-Zg-z]|\\/\\*|<\\/|\\|",
   contains: [
@@ -217,23 +204,15 @@ final delphi = Language(
       className: "number",
       relevance: 0,
       variants: [
-        Mode(
-          begin: "\\\$[0-9A-Fa-f]+",
-        ),
-        Mode(
-          begin: "&[0-7]+",
-        ),
-        Mode(
-          begin: "%[01]+",
-        ),
+        Mode(begin: "\\\$[0-9A-Fa-f]+"),
+        Mode(begin: "&[0-7]+"),
+        Mode(begin: "%[01]+"),
       ],
     ),
     Mode(
       begin: "[a-zA-Z]\\w*\\s*=\\s*class\\s*\\(",
       returnBegin: true,
-      contains: [
-        TITLE_MODE,
-      ],
+      contains: [TITLE_MODE],
     ),
     Mode(
       className: "function",
@@ -373,7 +352,7 @@ final delphi = Language(
             "specialize",
             "strict",
             "unaligned",
-            "varargs"
+            "varargs",
           ],
           contains: [
             ModeReference('~contains~0'),

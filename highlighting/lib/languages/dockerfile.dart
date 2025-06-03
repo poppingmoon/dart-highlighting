@@ -21,7 +21,7 @@ final dockerfile = Language(
     "arg",
     "user",
     "onbuild",
-    "stopsignal"
+    "stopsignal",
   ],
   contains: [
     HASH_COMMENT_MODE,
@@ -31,10 +31,7 @@ final dockerfile = Language(
     Mode(
       beginKeywords:
           "run cmd entrypoint volume add copy workdir label healthcheck shell",
-      starts: Mode(
-        end: "[^\\\\]\$",
-        subLanguage: ["bash"],
-      ),
+      starts: Mode(end: "[^\\\\]\$", subLanguage: ["bash"]),
     ),
   ],
   illegal: "</",

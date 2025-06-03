@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const a11yDarkTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff2b2b2b), color: Color(0xfff8f8f2)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff2b2b2b),
+    color: Color(0xfff8f8f2),
+  ),
   'comment': TextStyle(color: Color(0xffd4d0ab)),
   'quote': TextStyle(color: Color(0xffd4d0ab)),
   'deletion': TextStyle(color: Color(0xffffa07a)),

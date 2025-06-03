@@ -46,15 +46,16 @@ class CompiledMode {
       compiled.scope = mode.scope;
     }
 
-    compiled.contains = mode.contains?.map((e) {
+    compiled.contains =
+        mode.contains?.map((e) {
           return CompiledMode.fromMode(e);
         }).toList() ??
         [];
 
     compiled.keywords = mode.keywords;
     compiled.data = mode.data;
-    if (mode.terminator_end != null) {
-      compiled.terminatorEnd = mode.terminator_end;
+    if (mode.terminatorEnd != null) {
+      compiled.terminatorEnd = mode.terminatorEnd;
     }
     if (mode.keywordPatternRe != null) {
       compiled.keywordPatternRe = mode.keywordPatternRe;
@@ -77,27 +78,27 @@ class CompiledMode {
     if (mode.parent != null) {
       compiled.parent = CompiledMode.fromMode(mode.parent!);
     }
-    if (mode.beginScope != null) {
+    if (mode.beginScope case final Map beginScope) {
       compiled.beginScope = CompiledScope(
-        data: mode.beginScope,
-        emit: mode.beginScope[$emit],
-        wrap: mode.beginScope[$wrap],
-        multi: mode.beginScope[$multi],
+        // data: mode.beginScope,
+        // emit: mode.beginScope[$emit],
+        wrap: beginScope[$wrap],
+        multi: beginScope[$multi],
       );
-      compiled.beginScope!.data.remove($emit);
-      compiled.beginScope!.data.remove($multi);
-      compiled.beginScope!.data.remove($wrap);
+      beginScope.remove($emit);
+      beginScope.remove($multi);
+      beginScope.remove($wrap);
     }
-    if (mode.endScope != null) {
+    if (mode.endScope case final Map endScope) {
       compiled.endScope = CompiledScope(
-        data: mode.endScope,
-        emit: mode.endScope[$emit],
-        wrap: mode.endScope[$wrap],
-        multi: mode.endScope[$multi],
+        // data: mode.endScope,
+        // emit: mode.endScope[$emit],
+        wrap: endScope[$wrap],
+        multi: endScope[$multi],
       );
-      compiled.endScope!.data.remove($emit);
-      compiled.endScope!.data.remove($multi);
-      compiled.endScope!.data.remove($wrap);
+      endScope.remove($emit);
+      endScope.remove($multi);
+      endScope.remove($wrap);
     }
 
     return compiled;

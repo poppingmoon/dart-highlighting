@@ -1,12 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const shadesOfPurpleTheme = {
   'root': TextStyle(
-      backgroundColor: Color(0xff2d2b57),
-      color: Color(0xffe3dfff),
-      fontWeight: FontWeight.w400),
+    backgroundColor: Color(0xff2d2b57),
+    color: Color(0xffe3dfff),
+    fontWeight: FontWeight.w400,
+  ),
   'subst': TextStyle(color: Color(0xffe3dfff)),
   'title': TextStyle(color: Color(0xfffad000), fontWeight: FontWeight.w400),
   'name': TextStyle(color: Color(0xffa1feff), fontWeight: FontWeight.w400),
@@ -15,8 +18,10 @@ const shadesOfPurpleTheme = {
   'built_in': TextStyle(color: Color(0xfffb9e00)),
   'keyword': TextStyle(color: Color(0xfffb9e00), fontWeight: FontWeight.w400),
   'section': TextStyle(color: Color(0xfffb9e00)),
-  'selector-tag':
-      TextStyle(color: Color(0xfffb9e00), fontWeight: FontWeight.w400),
+  'selector-tag': TextStyle(
+    color: Color(0xfffb9e00),
+    fontWeight: FontWeight.w400,
+  ),
   'addition': TextStyle(color: Color(0xff4cd213)),
   'attribute': TextStyle(color: Color(0xff4cd213)),
   'bullet': TextStyle(color: Color(0xff4cd213)),

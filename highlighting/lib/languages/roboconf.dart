@@ -19,14 +19,8 @@ final roboconf = Language(
         end: ";",
         relevance: 0,
         contains: [
-          Mode(
-            className: "variable",
-            begin: "\\.[a-zA-Z-_]+",
-          ),
-          Mode(
-            className: "keyword",
-            begin: "\\(optional\\)",
-          ),
+          Mode(className: "variable", begin: "\\.[a-zA-Z-_]+"),
+          Mode(className: "keyword", begin: "\\(optional\\)"),
         ],
       ),
     ),
@@ -40,10 +34,7 @@ final roboconf = Language(
       begin: "^facet [a-zA-Z-_][^\\n{]+\\{",
       end: "\\}",
       keywords: "facet",
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-        HASH_COMMENT_MODE,
-      ],
+      contains: [ModeReference('~contains~0~contains~0'), HASH_COMMENT_MODE],
     ),
     Mode(
       begin: "^\\s*instance of [a-zA-Z-_][^\\n{]+\\{",
@@ -59,10 +50,7 @@ final roboconf = Language(
     Mode(
       begin: "^[a-zA-Z-_][^\\n{]+\\{",
       end: "\\}",
-      contains: [
-        ModeReference('~contains~0~contains~0'),
-        HASH_COMMENT_MODE,
-      ],
+      contains: [ModeReference('~contains~0~contains~0'), HASH_COMMENT_MODE],
     ),
     HASH_COMMENT_MODE,
   ],

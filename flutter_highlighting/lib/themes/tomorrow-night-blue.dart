@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const tomorrowNightBlueTheme = {
@@ -29,8 +31,10 @@ const tomorrowNightBlueTheme = {
   'title': TextStyle(color: Color(0xffbbdaff)),
   'keyword': TextStyle(color: Color(0xffebbbff)),
   'selector-tag': TextStyle(color: Color(0xffebbbff)),
-  'root':
-      TextStyle(backgroundColor: Color(0xff002451), color: Color(0xffffffff)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff002451),
+    color: Color(0xffffffff),
+  ),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'strong': TextStyle(fontWeight: FontWeight.w700),
 };

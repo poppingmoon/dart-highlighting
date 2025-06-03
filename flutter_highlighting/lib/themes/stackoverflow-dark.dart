@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const stackoverflowDarkTheme = {
-  'root':
-      TextStyle(color: Color(0xffffffff), backgroundColor: Color(0xff1c1b1b)),
+  'root': TextStyle(
+    color: Color(0xffffffff),
+    backgroundColor: Color(0xff1c1b1b),
+  ),
   'subst': TextStyle(color: Color(0xffffffff)),
   'comment': TextStyle(color: Color(0xff999999)),
   'attr': TextStyle(color: Color(0xff88aece)),

@@ -27,16 +27,12 @@ final elixir = Language(
       ],
       relevance: 0,
     ),
-    '~contains~0~contains~1~contains~7': Mode(
-      begin: "::",
-    ),
+    '~contains~0~contains~1~contains~7': Mode(begin: "::"),
     '~contains~0~contains~1~contains~6': Mode(
       className: "function",
       beginKeywords: "def defp defmacro defmacrop",
       end: "\\B\\b",
-      contains: [
-        ModeReference('~contains~0~contains~1~contains~5~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~1~contains~5~contains~0')],
     ),
     '~contains~0~contains~1~contains~5~contains~0': Mode(
       scope: "title",
@@ -48,9 +44,7 @@ final elixir = Language(
       className: "class",
       beginKeywords: "defimpl defmodule defprotocol defrecord",
       end: "\\bdo\\b|\$|;",
-      contains: [
-        ModeReference('~contains~0~contains~1~contains~5~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~1~contains~5~contains~0')],
     ),
     '~contains~0~contains~1~contains~3': Mode(
       className: "string",
@@ -60,13 +54,10 @@ final elixir = Language(
           begin: "\"",
           end: "\"",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\"",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\"", relevance: 0),
             ModeReference(
-                '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+              '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+            ),
             ModeReference('~contains~0~contains~1'),
           ],
         ),
@@ -74,13 +65,10 @@ final elixir = Language(
           begin: "'",
           end: "'",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\'",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\'", relevance: 0),
             ModeReference(
-                '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+              '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+            ),
             ModeReference('~contains~0~contains~1'),
           ],
         ),
@@ -88,13 +76,10 @@ final elixir = Language(
           begin: "\\/",
           end: "\\/",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\/",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\/", relevance: 0),
             ModeReference(
-                '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+              '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+            ),
             ModeReference('~contains~0~contains~1'),
           ],
         ),
@@ -102,13 +87,10 @@ final elixir = Language(
           begin: "\\|",
           end: "\\|",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\|",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\|", relevance: 0),
             ModeReference(
-                '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+              '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+            ),
             ModeReference('~contains~0~contains~1'),
           ],
         ),
@@ -116,13 +98,10 @@ final elixir = Language(
           begin: "\\(",
           end: "\\)",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\)",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\)", relevance: 0),
             ModeReference(
-                '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+              '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+            ),
             ModeReference('~contains~0~contains~1'),
           ],
         ),
@@ -130,13 +109,10 @@ final elixir = Language(
           begin: "\\[",
           end: "\\]",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\]",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\]", relevance: 0),
             ModeReference(
-                '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+              '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+            ),
             ModeReference('~contains~0~contains~1'),
           ],
         ),
@@ -144,13 +120,10 @@ final elixir = Language(
           begin: "\\{",
           end: "\\}",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\}",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\}", relevance: 0),
             ModeReference(
-                '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+              '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+            ),
             ModeReference('~contains~0~contains~1'),
           ],
         ),
@@ -158,13 +131,10 @@ final elixir = Language(
           begin: "<",
           end: ">",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\>",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\>", relevance: 0),
             ModeReference(
-                '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+              '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+            ),
             ModeReference('~contains~0~contains~1'),
           ],
         ),
@@ -177,90 +147,52 @@ final elixir = Language(
         Mode(
           begin: "\"",
           end: "\"",
-          contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\"",
-              relevance: 0,
-            ),
-          ],
+          contains: [Mode(scope: "char.escape", begin: "\\\\\"", relevance: 0)],
         ),
         Mode(
           begin: "'",
           end: "'",
-          contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\'",
-              relevance: 0,
-            ),
-          ],
+          contains: [Mode(scope: "char.escape", begin: "\\\\'", relevance: 0)],
         ),
         Mode(
           begin: "\\/",
           end: "\\/",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\/",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\/", relevance: 0),
           ],
         ),
         Mode(
           begin: "\\|",
           end: "\\|",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\|",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\|", relevance: 0),
           ],
         ),
         Mode(
           begin: "\\(",
           end: "\\)",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\)",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\)", relevance: 0),
           ],
         ),
         Mode(
           begin: "\\[",
           end: "\\]",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\]",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\]", relevance: 0),
           ],
         ),
         Mode(
           begin: "\\{",
           end: "\\}",
           contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\\\}",
-              relevance: 0,
-            ),
+            Mode(scope: "char.escape", begin: "\\\\\\}", relevance: 0),
           ],
         ),
         Mode(
           begin: "<",
           end: ">",
-          contains: [
-            Mode(
-              scope: "char.escape",
-              begin: "\\\\>",
-              relevance: 0,
-            ),
-          ],
+          contains: [Mode(scope: "char.escape", begin: "\\\\>", relevance: 0)],
         ),
       ],
     ),
@@ -294,13 +226,10 @@ final elixir = Language(
               begin: "\"",
               end: "\"[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\"",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\"", relevance: 0),
                 ModeReference(
-                    '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+                  '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+                ),
                 ModeReference('~contains~0~contains~1'),
               ],
             ),
@@ -308,13 +237,10 @@ final elixir = Language(
               begin: "'",
               end: "'[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\'",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\'", relevance: 0),
                 ModeReference(
-                    '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+                  '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+                ),
                 ModeReference('~contains~0~contains~1'),
               ],
             ),
@@ -322,13 +248,10 @@ final elixir = Language(
               begin: "\\/",
               end: "\\/[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\/",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\/", relevance: 0),
                 ModeReference(
-                    '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+                  '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+                ),
                 ModeReference('~contains~0~contains~1'),
               ],
             ),
@@ -336,13 +259,10 @@ final elixir = Language(
               begin: "\\|",
               end: "\\|[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\|",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\|", relevance: 0),
                 ModeReference(
-                    '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+                  '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+                ),
                 ModeReference('~contains~0~contains~1'),
               ],
             ),
@@ -350,13 +270,10 @@ final elixir = Language(
               begin: "\\(",
               end: "\\)[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\)",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\)", relevance: 0),
                 ModeReference(
-                    '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+                  '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+                ),
                 ModeReference('~contains~0~contains~1'),
               ],
             ),
@@ -364,13 +281,10 @@ final elixir = Language(
               begin: "\\[",
               end: "\\][uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\]",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\]", relevance: 0),
                 ModeReference(
-                    '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+                  '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+                ),
                 ModeReference('~contains~0~contains~1'),
               ],
             ),
@@ -378,13 +292,10 @@ final elixir = Language(
               begin: "\\{",
               end: "\\}[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\}",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\}", relevance: 0),
                 ModeReference(
-                    '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+                  '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+                ),
                 ModeReference('~contains~0~contains~1'),
               ],
             ),
@@ -392,13 +303,10 @@ final elixir = Language(
               begin: "<",
               end: ">[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\>",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\>", relevance: 0),
                 ModeReference(
-                    '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1'),
+                  '~contains~0~contains~1~contains~1~variants~0~contains~0~contains~1',
+                ),
                 ModeReference('~contains~0~contains~1'),
               ],
             ),
@@ -411,88 +319,56 @@ final elixir = Language(
               begin: "\"",
               end: "\"[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\"",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\"", relevance: 0),
               ],
             ),
             Mode(
               begin: "'",
               end: "'[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\'",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\'", relevance: 0),
               ],
             ),
             Mode(
               begin: "\\/",
               end: "\\/[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\/",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\/", relevance: 0),
               ],
             ),
             Mode(
               begin: "\\|",
               end: "\\|[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\|",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\|", relevance: 0),
               ],
             ),
             Mode(
               begin: "\\(",
               end: "\\)[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\)",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\)", relevance: 0),
               ],
             ),
             Mode(
               begin: "\\[",
               end: "\\][uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\]",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\]", relevance: 0),
               ],
             ),
             Mode(
               begin: "\\{",
               end: "\\}[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\\\}",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\\\}", relevance: 0),
               ],
             ),
             Mode(
               begin: "<",
               end: ">[uismxfU]{0,7}",
               contains: [
-                Mode(
-                  scope: "char.escape",
-                  begin: "\\\\>",
-                  relevance: 0,
-                ),
+                Mode(scope: "char.escape", begin: "\\\\>", relevance: 0),
               ],
             ),
           ],
@@ -536,9 +412,9 @@ final elixir = Language(
           "unquote_splicing",
           "use",
           "when",
-          "with|0"
+          "with|0",
         ],
-        "literal": ["false", "nil", "true"]
+        "literal": ["false", "nil", "true"],
       },
       contains: [
         ModeReference('~contains~0'),
@@ -558,47 +434,16 @@ final elixir = Language(
     ),
     '~contains~0': Mode(
       className: "string",
-      contains: [
-        BACKSLASH_ESCAPE,
-        ModeReference('~contains~0~contains~1'),
-      ],
+      contains: [BACKSLASH_ESCAPE, ModeReference('~contains~0~contains~1')],
       variants: [
-        Mode(
-          begin: "\"\"\"",
-          end: "\"\"\"",
-        ),
-        Mode(
-          begin: "'''",
-          end: "'''",
-        ),
-        Mode(
-          begin: "\\x7eS\"\"\"",
-          end: "\"\"\"",
-          contains: [],
-        ),
-        Mode(
-          begin: "\\x7eS\"",
-          end: "\"",
-          contains: [],
-        ),
-        Mode(
-          begin: "\\x7eS'''",
-          end: "'''",
-          contains: [],
-        ),
-        Mode(
-          begin: "\\x7eS'",
-          end: "'",
-          contains: [],
-        ),
-        Mode(
-          begin: "'",
-          end: "'",
-        ),
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
+        Mode(begin: "\"\"\"", end: "\"\"\""),
+        Mode(begin: "'''", end: "'''"),
+        Mode(begin: "\\x7eS\"\"\"", end: "\"\"\"", contains: []),
+        Mode(begin: "\\x7eS\"", end: "\"", contains: []),
+        Mode(begin: "\\x7eS'''", end: "'''", contains: []),
+        Mode(begin: "\\x7eS'", end: "'", contains: []),
+        Mode(begin: "'", end: "'"),
+        Mode(begin: "\"", end: "\""),
       ],
     ),
   },
@@ -637,9 +482,9 @@ final elixir = Language(
       "unquote_splicing",
       "use",
       "when",
-      "with|0"
+      "with|0",
     ],
-    "literal": ["false", "nil", "true"]
+    "literal": ["false", "nil", "true"],
   },
   contains: [
     ModeReference('~contains~0'),

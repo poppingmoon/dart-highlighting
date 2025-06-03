@@ -3,14 +3,18 @@
 import 'package:flutter/painting.dart';
 
 const darkTheme = {
-  'root':
-      TextStyle(color: Color(0xffdddddd), backgroundColor: Color(0xff303030)),
+  'root': TextStyle(
+    color: Color(0xffdddddd),
+    backgroundColor: Color(0xff303030),
+  ),
   'keyword': TextStyle(color: Color(0xffffffff), fontWeight: FontWeight.w700),
   'link': TextStyle(color: Color(0xffffffff)),
   'literal': TextStyle(color: Color(0xffffffff), fontWeight: FontWeight.w700),
   'section': TextStyle(color: Color(0xffffffff), fontWeight: FontWeight.w700),
-  'selector-tag':
-      TextStyle(color: Color(0xffffffff), fontWeight: FontWeight.w700),
+  'selector-tag': TextStyle(
+    color: Color(0xffffffff),
+    fontWeight: FontWeight.w700,
+  ),
   'addition': TextStyle(color: Color(0xffdd8888)),
   'attribute': TextStyle(color: Color(0xffdd8888)),
   'built_in': TextStyle(color: Color(0xffdd8888)),

@@ -12,19 +12,12 @@ final bnf = Language(
   refs: {},
   name: "Backus–Naur Form",
   contains: [
-    Mode(
-      className: "attribute",
-      begin: "<",
-      end: ">",
-    ),
+    Mode(className: "attribute", begin: "<", end: ">"),
     Mode(
       begin: "::=",
       end: "\$",
       contains: [
-        Mode(
-          begin: "<",
-          end: ">",
-        ),
+        Mode(begin: "<", end: ">"),
         C_LINE_COMMENT_MODE,
         C_BLOCK_COMMENT_MODE,
         APOS_STRING_MODE,

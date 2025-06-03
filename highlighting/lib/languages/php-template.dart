@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -18,27 +19,13 @@ final phpTemplate = Language(
       end: "\\?>",
       subLanguage: ["php"],
       contains: [
-        Mode(
-          begin: "/\\*",
-          end: "\\*/",
-          skip: true,
-        ),
-        Mode(
-          begin: "b\"",
-          end: "\"",
-          skip: true,
-        ),
-        Mode(
-          begin: "b'",
-          end: "'",
-          skip: true,
-        ),
+        Mode(begin: "/\\*", end: "\\*/", skip: true),
+        Mode(begin: "b\"", end: "\"", skip: true),
+        Mode(begin: "b'", end: "'", skip: true),
         Mode(
           scope: "string",
           begin: "'",
           end: "'",
-          illegal: null,
-          contains: null,
           className: overwritingNullString,
           skip: true,
         ),
@@ -46,8 +33,6 @@ final phpTemplate = Language(
           scope: "string",
           begin: "\"",
           end: "\"",
-          illegal: null,
-          contains: null,
           className: overwritingNullString,
           skip: true,
         ),

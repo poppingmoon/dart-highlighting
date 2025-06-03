@@ -81,7 +81,7 @@ final nim = Language(
       "with",
       "without",
       "xor",
-      "yield"
+      "yield",
     ],
     "literal": ["true", "false"],
     "type": [
@@ -130,38 +130,21 @@ final nim = Language(
       "cuint",
       "culonglong",
       "cstringarray",
-      "semistatic"
+      "semistatic",
     ],
-    "built_in": ["stdin", "stdout", "stderr", "result"]
+    "built_in": ["stdin", "stdout", "stderr", "result"],
   },
   contains: [
-    Mode(
-      className: "meta",
-      begin: "\\{\\.",
-      end: "\\.\\}",
-      relevance: 10,
-    ),
+    Mode(className: "meta", begin: "\\{\\.", end: "\\.\\}", relevance: 10),
     Mode(
       className: "string",
       begin: "[a-zA-Z]\\w*\"",
       end: "\"",
-      contains: [
-        Mode(
-          begin: "\"\"",
-        ),
-      ],
+      contains: [Mode(begin: "\"\"")],
     ),
-    Mode(
-      className: "string",
-      begin: "([a-zA-Z]\\w*)?\"\"\"",
-      end: "\"\"\"",
-    ),
+    Mode(className: "string", begin: "([a-zA-Z]\\w*)?\"\"\"", end: "\"\"\""),
     QUOTE_STRING_MODE,
-    Mode(
-      className: "type",
-      begin: "\\b[A-Z]\\w+\\b",
-      relevance: 0,
-    ),
+    Mode(className: "type", begin: "\\b[A-Z]\\w+\\b", relevance: 0),
     Mode(
       className: "number",
       relevance: 0,
@@ -169,15 +152,9 @@ final nim = Language(
         Mode(
           begin: "\\b(0[xX][0-9a-fA-F][_0-9a-fA-F]*)('?[iIuU](8|16|32|64))?",
         ),
-        Mode(
-          begin: "\\b(0o[0-7][_0-7]*)('?[iIuUfF](8|16|32|64))?",
-        ),
-        Mode(
-          begin: "\\b(0(b|B)[01][_01]*)('?[iIuUfF](8|16|32|64))?",
-        ),
-        Mode(
-          begin: "\\b(\\d[_\\d]*)('?[iIuUfF](8|16|32|64))?",
-        ),
+        Mode(begin: "\\b(0o[0-7][_0-7]*)('?[iIuUfF](8|16|32|64))?"),
+        Mode(begin: "\\b(0(b|B)[01][_01]*)('?[iIuUfF](8|16|32|64))?"),
+        Mode(begin: "\\b(\\d[_\\d]*)('?[iIuUfF](8|16|32|64))?"),
       ],
     ),
     HASH_COMMENT_MODE,

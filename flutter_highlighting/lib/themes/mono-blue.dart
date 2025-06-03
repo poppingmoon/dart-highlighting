@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const monoBlueTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xffeaeef3), color: Color(0xff00193a)),
+  'root': TextStyle(
+    backgroundColor: Color(0xffeaeef3),
+    color: Color(0xff00193a),
+  ),
   'doctag': TextStyle(fontWeight: FontWeight.w700),
   'keyword': TextStyle(fontWeight: FontWeight.w700),
   'name': TextStyle(fontWeight: FontWeight.w700, color: Color(0xff0048ab)),

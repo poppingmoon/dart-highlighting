@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const purebasicTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xffffffdf), color: Color(0xff000000)),
+  'root': TextStyle(
+    backgroundColor: Color(0xffffffdf),
+    color: Color(0xff000000),
+  ),
   'attr': TextStyle(color: Color(0xff000000)),
   'function': TextStyle(color: Color(0xff000000)),
   'name': TextStyle(color: Color(0xff000000), fontWeight: FontWeight.w700),
@@ -20,8 +22,10 @@ const purebasicTheme = {
   'built_in': TextStyle(color: Color(0xff006666), fontWeight: FontWeight.w700),
   'class': TextStyle(color: Color(0xff006666), fontWeight: FontWeight.w700),
   'keyword': TextStyle(color: Color(0xff006666), fontWeight: FontWeight.w700),
-  'selector-class':
-      TextStyle(color: Color(0xff006666), fontWeight: FontWeight.w700),
+  'selector-class': TextStyle(
+    color: Color(0xff006666),
+    fontWeight: FontWeight.w700,
+  ),
   'code': TextStyle(color: Color(0xff006666)),
   'tag': TextStyle(color: Color(0xff006666)),
   'title': TextStyle(color: Color(0xff006666)),
@@ -34,8 +38,10 @@ const purebasicTheme = {
   'symbol': TextStyle(color: Color(0xff924b72)),
   'literal': TextStyle(color: Color(0xff924b72), fontWeight: FontWeight.w700),
   'meta': TextStyle(color: Color(0xff924b72), fontWeight: FontWeight.w700),
-  'selector-id':
-      TextStyle(color: Color(0xff924b72), fontWeight: FontWeight.w700),
+  'selector-id': TextStyle(
+    color: Color(0xff924b72),
+    fontWeight: FontWeight.w700,
+  ),
   'strong': TextStyle(fontWeight: FontWeight.w700),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
 };

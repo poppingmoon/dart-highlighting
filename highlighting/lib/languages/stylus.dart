@@ -18,10 +18,7 @@ final stylus = Language(
       className: "built_in",
       begin: "[\\w-]+(?=\\()",
     ),
-    '~contains~13': Mode(
-      className: "variable",
-      begin: "\\\$[a-zA-Z]\\w*",
-    ),
+    '~contains~13': Mode(className: "variable", begin: "\\\$[a-zA-Z]\\w*"),
     '~contains~11~starts~contains~0': Mode(
       scope: "number",
       begin:
@@ -31,7 +28,6 @@ final stylus = Language(
   },
   name: "Stylus",
   aliases: ["styl"],
-  case_insensitive: false,
   keywords: "if else for in",
   illegal:
       "(\\?|(\\bReturn\\b)|(\\bEnd\\b)|(\\bend\\b)|(\\bdef\\b)|;|#\\s|\\*\\s|===\\s|\\||%)",
@@ -69,10 +65,7 @@ final stylus = Language(
       begin: "\\[",
       end: "\\]",
       illegal: "\$",
-      contains: [
-        APOS_STRING_MODE,
-        QUOTE_STRING_MODE,
-      ],
+      contains: [APOS_STRING_MODE, QUOTE_STRING_MODE],
     ),
     Mode(
       className: "keyword",
@@ -83,11 +76,9 @@ final stylus = Language(
           "\$pattern": "[a-z-]+",
           "keyword": "and or not only",
           "attribute":
-              "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height"
+              "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height",
         },
-        contains: [
-          ModeReference('~contains~11~starts~contains~0'),
-        ],
+        contains: [ModeReference('~contains~11~starts~contains~0')],
       ),
     ),
     Mode(
@@ -103,10 +94,7 @@ final stylus = Language(
       illegal: "[\\n]",
       returnBegin: true,
       contains: [
-        Mode(
-          className: "title",
-          begin: "\\b[a-zA-Z][a-zA-Z0-9_-]*",
-        ),
+        Mode(className: "title", begin: "\\b[a-zA-Z][a-zA-Z0-9_-]*"),
         Mode(
           className: "params",
           begin: "\\(",
@@ -121,10 +109,7 @@ final stylus = Language(
         ),
       ],
     ),
-    Mode(
-      className: "attr",
-      begin: "--[A-Za-z][A-Za-z0-9_-]*",
-    ),
+    Mode(className: "attr", begin: "--[A-Za-z][A-Za-z0-9_-]*"),
     Mode(
       className: "attribute",
       begin:
@@ -138,10 +123,7 @@ final stylus = Language(
           QUOTE_STRING_MODE,
           ModeReference('~contains~11~starts~contains~0'),
           C_BLOCK_COMMENT_MODE,
-          Mode(
-            scope: "meta",
-            begin: "!important",
-          ),
+          Mode(scope: "meta", begin: "!important"),
           ModeReference('~contains~17~starts~contains~7'),
         ],
         illegal: "\\.",

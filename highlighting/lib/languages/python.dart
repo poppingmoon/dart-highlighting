@@ -13,11 +13,7 @@ final python = Language(
     '~contains~7~contains~0': Mode(
       className: "params",
       variants: [
-        Mode(
-          className: overwritingNullString,
-          begin: "\\(\\s*\\)",
-          skip: true,
-        ),
+        Mode(className: overwritingNullString, begin: "\\(\\s*\\)", skip: true),
         Mode(
           begin: "\\(",
           end: "\\)",
@@ -59,7 +55,7 @@ final python = Language(
               "try",
               "while",
               "with",
-              "yield"
+              "yield",
             ],
             "built_in": [
               "__import__",
@@ -130,7 +126,7 @@ final python = Language(
               "tuple",
               "type",
               "vars",
-              "zip"
+              "zip",
             ],
             "literal": [
               "__debug__",
@@ -138,7 +134,7 @@ final python = Language(
               "False",
               "None",
               "NotImplemented",
-              "True"
+              "True",
             ],
             "type": [
               "Any",
@@ -153,8 +149,8 @@ final python = Language(
               "Set",
               "Tuple",
               "Type",
-              "Union"
-            ]
+              "Union",
+            ],
           },
           contains: [
             ModeSelfReference(),
@@ -206,7 +202,7 @@ final python = Language(
           "try",
           "while",
           "with",
-          "yield"
+          "yield",
         ],
         "built_in": [
           "__import__",
@@ -277,7 +273,7 @@ final python = Language(
           "tuple",
           "type",
           "vars",
-          "zip"
+          "zip",
         ],
         "literal": [
           "__debug__",
@@ -285,7 +281,7 @@ final python = Language(
           "False",
           "None",
           "NotImplemented",
-          "True"
+          "True",
         ],
         "type": [
           "Any",
@@ -300,8 +296,8 @@ final python = Language(
           "Set",
           "Tuple",
           "Type",
-          "Union"
-        ]
+          "Union",
+        ],
       },
       illegal: "#",
       contains: [
@@ -310,32 +306,21 @@ final python = Language(
         ModeReference('~contains~0'),
       ],
     ),
-    '~contains~4~variants~2~contains~2': Mode(
-      begin: "\\{\\{",
-      relevance: 0,
-    ),
+    '~contains~4~variants~2~contains~2': Mode(begin: "\\{\\{", relevance: 0),
     '~contains~4': Mode(
       className: "string",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       variants: [
         Mode(
           begin: "([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?'''",
           end: "'''",
-          contains: [
-            BACKSLASH_ESCAPE,
-            ModeReference('~contains~0'),
-          ],
+          contains: [BACKSLASH_ESCAPE, ModeReference('~contains~0')],
           relevance: 10,
         ),
         Mode(
           begin: "([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?\"\"\"",
           end: "\"\"\"",
-          contains: [
-            BACKSLASH_ESCAPE,
-            ModeReference('~contains~0'),
-          ],
+          contains: [BACKSLASH_ESCAPE, ModeReference('~contains~0')],
           relevance: 10,
         ),
         Mode(
@@ -358,24 +343,10 @@ final python = Language(
             ModeReference('~contains~4~variants~2~contains~3'),
           ],
         ),
-        Mode(
-          begin: "([uU]|[rR])'",
-          end: "'",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "([uU]|[rR])\"",
-          end: "\"",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "([bB]|[bB][rR]|[rR][bB])'",
-          end: "'",
-        ),
-        Mode(
-          begin: "([bB]|[bB][rR]|[rR][bB])\"",
-          end: "\"",
-        ),
+        Mode(begin: "([uU]|[rR])'", end: "'", relevance: 10),
+        Mode(begin: "([uU]|[rR])\"", end: "\"", relevance: 10),
+        Mode(begin: "([bB]|[bB][rR]|[rR][bB])'", end: "'"),
+        Mode(begin: "([bB]|[bB][rR]|[rR][bB])\"", end: "\""),
         Mode(
           begin: "([fF][rR]|[rR][fF]|[fF])'",
           end: "'",
@@ -432,10 +403,7 @@ final python = Language(
         ),
       ],
     ),
-    '~contains~0': Mode(
-      className: "meta",
-      begin: "^(>>>|\\.\\.\\.) ",
-    ),
+    '~contains~0': Mode(className: "meta", begin: "^(>>>|\\.\\.\\.) "),
   },
   name: "Python",
   aliases: ["py", "gyp", "ipython"],
@@ -476,7 +444,7 @@ final python = Language(
       "try",
       "while",
       "with",
-      "yield"
+      "yield",
     ],
     "built_in": [
       "__import__",
@@ -547,7 +515,7 @@ final python = Language(
       "tuple",
       "type",
       "vars",
-      "zip"
+      "zip",
     ],
     "literal": [
       "__debug__",
@@ -555,7 +523,7 @@ final python = Language(
       "False",
       "None",
       "NotImplemented",
-      "True"
+      "True",
     ],
     "type": [
       "Any",
@@ -570,20 +538,15 @@ final python = Language(
       "Set",
       "Tuple",
       "Type",
-      "Union"
-    ]
+      "Union",
+    ],
   },
   illegal: "(<\\/|\\?)|=>",
   contains: [
     ModeReference('~contains~0'),
     ModeReference('~contains~1'),
-    Mode(
-      begin: "\\bself\\b",
-    ),
-    Mode(
-      beginKeywords: "if",
-      relevance: 0,
-    ),
+    Mode(begin: "\\bself\\b"),
+    Mode(beginKeywords: "if", relevance: 0),
     ModeReference('~contains~4'),
     Mode(
       className: "comment",
@@ -625,7 +588,7 @@ final python = Language(
           "try",
           "while",
           "with",
-          "yield"
+          "yield",
         ],
         "built_in": [
           "__import__",
@@ -696,7 +659,7 @@ final python = Language(
           "tuple",
           "type",
           "vars",
-          "zip"
+          "zip",
         ],
         "literal": [
           "__debug__",
@@ -704,7 +667,7 @@ final python = Language(
           "False",
           "None",
           "NotImplemented",
-          "True"
+          "True",
         ],
         "type": [
           "Any",
@@ -719,27 +682,19 @@ final python = Language(
           "Set",
           "Tuple",
           "Type",
-          "Union"
-        ]
+          "Union",
+        ],
       },
       contains: [
-        Mode(
-          begin: "# type:",
-        ),
-        Mode(
-          begin: "#",
-          end: "\\b\\B",
-          endsWithParent: true,
-        ),
+        Mode(begin: "# type:"),
+        Mode(begin: "#", end: "\\b\\B", endsWithParent: true),
       ],
     ),
     HASH_COMMENT_MODE,
     Mode(
       match: ["\\bdef", "\\s+", "[\\p{XID_Start}_]\\p{XID_Continue}*"],
       scope: {"1": "keyword", "3": "title.function"},
-      contains: [
-        ModeReference('~contains~7~contains~0'),
-      ],
+      contains: [ModeReference('~contains~7~contains~0')],
     ),
     Mode(
       variants: [
@@ -751,7 +706,7 @@ final python = Language(
             "\\s*",
             "\\(\\s*",
             "[\\p{XID_Start}_]\\p{XID_Continue}*",
-            "\\s*\\)"
+            "\\s*\\)",
           ],
         ),
         Mode(

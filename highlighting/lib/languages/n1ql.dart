@@ -185,7 +185,7 @@ final n1Ql = Language(
           "with",
           "within",
           "work",
-          "xor"
+          "xor",
         ],
         "literal": ["true", "false", "null", "missing|5"],
         "built_in": [
@@ -320,33 +320,27 @@ final n1Ql = Language(
           "toboolean",
           "tonumber",
           "toobject",
-          "tostring"
-        ]
+          "tostring",
+        ],
       },
       contains: [
         Mode(
           className: "string",
           begin: "'",
           end: "'",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
         Mode(
           className: "string",
           begin: "\"",
           end: "\"",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
         Mode(
           className: "symbol",
           begin: "`",
           end: "`",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
         C_NUMBER_MODE,
         C_BLOCK_COMMENT_MODE,

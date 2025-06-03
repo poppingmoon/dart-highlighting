@@ -1,14 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const brownPaperTheme = {
-  'root':
-      TextStyle(color: Color(0xff363c69), backgroundColor: Color(0xffb7a68e)),
+  'root': TextStyle(
+    color: Color(0xff363c69),
+    backgroundColor: Color(0xffb7a68e),
+  ),
   'keyword': TextStyle(color: Color(0xff005599), fontWeight: FontWeight.w700),
   'literal': TextStyle(color: Color(0xff005599), fontWeight: FontWeight.w700),
-  'selector-tag':
-      TextStyle(color: Color(0xff005599), fontWeight: FontWeight.w700),
+  'selector-tag': TextStyle(
+    color: Color(0xff005599),
+    fontWeight: FontWeight.w700,
+  ),
   'addition': TextStyle(color: Color(0xff2c009f)),
   'attribute': TextStyle(color: Color(0xff2c009f)),
   'built_in': TextStyle(color: Color(0xff2c009f)),

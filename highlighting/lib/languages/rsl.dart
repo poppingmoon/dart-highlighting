@@ -21,7 +21,7 @@ final rsl = Language(
       "else",
       "break",
       "extern",
-      "continue"
+      "continue",
     ],
     "built_in": [
       "abs",
@@ -98,9 +98,9 @@ final rsl = Language(
       "vtransform",
       "xcomp",
       "ycomp",
-      "zcomp"
+      "zcomp",
     ],
-    "type": ["matrix", "float", "color", "point", "normal", "vector"]
+    "type": ["matrix", "float", "color", "point", "normal", "vector"],
   },
   illegal: "</",
   contains: [
@@ -109,22 +109,15 @@ final rsl = Language(
     QUOTE_STRING_MODE,
     APOS_STRING_MODE,
     C_NUMBER_MODE,
-    Mode(
-      className: "meta",
-      begin: "#",
-      end: "\$",
-    ),
+    Mode(className: "meta", begin: "#", end: "\$"),
     Mode(
       match: [
         "(surface|displacement|light|volume|imager)",
         "\\s+",
-        "[a-zA-Z]\\w*"
+        "[a-zA-Z]\\w*",
       ],
       scope: {"1": "keyword", "3": "title.class"},
     ),
-    Mode(
-      beginKeywords: "illuminate illuminance gather",
-      end: "\\(",
-    ),
+    Mode(beginKeywords: "illuminate illuminance gather", end: "\\("),
   ],
 );

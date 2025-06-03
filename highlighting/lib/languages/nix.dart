@@ -14,21 +14,12 @@ final nix = Language(
       begin: "[a-zA-Z0-9-_]+(\\s*=)",
       returnBegin: true,
       relevance: 0,
-      contains: [
-        Mode(
-          className: "attr",
-          begin: "\\S+",
-          relevance: 0.2,
-        ),
-      ],
+      contains: [Mode(className: "attr", begin: "\\S+", relevance: 0.2)],
     ),
     '~contains~3': Mode(
       className: "string",
       contains: [
-        Mode(
-          className: "char.escape",
-          begin: "''\\\$",
-        ),
+        Mode(className: "char.escape", begin: "''\\\$"),
         Mode(
           className: "subst",
           begin: "\\\$\\{",
@@ -43,7 +34,7 @@ final nix = Language(
               "assert",
               "if",
               "else",
-              "then"
+              "then",
             ],
             "literal": ["true", "false", "or", "and", "null"],
             "built_in": [
@@ -57,8 +48,8 @@ final nix = Language(
               "removeAttrs",
               "throw",
               "toString",
-              "derivation"
-            ]
+              "derivation",
+            ],
           },
           contains: [
             NUMBER_MODE,
@@ -70,14 +61,8 @@ final nix = Language(
         ),
       ],
       variants: [
-        Mode(
-          begin: "''",
-          end: "''",
-        ),
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
+        Mode(begin: "''", end: "''"),
+        Mode(begin: "\"", end: "\""),
       ],
     ),
   },
@@ -93,7 +78,7 @@ final nix = Language(
       "assert",
       "if",
       "else",
-      "then"
+      "then",
     ],
     "literal": ["true", "false", "or", "and", "null"],
     "built_in": [
@@ -107,8 +92,8 @@ final nix = Language(
       "removeAttrs",
       "throw",
       "toString",
-      "derivation"
-    ]
+      "derivation",
+    ],
   },
   contains: [
     NUMBER_MODE,

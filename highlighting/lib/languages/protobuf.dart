@@ -21,7 +21,7 @@ final protobuf = Language(
       "required",
       "repeated",
       "group",
-      "oneof"
+      "oneof",
     ],
     "type": [
       "double",
@@ -38,9 +38,9 @@ final protobuf = Language(
       "sfixed64",
       "bool",
       "string",
-      "bytes"
+      "bytes",
     ],
-    "literal": ["true", "false"]
+    "literal": ["true", "false"],
   },
   contains: [
     QUOTE_STRING_MODE,
@@ -58,8 +58,6 @@ final protobuf = Language(
       excludeEnd: true,
       keywords: "rpc returns",
     ),
-    Mode(
-      begin: "^\\s*[A-Z_]+(?=\\s*=[^\\n]+;\$)",
-    ),
+    Mode(begin: "^\\s*[A-Z_]+(?=\\s*=[^\\n]+;\$)"),
   ],
 );

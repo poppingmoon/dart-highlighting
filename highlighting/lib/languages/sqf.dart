@@ -13,22 +13,12 @@ final sqf = Language(
     '~contains~5~variants~1': Mode(
       begin: "'",
       end: "'",
-      contains: [
-        Mode(
-          begin: "''",
-          relevance: 0,
-        ),
-      ],
+      contains: [Mode(begin: "''", relevance: 0)],
     ),
     '~contains~5~variants~0': Mode(
       begin: "\"",
       end: "\"",
-      contains: [
-        Mode(
-          begin: "\"\"",
-          relevance: 0,
-        ),
-      ],
+      contains: [Mode(begin: "\"\"", relevance: 0)],
     ),
   },
   name: "SQF",
@@ -62,7 +52,7 @@ final sqf = Language(
       "try",
       "waitUntil",
       "while",
-      "with"
+      "with",
     ],
     "built_in": [
       "abs",
@@ -2521,7 +2511,7 @@ final sqf = Language(
       "worldSize",
       "worldToModel",
       "worldToModelVisual",
-      "worldToScreen"
+      "worldToScreen",
     ],
     "literal": [
       "blufor",
@@ -2552,21 +2542,15 @@ final sqf = Language(
       "taskNull",
       "teamMemberNull",
       "true",
-      "west"
-    ]
+      "west",
+    ],
   },
   contains: [
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
     NUMBER_MODE,
-    Mode(
-      className: "variable",
-      begin: "\\b_+[a-zA-Z]\\w*",
-    ),
-    Mode(
-      className: "title",
-      begin: "[a-zA-Z][a-zA-Z_0-9]*_fnc_[a-zA-Z_0-9]+",
-    ),
+    Mode(className: "variable", begin: "\\b_+[a-zA-Z]\\w*"),
+    Mode(className: "title", begin: "[a-zA-Z][a-zA-Z_0-9]*_fnc_[a-zA-Z_0-9]+"),
     Mode(
       className: "string",
       variants: [
@@ -2580,10 +2564,7 @@ final sqf = Language(
       end: "\$",
       keywords: "define undef ifdef ifndef else endif include if",
       contains: [
-        Mode(
-          begin: "\\\\\\n",
-          relevance: 0,
-        ),
+        Mode(begin: "\\\\\\n", relevance: 0),
         Mode(
           className: "string",
           variants: [
@@ -2591,11 +2572,7 @@ final sqf = Language(
             ModeReference('~contains~5~variants~1'),
           ],
         ),
-        Mode(
-          begin: "<[^\\n>]*>",
-          end: "\$",
-          illegal: "\\n",
-        ),
+        Mode(begin: "<[^\\n>]*>", end: "\$", illegal: "\\n"),
         C_LINE_COMMENT_MODE,
         C_BLOCK_COMMENT_MODE,
       ],
@@ -2609,6 +2586,6 @@ final sqf = Language(
     " \\| ",
     "[a-zA-Z_]\\.",
     "\\:\\=",
-    "\\[\\:"
+    "\\[\\:",
   ],
 );

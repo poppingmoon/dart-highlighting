@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const tokyoNightDarkTheme = {
@@ -45,8 +47,10 @@ const tokyoNightDarkTheme = {
   'name': TextStyle(color: Color(0xffbb9af7)),
   'operator': TextStyle(color: Color(0xffbb9af7)),
   'punctuation': TextStyle(color: Color(0xffc0caf5)),
-  'root':
-      TextStyle(backgroundColor: Color(0xff1a1b26), color: Color(0xff9aa5ce)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff1a1b26),
+    color: Color(0xff9aa5ce),
+  ),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'strong': TextStyle(fontWeight: FontWeight.w700),
 };

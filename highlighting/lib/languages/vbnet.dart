@@ -12,7 +12,6 @@ final vbnet = Language(
   refs: {
     '~contains~6': Mode(
       scope: "comment",
-      begin: null,
       end: "\$",
       contains: [
         Mode(
@@ -28,12 +27,8 @@ final vbnet = Language(
         ),
       ],
       variants: [
-        Mode(
-          begin: "'",
-        ),
-        Mode(
-          begin: "([\\t ]|^)REM(?=\\s)",
-        ),
+        Mode(begin: "'"),
+        Mode(begin: "([\\t ]|^)REM(?=\\s)"),
       ],
     ),
   },
@@ -48,24 +43,17 @@ final vbnet = Language(
         "addressof and andalso await directcast gettype getxmlnamespace is isfalse isnot istrue like mod nameof new not or orelse trycast typeof xor cbool cbyte cchar cdate cdbl cdec cint clng cobj csbyte cshort csng cstr cuint culng cushort",
     "type":
         "boolean byte char date decimal double integer long object sbyte short single string uinteger ulong ushort",
-    "literal": "true false nothing"
+    "literal": "true false nothing",
   },
   illegal: "//|\\{|\\}|endif|gosub|variant|wend|^\\\$ ",
   contains: [
-    Mode(
-      className: "string",
-      begin: "\"(\"\"|[^/n])\"C\\b",
-    ),
+    Mode(className: "string", begin: "\"(\"\"|[^/n])\"C\\b"),
     Mode(
       className: "string",
       begin: "\"",
       end: "\"",
       illegal: "\\n",
-      contains: [
-        Mode(
-          begin: "\"\"",
-        ),
-      ],
+      contains: [Mode(begin: "\"\"")],
     ),
     Mode(
       className: "literal",
@@ -74,12 +62,8 @@ final vbnet = Language(
           begin:
               "# *(?:\\d{4}-\\d{1,2}-\\d{1,2}|\\d{1,2}\\/\\d{1,2}\\/\\d{4}) *#",
         ),
-        Mode(
-          begin: "# *\\d{1,2}(:\\d{1,2}){1,2} *#",
-        ),
-        Mode(
-          begin: "# *(\\d|1[012])(:\\d+){0,2} *(AM|PM) *#",
-        ),
+        Mode(begin: "# *\\d{1,2}(:\\d{1,2}){1,2} *#"),
+        Mode(begin: "# *(\\d|1[012])(:\\d+){0,2} *(AM|PM) *#"),
         Mode(
           begin:
               "# *(?:\\d{4}-\\d{1,2}-\\d{1,2}|\\d{1,2}\\/\\d{1,2}\\/\\d{4}) +(?:(\\d|1[012])(:\\d+){0,2} *(AM|PM)|\\d{1,2}(:\\d{1,2}){1,2}) *#",
@@ -94,34 +78,19 @@ final vbnet = Language(
           begin:
               "\\b\\d[\\d_]*((\\.[\\d_]+(E[+-]?[\\d_]+)?)|(E[+-]?[\\d_]+))[RFD@!#]?",
         ),
-        Mode(
-          begin: "\\b\\d[\\d_]*((U?[SIL])|[%&])?",
-        ),
-        Mode(
-          begin: "&H[\\dA-F_]+((U?[SIL])|[%&])?",
-        ),
-        Mode(
-          begin: "&O[0-7_]+((U?[SIL])|[%&])?",
-        ),
-        Mode(
-          begin: "&B[01_]+((U?[SIL])|[%&])?",
-        ),
+        Mode(begin: "\\b\\d[\\d_]*((U?[SIL])|[%&])?"),
+        Mode(begin: "&H[\\dA-F_]+((U?[SIL])|[%&])?"),
+        Mode(begin: "&O[0-7_]+((U?[SIL])|[%&])?"),
+        Mode(begin: "&B[01_]+((U?[SIL])|[%&])?"),
       ],
     ),
-    Mode(
-      className: "label",
-      begin: "^\\w+:",
-    ),
+    Mode(className: "label", begin: "^\\w+:"),
     Mode(
       scope: "comment",
       begin: "'''",
       end: "\$",
       contains: [
-        Mode(
-          className: "doctag",
-          begin: "<\\/?",
-          end: ">",
-        ),
+        Mode(className: "doctag", begin: "<\\/?", end: ">"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -143,11 +112,9 @@ final vbnet = Language(
       end: "\$",
       keywords: {
         "keyword":
-            "const disable else elseif enable end externalsource if region then"
+            "const disable else elseif enable end externalsource if region then",
       },
-      contains: [
-        ModeReference('~contains~6'),
-      ],
+      contains: [ModeReference('~contains~6')],
     ),
   ],
 );

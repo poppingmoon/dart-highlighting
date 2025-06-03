@@ -9,19 +9,14 @@
 
 import 'mode.dart';
 
-final BACKSLASH_ESCAPE = Mode(
-  begin: "\\\\[\\s\\S]",
-  relevance: 0,
-);
+final BACKSLASH_ESCAPE = Mode(begin: "\\\\[\\s\\S]", relevance: 0);
 
 final APOS_STRING_MODE = Mode(
   scope: "string",
   begin: "'",
   end: "'",
   illegal: "\\n",
-  contains: [
-    BACKSLASH_ESCAPE,
-  ],
+  contains: [BACKSLASH_ESCAPE],
 );
 
 final QUOTE_STRING_MODE = Mode(
@@ -29,9 +24,7 @@ final QUOTE_STRING_MODE = Mode(
   begin: "\"",
   end: "\"",
   illegal: "\\n",
-  contains: [
-    BACKSLASH_ESCAPE,
-  ],
+  contains: [BACKSLASH_ESCAPE],
 );
 
 final PHRASAL_WORDS_MODE = Mode(
@@ -129,20 +122,14 @@ final REGEXP_MODE = Mode(
           begin: "\\[",
           end: "\\]",
           relevance: 0,
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
       ],
     ),
   ],
 );
 
-final TITLE_MODE = Mode(
-  scope: "title",
-  begin: "[a-zA-Z]\\w*",
-  relevance: 0,
-);
+final TITLE_MODE = Mode(scope: "title", begin: "[a-zA-Z]\\w*", relevance: 0);
 
 final UNDERSCORE_TITLE_MODE = Mode(
   scope: "title",
@@ -150,7 +137,4 @@ final UNDERSCORE_TITLE_MODE = Mode(
   relevance: 0,
 );
 
-final METHOD_GUARD = Mode(
-  begin: "\\.\\s*[a-zA-Z_]\\w*",
-  relevance: 0,
-);
+final METHOD_GUARD = Mode(begin: "\\.\\s*[a-zA-Z_]\\w*", relevance: 0);

@@ -21,9 +21,7 @@ final arduino = Language(
     '~contains~0~contains~5': Mode(
       className: "number",
       variants: [
-        Mode(
-          begin: "\\b(0b[01']+)",
-        ),
+        Mode(begin: "\\b(0b[01']+)"),
         Mode(
           begin:
               "(-?)\\b([\\d']+(\\.[\\d']*)?|\\.[\\d']+)((ll|LL|l|L)(u|U)?|(u|U)(ll|LL|l|L)?|f|F|b|B)",
@@ -44,9 +42,7 @@ final arduino = Language(
       begin: "//",
       end: "\$",
       contains: [
-        Mode(
-          begin: "\\\\\\n",
-        ),
+        Mode(begin: "\\\\\\n"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -76,9 +72,7 @@ final arduino = Language(
       begin: "(u8?|U|L)?\"",
       end: "\"",
       illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     '~contains~0~contains~1': Mode(
       className: "meta",
@@ -86,13 +80,10 @@ final arduino = Language(
       end: "\$",
       keywords: {
         "keyword":
-            "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include"
+            "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include",
       },
       contains: [
-        Mode(
-          begin: "\\\\\\n",
-          relevance: 0,
-        ),
+        Mode(begin: "\\\\\\n", relevance: 0),
         Mode(
           className: "string",
           variants: [
@@ -101,10 +92,7 @@ final arduino = Language(
             ModeReference('~contains~0~contains~1~contains~1~variants~2'),
           ],
         ),
-        Mode(
-          className: "string",
-          begin: "<.*?>",
-        ),
+        Mode(className: "string", begin: "<.*?>"),
         ModeReference('~contains~0~contains~1~contains~3'),
         C_BLOCK_COMMENT_MODE,
       ],
@@ -213,8 +201,8 @@ final arduino = Language(
           "vfprintf",
           "visit",
           "vprintf",
-          "vsprintf"
-        ]
+          "vsprintf",
+        ],
       },
       begin:
           "\\b(?!decltype)(?!if)(?!for)(?!switch)(?!while)[a-zA-Z]\\w*(?=(<[^<>]+>|)\\s*\\()",
@@ -243,7 +231,7 @@ final arduino = Language(
       "boolean",
       "byte",
       "word",
-      "String"
+      "String",
     ],
     "keyword": [
       "alignas",
@@ -332,7 +320,7 @@ final arduino = Language(
       "volatile",
       "while",
       "xor",
-      "xor_eq"
+      "xor_eq",
     ],
     "literal": [
       "NULL",
@@ -358,7 +346,7 @@ final arduino = Language(
       "OUTPUT",
       "INPUT",
       "HIGH",
-      "LOW"
+      "LOW",
     ],
     "built_in": [
       "_Pragma",
@@ -416,7 +404,7 @@ final arduino = Language(
       "TFT",
       "GSM",
       "SPI",
-      "SD"
+      "SD",
     ],
     "_type_hints": [
       "any",
@@ -473,7 +461,7 @@ final arduino = Language(
       "vector",
       "weak_ptr",
       "wstring",
-      "wstring_view"
+      "wstring_view",
     ],
     "_hints": [
       "setup",
@@ -753,26 +741,17 @@ final arduino = Language(
       "min",
       "get",
       "run",
-      "put"
-    ]
+      "put",
+    ],
   },
   illegal: "</",
   classNameAliases: {"function.dispatch": "built_in"},
   contains: [
     Mode(
       variants: [
-        Mode(
-          begin: "=",
-          end: ";",
-        ),
-        Mode(
-          begin: "\\(",
-          end: "\\)",
-        ),
-        Mode(
-          beginKeywords: "new throw return else",
-          end: ";",
-        ),
+        Mode(begin: "=", end: ";"),
+        Mode(begin: "\\(", end: "\\)"),
+        Mode(beginKeywords: "new throw return else", end: ";"),
       ],
       keywords: {
         "type": [
@@ -795,7 +774,7 @@ final arduino = Language(
           "boolean",
           "byte",
           "word",
-          "String"
+          "String",
         ],
         "keyword": [
           "alignas",
@@ -884,7 +863,7 @@ final arduino = Language(
           "volatile",
           "while",
           "xor",
-          "xor_eq"
+          "xor_eq",
         ],
         "literal": [
           "NULL",
@@ -910,7 +889,7 @@ final arduino = Language(
           "OUTPUT",
           "INPUT",
           "HIGH",
-          "LOW"
+          "LOW",
         ],
         "built_in": [
           "_Pragma",
@@ -968,7 +947,7 @@ final arduino = Language(
           "TFT",
           "GSM",
           "SPI",
-          "SD"
+          "SD",
         ],
         "_type_hints": [
           "any",
@@ -1025,7 +1004,7 @@ final arduino = Language(
           "vector",
           "weak_ptr",
           "wstring",
-          "wstring_view"
+          "wstring_view",
         ],
         "_hints": [
           "setup",
@@ -1305,8 +1284,8 @@ final arduino = Language(
           "min",
           "get",
           "run",
-          "put"
-        ]
+          "put",
+        ],
       },
       contains: [
         ModeReference('~contains~0~contains~0'),
@@ -1340,7 +1319,7 @@ final arduino = Language(
               "boolean",
               "byte",
               "word",
-              "String"
+              "String",
             ],
             "keyword": [
               "alignas",
@@ -1429,7 +1408,7 @@ final arduino = Language(
               "volatile",
               "while",
               "xor",
-              "xor_eq"
+              "xor_eq",
             ],
             "literal": [
               "NULL",
@@ -1455,7 +1434,7 @@ final arduino = Language(
               "OUTPUT",
               "INPUT",
               "HIGH",
-              "LOW"
+              "LOW",
             ],
             "built_in": [
               "_Pragma",
@@ -1513,7 +1492,7 @@ final arduino = Language(
               "TFT",
               "GSM",
               "SPI",
-              "SD"
+              "SD",
             ],
             "_type_hints": [
               "any",
@@ -1570,7 +1549,7 @@ final arduino = Language(
               "vector",
               "weak_ptr",
               "wstring",
-              "wstring_view"
+              "wstring_view",
             ],
             "_hints": [
               "setup",
@@ -1850,8 +1829,8 @@ final arduino = Language(
               "min",
               "get",
               "run",
-              "put"
-            ]
+              "put",
+            ],
           },
           contains: [
             ModeReference('~contains~0~contains~0'),
@@ -1896,7 +1875,7 @@ final arduino = Language(
           "boolean",
           "byte",
           "word",
-          "String"
+          "String",
         ],
         "keyword": [
           "alignas",
@@ -1985,7 +1964,7 @@ final arduino = Language(
           "volatile",
           "while",
           "xor",
-          "xor_eq"
+          "xor_eq",
         ],
         "literal": [
           "NULL",
@@ -2011,7 +1990,7 @@ final arduino = Language(
           "OUTPUT",
           "INPUT",
           "HIGH",
-          "LOW"
+          "LOW",
         ],
         "built_in": [
           "_Pragma",
@@ -2069,7 +2048,7 @@ final arduino = Language(
           "TFT",
           "GSM",
           "SPI",
-          "SD"
+          "SD",
         ],
         "_type_hints": [
           "any",
@@ -2126,7 +2105,7 @@ final arduino = Language(
           "vector",
           "weak_ptr",
           "wstring",
-          "wstring_view"
+          "wstring_view",
         ],
         "_hints": [
           "setup",
@@ -2406,8 +2385,8 @@ final arduino = Language(
           "min",
           "get",
           "run",
-          "put"
-        ]
+          "put",
+        ],
       },
       illegal: "[^\\w\\s\\*&:<>.]",
       contains: [
@@ -2434,7 +2413,7 @@ final arduino = Language(
               "boolean",
               "byte",
               "word",
-              "String"
+              "String",
             ],
             "keyword": [
               "alignas",
@@ -2523,7 +2502,7 @@ final arduino = Language(
               "volatile",
               "while",
               "xor",
-              "xor_eq"
+              "xor_eq",
             ],
             "literal": [
               "NULL",
@@ -2549,7 +2528,7 @@ final arduino = Language(
               "OUTPUT",
               "INPUT",
               "HIGH",
-              "LOW"
+              "LOW",
             ],
             "built_in": [
               "_Pragma",
@@ -2607,7 +2586,7 @@ final arduino = Language(
               "TFT",
               "GSM",
               "SPI",
-              "SD"
+              "SD",
             ],
             "_type_hints": [
               "any",
@@ -2664,7 +2643,7 @@ final arduino = Language(
               "vector",
               "weak_ptr",
               "wstring",
-              "wstring_view"
+              "wstring_view",
             ],
             "_hints": [
               "setup",
@@ -2944,8 +2923,8 @@ final arduino = Language(
               "min",
               "get",
               "run",
-              "put"
-            ]
+              "put",
+            ],
           },
           relevance: 0,
         ),
@@ -2961,10 +2940,7 @@ final arduino = Language(
           ],
           relevance: 0,
         ),
-        Mode(
-          begin: "::",
-          relevance: 0,
-        ),
+        Mode(begin: "::", relevance: 0),
         Mode(
           begin: ":",
           endsWithParent: true,
@@ -2973,10 +2949,7 @@ final arduino = Language(
             ModeReference('~contains~0~contains~5'),
           ],
         ),
-        Mode(
-          relevance: 0,
-          match: ",",
-        ),
+        Mode(relevance: 0, match: ","),
         Mode(
           className: "params",
           begin: "\\(",
@@ -3002,7 +2975,7 @@ final arduino = Language(
               "boolean",
               "byte",
               "word",
-              "String"
+              "String",
             ],
             "keyword": [
               "alignas",
@@ -3091,7 +3064,7 @@ final arduino = Language(
               "volatile",
               "while",
               "xor",
-              "xor_eq"
+              "xor_eq",
             ],
             "literal": [
               "NULL",
@@ -3117,7 +3090,7 @@ final arduino = Language(
               "OUTPUT",
               "INPUT",
               "HIGH",
-              "LOW"
+              "LOW",
             ],
             "built_in": [
               "_Pragma",
@@ -3175,7 +3148,7 @@ final arduino = Language(
               "TFT",
               "GSM",
               "SPI",
-              "SD"
+              "SD",
             ],
             "_type_hints": [
               "any",
@@ -3232,7 +3205,7 @@ final arduino = Language(
               "vector",
               "weak_ptr",
               "wstring",
-              "wstring_view"
+              "wstring_view",
             ],
             "_hints": [
               "setup",
@@ -3512,8 +3485,8 @@ final arduino = Language(
               "min",
               "get",
               "run",
-              "put"
-            ]
+              "put",
+            ],
           },
           relevance: 0,
           contains: [
@@ -3546,7 +3519,7 @@ final arduino = Language(
                   "boolean",
                   "byte",
                   "word",
-                  "String"
+                  "String",
                 ],
                 "keyword": [
                   "alignas",
@@ -3635,7 +3608,7 @@ final arduino = Language(
                   "volatile",
                   "while",
                   "xor",
-                  "xor_eq"
+                  "xor_eq",
                 ],
                 "literal": [
                   "NULL",
@@ -3661,7 +3634,7 @@ final arduino = Language(
                   "OUTPUT",
                   "INPUT",
                   "HIGH",
-                  "LOW"
+                  "LOW",
                 ],
                 "built_in": [
                   "_Pragma",
@@ -3719,7 +3692,7 @@ final arduino = Language(
                   "TFT",
                   "GSM",
                   "SPI",
-                  "SD"
+                  "SD",
                 ],
                 "_type_hints": [
                   "any",
@@ -3776,7 +3749,7 @@ final arduino = Language(
                   "vector",
                   "weak_ptr",
                   "wstring",
-                  "wstring_view"
+                  "wstring_view",
                 ],
                 "_hints": [
                   "setup",
@@ -4056,8 +4029,8 @@ final arduino = Language(
                   "min",
                   "get",
                   "run",
-                  "put"
-                ]
+                  "put",
+                ],
               },
               relevance: 0,
               contains: [
@@ -4111,7 +4084,7 @@ final arduino = Language(
           "boolean",
           "byte",
           "word",
-          "String"
+          "String",
         ],
         "keyword": [
           "alignas",
@@ -4200,7 +4173,7 @@ final arduino = Language(
           "volatile",
           "while",
           "xor",
-          "xor_eq"
+          "xor_eq",
         ],
         "literal": [
           "NULL",
@@ -4226,7 +4199,7 @@ final arduino = Language(
           "OUTPUT",
           "INPUT",
           "HIGH",
-          "LOW"
+          "LOW",
         ],
         "built_in": [
           "_Pragma",
@@ -4284,7 +4257,7 @@ final arduino = Language(
           "TFT",
           "GSM",
           "SPI",
-          "SD"
+          "SD",
         ],
         "_type_hints": [
           "any",
@@ -4341,7 +4314,7 @@ final arduino = Language(
           "vector",
           "weak_ptr",
           "wstring",
-          "wstring_view"
+          "wstring_view",
         ],
         "_hints": [
           "setup",
@@ -4621,13 +4594,10 @@ final arduino = Language(
           "min",
           "get",
           "run",
-          "put"
-        ]
+          "put",
+        ],
       },
-      contains: [
-        ModeSelfReference(),
-        ModeReference('~contains~0~contains~2'),
-      ],
+      contains: [ModeSelfReference(), ModeReference('~contains~0~contains~2')],
     ),
     Mode(
       begin: "[a-zA-Z]\\w*::",
@@ -4652,7 +4622,7 @@ final arduino = Language(
           "boolean",
           "byte",
           "word",
-          "String"
+          "String",
         ],
         "keyword": [
           "alignas",
@@ -4741,7 +4711,7 @@ final arduino = Language(
           "volatile",
           "while",
           "xor",
-          "xor_eq"
+          "xor_eq",
         ],
         "literal": [
           "NULL",
@@ -4767,7 +4737,7 @@ final arduino = Language(
           "OUTPUT",
           "INPUT",
           "HIGH",
-          "LOW"
+          "LOW",
         ],
         "built_in": [
           "_Pragma",
@@ -4825,7 +4795,7 @@ final arduino = Language(
           "TFT",
           "GSM",
           "SPI",
-          "SD"
+          "SD",
         ],
         "_type_hints": [
           "any",
@@ -4882,7 +4852,7 @@ final arduino = Language(
           "vector",
           "weak_ptr",
           "wstring",
-          "wstring_view"
+          "wstring_view",
         ],
         "_hints": [
           "setup",
@@ -5162,15 +5132,15 @@ final arduino = Language(
           "min",
           "get",
           "run",
-          "put"
-        ]
+          "put",
+        ],
       },
     ),
     Mode(
       match: [
         "\\b(?:enum(?:\\s+(?:class|struct))?|class|struct|union)",
         "\\s+",
-        "\\w+"
+        "\\w+",
       ],
       className: {"1": "keyword", "3": "title.class"},
     ),

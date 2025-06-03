@@ -58,8 +58,8 @@ final wasm = Language(
       "tee_local",
       "then",
       "type",
-      "unreachable"
-    ]
+      "unreachable",
+    ],
   },
   contains: [
     Mode(
@@ -103,24 +103,14 @@ final wasm = Language(
       match: ["(?:offset|align)", "\\s*", "="],
       className: {"1": "keyword", "3": "operator"},
     ),
-    Mode(
-      className: "variable",
-      begin: "\\\$[\\w_]+",
-    ),
-    Mode(
-      match: "(\\((?!;)|\\))+",
-      className: "punctuation",
-      relevance: 0,
-    ),
+    Mode(className: "variable", begin: "\\\$[\\w_]+"),
+    Mode(match: "(\\((?!;)|\\))+", className: "punctuation", relevance: 0),
     Mode(
       begin: ["(?:func|call|call_indirect)", "\\s+", "\\\$[^\\s)]+"],
       className: {"1": "keyword", "3": "title.function"},
     ),
     QUOTE_STRING_MODE,
-    Mode(
-      match: "(i32|i64|f32|f64)(?!\\.)",
-      className: "type",
-    ),
+    Mode(match: "(i32|i64|f32|f64)(?!\\.)", className: "type"),
     Mode(
       className: "keyword",
       match:

@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const stackoverflowLightTheme = {
-  'root':
-      TextStyle(color: Color(0xff2f3337), backgroundColor: Color(0xfff6f6f6)),
+  'root': TextStyle(
+    color: Color(0xff2f3337),
+    backgroundColor: Color(0xfff6f6f6),
+  ),
   'subst': TextStyle(color: Color(0xff2f3337)),
   'comment': TextStyle(color: Color(0xff656e77)),
   'attr': TextStyle(color: Color(0xff015692)),

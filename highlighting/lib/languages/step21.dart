@@ -15,19 +15,11 @@ final step21 = Language(
   case_insensitive: true,
   keywords: {
     "\$pattern": "[A-Z_][A-Z0-9_.]*",
-    "keyword": ["HEADER", "ENDSEC", "DATA"]
+    "keyword": ["HEADER", "ENDSEC", "DATA"],
   },
   contains: [
-    Mode(
-      className: "meta",
-      begin: "ISO-10303-21;",
-      relevance: 10,
-    ),
-    Mode(
-      className: "meta",
-      begin: "END-ISO-10303-21;",
-      relevance: 10,
-    ),
+    Mode(className: "meta", begin: "ISO-10303-21;", relevance: 10),
+    Mode(className: "meta", begin: "END-ISO-10303-21;", relevance: 10),
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
     Mode(
@@ -49,38 +41,12 @@ final step21 = Language(
       ],
     ),
     C_NUMBER_MODE,
-    Mode(
-      scope: "string",
-      begin: "'",
-      end: "'",
-      illegal: null,
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
-    ),
-    Mode(
-      scope: "string",
-      begin: "\"",
-      end: "\"",
-      illegal: null,
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
-    ),
-    Mode(
-      className: "string",
-      begin: "'",
-      end: "'",
-    ),
+    Mode(scope: "string", begin: "'", end: "'", contains: [BACKSLASH_ESCAPE]),
+    Mode(scope: "string", begin: "\"", end: "\"", contains: [BACKSLASH_ESCAPE]),
+    Mode(className: "string", begin: "'", end: "'"),
     Mode(
       className: "symbol",
-      variants: [
-        Mode(
-          begin: "#",
-          end: "\\d+",
-          illegal: "\\W",
-        ),
-      ],
+      variants: [Mode(begin: "#", end: "\\d+", illegal: "\\W")],
     ),
   ],
 );

@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const androidstudioTheme = {
-  'root':
-      TextStyle(color: Color(0xffa9b7c6), backgroundColor: Color(0xff282b2e)),
+  'root': TextStyle(
+    color: Color(0xffa9b7c6),
+    backgroundColor: Color(0xff282b2e),
+  ),
   'bullet': TextStyle(color: Color(0xff6897bb)),
   'literal': TextStyle(color: Color(0xff6897bb)),
   'number': TextStyle(color: Color(0xff6897bb)),

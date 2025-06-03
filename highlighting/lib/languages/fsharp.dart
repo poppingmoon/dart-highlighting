@@ -29,12 +29,8 @@ final fsharp = Language(
     '~contains~1~variants~0~contains~2~contains~8~contains~1': Mode(
       scope: "symbol",
       variants: [
-        Mode(
-          match: "\\B('|\\^)``.*?``",
-        ),
-        Mode(
-          match: "\\B('|\\^)[a-zA-Z_]\\w*",
-        ),
+        Mode(match: "\\B('|\\^)``.*?``"),
+        Mode(match: "\\B('|\\^)[a-zA-Z_]\\w*"),
       ],
       relevance: 0,
     ),
@@ -104,7 +100,7 @@ final fsharp = Language(
           "when",
           "while",
           "with",
-          "yield"
+          "yield",
         ],
         "literal": [
           "true",
@@ -117,7 +113,7 @@ final fsharp = Language(
           "infinity",
           "infinityf",
           "nan",
-          "nanf"
+          "nanf",
         ],
         "built_in": [
           "not",
@@ -153,12 +149,12 @@ final fsharp = Language(
           "fprintf",
           "fprintfn",
           "failwith",
-          "failwithf"
+          "failwithf",
         ],
         "variable.constant": [
           "__LINE__",
           "__SOURCE_DIRECTORY__",
-          "__SOURCE_FILE__"
+          "__SOURCE_FILE__",
         ],
         "type": [
           "bool",
@@ -197,20 +193,18 @@ final fsharp = Language(
           "obj",
           "outref",
           "voidptr",
-          "Result"
-        ]
+          "Result",
+        ],
       },
       contains: [
         ModeReference('~contains~1~variants~0~contains~2~contains~6'),
         ModeReference(
-            '~contains~1~variants~0~contains~2~contains~8~contains~1'),
-        Mode(
-          scope: overwritingNullString,
-          begin: "``",
-          end: "``",
+          '~contains~1~variants~0~contains~2~contains~8~contains~1',
         ),
+        Mode(scope: overwritingNullString, begin: "``", end: "``"),
         ModeReference(
-            '~contains~1~variants~0~contains~2~contains~8~contains~3'),
+          '~contains~1~variants~0~contains~2~contains~8~contains~3',
+        ),
       ],
     ),
     '~contains~1~variants~0~contains~2~contains~7': Mode(
@@ -251,18 +245,14 @@ final fsharp = Language(
       scope: "string",
       begin: "\"",
       end: "\"",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     '~contains~1~variants~0~contains~2~contains~2': Mode(
       scope: "string",
       begin: "@\"",
       end: "\"",
       contains: [
-        Mode(
-          match: "\"\"",
-        ),
+        Mode(match: "\"\""),
         BACKSLASH_ESCAPE,
       ],
     ),
@@ -273,16 +263,13 @@ final fsharp = Language(
       relevance: 0,
     ),
     '~contains~1~variants~0~contains~2~contains~11': Mode(
-      variants: [
-        BINARY_NUMBER_MODE,
-        C_NUMBER_MODE,
-      ],
+      variants: [BINARY_NUMBER_MODE, C_NUMBER_MODE],
     ),
     '~contains~1~variants~0~contains~2~contains~10': Mode(
       begin: [
         "^\\s*",
         "#(?:if|else|endif|line|nowarn|light|r|i|I|load|time|help|quit)",
-        "\\b"
+        "\\b",
       ],
       beginScope: {"2": "meta"},
       end: "(?=\\s|\$)",
@@ -292,12 +279,8 @@ final fsharp = Language(
       begin: "\\\$\"",
       end: "\"",
       contains: [
-        Mode(
-          match: "\\{\\{",
-        ),
-        Mode(
-          match: "\\}\\}",
-        ),
+        Mode(match: "\\{\\{"),
+        Mode(match: "\\}\\}"),
         BACKSLASH_ESCAPE,
         ModeReference('~contains~1~variants~0~contains~2'),
       ],
@@ -307,15 +290,9 @@ final fsharp = Language(
       begin: "(\\\$@|@\\\$)\"",
       end: "\"",
       contains: [
-        Mode(
-          match: "\\{\\{",
-        ),
-        Mode(
-          match: "\\}\\}",
-        ),
-        Mode(
-          match: "\"\"",
-        ),
+        Mode(match: "\\{\\{"),
+        Mode(match: "\\}\\}"),
+        Mode(match: "\"\""),
         BACKSLASH_ESCAPE,
         ModeReference('~contains~1~variants~0~contains~2'),
       ],
@@ -385,7 +362,7 @@ final fsharp = Language(
           "when",
           "while",
           "with",
-          "yield"
+          "yield",
         ],
         "literal": [
           "true",
@@ -398,7 +375,7 @@ final fsharp = Language(
           "infinity",
           "infinityf",
           "nan",
-          "nanf"
+          "nanf",
         ],
         "built_in": [
           "not",
@@ -434,13 +411,13 @@ final fsharp = Language(
           "fprintf",
           "fprintfn",
           "failwith",
-          "failwithf"
+          "failwithf",
         ],
         "variable.constant": [
           "__LINE__",
           "__SOURCE_DIRECTORY__",
-          "__SOURCE_FILE__"
-        ]
+          "__SOURCE_FILE__",
+        ],
       },
       contains: [
         ModeReference('~contains~1~variants~0~contains~2~contains~0'),
@@ -456,7 +433,8 @@ final fsharp = Language(
         ModeReference('~contains~1~variants~0~contains~2~contains~10'),
         ModeReference('~contains~1~variants~0~contains~2~contains~11'),
         ModeReference(
-            '~contains~1~variants~0~contains~2~contains~8~contains~1'),
+          '~contains~1~variants~0~contains~2~contains~8~contains~1',
+        ),
         ModeReference('~contains~1~variants~0~contains~2~contains~13'),
       ],
     ),
@@ -528,7 +506,7 @@ final fsharp = Language(
       "when",
       "while",
       "with",
-      "yield"
+      "yield",
     ],
     "literal": [
       "true",
@@ -541,7 +519,7 @@ final fsharp = Language(
       "infinity",
       "infinityf",
       "nan",
-      "nanf"
+      "nanf",
     ],
     "built_in": [
       "not",
@@ -577,9 +555,13 @@ final fsharp = Language(
       "fprintf",
       "fprintfn",
       "failwith",
-      "failwithf"
+      "failwithf",
     ],
-    "variable.constant": ["__LINE__", "__SOURCE_DIRECTORY__", "__SOURCE_FILE__"]
+    "variable.constant": [
+      "__LINE__",
+      "__SOURCE_DIRECTORY__",
+      "__SOURCE_FILE__",
+    ],
   },
   illegal: "\\/\\*",
   classNameAliases: {"computation-expression": "keyword"},
@@ -592,12 +574,8 @@ final fsharp = Language(
           begin: "\\\$\"\"\"",
           end: "\"\"\"",
           contains: [
-            Mode(
-              match: "\\{\\{",
-            ),
-            Mode(
-              match: "\\}\\}",
-            ),
+            Mode(match: "\\{\\{"),
+            Mode(match: "\\}\\}"),
             ModeReference('~contains~1~variants~0~contains~2'),
           ],
           relevance: 2,
@@ -677,7 +655,7 @@ final fsharp = Language(
           "when",
           "while",
           "with",
-          "yield"
+          "yield",
         ],
         "literal": [
           "true",
@@ -690,7 +668,7 @@ final fsharp = Language(
           "infinity",
           "infinityf",
           "nan",
-          "nanf"
+          "nanf",
         ],
         "built_in": [
           "not",
@@ -726,27 +704,21 @@ final fsharp = Language(
           "fprintf",
           "fprintfn",
           "failwith",
-          "failwithf"
+          "failwithf",
         ],
         "variable.constant": [
           "__LINE__",
           "__SOURCE_DIRECTORY__",
-          "__SOURCE_FILE__"
-        ]
+          "__SOURCE_FILE__",
+        ],
       },
       contains: [
         ModeReference('~contains~1~variants~0~contains~2~contains~6'),
-        Mode(
-          scope: overwritingNullString,
-          begin: "``",
-          end: "``",
-        ),
+        Mode(scope: overwritingNullString, begin: "``", end: "``"),
         ModeReference(
-            '~contains~1~variants~0~contains~2~contains~8~contains~1'),
-        Mode(
-          scope: "operator",
-          match: "<|>",
+          '~contains~1~variants~0~contains~2~contains~8~contains~1',
         ),
+        Mode(scope: "operator", match: "<|>"),
         ModeReference('~contains~1~variants~0~contains~2~contains~8'),
       ],
     ),
@@ -830,7 +802,7 @@ final fsharp = Language(
           "when",
           "while",
           "with",
-          "yield"
+          "yield",
         ],
         "literal": [
           "true",
@@ -843,7 +815,7 @@ final fsharp = Language(
           "infinity",
           "infinityf",
           "nan",
-          "nanf"
+          "nanf",
         ],
         "built_in": [
           "not",
@@ -879,12 +851,12 @@ final fsharp = Language(
           "fprintf",
           "fprintfn",
           "failwith",
-          "failwithf"
+          "failwithf",
         ],
         "variable.constant": [
           "__LINE__",
           "__SOURCE_DIRECTORY__",
-          "__SOURCE_FILE__"
+          "__SOURCE_FILE__",
         ],
         "type": [
           "bool",
@@ -923,20 +895,18 @@ final fsharp = Language(
           "obj",
           "outref",
           "voidptr",
-          "Result"
-        ]
+          "Result",
+        ],
       },
       contains: [
         ModeReference('~contains~1~variants~0~contains~2~contains~6'),
         ModeReference(
-            '~contains~1~variants~0~contains~2~contains~8~contains~1'),
-        Mode(
-          scope: overwritingNullString,
-          begin: "``",
-          end: "``",
+          '~contains~1~variants~0~contains~2~contains~8~contains~1',
         ),
+        Mode(scope: overwritingNullString, begin: "``", end: "``"),
         ModeReference(
-            '~contains~1~variants~0~contains~2~contains~8~contains~3'),
+          '~contains~1~variants~0~contains~2~contains~8~contains~3',
+        ),
       ],
     ),
     ModeReference('~contains~1~variants~0~contains~2~contains~8'),

@@ -16,13 +16,8 @@ final less = Language(
       end: "[;}]",
       relevance: 0,
       contains: [
-        Mode(
-          begin: "-(webkit|moz|ms|o)-",
-        ),
-        Mode(
-          className: "attr",
-          begin: "--[A-Za-z][A-Za-z0-9_-]*",
-        ),
+        Mode(begin: "-(webkit|moz|ms|o)-"),
+        Mode(className: "attr", begin: "--[A-Za-z][A-Za-z0-9_-]*"),
         Mode(
           className: "attribute",
           begin:
@@ -57,9 +52,7 @@ final less = Language(
       beginKeywords: "when",
       endsWithParent: true,
       contains: [
-        Mode(
-          beginKeywords: "and not",
-        ),
+        Mode(beginKeywords: "and not"),
         C_LINE_COMMENT_MODE,
         C_BLOCK_COMMENT_MODE,
         ModeReference('~contains~2~starts~contains~2'),
@@ -79,14 +72,8 @@ final less = Language(
     ),
     '~contains~3~starts~contains~15~contains~4~contains~0': Mode(
       variants: [
-        Mode(
-          begin: "[\\.#:&\\[>]",
-          end: "[;{}]",
-        ),
-        Mode(
-          begin: "([\\w-]+|@\\{[\\w-]+\\})",
-          end: "\\{",
-        ),
+        Mode(begin: "[\\.#:&\\[>]", end: "[;{}]"),
+        Mode(begin: "([\\w-]+|@\\{[\\w-]+\\})", end: "\\{"),
       ],
       returnBegin: true,
       returnEnd: true,
@@ -96,15 +83,10 @@ final less = Language(
         C_LINE_COMMENT_MODE,
         C_BLOCK_COMMENT_MODE,
         ModeReference(
-            '~contains~3~starts~contains~15~contains~4~contains~0~contains~2'),
-        Mode(
-          className: "keyword",
-          begin: "all\\b",
+          '~contains~3~starts~contains~15~contains~4~contains~0~contains~2',
         ),
-        Mode(
-          className: "variable",
-          begin: "@\\{[\\w-]+\\}",
-        ),
+        Mode(className: "keyword", begin: "all\\b"),
+        Mode(className: "variable", begin: "@\\{[\\w-]+\\}"),
         Mode(
           begin:
               "\\b(a|abbr|address|article|aside|audio|b|blockquote|body|button|canvas|caption|cite|code|dd|del|details|dfn|div|dl|dt|em|fieldset|figcaption|figure|footer|form|h1|h2|h3|h4|h5|h6|header|hgroup|html|i|iframe|img|input|ins|kbd|label|legend|li|main|mark|menu|nav|object|ol|p|q|quote|samp|section|span|strong|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|tr|ul|var|video)\\b",
@@ -116,29 +98,19 @@ final less = Language(
           begin: "([\\w-]+|@\\{[\\w-]+\\})",
           relevance: 0,
         ),
-        Mode(
-          className: "selector-id",
-          begin: "#([\\w-]+|@\\{[\\w-]+\\})",
-        ),
+        Mode(className: "selector-id", begin: "#([\\w-]+|@\\{[\\w-]+\\})"),
         Mode(
           className: "selector-class",
           begin: "\\.([\\w-]+|@\\{[\\w-]+\\})",
           relevance: 0,
         ),
-        Mode(
-          className: "selector-tag",
-          begin: "&",
-          relevance: 0,
-        ),
+        Mode(className: "selector-tag", begin: "&", relevance: 0),
         Mode(
           scope: "selector-attr",
           begin: "\\[",
           end: "\\]",
           illegal: "\$",
-          contains: [
-            APOS_STRING_MODE,
-            QUOTE_STRING_MODE,
-          ],
+          contains: [APOS_STRING_MODE, QUOTE_STRING_MODE],
         ),
         Mode(
           className: "selector-pseudo",
@@ -173,9 +145,7 @@ final less = Language(
             ModeReference('~contains~3~starts~contains~15'),
           ],
         ),
-        Mode(
-          begin: "!important",
-        ),
+        Mode(begin: "!important"),
         ModeReference('~contains~2~starts~contains~7~contains~14'),
       ],
     ),
@@ -199,20 +169,16 @@ final less = Language(
         ModeReference('~contains~3~starts~contains~15~contains~5'),
         ModeReference('~contains~3~starts~contains~15~contains~4~contains~0'),
         ModeReference(
-            '~contains~3~starts~contains~15~contains~4~contains~0~contains~2'),
+          '~contains~3~starts~contains~15~contains~4~contains~0~contains~2',
+        ),
         ModeReference('~contains~2~starts~contains~7~contains~14'),
       ],
     ),
     '~contains~3': Mode(
       className: "variable",
       variants: [
-        Mode(
-          begin: "@[\\w-]+\\s*:",
-          relevance: 15,
-        ),
-        Mode(
-          begin: "@[\\w-]+",
-        ),
+        Mode(begin: "@[\\w-]+\\s*:", relevance: 15),
+        Mode(begin: "@[\\w-]+"),
       ],
       starts: Mode(
         end: "[;}]",
@@ -250,9 +216,7 @@ final less = Language(
       className: "built_in",
       begin: "[\\w-]+(?=\\()",
     ),
-    '~contains~2~starts~contains~7~contains~13': Mode(
-      beginKeywords: "and not",
-    ),
+    '~contains~2~starts~contains~7~contains~13': Mode(beginKeywords: "and not"),
     '~contains~2~starts~contains~7~contains~12': Mode(
       scope: "meta",
       begin: "!important",
@@ -292,7 +256,7 @@ final less = Language(
         "\$pattern": "[a-z-]+",
         "keyword": "and or not only",
         "attribute":
-            "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height"
+            "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height",
       },
       relevance: 0,
     ),
@@ -302,11 +266,7 @@ final less = Language(
     ),
     '~contains~2~starts~contains~5': Mode(
       begin: "(url|data-uri)\\(",
-      starts: Mode(
-        className: "string",
-        end: "[\\)\\n]",
-        excludeEnd: true,
-      ),
+      starts: Mode(className: "string", end: "[\\)\\n]", excludeEnd: true),
     ),
     '~contains~2~starts~contains~4': Mode(
       scope: "number",
@@ -332,7 +292,7 @@ final less = Language(
           "\$pattern": "[a-z-]+",
           "keyword": "and or not only",
           "attribute":
-              "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height"
+              "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height",
         },
         returnEnd: true,
         contains: [
@@ -368,7 +328,8 @@ final less = Language(
     ModeReference('~contains~3~starts~contains~15~contains~5'),
     ModeReference('~contains~3~starts~contains~15~contains~4~contains~0'),
     ModeReference(
-        '~contains~3~starts~contains~15~contains~4~contains~0~contains~2'),
+      '~contains~3~starts~contains~15~contains~4~contains~0~contains~2',
+    ),
     ModeReference('~contains~2~starts~contains~7~contains~14'),
   ],
 );

@@ -13,12 +13,8 @@ final gams = Language(
     '~contains~9~contains~2': Mode(
       className: "symbol",
       variants: [
-        Mode(
-          begin: "=[lgenxc]=",
-        ),
-        Mode(
-          begin: "\\\$",
-        ),
+        Mode(begin: "=[lgenxc]="),
+        Mode(begin: "\\\$"),
       ],
     ),
     '~contains~7~contains~6': Mode(
@@ -40,19 +36,11 @@ final gams = Language(
     '~contains~7~contains~5~contains~0': Mode(
       className: "comment",
       variants: [
-        Mode(
-          begin: "'",
-          end: "'",
-        ),
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
+        Mode(begin: "'", end: "'"),
+        Mode(begin: "\"", end: "\""),
       ],
       illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     '~contains~7~contains~5': Mode(
       begin: "/",
@@ -62,7 +50,7 @@ final gams = Language(
             "abort acronym acronyms alias all and assign binary card diag display else eq file files for free ge gt if integer le loop lt maximizing minimizing model models ne negative no not option options or ord positive prod put putpage puttl repeat sameas semicont semiint smax smin solve sos1 sos2 sum system table then until using while xor yes",
         "literal": "eps inf na",
         "built_in":
-            "abs arccos arcsin arctan arctan2 Beta betaReg binomial ceil centropy cos cosh cvPower div div0 eDist entropy errorf execSeed exp fact floor frac gamma gammaReg log logBeta logGamma log10 log2 mapVal max min mod ncpCM ncpF ncpVUpow ncpVUsin normal pi poly power randBinomial randLinear randTriangle round rPower sigmoid sign signPower sin sinh slexp sllog10 slrec sqexp sqlog10 sqr sqrec sqrt tan tanh trunc uniform uniformInt vcPower bool_and bool_eqv bool_imp bool_not bool_or bool_xor ifThen rel_eq rel_ge rel_gt rel_le rel_lt rel_ne gday gdow ghour gleap gmillisec gminute gmonth gsecond gyear jdate jnow jstart jtime errorLevel execError gamsRelease gamsVersion handleCollect handleDelete handleStatus handleSubmit heapFree heapLimit heapSize jobHandle jobKill jobStatus jobTerminate licenseLevel licenseStatus maxExecError sleep timeClose timeComp timeElapsed timeExec timeStart"
+            "abs arccos arcsin arctan arctan2 Beta betaReg binomial ceil centropy cos cosh cvPower div div0 eDist entropy errorf execSeed exp fact floor frac gamma gammaReg log logBeta logGamma log10 log2 mapVal max min mod ncpCM ncpF ncpVUpow ncpVUsin normal pi poly power randBinomial randLinear randTriangle round rPower sigmoid sign signPower sin sinh slexp sllog10 slrec sqexp sqlog10 sqr sqrec sqrt tan tanh trunc uniform uniformInt vcPower bool_and bool_eqv bool_imp bool_not bool_or bool_xor ifThen rel_eq rel_ge rel_gt rel_le rel_lt rel_ne gday gdow ghour gleap gmillisec gminute gmonth gsecond gyear jdate jnow jstart jtime errorLevel execError gamsRelease gamsVersion handleCollect handleDelete handleStatus handleSubmit heapFree heapLimit heapSize jobHandle jobKill jobStatus jobTerminate licenseLevel licenseStatus maxExecError sleep timeClose timeComp timeElapsed timeExec timeStart",
       },
       contains: [
         ModeReference('~contains~7~contains~5~contains~0'),
@@ -82,7 +70,7 @@ final gams = Language(
         "abort acronym acronyms alias all and assign binary card diag display else eq file files for free ge gt if integer le loop lt maximizing minimizing model models ne negative no not option options or ord positive prod put putpage puttl repeat sameas semicont semiint smax smin solve sos1 sos2 sum system table then until using while xor yes",
     "literal": "eps inf na",
     "built_in":
-        "abs arccos arcsin arctan arctan2 Beta betaReg binomial ceil centropy cos cosh cvPower div div0 eDist entropy errorf execSeed exp fact floor frac gamma gammaReg log logBeta logGamma log10 log2 mapVal max min mod ncpCM ncpF ncpVUpow ncpVUsin normal pi poly power randBinomial randLinear randTriangle round rPower sigmoid sign signPower sin sinh slexp sllog10 slrec sqexp sqlog10 sqr sqrec sqrt tan tanh trunc uniform uniformInt vcPower bool_and bool_eqv bool_imp bool_not bool_or bool_xor ifThen rel_eq rel_ge rel_gt rel_le rel_lt rel_ne gday gdow ghour gleap gmillisec gminute gmonth gsecond gyear jdate jnow jstart jtime errorLevel execError gamsRelease gamsVersion handleCollect handleDelete handleStatus handleSubmit heapFree heapLimit heapSize jobHandle jobKill jobStatus jobTerminate licenseLevel licenseStatus maxExecError sleep timeClose timeComp timeElapsed timeExec timeStart"
+        "abs arccos arcsin arctan arctan2 Beta betaReg binomial ceil centropy cos cosh cvPower div div0 eDist entropy errorf execSeed exp fact floor frac gamma gammaReg log logBeta logGamma log10 log2 mapVal max min mod ncpCM ncpF ncpVUpow ncpVUsin normal pi poly power randBinomial randLinear randTriangle round rPower sigmoid sign signPower sin sinh slexp sllog10 slrec sqexp sqlog10 sqr sqrec sqrt tan tanh trunc uniform uniformInt vcPower bool_and bool_eqv bool_imp bool_not bool_or bool_xor ifThen rel_eq rel_ge rel_gt rel_le rel_lt rel_ne gday gdow ghour gleap gmillisec gminute gmonth gsecond gyear jdate jnow jstart jtime errorLevel execError gamsRelease gamsVersion handleCollect handleDelete handleStatus handleSubmit heapFree heapLimit heapSize jobHandle jobKill jobStatus jobTerminate licenseLevel licenseStatus maxExecError sleep timeClose timeComp timeElapsed timeExec timeStart",
   },
   contains: [
     Mode(
@@ -108,12 +96,7 @@ final gams = Language(
       begin: "^\\\$[a-z0-9]+",
       end: "\$",
       returnBegin: true,
-      contains: [
-        Mode(
-          className: "keyword",
-          begin: "^\\\$[a-z0-9]+",
-        ),
-      ],
+      contains: [Mode(className: "keyword", begin: "^\\\$[a-z0-9]+")],
     ),
     Mode(
       scope: "comment",
@@ -176,9 +159,7 @@ final gams = Language(
         Mode(
           beginKeywords: "table",
           end: "\$",
-          contains: [
-            ModeReference('~contains~7~contains~6'),
-          ],
+          contains: [ModeReference('~contains~7~contains~6')],
         ),
         Mode(
           scope: "comment",
@@ -210,10 +191,7 @@ final gams = Language(
       begin: "^[a-z][a-z0-9_,\\-+' ()\$]+\\.{2}",
       returnBegin: true,
       contains: [
-        Mode(
-          className: "title",
-          begin: "^[a-z0-9_]+",
-        ),
+        Mode(className: "title", begin: "^[a-z0-9_]+"),
         Mode(
           className: "params",
           begin: "\\(",

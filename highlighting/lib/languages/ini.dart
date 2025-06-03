@@ -14,49 +14,25 @@ final ini = Language(
       className: "number",
       relevance: 0,
       variants: [
-        Mode(
-          begin: "([+-]+)?[\\d]+_[\\d_]+",
-        ),
-        Mode(
-          begin: "\\b\\d+(\\.\\d+)?",
-        ),
+        Mode(begin: "([+-]+)?[\\d]+_[\\d_]+"),
+        Mode(begin: "\\b\\d+(\\.\\d+)?"),
       ],
     ),
     '~contains~2~starts~contains~1~contains~3': Mode(
       className: "string",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       variants: [
-        Mode(
-          begin: "'''",
-          end: "'''",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "\"\"\"",
-          end: "\"\"\"",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
-        Mode(
-          begin: "'",
-          end: "'",
-        ),
+        Mode(begin: "'''", end: "'''", relevance: 10),
+        Mode(begin: "\"\"\"", end: "\"\"\"", relevance: 10),
+        Mode(begin: "\"", end: "\""),
+        Mode(begin: "'", end: "'"),
       ],
     ),
     '~contains~2~starts~contains~1~contains~2': Mode(
       className: "variable",
       variants: [
-        Mode(
-          begin: "\\\$[\\w\\d\"][\\w\\d_]*",
-        ),
-        Mode(
-          begin: "\\\$\\{(.*?)\\}",
-        ),
+        Mode(begin: "\\\$[\\w\\d\"][\\w\\d_]*"),
+        Mode(begin: "\\\$\\{(.*?)\\}"),
       ],
     ),
     '~contains~2~starts~contains~1~contains~1': Mode(
@@ -79,14 +55,8 @@ final ini = Language(
         ),
       ],
       variants: [
-        Mode(
-          begin: ";",
-          end: "\$",
-        ),
-        Mode(
-          begin: "#",
-          end: "\$",
-        ),
+        Mode(begin: ";", end: "\$"),
+        Mode(begin: "#", end: "\$"),
       ],
     ),
   },
@@ -96,11 +66,7 @@ final ini = Language(
   illegal: "\\S",
   contains: [
     ModeReference('~contains~0'),
-    Mode(
-      className: "section",
-      begin: "\\[+",
-      end: "\\]+",
-    ),
+    Mode(className: "section", begin: "\\[+", end: "\\]+"),
     Mode(
       begin:
           "(?:[A-Za-z0-9_-]+|\"(\\\\\"|[^\"])*\"|'[^']*')(\\s*\\.\\s*(?:[A-Za-z0-9_-]+|\"(\\\\\"|[^\"])*\"|'[^']*'))*(?=\\s*=\\s*[^#\\s])",

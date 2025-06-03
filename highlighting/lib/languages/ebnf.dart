@@ -33,28 +33,19 @@ final ebnf = Language(
   illegal: "\\S",
   contains: [
     ModeReference('~contains~0'),
-    Mode(
-      className: "attribute",
-      begin: "^[ ]*[a-zA-Z]+([\\s_-]+[a-zA-Z]+)*",
-    ),
+    Mode(className: "attribute", begin: "^[ ]*[a-zA-Z]+([\\s_-]+[a-zA-Z]+)*"),
     Mode(
       begin: "=",
       end: "[.;]",
       contains: [
         ModeReference('~contains~0'),
-        Mode(
-          className: "meta",
-          begin: "\\?.*\\?",
-        ),
+        Mode(className: "meta", begin: "\\?.*\\?"),
         Mode(
           className: "string",
           variants: [
             APOS_STRING_MODE,
             QUOTE_STRING_MODE,
-            Mode(
-              begin: "`",
-              end: "`",
-            ),
+            Mode(begin: "`", end: "`"),
           ],
         ),
       ],

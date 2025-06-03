@@ -85,7 +85,7 @@ final aspectj = Language(
     "error",
     "soft",
     "precedence",
-    "thisAspectInstance"
+    "thisAspectInstance",
   ],
   illegal: "<\\/|#",
   contains: [
@@ -94,14 +94,8 @@ final aspectj = Language(
       begin: "\\/\\*\\*",
       end: "\\*\\/",
       contains: [
-        Mode(
-          begin: "\\w+@",
-          relevance: 0,
-        ),
-        Mode(
-          className: "doctag",
-          begin: "@[A-Za-z]+",
-        ),
+        Mode(begin: "\\w+@", relevance: 0),
+        Mode(className: "doctag", begin: "@[A-Za-z]+"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -213,7 +207,7 @@ final aspectj = Language(
             "get",
             "set",
             "args",
-            "call"
+            "call",
           ],
           excludeEnd: false,
         ),
@@ -228,9 +222,7 @@ final aspectj = Language(
       keywords: "class interface",
       illegal: "[:\"\\[\\]]",
       contains: [
-        Mode(
-          beginKeywords: "extends implements",
-        ),
+        Mode(beginKeywords: "extends implements"),
         UNDERSCORE_TITLE_MODE,
       ],
     ),
@@ -243,9 +235,7 @@ final aspectj = Language(
         Mode(
           begin: "[a-zA-Z_]\\w*\\s*\\(",
           returnBegin: true,
-          contains: [
-            UNDERSCORE_TITLE_MODE,
-          ],
+          contains: [UNDERSCORE_TITLE_MODE],
         ),
       ],
     ),
@@ -329,7 +319,7 @@ final aspectj = Language(
         "error",
         "soft",
         "precedence",
-        "thisAspectInstance"
+        "thisAspectInstance",
       ],
       illegal: "[\"\\[\\]]",
       contains: [
@@ -413,17 +403,14 @@ final aspectj = Language(
             "get",
             "set",
             "args",
-            "call"
+            "call",
           ],
           relevance: 0,
         ),
         QUOTE_STRING_MODE,
       ],
     ),
-    Mode(
-      beginKeywords: "new throw",
-      relevance: 0,
-    ),
+    Mode(beginKeywords: "new throw", relevance: 0),
     Mode(
       className: "function",
       begin:
@@ -504,7 +491,7 @@ final aspectj = Language(
         "error",
         "soft",
         "precedence",
-        "thisAspectInstance"
+        "thisAspectInstance",
       ],
       excludeEnd: true,
       contains: [
@@ -512,9 +499,7 @@ final aspectj = Language(
           begin: "[a-zA-Z_]\\w*\\s*\\(",
           returnBegin: true,
           relevance: 0,
-          contains: [
-            UNDERSCORE_TITLE_MODE,
-          ],
+          contains: [UNDERSCORE_TITLE_MODE],
         ),
         Mode(
           className: "params",
@@ -595,7 +580,7 @@ final aspectj = Language(
             "error",
             "soft",
             "precedence",
-            "thisAspectInstance"
+            "thisAspectInstance",
           ],
           contains: [
             APOS_STRING_MODE,
@@ -609,9 +594,6 @@ final aspectj = Language(
       ],
     ),
     C_NUMBER_MODE,
-    Mode(
-      className: "meta",
-      begin: "@[A-Za-z]+",
-    ),
+    Mode(className: "meta", begin: "@[A-Za-z]+"),
   ],
 );

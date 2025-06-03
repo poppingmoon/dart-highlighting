@@ -14,17 +14,13 @@ final prolog = Language(
       className: "string",
       begin: "`",
       end: "`",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     '~contains~2~contains~4~contains~5': Mode(
       className: "comment",
       begin: "%",
       end: "\$",
-      contains: [
-        PHRASAL_WORDS_MODE,
-      ],
+      contains: [PHRASAL_WORDS_MODE],
     ),
     '~contains~2~contains~4~contains~11': Mode(
       className: "string",
@@ -53,9 +49,7 @@ final prolog = Language(
         C_NUMBER_MODE,
       ],
     ),
-    '~contains~2~contains~3': Mode(
-      begin: ":-",
-    ),
+    '~contains~2~contains~3': Mode(begin: ":-"),
     '~contains~2': Mode(
       begin: "\\(",
       end: "\\)",
@@ -79,19 +73,12 @@ final prolog = Language(
     '~contains~1': Mode(
       className: "symbol",
       variants: [
-        Mode(
-          begin: "[A-Z][a-zA-Z0-9_]*",
-        ),
-        Mode(
-          begin: "_[A-Za-z0-9_]*",
-        ),
+        Mode(begin: "[A-Z][a-zA-Z0-9_]*"),
+        Mode(begin: "_[A-Za-z0-9_]*"),
       ],
       relevance: 0,
     ),
-    '~contains~0': Mode(
-      begin: "[a-z][A-Za-z0-9_]*",
-      relevance: 0,
-    ),
+    '~contains~0': Mode(begin: "[a-z][A-Za-z0-9_]*", relevance: 0),
   },
   name: "Prolog",
   contains: [
@@ -108,8 +95,6 @@ final prolog = Language(
     ModeReference('~contains~2~contains~4~contains~10'),
     ModeReference('~contains~2~contains~4~contains~11'),
     C_NUMBER_MODE,
-    Mode(
-      begin: "\\.\$",
-    ),
+    Mode(begin: "\\.\$"),
   ],
 );

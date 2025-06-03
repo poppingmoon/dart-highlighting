@@ -92,7 +92,7 @@ final elm = Language(
     "port",
     "effect",
     "command",
-    "subscription"
+    "subscription",
   ],
   contains: [
     Mode(
@@ -145,28 +145,15 @@ final elm = Language(
       begin: "port",
       end: "\$",
       keywords: "port",
-      contains: [
-        ModeReference('~contains~0~contains~0~contains~1'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0~contains~1')],
     ),
-    Mode(
-      className: "string",
-      begin: "'\\\\?.",
-      end: "'",
-      illegal: ".",
-    ),
+    Mode(className: "string", begin: "'\\\\?.", end: "'", illegal: "."),
     QUOTE_STRING_MODE,
     C_NUMBER_MODE,
     ModeReference('~contains~2~contains~0'),
-    Mode(
-      scope: "title",
-      begin: "^[_a-z][\\w']*",
-      relevance: 0,
-    ),
+    Mode(scope: "title", begin: "^[_a-z][\\w']*", relevance: 0),
     ModeReference('~contains~0~contains~0~contains~1'),
-    Mode(
-      begin: "->|<-",
-    ),
+    Mode(begin: "->|<-"),
   ],
   illegal: ";",
 );

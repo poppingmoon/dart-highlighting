@@ -46,22 +46,11 @@ final purebasic = Language(
           begin: "(Procedure|Declare)(C|CDLL|DLL)?",
           excludeEnd: true,
         ),
-        Mode(
-          className: "type",
-          begin: "\\.\\w*",
-        ),
+        Mode(className: "type", begin: "\\.\\w*"),
         UNDERSCORE_TITLE_MODE,
       ],
     ),
-    Mode(
-      className: "string",
-      begin: "(\\x7e)?\"",
-      end: "\"",
-      illegal: "\\n",
-    ),
-    Mode(
-      className: "symbol",
-      begin: "#[a-zA-Z_]\\w*\\\$?",
-    ),
+    Mode(className: "string", begin: "(\\x7e)?\"", end: "\"", illegal: "\\n"),
+    Mode(className: "symbol", begin: "#[a-zA-Z_]\\w*\\\$?"),
   ],
 );

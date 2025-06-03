@@ -186,12 +186,7 @@ final haskell = Language(
       scope: "string",
       begin: "'(?=\\\\?.')",
       end: "'",
-      contains: [
-        Mode(
-          scope: "char.escape",
-          match: "\\\\.",
-        ),
-      ],
+      contains: [Mode(scope: "char.escape", match: "\\\\.")],
     ),
     QUOTE_STRING_MODE,
     Mode(
@@ -205,23 +200,13 @@ final haskell = Language(
           match:
               "\\b0[xX]_*(([0-9a-fA-F]_*)+)(\\.(([0-9a-fA-F]_*)+))?([pP][+-]?(([0-9]_*)+))?\\b",
         ),
-        Mode(
-          match: "\\b0[oO](([0-7]_*)+)\\b",
-        ),
-        Mode(
-          match: "\\b0[bB](([01]_*)+)\\b",
-        ),
+        Mode(match: "\\b0[oO](([0-7]_*)+)\\b"),
+        Mode(match: "\\b0[bB](([01]_*)+)\\b"),
       ],
     ),
     ModeReference('~contains~2~contains~0'),
-    Mode(
-      scope: "title",
-      begin: "^[_a-z][\\w']*",
-      relevance: 0,
-    ),
+    Mode(scope: "title", begin: "^[_a-z][\\w']*", relevance: 0),
     ModeReference('~contains~0~contains~0~contains~4'),
-    Mode(
-      begin: "->|<-",
-    ),
+    Mode(begin: "->|<-"),
   ],
 );

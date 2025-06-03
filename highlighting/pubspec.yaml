@@ -4,15 +4,15 @@ version: 0.9.1+11.8.0
 homepage: https://github.com/akvelon/dart-highlighting
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=3.8.0 <4.0.0"
 
 dependencies:
-  collection: ^1.15.0
-  equatable: ^2.0.5
-  meta: ^1.7.0
-  tuple: ^2.0.1
+  collection: ^1.19.1
+  equatable: ^2.0.7
+  meta: ^1.16.0
+  tuple: ^2.0.2
 
 dev_dependencies:
-  path: ^1.8.0
-  test: ^1.16.5
-  total_lints: ^2.19.0
+  path: ^1.9.1
+  test: ^1.26.2
+  total_lints: ^3.4.0

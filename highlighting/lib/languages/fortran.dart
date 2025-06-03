@@ -215,7 +215,7 @@ final fortran = Language(
       "out",
       "common",
       "equivalence",
-      "data"
+      "data",
     ],
     "literal": [".False.", ".True."],
     "built_in": [
@@ -498,18 +498,15 @@ final fortran = Language(
       "co_max",
       "co_min",
       "co_sum",
-      "co_reduce"
-    ]
+      "co_reduce",
+    ],
   },
   illegal: "\\/\\*",
   contains: [
     Mode(
       className: "string",
       relevance: 0,
-      variants: [
-        APOS_STRING_MODE,
-        QUOTE_STRING_MODE,
-      ],
+      variants: [APOS_STRING_MODE, QUOTE_STRING_MODE],
     ),
     Mode(
       className: "function",
@@ -517,17 +514,10 @@ final fortran = Language(
       illegal: "[\${=\\n]",
       contains: [
         UNDERSCORE_TITLE_MODE,
-        Mode(
-          className: "params",
-          begin: "\\(",
-          end: "\\)",
-        ),
+        Mode(className: "params", begin: "\\(", end: "\\)"),
       ],
     ),
-    Mode(
-      begin: "^C\\s*=(?!=)",
-      relevance: 0,
-    ),
+    Mode(begin: "^C\\s*=(?!=)", relevance: 0),
     Mode(
       variants: [
         Mode(
@@ -592,15 +582,9 @@ final fortran = Language(
     Mode(
       className: "number",
       variants: [
-        Mode(
-          begin: "\\b\\d+\\.(\\d*)([de][+-]?\\d+)?(_[a-z_\\d]+)?",
-        ),
-        Mode(
-          begin: "\\b\\d+([de][+-]?\\d+)?(_[a-z_\\d]+)?",
-        ),
-        Mode(
-          begin: "\\.\\d+([de][+-]?\\d+)?(_[a-z_\\d]+)?",
-        ),
+        Mode(begin: "\\b\\d+\\.(\\d*)([de][+-]?\\d+)?(_[a-z_\\d]+)?"),
+        Mode(begin: "\\b\\d+([de][+-]?\\d+)?(_[a-z_\\d]+)?"),
+        Mode(begin: "\\.\\d+([de][+-]?\\d+)?(_[a-z_\\d]+)?"),
       ],
       relevance: 0,
     ),

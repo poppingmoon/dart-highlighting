@@ -29,9 +29,11 @@ final markdown = Language(
       ],
       variants: [
         ModeReference(
-            '~contains~0~variants~0~contains~2~contains~0~variants~0'),
+          '~contains~0~variants~0~contains~2~contains~0~variants~0',
+        ),
         ModeReference(
-            '~contains~0~variants~0~contains~2~contains~0~variants~1'),
+          '~contains~0~variants~0~contains~2~contains~0~variants~1',
+        ),
       ],
     ),
     '~contains~0~variants~0~contains~2~variants~1': Mode(
@@ -62,9 +64,11 @@ final markdown = Language(
           ],
           variants: [
             ModeReference(
-                '~contains~0~variants~0~contains~2~contains~0~variants~0'),
+              '~contains~0~variants~0~contains~2~contains~0~variants~0',
+            ),
             ModeReference(
-                '~contains~0~variants~0~contains~2~contains~0~variants~1'),
+              '~contains~0~variants~0~contains~2~contains~0~variants~1',
+            ),
           ],
         ),
         ModeReference('~contains~0~variants~0~contains~0'),
@@ -77,10 +81,7 @@ final markdown = Language(
     ),
     '~contains~0~variants~0~contains~1': Mode(
       variants: [
-        Mode(
-          begin: "\\[.+?\\]\\[.*?\\]",
-          relevance: 0,
-        ),
+        Mode(begin: "\\[.+?\\]\\[.*?\\]", relevance: 0),
         Mode(
           begin:
               "\\[.+?\\]\\(((data|javascript|mailto):|(?:http|ftp)s?:\\/\\/).*?\\)",
@@ -90,20 +91,12 @@ final markdown = Language(
           begin: "\\[.+?\\]\\([A-Za-z][A-Za-z0-9+.-]*:\\/\\/.*?\\)",
           relevance: 2,
         ),
-        Mode(
-          begin: "\\[.+?\\]\\([./?&#].*?\\)",
-          relevance: 1,
-        ),
-        Mode(
-          begin: "\\[.*?\\]\\(.*?\\)",
-          relevance: 0,
-        ),
+        Mode(begin: "\\[.+?\\]\\([./?&#].*?\\)", relevance: 1),
+        Mode(begin: "\\[.*?\\]\\(.*?\\)", relevance: 0),
       ],
       returnBegin: true,
       contains: [
-        Mode(
-          match: "\\[(?=\\])",
-        ),
+        Mode(match: "\\[(?=\\])"),
         Mode(
           className: "string",
           relevance: 0,
@@ -156,9 +149,7 @@ final markdown = Language(
         Mode(
           begin: "(?=^.+?\\n[=-]{2,}\$)",
           contains: [
-            Mode(
-              begin: "^[=-]*\$",
-            ),
+            Mode(begin: "^[=-]*\$"),
             Mode(
               begin: "^",
               end: "\\n",
@@ -196,39 +187,19 @@ final markdown = Language(
     Mode(
       className: "code",
       variants: [
-        Mode(
-          begin: "(`{3,})[^`](.|\\n)*?\\1`*[ ]*",
-        ),
-        Mode(
-          begin: "(\\x7e{3,})[^~](.|\\n)*?\\1~*[ ]*",
-        ),
-        Mode(
-          begin: "```",
-          end: "```+[ ]*\$",
-        ),
-        Mode(
-          begin: "\\x7e~~",
-          end: "\\x7e~~+[ ]*\$",
-        ),
-        Mode(
-          begin: "`.+?`",
-        ),
+        Mode(begin: "(`{3,})[^`](.|\\n)*?\\1`*[ ]*"),
+        Mode(begin: "(\\x7e{3,})[^~](.|\\n)*?\\1~*[ ]*"),
+        Mode(begin: "```", end: "```+[ ]*\$"),
+        Mode(begin: "\\x7e~~", end: "\\x7e~~+[ ]*\$"),
+        Mode(begin: "`.+?`"),
         Mode(
           begin: "(?=^( {4}|\\t))",
-          contains: [
-            Mode(
-              begin: "^( {4}|\\t)",
-              end: "(\\n)\$",
-            ),
-          ],
+          contains: [Mode(begin: "^( {4}|\\t)", end: "(\\n)\$")],
           relevance: 0,
         ),
       ],
     ),
-    Mode(
-      begin: "^[-\\*]{3,}",
-      end: "\$",
-    ),
+    Mode(begin: "^[-\\*]{3,}", end: "\$"),
     ModeReference('~contains~0~variants~0~contains~1'),
     Mode(
       begin: "^\\[[^\\n]+\\]:",
@@ -241,12 +212,7 @@ final markdown = Language(
           excludeBegin: true,
           excludeEnd: true,
         ),
-        Mode(
-          className: "link",
-          begin: ":\\s*",
-          end: "\$",
-          excludeBegin: true,
-        ),
+        Mode(className: "link", begin: ":\\s*", end: "\$", excludeBegin: true),
       ],
     ),
   ],

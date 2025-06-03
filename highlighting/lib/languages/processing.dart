@@ -51,7 +51,7 @@ final processing = Language(
       "try",
       "void",
       "volatile",
-      "while"
+      "while",
     ],
     "literal": "P2D P3D HALF_PI PI QUARTER_PI TAU TWO_PI null true false",
     "title": "setup draw",
@@ -338,7 +338,7 @@ final processing = Language(
       "StringList",
       "Table",
       "TableRow",
-      "XML"
+      "XML",
     ],
     "type": [
       "boolean",
@@ -349,8 +349,8 @@ final processing = Language(
       "float",
       "int",
       "long",
-      "short"
-    ]
+      "short",
+    ],
   },
   contains: [
     Mode(
@@ -363,18 +363,16 @@ final processing = Language(
             "\\s+",
             "extends",
             "\\s+",
-            "[a-zA-Z]\\w*"
+            "[a-zA-Z]\\w*",
           ],
         ),
-        Mode(
-          match: ["class", "\\s+", "[a-zA-Z]\\w*"],
-        ),
+        Mode(match: ["class", "\\s+", "[a-zA-Z]\\w*"]),
       ],
       className: {
         "1": "keyword",
         "3": "title.class",
         "5": "keyword",
-        "7": "title.class.inherited"
+        "7": "title.class.inherited",
       },
     ),
     Mode(

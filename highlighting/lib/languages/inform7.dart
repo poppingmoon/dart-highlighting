@@ -15,7 +15,7 @@ final inform7 = Language(
   case_insensitive: true,
   keywords: {
     "keyword":
-        "thing room person man woman animal container supporter backdrop door scenery open closed locked inside gender is are say understand kind of rule"
+        "thing room person man woman animal container supporter backdrop door scenery open closed locked inside gender is are say understand kind of rule",
   },
   contains: [
     Mode(
@@ -23,13 +23,7 @@ final inform7 = Language(
       begin: "\"",
       end: "\"",
       relevance: 0,
-      contains: [
-        Mode(
-          className: "subst",
-          begin: "\\[",
-          end: "\\]",
-        ),
-      ],
+      contains: [Mode(className: "subst", begin: "\\[", end: "\\]")],
     ),
     Mode(
       className: "section",
@@ -40,20 +34,13 @@ final inform7 = Language(
       begin:
           "^(Check|Carry out|Report|Instead of|To|Rule|When|Before|After)\\b",
       end: ":",
-      contains: [
-        Mode(
-          begin: "\\(This",
-          end: "\\)",
-        ),
-      ],
+      contains: [Mode(begin: "\\(This", end: "\\)")],
     ),
     Mode(
       className: "comment",
       begin: "\\[",
       end: "\\]",
-      contains: [
-        ModeSelfReference(),
-      ],
+      contains: [ModeSelfReference()],
     ),
   ],
 );

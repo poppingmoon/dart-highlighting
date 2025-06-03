@@ -248,7 +248,7 @@ final coq = Language(
       "Verbose",
       "Visibility",
       "where",
-      "with"
+      "with",
     ],
     "built_in": [
       "abstract",
@@ -423,8 +423,8 @@ final coq = Language(
       "until",
       "using",
       "vm_compute",
-      "with"
-    ]
+      "with",
+    ],
   },
   contains: [
     QUOTE_STRING_MODE,
@@ -447,14 +447,7 @@ final coq = Language(
       ],
     ),
     C_NUMBER_MODE,
-    Mode(
-      className: "type",
-      excludeBegin: true,
-      begin: "\\|\\s*",
-      end: "\\w+",
-    ),
-    Mode(
-      begin: "[-=]>",
-    ),
+    Mode(className: "type", excludeBegin: true, begin: "\\|\\s*", end: "\\w+"),
+    Mode(begin: "[-=]>"),
   ],
 );

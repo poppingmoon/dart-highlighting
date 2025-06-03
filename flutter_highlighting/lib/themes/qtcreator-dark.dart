@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const qtcreatorDarkTheme = {
-  'root':
-      TextStyle(color: Color(0xffaaaaaa), backgroundColor: Color(0xff000000)),
+  'root': TextStyle(
+    color: Color(0xffaaaaaa),
+    backgroundColor: Color(0xff000000),
+  ),
   'emphasis': TextStyle(color: Color(0xffa8a8a2), fontStyle: FontStyle.italic),
   'strong': TextStyle(color: Color(0xffa8a8a2)),
   'bullet': TextStyle(color: Color(0xffff55ff)),

@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const arduinoLightTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xffffffff), color: Color(0xff434f54)),
+  'root': TextStyle(
+    backgroundColor: Color(0xffffffff),
+    color: Color(0xff434f54),
+  ),
   'subst': TextStyle(color: Color(0xff434f54)),
   'attribute': TextStyle(color: Color(0xff00979d)),
   'doctag': TextStyle(color: Color(0xff00979d)),

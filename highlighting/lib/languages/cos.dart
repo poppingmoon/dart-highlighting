@@ -27,43 +27,18 @@ final cos = Language(
         Mode(
           begin: "\"",
           end: "\"",
-          contains: [
-            Mode(
-              begin: "\"\"",
-              relevance: 0,
-            ),
-          ],
+          contains: [Mode(begin: "\"\"", relevance: 0)],
         ),
       ],
     ),
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
-    Mode(
-      className: "comment",
-      begin: ";",
-      end: "\$",
-      relevance: 0,
-    ),
-    Mode(
-      className: "built_in",
-      begin: "(?:\\\$\\\$?|\\.\\.)\\^?[a-zA-Z]+",
-    ),
-    Mode(
-      className: "built_in",
-      begin: "\\\$\\\$\\\$[a-zA-Z]+",
-    ),
-    Mode(
-      className: "built_in",
-      begin: "%[a-z]+(?:\\.[a-z]+)*",
-    ),
-    Mode(
-      className: "symbol",
-      begin: "\\^%?[a-zA-Z][\\w]*",
-    ),
-    Mode(
-      className: "keyword",
-      begin: "##class|##super|#define|#dim",
-    ),
+    Mode(className: "comment", begin: ";", end: "\$", relevance: 0),
+    Mode(className: "built_in", begin: "(?:\\\$\\\$?|\\.\\.)\\^?[a-zA-Z]+"),
+    Mode(className: "built_in", begin: "\\\$\\\$\\\$[a-zA-Z]+"),
+    Mode(className: "built_in", begin: "%[a-z]+(?:\\.[a-z]+)*"),
+    Mode(className: "symbol", begin: "\\^%?[a-zA-Z][\\w]*"),
+    Mode(className: "keyword", begin: "##class|##super|#define|#dim"),
     Mode(
       begin: "&sql\\(",
       end: "\\)",
@@ -78,10 +53,6 @@ final cos = Language(
       excludeEnd: true,
       subLanguage: ["javascript"],
     ),
-    Mode(
-      begin: "&html<\\s*<",
-      end: ">\\s*>",
-      subLanguage: ["xml"],
-    ),
+    Mode(begin: "&html<\\s*<", end: ">\\s*>", subLanguage: ["xml"]),
   ],
 );

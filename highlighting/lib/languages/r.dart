@@ -17,7 +17,7 @@ final r = Language(
     "literal":
         "NULL NA TRUE FALSE Inf NaN NA_integer_|10 NA_real_|10 NA_character_|10 NA_complex_|10",
     "built_in":
-        "LETTERS letters month.abb month.name pi T F abs acos acosh all any anyNA Arg as.call as.character as.complex as.double as.environment as.integer as.logical as.null.default as.numeric as.raw asin asinh atan atanh attr attributes baseenv browser c call ceiling class Conj cos cosh cospi cummax cummin cumprod cumsum digamma dim dimnames emptyenv exp expression floor forceAndCall gamma gc.time globalenv Im interactive invisible is.array is.atomic is.call is.character is.complex is.double is.environment is.expression is.finite is.function is.infinite is.integer is.language is.list is.logical is.matrix is.na is.name is.nan is.null is.numeric is.object is.pairlist is.raw is.recursive is.single is.symbol lazyLoadDBfetch length lgamma list log max min missing Mod names nargs nzchar oldClass on.exit pos.to.env proc.time prod quote range Re rep retracemem return round seq_along seq_len seq.int sign signif sin sinh sinpi sqrt standardGeneric substitute sum switch tan tanh tanpi tracemem trigamma trunc unclass untracemem UseMethod xtfrm"
+        "LETTERS letters month.abb month.name pi T F abs acos acosh all any anyNA Arg as.call as.character as.complex as.double as.environment as.integer as.logical as.null.default as.numeric as.raw asin asinh atan atanh attr attributes baseenv browser c call ceiling class Conj cos cosh cospi cummax cummin cumprod cumsum digamma dim dimnames emptyenv exp expression floor forceAndCall gamma gc.time globalenv Im interactive invisible is.array is.atomic is.call is.character is.complex is.double is.environment is.expression is.finite is.function is.infinite is.integer is.language is.list is.logical is.matrix is.na is.name is.nan is.null is.numeric is.object is.pairlist is.raw is.recursive is.single is.symbol lazyLoadDBfetch length lgamma list log max min missing Mod names nargs nzchar oldClass on.exit pos.to.env proc.time prod quote range Re rep retracemem return round seq_along seq_len seq.int sign signif sin sinh sinpi sqrt standardGeneric substitute sum switch tan tanh tanpi tracemem trigamma trunc unclass untracemem UseMethod xtfrm",
   },
   contains: [
     Mode(
@@ -45,22 +45,14 @@ final r = Language(
                   match:
                       "(?:(?:[a-zA-Z]|\\.[._a-zA-Z])[._a-zA-Z0-9]*)|\\.(?!\\d)",
                 ),
-                Mode(
-                  match: "`(?:\\\\.|[^`\\\\])+`",
-                ),
+                Mode(match: "`(?:\\\\.|[^`\\\\])+`"),
               ],
               endsParent: true,
             ),
           ],
         ),
-        Mode(
-          scope: "doctag",
-          match: "@[a-zA-Z]+",
-        ),
-        Mode(
-          scope: "keyword",
-          match: "\\\\[a-zA-Z]+",
-        ),
+        Mode(scope: "doctag", match: "@[a-zA-Z]+"),
+        Mode(scope: "keyword", match: "\\\\[a-zA-Z]+"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -77,9 +69,7 @@ final r = Language(
     HASH_COMMENT_MODE,
     Mode(
       scope: "string",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       variants: [
         Mode(
           begin: "[rR]\"(-*)\\(",
@@ -117,16 +107,8 @@ final r = Language(
           onBegin: endSameAsBeginOnBegin,
           onEnd: endSameAsBeginOnEnd,
         ),
-        Mode(
-          begin: "\"",
-          end: "\"",
-          relevance: 0,
-        ),
-        Mode(
-          begin: "'",
-          end: "'",
-          relevance: 0,
-        ),
+        Mode(begin: "\"", end: "\"", relevance: 0),
+        Mode(begin: "'", end: "'", relevance: 0),
       ],
     ),
     Mode(
@@ -136,28 +118,28 @@ final r = Language(
           scope: {"1": "operator", "2": "number"},
           match: [
             "[=!<>:]=|\\|\\||&&|:::?|<-|<<-|->>|->|\\|>|[-+*\\/?!\$&|:<=>@^\\x7e]|\\*\\*",
-            "(?:0[xX][0-9a-fA-F]+\\.[0-9a-fA-F]*[pP][+-]?\\d+i?|0[xX][0-9a-fA-F]+(?:[pP][+-]?\\d+)?[Li]?|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?[Li]?)"
+            "(?:0[xX][0-9a-fA-F]+\\.[0-9a-fA-F]*[pP][+-]?\\d+i?|0[xX][0-9a-fA-F]+(?:[pP][+-]?\\d+)?[Li]?|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?[Li]?)",
           ],
         ),
         Mode(
           scope: {"1": "operator", "2": "number"},
           match: [
             "%[^%]*%",
-            "(?:0[xX][0-9a-fA-F]+\\.[0-9a-fA-F]*[pP][+-]?\\d+i?|0[xX][0-9a-fA-F]+(?:[pP][+-]?\\d+)?[Li]?|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?[Li]?)"
+            "(?:0[xX][0-9a-fA-F]+\\.[0-9a-fA-F]*[pP][+-]?\\d+i?|0[xX][0-9a-fA-F]+(?:[pP][+-]?\\d+)?[Li]?|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?[Li]?)",
           ],
         ),
         Mode(
           scope: {"1": "punctuation", "2": "number"},
           match: [
             "(?:[()]|[{}]|\\[\\[|[[\\]]|\\\\|,)",
-            "(?:0[xX][0-9a-fA-F]+\\.[0-9a-fA-F]*[pP][+-]?\\d+i?|0[xX][0-9a-fA-F]+(?:[pP][+-]?\\d+)?[Li]?|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?[Li]?)"
+            "(?:0[xX][0-9a-fA-F]+\\.[0-9a-fA-F]*[pP][+-]?\\d+i?|0[xX][0-9a-fA-F]+(?:[pP][+-]?\\d+)?[Li]?|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?[Li]?)",
           ],
         ),
         Mode(
           scope: {"2": "number"},
           match: [
             "[^a-zA-Z0-9._]|^",
-            "(?:0[xX][0-9a-fA-F]+\\.[0-9a-fA-F]*[pP][+-]?\\d+i?|0[xX][0-9a-fA-F]+(?:[pP][+-]?\\d+)?[Li]?|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?[Li]?)"
+            "(?:0[xX][0-9a-fA-F]+\\.[0-9a-fA-F]*[pP][+-]?\\d+i?|0[xX][0-9a-fA-F]+(?:[pP][+-]?\\d+)?[Li]?|(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?[Li]?)",
           ],
         ),
       ],
@@ -168,7 +150,7 @@ final r = Language(
         "(?:(?:[a-zA-Z]|\\.[._a-zA-Z])[._a-zA-Z0-9]*)|\\.(?!\\d)",
         "\\s+",
         "<-",
-        "\\s+"
+        "\\s+",
       ],
     ),
     Mode(
@@ -179,9 +161,7 @@ final r = Language(
           match:
               "[=!<>:]=|\\|\\||&&|:::?|<-|<<-|->>|->|\\|>|[-+*\\/?!\$&|:<=>@^\\x7e]|\\*\\*",
         ),
-        Mode(
-          match: "%[^%]*%",
-        ),
+        Mode(match: "%[^%]*%"),
       ],
     ),
     Mode(
@@ -192,11 +172,7 @@ final r = Language(
     Mode(
       begin: "`",
       end: "`",
-      contains: [
-        Mode(
-          begin: "\\\\.",
-        ),
-      ],
+      contains: [Mode(begin: "\\\\.")],
     ),
   ],
 );

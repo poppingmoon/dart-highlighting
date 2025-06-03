@@ -17,7 +17,7 @@ final php = Language(
         "(?!fn\\b|function\\b|__CLASS__\\b|__DIR__\\b|__FILE__\\b|__FUNCTION__\\b|__COMPILER_HALT_OFFSET__\\b|__LINE__\\b|__METHOD__\\b|__NAMESPACE__\\b|__TRAIT__\\b|die\\b|echo\\b|exit\\b|include\\b|include_once\\b|print\\b|require\\b|require_once\\b|array\\b|abstract\\b|and\\b|as\\b|binary\\b|bool\\b|boolean\\b|break\\b|callable\\b|case\\b|catch\\b|class\\b|clone\\b|const\\b|continue\\b|declare\\b|default\\b|do\\b|double\\b|else\\b|elseif\\b|empty\\b|enddeclare\\b|endfor\\b|endforeach\\b|endif\\b|endswitch\\b|endwhile\\b|enum\\b|eval\\b|extends\\b|final\\b|finally\\b|float\\b|for\\b|foreach\\b|from\\b|global\\b|goto\\b|if\\b|implements\\b|instanceof\\b|insteadof\\b|int\\b|integer\\b|interface\\b|isset\\b|iterable\\b|list\\b|match\\b|mixed\\b|new\\b|never\\b|object\\b|or\\b|private\\b|protected\\b|public\\b|readonly\\b|real\\b|return\\b|string\\b|switch\\b|throw\\b|trait\\b|try\\b|unset\\b|use\\b|var\\b|void\\b|while\\b|xor\\b|yield|Error\\b|AppendIterator\\b|ArgumentCountError\\b|ArithmeticError\\b|ArrayIterator\\b|ArrayObject\\b|AssertionError\\b|BadFunctionCallException\\b|BadMethodCallException\\b|CachingIterator\\b|CallbackFilterIterator\\b|CompileError\\b|Countable\\b|DirectoryIterator\\b|DivisionByZeroError\\b|DomainException\\b|EmptyIterator\\b|ErrorException\\b|Exception\\b|FilesystemIterator\\b|FilterIterator\\b|GlobIterator\\b|InfiniteIterator\\b|InvalidArgumentException\\b|IteratorIterator\\b|LengthException\\b|LimitIterator\\b|LogicException\\b|MultipleIterator\\b|NoRewindIterator\\b|OutOfBoundsException\\b|OutOfRangeException\\b|OuterIterator\\b|OverflowException\\b|ParentIterator\\b|ParseError\\b|RangeException\\b|RecursiveArrayIterator\\b|RecursiveCachingIterator\\b|RecursiveCallbackFilterIterator\\b|RecursiveDirectoryIterator\\b|RecursiveFilterIterator\\b|RecursiveIterator\\b|RecursiveIteratorIterator\\b|RecursiveRegexIterator\\b|RecursiveTreeIterator\\b|RegexIterator\\b|RuntimeException\\b|SeekableIterator\\b|SplDoublyLinkedList\\b|SplFileInfo\\b|SplFileObject\\b|SplFixedArray\\b|SplHeap\\b|SplMaxHeap\\b|SplMinHeap\\b|SplObjectStorage\\b|SplObserver\\b|SplPriorityQueue\\b|SplQueue\\b|SplStack\\b|SplSubject\\b|SplTempFileObject\\b|TypeError\\b|UnderflowException\\b|UnexpectedValueException\\b|UnhandledMatchError\\b|ArrayAccess\\b|BackedEnum\\b|Closure\\b|Fiber\\b|Generator\\b|Iterator\\b|IteratorAggregate\\b|Serializable\\b|Stringable\\b|Throwable\\b|Traversable\\b|UnitEnum\\b|WeakReference\\b|WeakMap\\b|Directory\\b|__PHP_Incomplete_Class\\b|parent\\b|php_user_filter\\b|self\\b|static\\b|stdClass\\b)",
         "[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*(?![A-Za-z0-9])(?![\$])",
         "[ \t\n]*",
-        "(?=(?=\\())"
+        "(?=(?=\\())",
       ],
       scope: {"3": "title.function.invoke"},
       contains: [
@@ -116,7 +116,7 @@ final php = Language(
               "void",
               "while",
               "xor",
-              "yield"
+              "yield",
             ],
             "literal": ["false", "FALSE", "null", "NULL", "true", "TRUE"],
             "built_in": [
@@ -207,8 +207,8 @@ final php = Language(
               "php_user_filter",
               "self",
               "static",
-              "stdClass"
-            ]
+              "stdClass",
+            ],
           },
           contains: [
             ModeReference('~contains~0~contains~0~contains~1'),
@@ -235,7 +235,7 @@ final php = Language(
             "new",
             "[ \t\n]+",
             "(?!Error\\b|AppendIterator\\b|ArgumentCountError\\b|ArithmeticError\\b|ArrayIterator\\b|ArrayObject\\b|AssertionError\\b|BadFunctionCallException\\b|BadMethodCallException\\b|CachingIterator\\b|CallbackFilterIterator\\b|CompileError\\b|Countable\\b|DirectoryIterator\\b|DivisionByZeroError\\b|DomainException\\b|EmptyIterator\\b|ErrorException\\b|Exception\\b|FilesystemIterator\\b|FilterIterator\\b|GlobIterator\\b|InfiniteIterator\\b|InvalidArgumentException\\b|IteratorIterator\\b|LengthException\\b|LimitIterator\\b|LogicException\\b|MultipleIterator\\b|NoRewindIterator\\b|OutOfBoundsException\\b|OutOfRangeException\\b|OuterIterator\\b|OverflowException\\b|ParentIterator\\b|ParseError\\b|RangeException\\b|RecursiveArrayIterator\\b|RecursiveCachingIterator\\b|RecursiveCallbackFilterIterator\\b|RecursiveDirectoryIterator\\b|RecursiveFilterIterator\\b|RecursiveIterator\\b|RecursiveIteratorIterator\\b|RecursiveRegexIterator\\b|RecursiveTreeIterator\\b|RegexIterator\\b|RuntimeException\\b|SeekableIterator\\b|SplDoublyLinkedList\\b|SplFileInfo\\b|SplFileObject\\b|SplFixedArray\\b|SplHeap\\b|SplMaxHeap\\b|SplMinHeap\\b|SplObjectStorage\\b|SplObserver\\b|SplPriorityQueue\\b|SplQueue\\b|SplStack\\b|SplSubject\\b|SplTempFileObject\\b|TypeError\\b|UnderflowException\\b|UnexpectedValueException\\b|UnhandledMatchError\\b|ArrayAccess\\b|BackedEnum\\b|Closure\\b|Fiber\\b|Generator\\b|Iterator\\b|IteratorAggregate\\b|Serializable\\b|Stringable\\b|Throwable\\b|Traversable\\b|UnitEnum\\b|WeakReference\\b|WeakMap\\b|Directory\\b|__PHP_Incomplete_Class\\b|parent\\b|php_user_filter\\b|self\\b|static\\b|stdClass\\b)",
-            "(\\\\?[A-Z][a-z0-9_\\x7f-\\xff]+|\\\\?[A-Z]+(?=[A-Z][a-z0-9_\\x7f-\\xff])){1,}(?![A-Za-z0-9])(?![\$])"
+            "(\\\\?[A-Z][a-z0-9_\\x7f-\\xff]+|\\\\?[A-Z]+(?=[A-Z][a-z0-9_\\x7f-\\xff])){1,}(?![A-Za-z0-9])(?![\$])",
           ],
           scope: {"1": "keyword", "4": "title.class"},
         ),
@@ -244,15 +244,9 @@ final php = Language(
     '~contains~0~contains~0~contains~5': Mode(
       scope: "number",
       variants: [
-        Mode(
-          begin: "\\b0[bB][01]+(?:_[01]+)*\\b",
-        ),
-        Mode(
-          begin: "\\b0[oO][0-7]+(?:_[0-7]+)*\\b",
-        ),
-        Mode(
-          begin: "\\b0[xX][\\da-fA-F]+(?:_[\\da-fA-F]+)*\\b",
-        ),
+        Mode(begin: "\\b0[bB][01]+(?:_[01]+)*\\b"),
+        Mode(begin: "\\b0[oO][0-7]+(?:_[0-7]+)*\\b"),
+        Mode(begin: "\\b0[xX][\\da-fA-F]+(?:_[\\da-fA-F]+)*\\b"),
         Mode(
           begin:
               "(?:\\b\\d+(?:_\\d+)*(\\.(?:\\d+(?:_\\d+)*))?|\\B\\.\\d+)(?:[eE][+-]?\\d+)?",
@@ -263,13 +257,8 @@ final php = Language(
     '~contains~0~contains~0~contains~4~variants~0~contains~1': Mode(
       scope: "subst",
       variants: [
-        Mode(
-          begin: "\\\$\\w+",
-        ),
-        Mode(
-          begin: "\\{\\\$",
-          end: "\\}",
-        ),
+        Mode(begin: "\\\$\\w+"),
+        Mode(begin: "\\{\\\$", end: "\\}"),
       ],
     ),
     '~contains~0~contains~0~contains~4': Mode(
@@ -279,21 +268,18 @@ final php = Language(
           scope: "string",
           begin: "\"",
           end: "\"",
-          illegal: null,
           contains: [
             BACKSLASH_ESCAPE,
             ModeReference(
-                '~contains~0~contains~0~contains~4~variants~0~contains~1'),
+              '~contains~0~contains~0~contains~4~variants~0~contains~1',
+            ),
           ],
         ),
         Mode(
           scope: "string",
           begin: "'",
           end: "'",
-          illegal: null,
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
         Mode(
           begin: "<<<[ \\t]*(?:(\\w+)|\"(\\w+)\")\\n",
@@ -301,7 +287,8 @@ final php = Language(
           contains: [
             BACKSLASH_ESCAPE,
             ModeReference(
-                '~contains~0~contains~0~contains~4~variants~0~contains~1'),
+              '~contains~0~contains~0~contains~4~variants~0~contains~1',
+            ),
           ],
           onBegin:
               language_undefined_contains_0_contains_0_contains_0_variants_0_onBegin,
@@ -320,26 +307,23 @@ final php = Language(
         Mode(
           match: [
             "::(?=(?!class\\b))",
-            "[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*(?![A-Za-z0-9])(?![\$])\\b(?!\\()"
+            "[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*(?![A-Za-z0-9])(?![\$])\\b(?!\\()",
           ],
           scope: {"2": "variable.constant"},
         ),
-        Mode(
-          match: ["::", "class"],
-          scope: {"2": "variable.language"},
-        ),
+        Mode(match: ["::", "class"], scope: {"2": "variable.language"}),
         Mode(
           match: [
             "(\\\\?[A-Z][a-z0-9_\\x7f-\\xff]+|\\\\?[A-Z]+(?=[A-Z][a-z0-9_\\x7f-\\xff])){1,}(?![A-Za-z0-9])(?![\$])",
             "::(?=(?!class\\b))",
-            "[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*(?![A-Za-z0-9])(?![\$])\\b(?!\\()"
+            "[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*(?![A-Za-z0-9])(?![\$])\\b(?!\\()",
           ],
           scope: {"1": "title.class", "3": "variable.constant"},
         ),
         Mode(
           match: [
             "(\\\\?[A-Z][a-z0-9_\\x7f-\\xff]+|\\\\?[A-Z]+(?=[A-Z][a-z0-9_\\x7f-\\xff])){1,}(?![A-Za-z0-9])(?![\$])",
-            "::(?=(?!class\\b))"
+            "::(?=(?!class\\b))",
           ],
           scope: {"1": "title.class"},
         ),
@@ -347,7 +331,7 @@ final php = Language(
           match: [
             "(\\\\?[A-Z][a-z0-9_\\x7f-\\xff]+|\\\\?[A-Z]+(?=[A-Z][a-z0-9_\\x7f-\\xff])){1,}(?![A-Za-z0-9])(?![\$])",
             "::",
-            "class"
+            "class",
           ],
           scope: {"1": "title.class", "3": "variable.language"},
         ),
@@ -359,7 +343,6 @@ final php = Language(
           "[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*(?![A-Za-z0-9])(?![\$])(?=:)(?=(?!::))",
     ),
   },
-  case_insensitive: false,
   keywords: {
     "keyword": [
       "__CLASS__",
@@ -451,7 +434,7 @@ final php = Language(
       "void",
       "while",
       "xor",
-      "yield"
+      "yield",
     ],
     "literal": ["false", "FALSE", "null", "NULL", "true", "TRUE"],
     "built_in": [
@@ -542,8 +525,8 @@ final php = Language(
       "php_user_filter",
       "self",
       "static",
-      "stdClass"
-    ]
+      "stdClass",
+    ],
   },
   contains: [
     Mode(
@@ -554,7 +537,7 @@ final php = Language(
       endScope: "meta",
       keywords: {
         "literal": ["false", "null", "true"],
-        "keyword": ["new", "array"]
+        "keyword": ["new", "array"],
       },
       contains: [
         Mode(
@@ -562,7 +545,7 @@ final php = Language(
           end: "]",
           keywords: {
             "literal": ["false", "null", "true"],
-            "keyword": ["new", "array"]
+            "keyword": ["new", "array"],
           },
           contains: [
             ModeSelfReference(),
@@ -611,10 +594,7 @@ final php = Language(
       begin: "/\\*",
       end: "\\*/",
       contains: [
-        Mode(
-          scope: "doctag",
-          match: "@[A-Za-z]+",
-        ),
+        Mode(scope: "doctag", match: "@[A-Za-z]+"),
         Mode(
           scope: "doctag",
           begin: "[ ]*(?=(TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):)",
@@ -634,38 +614,19 @@ final php = Language(
       starts: Mode(
         scope: "comment",
         end: "\\b\\B",
-        contains: [
-          Mode(
-            match: "\\?>",
-            scope: "meta",
-            endsParent: true,
-          ),
-        ],
+        contains: [Mode(match: "\\?>", scope: "meta", endsParent: true)],
       ),
     ),
     Mode(
       scope: "meta",
       variants: [
-        Mode(
-          begin: "<\\?php",
-          relevance: 10,
-        ),
-        Mode(
-          begin: "<\\?=",
-        ),
-        Mode(
-          begin: "<\\?",
-          relevance: 0.1,
-        ),
-        Mode(
-          begin: "\\?>",
-        ),
+        Mode(begin: "<\\?php", relevance: 10),
+        Mode(begin: "<\\?="),
+        Mode(begin: "<\\?", relevance: 0.1),
+        Mode(begin: "\\?>"),
       ],
     ),
-    Mode(
-      scope: "variable.language",
-      match: "\\\$this\\b",
-    ),
+    Mode(scope: "variable.language", match: "\\\$this\\b"),
     ModeReference('~contains~7'),
     ModeReference('~contains~8'),
     ModeReference('~contains~0~contains~0~contains~2'),
@@ -673,7 +634,7 @@ final php = Language(
       match: [
         "const",
         "\\s",
-        "[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*(?![A-Za-z0-9])(?![\$])"
+        "[a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*(?![A-Za-z0-9])(?![\$])",
       ],
       scope: {"1": "keyword", "3": "variable.constant"},
     ),
@@ -686,14 +647,9 @@ final php = Language(
       excludeEnd: true,
       illegal: "[\$%\\[]",
       contains: [
-        Mode(
-          beginKeywords: "use",
-        ),
+        Mode(beginKeywords: "use"),
         UNDERSCORE_TITLE_MODE,
-        Mode(
-          begin: "=>",
-          endsParent: true,
-        ),
+        Mode(begin: "=>", endsParent: true),
         Mode(
           scope: "params",
           begin: "\\(",
@@ -791,7 +747,7 @@ final php = Language(
               "void",
               "while",
               "xor",
-              "yield"
+              "yield",
             ],
             "literal": ["false", "FALSE", "null", "NULL", "true", "TRUE"],
             "built_in": [
@@ -882,8 +838,8 @@ final php = Language(
               "php_user_filter",
               "self",
               "static",
-              "stdClass"
-            ]
+              "stdClass",
+            ],
           },
           contains: [
             ModeSelfReference(),
@@ -899,22 +855,14 @@ final php = Language(
     Mode(
       scope: "class",
       variants: [
-        Mode(
-          beginKeywords: "enum",
-          illegal: "[(\$\"]",
-        ),
-        Mode(
-          beginKeywords: "class interface trait",
-          illegal: "[:(\$\"]",
-        ),
+        Mode(beginKeywords: "enum", illegal: "[(\$\"]"),
+        Mode(beginKeywords: "class interface trait", illegal: "[:(\$\"]"),
       ],
       relevance: 0,
       end: "\\{",
       excludeEnd: true,
       contains: [
-        Mode(
-          beginKeywords: "extends implements",
-        ),
+        Mode(beginKeywords: "extends implements"),
         UNDERSCORE_TITLE_MODE,
       ],
     ),
@@ -924,11 +872,7 @@ final php = Language(
       end: ";",
       illegal: "[.']",
       contains: [
-        Mode(
-          scope: "title.class",
-          begin: "[a-zA-Z_]\\w*",
-          relevance: 0,
-        ),
+        Mode(scope: "title.class", begin: "[a-zA-Z_]\\w*", relevance: 0),
       ],
     ),
     Mode(
@@ -936,10 +880,7 @@ final php = Language(
       relevance: 0,
       end: ";",
       contains: [
-        Mode(
-          match: "\\b(as|const|function)\\b",
-          scope: "keyword",
-        ),
+        Mode(match: "\\b(as|const|function)\\b", scope: "keyword"),
         UNDERSCORE_TITLE_MODE,
       ],
     ),

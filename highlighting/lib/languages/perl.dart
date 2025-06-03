@@ -14,13 +14,7 @@ final perl = Language(
       begin: "^__DATA__\$",
       end: "^__END__\$",
       subLanguage: ["mojolicious"],
-      contains: [
-        Mode(
-          begin: "^@@.*",
-          end: "\$",
-          className: "comment",
-        ),
-      ],
+      contains: [Mode(begin: "^@@.*", end: "\$", className: "comment")],
     ),
     '~contains~3~contains~4~contains~1~contains~8': Mode(
       begin: "-\\w\\b",
@@ -32,9 +26,7 @@ final perl = Language(
       end: "(\\s*\\(.*?\\))?[;{]",
       excludeEnd: true,
       relevance: 5,
-      contains: [
-        TITLE_MODE,
-      ],
+      contains: [TITLE_MODE],
     ),
     '~contains~3~contains~4~contains~1~contains~6': Mode(
       begin:
@@ -68,10 +60,7 @@ final perl = Language(
         Mode(
           className: "regexp",
           variants: [
-            Mode(
-              begin: "(m|qr)\\/\\/",
-              relevance: 0,
-            ),
+            Mode(begin: "(m|qr)\\/\\/", relevance: 0),
             Mode(
               begin:
                   "(?:(?:m|qr)?)\\/(?:\\\\.|[^\\\\\\/])*?\\/[dualxmsipngr]{0,12}",
@@ -110,7 +99,7 @@ final perl = Language(
           keywords: {
             "\$pattern": "[\\w.]+",
             "keyword":
-                "abs accept alarm and atan2 bind binmode bless break caller chdir chmod chomp chop chown chr chroot close closedir connect continue cos crypt dbmclose dbmopen defined delete die do dump each else elsif endgrent endhostent endnetent endprotoent endpwent endservent eof eval exec exists exit exp fcntl fileno flock for foreach fork format formline getc getgrent getgrgid getgrnam gethostbyaddr gethostbyname gethostent getlogin getnetbyaddr getnetbyname getnetent getpeername getpgrp getpriority getprotobyname getprotobynumber getprotoent getpwent getpwnam getpwuid getservbyname getservbyport getservent getsockname getsockopt given glob gmtime goto grep gt hex if index int ioctl join keys kill last lc lcfirst length link listen local localtime log lstat lt ma map mkdir msgctl msgget msgrcv msgsnd my ne next no not oct open opendir or ord our pack package pipe pop pos print printf prototype push q|0 qq quotemeta qw qx rand read readdir readline readlink readpipe recv redo ref rename require reset return reverse rewinddir rindex rmdir say scalar seek seekdir select semctl semget semop send setgrent sethostent setnetent setpgrp setpriority setprotoent setpwent setservent setsockopt shift shmctl shmget shmread shmwrite shutdown sin sleep socket socketpair sort splice split sprintf sqrt srand stat state study sub substr symlink syscall sysopen sysread sysseek system syswrite tell telldir tie tied time times tr truncate uc ucfirst umask undef unless unlink unpack unshift untie until use utime values vec wait waitpid wantarray warn when while write x|0 xor y|0"
+                "abs accept alarm and atan2 bind binmode bless break caller chdir chmod chomp chop chown chr chroot close closedir connect continue cos crypt dbmclose dbmopen defined delete die do dump each else elsif endgrent endhostent endnetent endprotoent endpwent endservent eof eval exec exists exit exp fcntl fileno flock for foreach fork format formline getc getgrent getgrgid getgrnam gethostbyaddr gethostbyname gethostent getlogin getnetbyaddr getnetbyname getnetent getpeername getpgrp getpriority getprotobyname getprotobynumber getprotoent getpwent getpwnam getpwuid getservbyname getservbyport getservent getsockname getsockopt given glob gmtime goto grep gt hex if index int ioctl join keys kill last lc lcfirst length link listen local localtime log lstat lt ma map mkdir msgctl msgget msgrcv msgsnd my ne next no not oct open opendir or ord our pack package pipe pop pos print printf prototype push q|0 qq quotemeta qw qx rand read readdir readline readlink readpipe recv redo ref rename require reset return reverse rewinddir rindex rmdir say scalar seek seekdir select semctl semget semop send setgrent sethostent setnetent setpgrp setpriority setprotoent setpwent setservent setsockopt shift shmctl shmget shmread shmwrite shutdown sin sleep socket socketpair sort splice split sprintf sqrt srand stat state study sub substr symlink syscall sysopen sysread sysseek system syswrite tell telldir tie tied time times tr truncate uc ucfirst umask undef unless unlink unpack unshift untie until use utime values vec wait waitpid wantarray warn when while write x|0 xor y|0",
           },
           contains: [
             ModeReference('~contains~0'),
@@ -128,62 +117,17 @@ final perl = Language(
         ModeReference('~contains~0'),
       ],
       variants: [
-        Mode(
-          begin: "q[qwxr]?\\s*\\(",
-          end: "\\)",
-          relevance: 5,
-        ),
-        Mode(
-          begin: "q[qwxr]?\\s*\\[",
-          end: "\\]",
-          relevance: 5,
-        ),
-        Mode(
-          begin: "q[qwxr]?\\s*\\{",
-          end: "\\}",
-          relevance: 5,
-        ),
-        Mode(
-          begin: "q[qwxr]?\\s*\\|",
-          end: "\\|",
-          relevance: 5,
-        ),
-        Mode(
-          begin: "q[qwxr]?\\s*<",
-          end: ">",
-          relevance: 5,
-        ),
-        Mode(
-          begin: "qw\\s+q",
-          end: "q",
-          relevance: 5,
-        ),
-        Mode(
-          begin: "'",
-          end: "'",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
-        ),
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
-        Mode(
-          begin: "`",
-          end: "`",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
-        ),
-        Mode(
-          begin: "\\{\\w+\\}",
-          relevance: 0,
-        ),
-        Mode(
-          begin: "-?\\w+\\s*=>",
-          relevance: 0,
-        ),
+        Mode(begin: "q[qwxr]?\\s*\\(", end: "\\)", relevance: 5),
+        Mode(begin: "q[qwxr]?\\s*\\[", end: "\\]", relevance: 5),
+        Mode(begin: "q[qwxr]?\\s*\\{", end: "\\}", relevance: 5),
+        Mode(begin: "q[qwxr]?\\s*\\|", end: "\\|", relevance: 5),
+        Mode(begin: "q[qwxr]?\\s*<", end: ">", relevance: 5),
+        Mode(begin: "qw\\s+q", end: "q", relevance: 5),
+        Mode(begin: "'", end: "'", contains: [BACKSLASH_ESCAPE]),
+        Mode(begin: "\"", end: "\""),
+        Mode(begin: "`", end: "`", contains: [BACKSLASH_ESCAPE]),
+        Mode(begin: "\\{\\w+\\}", relevance: 0),
+        Mode(begin: "-?\\w+\\s*=>", relevance: 0),
       ],
     ),
     '~contains~3': Mode(
@@ -223,17 +167,12 @@ final perl = Language(
     ),
     '~contains~0': Mode(
       variants: [
-        Mode(
-          begin: "\\\$\\d",
-        ),
+        Mode(begin: "\\\$\\d"),
         Mode(
           begin:
               "[\$%@](\\^\\w\\b|#\\w+(::\\w+)*|\\{\\w+\\}|\\w+(::\\w*)*)(?![A-Za-z])(?![@\$%])",
         ),
-        Mode(
-          begin: "[\$%@][^\\s\\w{]",
-          relevance: 0,
-        ),
+        Mode(begin: "[\$%@][^\\s\\w{]", relevance: 0),
       ],
     ),
   },
@@ -242,7 +181,7 @@ final perl = Language(
   keywords: {
     "\$pattern": "[\\w.]+",
     "keyword":
-        "abs accept alarm and atan2 bind binmode bless break caller chdir chmod chomp chop chown chr chroot close closedir connect continue cos crypt dbmclose dbmopen defined delete die do dump each else elsif endgrent endhostent endnetent endprotoent endpwent endservent eof eval exec exists exit exp fcntl fileno flock for foreach fork format formline getc getgrent getgrgid getgrnam gethostbyaddr gethostbyname gethostent getlogin getnetbyaddr getnetbyname getnetent getpeername getpgrp getpriority getprotobyname getprotobynumber getprotoent getpwent getpwnam getpwuid getservbyname getservbyport getservent getsockname getsockopt given glob gmtime goto grep gt hex if index int ioctl join keys kill last lc lcfirst length link listen local localtime log lstat lt ma map mkdir msgctl msgget msgrcv msgsnd my ne next no not oct open opendir or ord our pack package pipe pop pos print printf prototype push q|0 qq quotemeta qw qx rand read readdir readline readlink readpipe recv redo ref rename require reset return reverse rewinddir rindex rmdir say scalar seek seekdir select semctl semget semop send setgrent sethostent setnetent setpgrp setpriority setprotoent setpwent setservent setsockopt shift shmctl shmget shmread shmwrite shutdown sin sleep socket socketpair sort splice split sprintf sqrt srand stat state study sub substr symlink syscall sysopen sysread sysseek system syswrite tell telldir tie tied time times tr truncate uc ucfirst umask undef unless unlink unpack unshift untie until use utime values vec wait waitpid wantarray warn when while write x|0 xor y|0"
+        "abs accept alarm and atan2 bind binmode bless break caller chdir chmod chomp chop chown chr chroot close closedir connect continue cos crypt dbmclose dbmopen defined delete die do dump each else elsif endgrent endhostent endnetent endprotoent endpwent endservent eof eval exec exists exit exp fcntl fileno flock for foreach fork format formline getc getgrent getgrgid getgrnam gethostbyaddr gethostbyname gethostent getlogin getnetbyaddr getnetbyname getnetent getpeername getpgrp getpriority getprotobyname getprotobynumber getprotoent getpwent getpwnam getpwuid getservbyname getservbyport getservent getsockname getsockopt given glob gmtime goto grep gt hex if index int ioctl join keys kill last lc lcfirst length link listen local localtime log lstat lt ma map mkdir msgctl msgget msgrcv msgsnd my ne next no not oct open opendir or ord our pack package pipe pop pos print printf prototype push q|0 qq quotemeta qw qx rand read readdir readline readlink readpipe recv redo ref rename require reset return reverse rewinddir rindex rmdir say scalar seek seekdir select semctl semget semop send setgrent sethostent setnetent setpgrp setpriority setprotoent setpwent setservent setsockopt shift shmctl shmget shmread shmwrite shutdown sin sleep socket socketpair sort splice split sprintf sqrt srand stat state study sub substr symlink syscall sysopen sysread sysseek system syswrite tell telldir tie tied time times tr truncate uc ucfirst umask undef unless unlink unpack unshift untie until use utime values vec wait waitpid wantarray warn when while write x|0 xor y|0",
   },
   contains: [
     ModeReference('~contains~0'),

@@ -15,11 +15,7 @@ final xml = Language(
       illegal: "<",
       relevance: 0,
       contains: [
-        Mode(
-          className: "attr",
-          begin: "[\\p{L}0-9._:-]+",
-          relevance: 0,
-        ),
+        Mode(className: "attr", begin: "[\\p{L}0-9._:-]+", relevance: 0),
         Mode(
           begin: "=\\s*",
           relevance: 0,
@@ -31,20 +27,14 @@ final xml = Language(
                 Mode(
                   begin: "\"",
                   end: "\"",
-                  contains: [
-                    ModeReference('~contains~3'),
-                  ],
+                  contains: [ModeReference('~contains~3')],
                 ),
                 Mode(
                   begin: "'",
                   end: "'",
-                  contains: [
-                    ModeReference('~contains~3'),
-                  ],
+                  contains: [ModeReference('~contains~3')],
                 ),
-                Mode(
-                  begin: "[^\\s\"'=<>`]+",
-                ),
+                Mode(begin: "[^\\s\"'=<>`]+"),
               ],
             ),
           ],
@@ -57,9 +47,7 @@ final xml = Language(
     ),
     '~contains~0~contains~3': Mode(
       begin: "\\(",
-      contains: [
-        ModeReference('~contains~0~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0~contains~0')],
       end: "\\)",
     ),
     '~contains~0~contains~2': Mode(
@@ -67,9 +55,7 @@ final xml = Language(
       begin: "'",
       end: "'",
       illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       className: "string",
     ),
     '~contains~0~contains~1': Mode(
@@ -77,9 +63,7 @@ final xml = Language(
       begin: "\"",
       end: "\"",
       illegal: "\\n",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       className: "string",
     ),
     '~contains~0~contains~0~contains~0': Mode(
@@ -89,9 +73,7 @@ final xml = Language(
     ),
     '~contains~0~contains~0': Mode(
       begin: "\\s",
-      contains: [
-        ModeReference('~contains~0~contains~0~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0~contains~0')],
     ),
   },
   name: "HTML, XML",
@@ -105,7 +87,7 @@ final xml = Language(
     "xsl",
     "plist",
     "wsf",
-    "svg"
+    "svg",
   ],
   case_insensitive: true,
   unicodeRegex: true,
@@ -158,11 +140,7 @@ final xml = Language(
       ],
       relevance: 10,
     ),
-    Mode(
-      begin: "<!\\[CDATA\\[",
-      end: "\\]\\]>",
-      relevance: 10,
-    ),
+    Mode(begin: "<!\\[CDATA\\[", end: "\\]\\]>", relevance: 10),
     ModeReference('~contains~3'),
     Mode(
       className: "meta",
@@ -171,13 +149,9 @@ final xml = Language(
         Mode(
           begin: "<\\?xml",
           relevance: 10,
-          contains: [
-            ModeReference('~contains~0~contains~1'),
-          ],
+          contains: [ModeReference('~contains~0~contains~1')],
         ),
-        Mode(
-          begin: "<\\?[a-z][a-z0-9]+",
-        ),
+        Mode(begin: "<\\?[a-z][a-z0-9]+"),
       ],
     ),
     Mode(
@@ -185,9 +159,7 @@ final xml = Language(
       begin: "<style(?=\\s|>)",
       end: ">",
       keywords: {"name": "style"},
-      contains: [
-        ModeReference('~contains~5~contains~0'),
-      ],
+      contains: [ModeReference('~contains~5~contains~0')],
       starts: Mode(
         end: "<\\/style>",
         returnEnd: true,
@@ -199,19 +171,14 @@ final xml = Language(
       begin: "<script(?=\\s|>)",
       end: ">",
       keywords: {"name": "script"},
-      contains: [
-        ModeReference('~contains~5~contains~0'),
-      ],
+      contains: [ModeReference('~contains~5~contains~0')],
       starts: Mode(
         end: "<\\/script>",
         returnEnd: true,
         subLanguage: ["javascript", "handlebars", "xml"],
       ),
     ),
-    Mode(
-      className: "tag",
-      begin: "<>|<\\/>",
-    ),
+    Mode(className: "tag", begin: "<>|<\\/>"),
     Mode(
       className: "tag",
       begin: "<(?=[\\p{L}_](?:[\\p{L}0-9_.-]*:)?[\\p{L}0-9_.-]*(?:\\/>|>|\\s))",
@@ -234,11 +201,7 @@ final xml = Language(
           begin: "[\\p{L}_](?:[\\p{L}0-9_.-]*:)?[\\p{L}0-9_.-]*",
           relevance: 0,
         ),
-        Mode(
-          begin: ">",
-          relevance: 0,
-          endsParent: true,
-        ),
+        Mode(begin: ">", relevance: 0, endsParent: true),
       ],
     ),
   ],

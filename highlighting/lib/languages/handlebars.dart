@@ -44,8 +44,8 @@ final handlebars = Language(
           "unless",
           "view",
           "with",
-          "yield"
-        ]
+          "yield",
+        ],
       },
       className: "name",
     ),
@@ -88,8 +88,8 @@ final handlebars = Language(
               "unless",
               "view",
               "with",
-              "yield"
-            ]
+              "yield",
+            ],
           },
           starts: Mode(
             contains: [
@@ -99,9 +99,11 @@ final handlebars = Language(
               ModeReference('~contains~4~contains~0~starts~contains~3'),
               ModeReference('~contains~4~contains~0~starts~contains~4'),
               ModeReference(
-                  '~contains~4~contains~0~starts~contains~4~starts~starts~contains~3'),
+                '~contains~4~contains~0~starts~contains~4~starts~starts~contains~3',
+              ),
               ModeReference(
-                  '~contains~4~contains~0~starts~contains~4~starts~starts~contains~4'),
+                '~contains~4~contains~0~starts~contains~4~starts~starts~contains~4',
+              ),
             ],
             returnEnd: true,
             end: "\\)",
@@ -114,7 +116,7 @@ final handlebars = Language(
           "(?:\\.|\\.\\/|\\/)?(?:\"\"|\"[^\"]+\"|''|'[^']+'|\\[\\]|\\[[^\\]]+\\]|[^\\s!\"#%&'()*+,.\\/;<=>@\\[\\\\\\]^`{|}\\x7e]+)(?:(\\.|\\/)(?:\"\"|\"[^\"]+\"|''|'[^']+'|\\[\\]|\\[[^\\]]+\\]|[^\\s!\"#%&'()*+,.\\/;<=>@\\[\\\\\\]^`{|}~]+))*",
       keywords: {
         "\$pattern": "[\\w.\\/]+",
-        "literal": ["true", "false", "undefined", "null"]
+        "literal": ["true", "false", "undefined", "null"],
       },
     ),
     '~contains~4~contains~0~starts~contains~4': Mode(
@@ -131,9 +133,11 @@ final handlebars = Language(
             QUOTE_STRING_MODE,
             APOS_STRING_MODE,
             ModeReference(
-                '~contains~4~contains~0~starts~contains~4~starts~starts~contains~3'),
+              '~contains~4~contains~0~starts~contains~4~starts~starts~contains~3',
+            ),
             ModeReference(
-                '~contains~4~contains~0~starts~contains~4~starts~starts~contains~4'),
+              '~contains~4~contains~0~starts~contains~4~starts~starts~contains~4',
+            ),
           ],
         ),
       ),
@@ -142,11 +146,7 @@ final handlebars = Language(
       begin: "as\\s+\\|",
       keywords: {"keyword": "as"},
       end: "\\|",
-      contains: [
-        Mode(
-          begin: "\\w+",
-        ),
-      ],
+      contains: [Mode(begin: "\\w+")],
     ),
     '~contains~4~contains~0': Mode(
       begin:
@@ -182,8 +182,8 @@ final handlebars = Language(
           "unless",
           "view",
           "with",
-          "yield"
-        ]
+          "yield",
+        ],
       },
       className: "name",
       starts: Mode(
@@ -194,9 +194,11 @@ final handlebars = Language(
           ModeReference('~contains~4~contains~0~starts~contains~3'),
           ModeReference('~contains~4~contains~0~starts~contains~4'),
           ModeReference(
-              '~contains~4~contains~0~starts~contains~4~starts~starts~contains~3'),
+            '~contains~4~contains~0~starts~contains~4~starts~starts~contains~3',
+          ),
           ModeReference(
-              '~contains~4~contains~0~starts~contains~4~starts~starts~contains~4'),
+            '~contains~4~contains~0~starts~contains~4~starts~starts~contains~4',
+          ),
         ],
         returnEnd: true,
         end: "\\}\\}",
@@ -237,8 +239,8 @@ final handlebars = Language(
           "unless",
           "view",
           "with",
-          "yield"
-        ]
+          "yield",
+        ],
       },
       starts: Mode(
         contains: [
@@ -248,9 +250,11 @@ final handlebars = Language(
           ModeReference('~contains~4~contains~0~starts~contains~3'),
           ModeReference('~contains~4~contains~0~starts~contains~4'),
           ModeReference(
-              '~contains~4~contains~0~starts~contains~4~starts~starts~contains~3'),
+            '~contains~4~contains~0~starts~contains~4~starts~starts~contains~3',
+          ),
           ModeReference(
-              '~contains~4~contains~0~starts~contains~4~starts~starts~contains~4'),
+            '~contains~4~contains~0~starts~contains~4~starts~starts~contains~4',
+          ),
         ],
         returnEnd: true,
         end: "\\}\\}",
@@ -262,14 +266,8 @@ final handlebars = Language(
   case_insensitive: true,
   subLanguage: ["xml"],
   contains: [
-    Mode(
-      begin: "\\\\\\{\\{",
-      skip: true,
-    ),
-    Mode(
-      begin: "\\\\\\\\(?=\\{\\{)",
-      skip: true,
-    ),
+    Mode(begin: "\\\\\\{\\{", skip: true),
+    Mode(begin: "\\\\\\\\(?=\\{\\{)", skip: true),
     Mode(
       scope: "comment",
       begin: "\\{\\{!--",
@@ -310,9 +308,7 @@ final handlebars = Language(
       className: "template-tag",
       begin: "\\{\\{\\{\\{(?!\\/)",
       end: "\\}\\}\\}\\}",
-      contains: [
-        ModeReference('~contains~4~contains~0'),
-      ],
+      contains: [ModeReference('~contains~4~contains~0')],
       starts: Mode(
         end: "\\{\\{\\{\\{\\/",
         returnEnd: true,
@@ -323,17 +319,13 @@ final handlebars = Language(
       className: "template-tag",
       begin: "\\{\\{\\{\\{\\/",
       end: "\\}\\}\\}\\}",
-      contains: [
-        ModeReference('~contains~5~contains~0'),
-      ],
+      contains: [ModeReference('~contains~5~contains~0')],
     ),
     Mode(
       className: "template-tag",
       begin: "\\{\\{#",
       end: "\\}\\}",
-      contains: [
-        ModeReference('~contains~4~contains~0'),
-      ],
+      contains: [ModeReference('~contains~4~contains~0')],
     ),
     Mode(
       className: "template-tag",
@@ -351,25 +343,19 @@ final handlebars = Language(
       className: "template-tag",
       begin: "\\{\\{\\/",
       end: "\\}\\}",
-      contains: [
-        ModeReference('~contains~5~contains~0'),
-      ],
+      contains: [ModeReference('~contains~5~contains~0')],
     ),
     Mode(
       className: "template-variable",
       begin: "\\{\\{\\{",
       end: "\\}\\}\\}",
-      contains: [
-        ModeReference('~contains~10~contains~0'),
-      ],
+      contains: [ModeReference('~contains~10~contains~0')],
     ),
     Mode(
       className: "template-variable",
       begin: "\\{\\{",
       end: "\\}\\}",
-      contains: [
-        ModeReference('~contains~10~contains~0'),
-      ],
+      contains: [ModeReference('~contains~10~contains~0')],
     ),
   ],
 );

@@ -19,7 +19,7 @@ final mathematica = Language(
     "symbol": "variable",
     "named-character": "variable",
     "builtin-symbol": "built_in",
-    "message-name": "string"
+    "message-name": "string",
   },
   contains: [
     Mode(
@@ -86,10 +86,6 @@ final mathematica = Language(
       relevance: 0,
       begin: "[+\\-*/,;.:@\\x7e=><&|_`'^?!%]+",
     ),
-    Mode(
-      className: "brace",
-      relevance: 0,
-      begin: "[[\\](){}]",
-    ),
+    Mode(className: "brace", relevance: 0, begin: "[[\\](){}]"),
   ],
 );

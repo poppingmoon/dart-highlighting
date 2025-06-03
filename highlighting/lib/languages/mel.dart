@@ -22,13 +22,9 @@ final mel = Language(
       className: "string",
       begin: "`",
       end: "`",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
-    Mode(
-      begin: "[\$%@](\\^\\w\\b|#\\w+|[^\\s\\w{]|\\{\\w+\\}|\\w+)",
-    ),
+    Mode(begin: "[\$%@](\\^\\w\\b|#\\w+|[^\\s\\w{]|\\{\\w+\\}|\\w+)"),
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
   ],

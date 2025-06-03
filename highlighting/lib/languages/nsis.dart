@@ -239,7 +239,7 @@ final nsis = Language(
       "WriteRegNone",
       "WriteRegStr",
       "WriteUninstaller",
-      "XPStyle"
+      "XPStyle",
     ],
     "literal": [
       "admin",
@@ -294,8 +294,8 @@ final nsis = Language(
       "Win7",
       "Win8",
       "WinVista",
-      "zlib"
-    ]
+      "zlib",
+    ],
   },
   contains: [
     HASH_COMMENT_MODE,
@@ -334,25 +334,13 @@ final nsis = Language(
     Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
-        Mode(
-          begin: "'",
-          end: "'",
-        ),
-        Mode(
-          begin: "`",
-          end: "`",
-        ),
+        Mode(begin: "\"", end: "\""),
+        Mode(begin: "'", end: "'"),
+        Mode(begin: "`", end: "`"),
       ],
       illegal: "\\n",
       contains: [
-        Mode(
-          className: "char.escape",
-          begin: "\\\$(\\\\[nrt]|\\\$)",
-        ),
+        Mode(className: "char.escape", begin: "\\\$(\\\\[nrt]|\\\$)"),
         Mode(
           className: "variable.constant",
           begin:
@@ -376,10 +364,7 @@ final nsis = Language(
       begin:
           "(?:ARCHIVE|FILE_ATTRIBUTE_ARCHIVE|FILE_ATTRIBUTE_NORMAL|FILE_ATTRIBUTE_OFFLINE|FILE_ATTRIBUTE_READONLY|FILE_ATTRIBUTE_SYSTEM|FILE_ATTRIBUTE_TEMPORARY|HKCR|HKCU|HKDD|HKEY_CLASSES_ROOT|HKEY_CURRENT_CONFIG|HKEY_CURRENT_USER|HKEY_DYN_DATA|HKEY_LOCAL_MACHINE|HKEY_PERFORMANCE_DATA|HKEY_USERS|HKLM|HKPD|HKU|IDABORT|IDCANCEL|IDIGNORE|IDNO|IDOK|IDRETRY|IDYES|MB_ABORTRETRYIGNORE|MB_DEFBUTTON1|MB_DEFBUTTON2|MB_DEFBUTTON3|MB_DEFBUTTON4|MB_ICONEXCLAMATION|MB_ICONINFORMATION|MB_ICONQUESTION|MB_ICONSTOP|MB_OK|MB_OKCANCEL|MB_RETRYCANCEL|MB_RIGHT|MB_RTLREADING|MB_SETFOREGROUND|MB_TOPMOST|MB_USERICON|MB_YESNO|NORMAL|OFFLINE|READONLY|SHCTX|SHELL_CONTEXT|SYSTEM|TEMPORARY)",
     ),
-    Mode(
-      className: "title.function",
-      begin: "\\w+::\\w+",
-    ),
+    Mode(className: "title.function", begin: "\\w+::\\w+"),
     NUMBER_MODE,
   ],
 );

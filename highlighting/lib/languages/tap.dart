@@ -17,12 +17,8 @@ final tap = Language(
     Mode(
       className: "meta",
       variants: [
-        Mode(
-          begin: "^TAP version (\\d+)\$",
-        ),
-        Mode(
-          begin: "^1\\.\\.(\\d+)\$",
-        ),
+        Mode(begin: "^TAP version (\\d+)\$"),
+        Mode(begin: "^1\\.\\.(\\d+)\$"),
       ],
     ),
     Mode(
@@ -31,19 +27,12 @@ final tap = Language(
       subLanguage: ["yaml"],
       relevance: 0,
     ),
-    Mode(
-      className: "number",
-      begin: " (\\d+) ",
-    ),
+    Mode(className: "number", begin: " (\\d+) "),
     Mode(
       className: "symbol",
       variants: [
-        Mode(
-          begin: "^ok",
-        ),
-        Mode(
-          begin: "^not ok",
-        ),
+        Mode(begin: "^ok"),
+        Mode(begin: "^not ok"),
       ],
     ),
   ],

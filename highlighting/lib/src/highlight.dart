@@ -21,17 +21,14 @@ class Highlight {
     _languages[id ?? language.id] = language;
   }
 
-  Result parse(
-    String text, {
-    required String languageId,
-  }) {
+  Result parse(String text, {required String languageId}) {
     return highlight(languageId, text, true);
   }
 
-  @internal
   Result highlight(
     String languageId,
     String codeToHighlight,
+    // ignore: avoid_positional_boolean_parameters
     bool ignoreIllegals, {
     Mode? continuation,
     bool safeMode = true,
@@ -42,24 +39,24 @@ class Highlight {
     final md = compileLanguage(language!);
 
     Mode top = continuation ?? md;
-    final continuations = Map<String, dynamic>();
+    final continuations = <String, dynamic>{};
 
     void processContinuations() {
       final list = [];
-      for (Mode? current = top;
-          current != language && current != null;
-          current = current.parent) {
+      for (
+        Mode? current = top;
+        current != language && current != null;
+        current = current.parent
+      ) {
         if (current.scope != null) {
           list.insert(0, current.scope);
         }
       }
-      list.forEach((element) {
-        emitter.openNode(element);
-      });
+      list.whereType<String>().forEach(emitter.openNode);
     }
 
     processContinuations();
-    String modeBuffer = '';
+    final modeBuffer = StringBuffer();
     double relevance = 0;
     int index = 0;
     int iterations = 0;
@@ -71,26 +68,29 @@ class Highlight {
     /// `$rule`: Mode
     JsStyleRegExpMatch? lastMatch;
 
-    var keywordHits = Map<String, dynamic>();
+    final keywordHits = <String, int>{};
 
     Tuple2<String, double>? keywordData(Mode mode, String matchText) {
-      return mode.keywords[matchText];
+      if (mode.keywords case final Map keywords) {
+        return keywords[matchText];
+      }
+      return null;
     }
 
     void processKeywords() {
       if (top.keywords == null) {
-        emitter.addText(modeBuffer);
+        emitter.addText(modeBuffer.toString());
         return;
       }
 
       var lastIndex = 0;
       top.keywordPatternRe!.lastIndex = 0; // lets assume it can't be null here
-      var match = top.keywordPatternRe!.exec(modeBuffer);
-      var buf = '';
+      var match = top.keywordPatternRe!.exec(modeBuffer.toString());
+      final buf = StringBuffer();
 
       while (match != null) {
-        buf += substring(modeBuffer, lastIndex, match.index);
-        final word = language.case_insensitive == true
+        buf.write(substring(modeBuffer.toString(), lastIndex, match.index));
+        final word = language.case_insensitive
             ? match[0]!.toLowerCase()
             : match[0];
 
@@ -98,28 +98,30 @@ class Highlight {
         if (data != null) {
           final kind = data.item1;
           final keywordRelevance = data.item2;
-          emitter.addText(buf);
-          buf = '';
+          emitter.addText(buf.toString());
+          buf.clear();
 
           keywordHits[word] = (keywordHits[word] ?? 0) + 1;
-          if (keywordHits[word] <= kMaxKeywordHits) {
+          if ((keywordHits[word] ?? 0) <= kMaxKeywordHits) {
             relevance += keywordRelevance;
           }
           if (kind.startsWith('_')) {
-            buf += match[0]!;
+            buf.write(match[0]);
           } else {
-            final cssClass = language.classNameAliases[kind] ?? kind;
-            emitter.addKeyword(match[0]!, cssClass);
+            if (language.classNameAliases case final Map classNameAliases) {
+              final cssClass = classNameAliases[kind] ?? kind;
+              emitter.addKeyword(match[0]!, cssClass);
+            }
           }
         } else {
-          buf += match[0]!;
+          buf.write(match[0]);
         }
         lastIndex = top.keywordPatternRe!.lastIndex;
-        match = top.keywordPatternRe?.exec(modeBuffer);
+        match = top.keywordPatternRe?.exec(modeBuffer.toString());
       }
 
-      buf += substring(modeBuffer, lastIndex);
-      emitter.addText(buf);
+      buf.write(substring(modeBuffer.toString(), lastIndex));
+      emitter.addText(buf.toString());
     }
 
     void processSubLanguage() {
@@ -133,11 +135,11 @@ class Highlight {
 
       Result result;
       if (top.subLanguage.length > 1) {
-        result = highlightAuto(modeBuffer, top.subLanguage);
+        result = highlightAuto(modeBuffer.toString(), top.subLanguage);
       } else {
         result = highlight(
           top.subLanguage.first,
-          modeBuffer,
+          modeBuffer.toString(),
           true,
           continuation: continuations[top.subLanguage.first],
         );
@@ -156,27 +158,33 @@ class Highlight {
       } else {
         processKeywords();
       }
-      modeBuffer = '';
+      modeBuffer.clear();
     }
 
     void emitMultiClass(Map scope, JsStyleRegExpMatch match) {
       var i = 1;
       final max = match.length - 1;
       while (i <= max) {
-        if (scope[$emit][i] == null) {
+        if ((scope[$emit] as Map)[i] == null) {
           i++;
           continue;
         }
-        final klass = language.classNameAliases[scope[i.toString()]] ??
+        final klass =
+            switch (language.classNameAliases) {
+              final Map classNameAliases =>
+                classNameAliases[scope[i.toString()]],
+              _ => null,
+            } ??
             scope[i.toString()];
         final text = match[i];
 
         if (klass != null) {
           emitter.addKeyword(text!, klass);
         } else {
-          modeBuffer = text!;
+          modeBuffer.clear();
+          modeBuffer.write(text);
           processKeywords();
-          modeBuffer = '';
+          modeBuffer.clear();
         }
         i++;
       }
@@ -184,27 +192,34 @@ class Highlight {
 
     Mode startNewMode(Mode mode, JsStyleRegExpMatch match) {
       if (mode.scope != null && mode.scope is String) {
-        emitter.openNode(language.classNameAliases[mode.scope] ?? mode.scope);
+        emitter.openNode(
+          switch (language.classNameAliases) {
+                final Map classNameAliases => classNameAliases[mode.scope],
+                _ => null,
+              } ??
+              mode.scope,
+        );
       }
 
-      if (mode.beginScope != null) {
-        if (mode.beginScope[$wrap] != null) {
+      if (mode.beginScope case final Map beginScope) {
+        if (beginScope[$wrap] case final wrap?) {
           emitter.addKeyword(
-            modeBuffer,
-            language.classNameAliases[mode.beginScope[$wrap]] ??
-                mode.beginScope[$wrap],
+            modeBuffer.toString(),
+            switch (language.classNameAliases) {
+                  final Map classNameAliases => classNameAliases[wrap],
+                  _ => null,
+                } ??
+                wrap,
           );
-          modeBuffer = '';
-        } else if (mode.beginScope[$multi] == true) {
+          modeBuffer.clear();
+        } else if (beginScope[$multi] == true) {
           // Here it must be compiledscope
           emitMultiClass(mode.beginScope, match);
-          modeBuffer = '';
+          modeBuffer.clear();
         }
       }
 
-      top = Mode.inherit(mode, Mode(parent: top));
-
-      return top;
+      return top = Mode.inherit(mode, Mode(parent: top));
     }
 
     Mode? endOfMode(
@@ -227,15 +242,16 @@ class Highlight {
             matched = false;
           }
         }
+        Mode result = mode;
         if (matched) {
-          while (mode.endsParent == true && mode.parent != null) {
-            mode = mode.parent!;
+          while ((result.endsParent ?? false) && result.parent != null) {
+            result = result.parent!;
           }
-          return mode;
+          return result;
         }
       }
 
-      if (mode.endsWithParent == true) {
+      if (mode.endsWithParent ?? false) {
         return endOfMode(mode.parent!, match, matchPlusRemainder);
       }
 
@@ -245,7 +261,7 @@ class Highlight {
 
     int doIgnore(String lexeme) {
       if (top.matcher?.regexIndex == 0) {
-        modeBuffer += lexeme[0];
+        modeBuffer.write(lexeme[0]);
         return 1;
       } else {
         resumeScanAtSamePosition = true;
@@ -268,19 +284,19 @@ class Highlight {
         if (resp.isMatchIgnored) return doIgnore(lexeme!);
       }
 
-      if (newMode.skip == true) {
-        modeBuffer += lexeme!;
+      if (newMode.skip ?? false) {
+        modeBuffer.write(lexeme);
       } else {
-        if (newMode.excludeBegin == true) {
-          modeBuffer += lexeme!;
+        if (newMode.excludeBegin ?? false) {
+          modeBuffer.write(lexeme);
         }
         processBuffer();
         if (newMode.returnBegin != true && newMode.excludeBegin != true) {
-          modeBuffer = lexeme!;
+          modeBuffer.write(lexeme);
         }
       }
       startNewMode(newMode, match);
-      return newMode.returnBegin == true ? 0 : lexeme!.length;
+      return newMode.returnBegin ?? false ? 0 : lexeme!.length;
     }
 
     int doEndMatch(JsStyleRegExpMatch match) {
@@ -293,21 +309,21 @@ class Highlight {
       }
 
       final origin = top;
-      if (top.endScope != null && top.endScope[$wrap] != null) {
+      if (top.endScope case {$wrap: final wrap?}) {
         processBuffer();
-        emitter.addKeyword(lexeme!, top.endScope[$wrap]);
-      } else if (top.endScope != null && top.endScope[$multi] == true) {
+        emitter.addKeyword(lexeme!, wrap);
+      } else if (top.endScope case {$multi: true}) {
         processBuffer();
         emitMultiClass(top.endScope, match);
-      } else if (origin.skip == true) {
-        modeBuffer += lexeme!;
+      } else if (origin.skip ?? false) {
+        modeBuffer.write(lexeme);
       } else {
-        if (!(origin.returnEnd == true || origin.excludeEnd == true)) {
-          modeBuffer += lexeme!;
+        if (!((origin.returnEnd ?? false) || (origin.excludeEnd ?? false))) {
+          modeBuffer.write(lexeme);
         }
         processBuffer();
-        if (origin.excludeEnd == true) {
-          modeBuffer = lexeme!;
+        if (origin.excludeEnd ?? false) {
+          modeBuffer.write(lexeme);
         }
       }
 
@@ -324,13 +340,13 @@ class Highlight {
       if (endMode.starts != null) {
         startNewMode(endMode.starts!, match);
       }
-      return origin.returnEnd == true ? 0 : lexeme!.length;
+      return origin.returnEnd ?? false ? 0 : lexeme!.length;
     }
 
     int processLexeme(String textBeforeMatch, JsStyleRegExpMatch? match) {
-      dynamic lexeme = match != null ? match[0] : null;
+      final lexeme = match != null ? match[0] : null;
 
-      modeBuffer += textBeforeMatch;
+      modeBuffer.write(textBeforeMatch);
 
       if (lexeme == null) {
         processBuffer();
@@ -341,38 +357,44 @@ class Highlight {
           match!.matchType == $end &&
           lastMatch?.index == match.index &&
           lexeme == '') {
-        modeBuffer += codeToHighlight.substring(match.index, match.index + 1);
+        modeBuffer.write(
+          codeToHighlight.substring(match.index, match.index + 1),
+        );
         if (!safeMode) {
           throw Exception(
-              '0 width match regex $languageId, rule: ${lastMatch?.rule}');
+            '0 width match regex $languageId, rule: ${lastMatch?.rule}',
+          );
         }
 
         return 1;
       }
 
-      lastMatch = match!;
+      lastMatch = match;
 
-      if (match.matchType == $begin) {
+      if (match != null && match.matchType == $begin) {
         return doBeginMatch(match);
-      } else if (match.matchType == $illegal && ignoreIllegals != true) {
+      } else if (match?.matchType == $illegal && !ignoreIllegals) {
         throw Exception(
-            'Illegal lexeme $lexeme for mode ${top.scope ?? '<unnamed>'}');
-      } else if (match.matchType == $end) {
+          'Illegal lexeme $lexeme for mode ${top.scope ?? '<unnamed>'}',
+        );
+      } else if (match != null && match.matchType == $end) {
         final processed = doEndMatch(match);
         if (processed != kNoMatch) {
           return processed;
         }
       }
 
-      if (match.matchType == $illegal && lexeme == '') {
+      if (match?.matchType == $illegal && lexeme == '') {
         return 1;
       }
 
-      if (iterations > kMaxIterations && iterations > match.index * 3) {
+      if (iterations > kMaxIterations &&
+          match != null &&
+          iterations > match.index * 3) {
         throw Exception();
       }
 
-      modeBuffer += lexeme;
+      modeBuffer.write(lexeme);
       return lexeme.length;
     }
 
@@ -407,6 +429,7 @@ class Highlight {
       emitter.top = top;
       return emitter;
     } on Exception catch (e) {
+      // ignore: avoid_print
       print(e);
     }
 
@@ -414,17 +437,16 @@ class Highlight {
   }
 
   @internal
-  Result highlightAuto(
-    String code,
-    List<String> languageSubset,
-  ) {
+  Result highlightAuto(String code, List<String> languageSubset) {
     final plainText = justTextHighlightResult(code);
     try {
       final results = languageSubset
           .where((e) => _languages[e] != null || builtinLanguages[e] != null)
-          .where((e) =>
-              _languages[e]?.disableAutodetect != true ||
-              builtinLanguages[e]?.disableAutodetect != true)
+          .where(
+            (e) =>
+                _languages[e]?.disableAutodetect != true ||
+                builtinLanguages[e]?.disableAutodetect != true,
+          )
           .map((name) => highlight(name, code, false))
           .toList();
 
@@ -438,10 +460,7 @@ class Highlight {
   }
 
   Result justTextHighlightResult(String code) {
-    final emitter = Result(
-      language: null,
-      top: plaintext,
-    );
+    final emitter = Result(top: plaintext);
 
     return emitter..addText(code);
   }

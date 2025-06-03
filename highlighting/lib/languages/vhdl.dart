@@ -129,7 +129,7 @@ final vhdl = Language(
       "while",
       "with",
       "xnor",
-      "xor"
+      "xor",
     ],
     "built_in": [
       "boolean",
@@ -157,7 +157,7 @@ final vhdl = Language(
       "unresolved_signed",
       "u_signed",
       "real_vector",
-      "time_vector"
+      "time_vector",
     ],
     "literal": [
       "false",
@@ -169,8 +169,8 @@ final vhdl = Language(
       "line",
       "text",
       "side",
-      "width"
-    ]
+      "width",
+    ],
   },
   illegal: "\\{",
   contains: [
@@ -203,16 +203,12 @@ final vhdl = Language(
     Mode(
       className: "string",
       begin: "'(U|X|0|1|Z|W|L|H|-)'",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
     Mode(
       className: "symbol",
       begin: "'[A-Za-z](_?[A-Za-z0-9])*",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
     ),
   ],
 );

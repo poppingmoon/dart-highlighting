@@ -15,10 +15,7 @@ final ada = Language(
       end: "\\s*(:=|;|\\)|=>|\$)",
       illegal: "[]\\{\\}%#'\"",
       contains: [
-        Mode(
-          beginKeywords: "loop for declare others",
-          endsParent: true,
-        ),
+        Mode(beginKeywords: "loop for declare others", endsParent: true),
         Mode(
           className: "keyword",
           beginKeywords:
@@ -125,9 +122,9 @@ final ada = Language(
       "do",
       "mod",
       "requeue",
-      "xor"
+      "xor",
     ],
-    "literal": ["True", "False"]
+    "literal": ["True", "False"],
   },
   contains: [
     ModeReference('~contains~0'),
@@ -135,27 +132,16 @@ final ada = Language(
       className: "string",
       begin: "\"",
       end: "\"",
-      contains: [
-        Mode(
-          begin: "\"\"",
-          relevance: 0,
-        ),
-      ],
+      contains: [Mode(begin: "\"\"", relevance: 0)],
     ),
-    Mode(
-      className: "string",
-      begin: "'.'",
-    ),
+    Mode(className: "string", begin: "'.'"),
     Mode(
       className: "number",
       begin:
           "\\b(\\d(_|\\d)*#\\w+(\\.\\w+)?#([eE][-+]?\\d(_|\\d)*)?|\\d(_|\\d)*(\\.\\d(_|\\d)*)?([eE][-+]?\\d(_|\\d)*)?)",
       relevance: 0,
     ),
-    Mode(
-      className: "symbol",
-      begin: "'[A-Za-z](_?[A-Za-z0-9.])*",
-    ),
+    Mode(className: "symbol", begin: "'[A-Za-z](_?[A-Za-z0-9.])*"),
     Mode(
       className: "title",
       begin: "(\\bwith\\s+)?(\\bprivate\\s+)?\\bpackage\\s+(\\bbody\\s+)?",

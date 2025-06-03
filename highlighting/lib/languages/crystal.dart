@@ -13,30 +13,22 @@ final crystal = Language(
     '~contains~0~contains~0~variants~6~contains~0': Mode(
       begin: "<",
       end: ">",
-      contains: [
-        ModeReference('~contains~0~contains~0~variants~6~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0~variants~6~contains~0')],
     ),
     '~contains~0~contains~0~variants~5~contains~0': Mode(
       begin: "\\{",
       end: "\\}",
-      contains: [
-        ModeReference('~contains~0~contains~0~variants~5~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0~variants~5~contains~0')],
     ),
     '~contains~0~contains~0~variants~4~contains~0': Mode(
       begin: "\\[",
       end: "\\]",
-      contains: [
-        ModeReference('~contains~0~contains~0~variants~4~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0~variants~4~contains~0')],
     ),
     '~contains~0~contains~0~variants~3~contains~0': Mode(
       begin: "\\(",
       end: "\\)",
-      contains: [
-        ModeReference('~contains~0~contains~0~variants~3~contains~0'),
-      ],
+      contains: [ModeReference('~contains~0~contains~0~variants~3~contains~0')],
     ),
     '~contains~0~contains~0~contains~1~contains~9': Mode(
       className: "class",
@@ -64,9 +56,7 @@ final crystal = Language(
           begin: "[A-Za-z_]\\w*(::\\w+)*(\\?|!)?",
           relevance: 0,
         ),
-        Mode(
-          begin: "<",
-        ),
+        Mode(begin: "<"),
       ],
     ),
     '~contains~0~contains~0~contains~1~contains~6': Mode(
@@ -83,9 +73,7 @@ final crystal = Language(
           begin: "\"",
           end: "\"",
           illegal: "\\n",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
           className: "string",
         ),
       ],
@@ -102,14 +90,8 @@ final crystal = Language(
             ModeReference('~contains~0~contains~0~contains~1'),
           ],
           variants: [
-            Mode(
-              begin: "//[a-z]*",
-              relevance: 0,
-            ),
-            Mode(
-              begin: "/(?!\\/)",
-              end: "/[a-z]*",
-            ),
+            Mode(begin: "//[a-z]*", relevance: 0),
+            Mode(begin: "/(?!\\/)", end: "/[a-z]*"),
           ],
         ),
       ],
@@ -120,7 +102,8 @@ final crystal = Language(
       end: ">",
       contains: [
         ModeReference(
-            '~contains~0~contains~0~contains~1~contains~3~variants~3~contains~0'),
+          '~contains~0~contains~0~contains~1~contains~3~variants~3~contains~0',
+        ),
       ],
     ),
     '~contains~0~contains~0~contains~1~contains~3~variants~2~contains~0': Mode(
@@ -128,7 +111,8 @@ final crystal = Language(
       end: "\\}",
       contains: [
         ModeReference(
-            '~contains~0~contains~0~contains~1~contains~3~variants~2~contains~0'),
+          '~contains~0~contains~0~contains~1~contains~3~variants~2~contains~0',
+        ),
       ],
     ),
     '~contains~0~contains~0~contains~1~contains~3~variants~1~contains~0': Mode(
@@ -136,7 +120,8 @@ final crystal = Language(
       end: "\\]",
       contains: [
         ModeReference(
-            '~contains~0~contains~0~contains~1~contains~3~variants~1~contains~0'),
+          '~contains~0~contains~0~contains~1~contains~3~variants~1~contains~0',
+        ),
       ],
     ),
     '~contains~0~contains~0~contains~1~contains~3~variants~0~contains~0': Mode(
@@ -144,7 +129,8 @@ final crystal = Language(
       end: "\\)",
       contains: [
         ModeReference(
-            '~contains~0~contains~0~contains~1~contains~3~variants~0~contains~0'),
+          '~contains~0~contains~0~contains~1~contains~3~variants~0~contains~0',
+        ),
       ],
     ),
     '~contains~0~contains~0~contains~1~contains~3': Mode(
@@ -159,7 +145,8 @@ final crystal = Language(
           end: "\\)",
           contains: [
             ModeReference(
-                '~contains~0~contains~0~contains~1~contains~3~variants~0~contains~0'),
+              '~contains~0~contains~0~contains~1~contains~3~variants~0~contains~0',
+            ),
           ],
         ),
         Mode(
@@ -167,7 +154,8 @@ final crystal = Language(
           end: "\\]",
           contains: [
             ModeReference(
-                '~contains~0~contains~0~contains~1~contains~3~variants~1~contains~0'),
+              '~contains~0~contains~0~contains~1~contains~3~variants~1~contains~0',
+            ),
           ],
         ),
         Mode(
@@ -175,7 +163,8 @@ final crystal = Language(
           end: "\\}",
           contains: [
             ModeReference(
-                '~contains~0~contains~0~contains~1~contains~3~variants~2~contains~0'),
+              '~contains~0~contains~0~contains~1~contains~3~variants~2~contains~0',
+            ),
           ],
         ),
         Mode(
@@ -183,13 +172,11 @@ final crystal = Language(
           end: ">",
           contains: [
             ModeReference(
-                '~contains~0~contains~0~contains~1~contains~3~variants~3~contains~0'),
+              '~contains~0~contains~0~contains~1~contains~3~variants~3~contains~0',
+            ),
           ],
         ),
-        Mode(
-          begin: "%r\\|",
-          end: "\\|",
-        ),
+        Mode(begin: "%r\\|", end: "\\|"),
       ],
       relevance: 0,
     ),
@@ -198,7 +185,8 @@ final crystal = Language(
       end: ">",
       contains: [
         ModeReference(
-            '~contains~0~contains~0~contains~1~contains~2~variants~3~contains~0'),
+          '~contains~0~contains~0~contains~1~contains~2~variants~3~contains~0',
+        ),
       ],
     ),
     '~contains~0~contains~0~contains~1~contains~2~variants~2~contains~0': Mode(
@@ -206,7 +194,8 @@ final crystal = Language(
       end: "\\}",
       contains: [
         ModeReference(
-            '~contains~0~contains~0~contains~1~contains~2~variants~2~contains~0'),
+          '~contains~0~contains~0~contains~1~contains~2~variants~2~contains~0',
+        ),
       ],
     ),
     '~contains~0~contains~0~contains~1~contains~2~variants~1~contains~0': Mode(
@@ -214,7 +203,8 @@ final crystal = Language(
       end: "\\]",
       contains: [
         ModeReference(
-            '~contains~0~contains~0~contains~1~contains~2~variants~1~contains~0'),
+          '~contains~0~contains~0~contains~1~contains~2~variants~1~contains~0',
+        ),
       ],
     ),
     '~contains~0~contains~0~contains~1~contains~2~variants~0~contains~0': Mode(
@@ -222,7 +212,8 @@ final crystal = Language(
       end: "\\)",
       contains: [
         ModeReference(
-            '~contains~0~contains~0~contains~1~contains~2~variants~0~contains~0'),
+          '~contains~0~contains~0~contains~1~contains~2~variants~0~contains~0',
+        ),
       ],
     ),
     '~contains~0~contains~0~contains~1~contains~2': Mode(
@@ -233,7 +224,8 @@ final crystal = Language(
           end: "\\)",
           contains: [
             ModeReference(
-                '~contains~0~contains~0~contains~1~contains~2~variants~0~contains~0'),
+              '~contains~0~contains~0~contains~1~contains~2~variants~0~contains~0',
+            ),
           ],
         ),
         Mode(
@@ -241,7 +233,8 @@ final crystal = Language(
           end: "\\]",
           contains: [
             ModeReference(
-                '~contains~0~contains~0~contains~1~contains~2~variants~1~contains~0'),
+              '~contains~0~contains~0~contains~1~contains~2~variants~1~contains~0',
+            ),
           ],
         ),
         Mode(
@@ -249,7 +242,8 @@ final crystal = Language(
           end: "\\}",
           contains: [
             ModeReference(
-                '~contains~0~contains~0~contains~1~contains~2~variants~2~contains~0'),
+              '~contains~0~contains~0~contains~1~contains~2~variants~2~contains~0',
+            ),
           ],
         ),
         Mode(
@@ -257,39 +251,26 @@ final crystal = Language(
           end: ">",
           contains: [
             ModeReference(
-                '~contains~0~contains~0~contains~1~contains~2~variants~3~contains~0'),
+              '~contains~0~contains~0~contains~1~contains~2~variants~3~contains~0',
+            ),
           ],
         ),
-        Mode(
-          begin: "%q\\|",
-          end: "\\|",
-        ),
-        Mode(
-          begin: "<<-'\\w+'\$",
-          end: "^\\s*\\w+\$",
-        ),
+        Mode(begin: "%q\\|", end: "\\|"),
+        Mode(begin: "<<-'\\w+'\$", end: "^\\s*\\w+\$"),
       ],
       relevance: 0,
     ),
     '~contains~0~contains~0~contains~1~contains~15': Mode(
       className: "number",
       variants: [
-        Mode(
-          begin: "\\b0b([01_]+)(_?[ui](8|16|32|64|128))?",
-        ),
-        Mode(
-          begin: "\\b0o([0-7_]+)(_?[ui](8|16|32|64|128))?",
-        ),
-        Mode(
-          begin: "\\b0x([A-Fa-f0-9_]+)(_?[ui](8|16|32|64|128))?",
-        ),
+        Mode(begin: "\\b0b([01_]+)(_?[ui](8|16|32|64|128))?"),
+        Mode(begin: "\\b0o([0-7_]+)(_?[ui](8|16|32|64|128))?"),
+        Mode(begin: "\\b0x([A-Fa-f0-9_]+)(_?[ui](8|16|32|64|128))?"),
         Mode(
           begin:
               "\\b([1-9][0-9_]*[0-9]|[0-9])(\\.[0-9][0-9_]*)?([eE]_?[-+]?[0-9_]*)?(_?f(32|64))?(?!_)",
         ),
-        Mode(
-          begin: "\\b([1-9][0-9_]*|0)(_?[ui](8|16|32|64|128))?",
-        ),
+        Mode(begin: "\\b([1-9][0-9_]*|0)(_?[ui](8|16|32|64|128))?"),
       ],
       relevance: 0,
     ),
@@ -361,7 +342,7 @@ final crystal = Language(
         "\$pattern": "[a-zA-Z_]\\w*[!?=]?",
         "keyword":
             "abstract alias annotation as as? asm begin break case class def do else elsif end ensure enum extend for fun if include instance_sizeof is_a? lib macro module next nil? of out pointerof private protected rescue responds_to? return require select self sizeof struct super then type typeof union uninitialized unless until verbatim when while with yield __DIR__ __END_LINE__ __FILE__ __LINE__",
-        "literal": "false nil true"
+        "literal": "false nil true",
       },
       contains: [
         ModeReference('~contains~0'),
@@ -389,18 +370,9 @@ final crystal = Language(
         ModeReference('~contains~0~contains~0~contains~1'),
       ],
       variants: [
-        Mode(
-          begin: "'",
-          end: "'",
-        ),
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
-        Mode(
-          begin: "`",
-          end: "`",
-        ),
+        Mode(begin: "'", end: "'"),
+        Mode(begin: "\"", end: "\""),
+        Mode(begin: "`", end: "`"),
         Mode(
           begin: "%[Qwi]?\\(",
           end: "\\)",
@@ -429,34 +401,22 @@ final crystal = Language(
             ModeReference('~contains~0~contains~0~variants~6~contains~0'),
           ],
         ),
-        Mode(
-          begin: "%[Qwi]?\\|",
-          end: "\\|",
-        ),
-        Mode(
-          begin: "<<-\\w+\$",
-          end: "^\\s*\\w+\$",
-        ),
+        Mode(begin: "%[Qwi]?\\|", end: "\\|"),
+        Mode(begin: "<<-\\w+\$", end: "^\\s*\\w+\$"),
       ],
       relevance: 0,
     ),
     '~contains~0': Mode(
       className: "template-variable",
       variants: [
-        Mode(
-          begin: "\\{\\{",
-          end: "\\}\\}",
-        ),
-        Mode(
-          begin: "\\{%",
-          end: "%\\}",
-        ),
+        Mode(begin: "\\{\\{", end: "\\}\\}"),
+        Mode(begin: "\\{%", end: "%\\}"),
       ],
       keywords: {
         "\$pattern": "[a-zA-Z_]\\w*[!?=]?",
         "keyword":
             "abstract alias annotation as as? asm begin break case class def do else elsif end ensure enum extend for fun if include instance_sizeof is_a? lib macro module next nil? of out pointerof private protected rescue responds_to? return require select self sizeof struct super then type typeof union uninitialized unless until verbatim when while with yield __DIR__ __END_LINE__ __FILE__ __LINE__",
-        "literal": "false nil true"
+        "literal": "false nil true",
       },
       contains: [
         ModeReference('~contains~0~contains~0'),
@@ -483,7 +443,7 @@ final crystal = Language(
     "\$pattern": "[a-zA-Z_]\\w*[!?=]?",
     "keyword":
         "abstract alias annotation as as? asm begin break case class def do else elsif end ensure enum extend for fun if include instance_sizeof is_a? lib macro module next nil? of out pointerof private protected rescue responds_to? return require select self sizeof struct super then type typeof union uninitialized unless until verbatim when while with yield __DIR__ __END_LINE__ __FILE__ __LINE__",
-    "literal": "false nil true"
+    "literal": "false nil true",
   },
   contains: [
     ModeReference('~contains~0'),

@@ -24,15 +24,9 @@ final css = Language(
   classNameAliases: {"keyframePosition": "selector-tag"},
   contains: [
     C_BLOCK_COMMENT_MODE,
-    Mode(
-      begin: "-(webkit|moz|ms|o)-(?=[a-z])",
-    ),
+    Mode(begin: "-(webkit|moz|ms|o)-(?=[a-z])"),
     ModeReference('~contains~2'),
-    Mode(
-      className: "selector-id",
-      begin: "#[A-Za-z0-9_-]+",
-      relevance: 0,
-    ),
+    Mode(className: "selector-id", begin: "#[A-Za-z0-9_-]+", relevance: 0),
     Mode(
       className: "selector-class",
       begin: "\\.[a-zA-Z-][a-zA-Z0-9_-]*",
@@ -43,10 +37,7 @@ final css = Language(
       begin: "\\[",
       end: "\\]",
       illegal: "\$",
-      contains: [
-        APOS_STRING_MODE,
-        QUOTE_STRING_MODE,
-      ],
+      contains: [APOS_STRING_MODE, QUOTE_STRING_MODE],
     ),
     Mode(
       className: "selector-pseudo",
@@ -61,10 +52,7 @@ final css = Language(
         ),
       ],
     ),
-    Mode(
-      className: "attr",
-      begin: "--[A-Za-z][A-Za-z0-9_-]*",
-    ),
+    Mode(className: "attr", begin: "--[A-Za-z][A-Za-z0-9_-]*"),
     Mode(
       className: "attribute",
       begin:
@@ -79,10 +67,7 @@ final css = Language(
           scope: "number",
           begin: "#(([0-9a-fA-F]{3,4})|(([0-9a-fA-F]{2}){3,4}))\\b",
         ),
-        Mode(
-          scope: "meta",
-          begin: "!important",
-        ),
+        Mode(scope: "meta", begin: "!important"),
         ModeReference('~contains~2'),
         APOS_STRING_MODE,
         QUOTE_STRING_MODE,
@@ -102,10 +87,7 @@ final css = Language(
             ),
           ],
         ),
-        Mode(
-          className: "built_in",
-          begin: "[\\w-]+(?=\\()",
-        ),
+        Mode(className: "built_in", begin: "[\\w-]+(?=\\()"),
       ],
     ),
     Mode(
@@ -114,10 +96,7 @@ final css = Language(
       relevance: 0,
       illegal: ":",
       contains: [
-        Mode(
-          className: "keyword",
-          begin: "@-?\\w[\\w]*(-\\w+)*",
-        ),
+        Mode(className: "keyword", begin: "@-?\\w[\\w]*(-\\w+)*"),
         Mode(
           begin: "\\s",
           endsWithParent: true,
@@ -127,13 +106,10 @@ final css = Language(
             "\$pattern": "[a-z-]+",
             "keyword": "and or not only",
             "attribute":
-                "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height"
+                "any-hover any-pointer aspect-ratio color color-gamut color-index device-aspect-ratio device-height device-width display-mode forced-colors grid height hover inverted-colors monochrome orientation overflow-block overflow-inline pointer prefers-color-scheme prefers-contrast prefers-reduced-motion prefers-reduced-transparency resolution scan scripting update width min-width max-width min-height max-height",
           },
           contains: [
-            Mode(
-              begin: "[a-z-]+(?=:)",
-              className: "attribute",
-            ),
+            Mode(begin: "[a-z-]+(?=:)", className: "attribute"),
             APOS_STRING_MODE,
             QUOTE_STRING_MODE,
             ModeReference('~contains~2'),

@@ -49,7 +49,7 @@ final xl = Language(
       "prefix",
       "postfix",
       "block",
-      "tree"
+      "tree",
     ],
     "literal": ["true", "false", "nil"],
     "built_in": [
@@ -145,24 +145,15 @@ final xl = Language(
       "Snowfall",
       "NodeJS",
       "Speech",
-      "Charts"
-    ]
+      "Charts",
+    ],
   },
   contains: [
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
     ModeReference('~contains~2'),
-    Mode(
-      className: "string",
-      begin: "'",
-      end: "'",
-      illegal: "\\n",
-    ),
-    Mode(
-      className: "string",
-      begin: "<<",
-      end: ">>",
-    ),
+    Mode(className: "string", begin: "'", end: "'", illegal: "\\n"),
+    Mode(className: "string", begin: "<<", end: ">>"),
     Mode(
       className: "function",
       begin: "[a-z][^\\n]*->",
@@ -205,7 +196,7 @@ final xl = Language(
                 "prefix",
                 "postfix",
                 "block",
-                "tree"
+                "tree",
               ],
               "literal": ["true", "false", "nil"],
               "built_in": [
@@ -301,8 +292,8 @@ final xl = Language(
                 "Snowfall",
                 "NodeJS",
                 "Speech",
-                "Charts"
-              ]
+                "Charts",
+              ],
             },
           ),
         ),
@@ -341,7 +332,7 @@ final xl = Language(
           "prefix",
           "postfix",
           "block",
-          "tree"
+          "tree",
         ],
         "literal": ["true", "false", "nil"],
         "built_in": [
@@ -437,12 +428,10 @@ final xl = Language(
           "Snowfall",
           "NodeJS",
           "Speech",
-          "Charts"
-        ]
+          "Charts",
+        ],
       },
-      contains: [
-        ModeReference('~contains~2'),
-      ],
+      contains: [ModeReference('~contains~2')],
     ),
     Mode(
       className: "number",

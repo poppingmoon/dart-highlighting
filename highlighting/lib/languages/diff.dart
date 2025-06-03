@@ -26,25 +26,11 @@ final diff = Language(
           begin: "(?:Index: |^index|={3,}|^-{3}|^\\*{3} |^\\+{3}|^diff --git)",
           end: "\$",
         ),
-        Mode(
-          match: "^\\*{15}\$",
-        ),
+        Mode(match: "^\\*{15}\$"),
       ],
     ),
-    Mode(
-      className: "addition",
-      begin: "^\\+",
-      end: "\$",
-    ),
-    Mode(
-      className: "deletion",
-      begin: "^-",
-      end: "\$",
-    ),
-    Mode(
-      className: "addition",
-      begin: "^!",
-      end: "\$",
-    ),
+    Mode(className: "addition", begin: "^\\+", end: "\$"),
+    Mode(className: "deletion", begin: "^-", end: "\$"),
+    Mode(className: "addition", begin: "^!", end: "\$"),
   ],
 );

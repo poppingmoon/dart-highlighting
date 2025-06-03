@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: prefer_single_quotes
 // ignore_for_file: unnecessary_raw_strings
@@ -14,14 +15,10 @@ final erlangRepl = Language(
   keywords: {
     "built_in": "spawn spawn_link self",
     "keyword":
-        "after and andalso|10 band begin bnot bor bsl bsr bxor case catch cond div end fun if let not of or orelse|10 query receive rem try when xor"
+        "after and andalso|10 band begin bnot bor bsl bsr bxor case catch cond div end fun if let not of or orelse|10 query receive rem try when xor",
   },
   contains: [
-    Mode(
-      className: "meta.prompt",
-      begin: "^[0-9]+> ",
-      relevance: 10,
-    ),
+    Mode(className: "meta.prompt", begin: "^[0-9]+> ", relevance: 10),
     Mode(
       scope: "comment",
       begin: "%",
@@ -48,26 +45,15 @@ final erlangRepl = Language(
     ),
     APOS_STRING_MODE,
     QUOTE_STRING_MODE,
-    Mode(
-      begin: "\\?(::)?([A-Z]\\w*)((::)[A-Z]\\w*)*",
-    ),
-    Mode(
-      begin: "->",
-    ),
-    Mode(
-      begin: "ok",
-    ),
-    Mode(
-      begin: "!",
-    ),
+    Mode(begin: "\\?(::)?([A-Z]\\w*)((::)[A-Z]\\w*)*"),
+    Mode(begin: "->"),
+    Mode(begin: "ok"),
+    Mode(begin: "!"),
     Mode(
       begin:
           "(\\b[a-z'][a-zA-Z0-9_']*:[a-z'][a-zA-Z0-9_']*)|(\\b[a-z'][a-zA-Z0-9_']*)",
       relevance: 0,
     ),
-    Mode(
-      begin: "[A-Z][a-zA-Z0-9_']*",
-      relevance: 0,
-    ),
+    Mode(begin: "[A-Z][a-zA-Z0-9_']*", relevance: 0),
   ],
 );

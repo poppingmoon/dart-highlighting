@@ -19,29 +19,16 @@ final leaf = Language(
       returnBegin: true,
       excludeEnd: true,
       contains: [
-        Mode(
-          className: "keyword",
-          begin: "#+",
-        ),
-        Mode(
-          className: "title",
-          begin: "[A-Za-z_][A-Za-z_0-9]*",
-        ),
+        Mode(className: "keyword", begin: "#+"),
+        Mode(className: "title", begin: "[A-Za-z_][A-Za-z_0-9]*"),
         Mode(
           className: "params",
           begin: "\\(",
           end: "\\)",
           endsParent: true,
           contains: [
-            Mode(
-              className: "string",
-              begin: "\"",
-              end: "\"",
-            ),
-            Mode(
-              className: "variable",
-              begin: "[A-Za-z_][A-Za-z_0-9]*",
-            ),
+            Mode(className: "string", begin: "\"", end: "\""),
+            Mode(className: "variable", begin: "[A-Za-z_][A-Za-z_0-9]*"),
           ],
         ),
       ],

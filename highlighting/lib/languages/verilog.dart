@@ -12,7 +12,6 @@ final verilog = Language(
   refs: {},
   name: "Verilog",
   aliases: ["v", "sv", "svh"],
-  case_insensitive: false,
   keywords: {
     "\$pattern": "\\\$?[\\w]+(\\\$[\\w]+)*",
     "keyword": [
@@ -262,7 +261,7 @@ final verilog = Language(
       "within",
       "wor",
       "xnor",
-      "xor"
+      "xor",
     ],
     "literal": ["null"],
     "built_in": [
@@ -464,8 +463,8 @@ final verilog = Language(
       "\$sscanf",
       "\$rewind",
       "\$ftell",
-      "\$ferror"
-    ]
+      "\$ferror",
+    ],
   },
   contains: [
     C_BLOCK_COMMENT_MODE,
@@ -473,38 +472,21 @@ final verilog = Language(
     QUOTE_STRING_MODE,
     Mode(
       scope: "number",
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
+      contains: [BACKSLASH_ESCAPE],
       variants: [
-        Mode(
-          begin: "\\b((\\d+'([bhodBHOD]))[0-9xzXZa-fA-F_]+)",
-        ),
-        Mode(
-          begin: "\\B(('([bhodBHOD]))[0-9xzXZa-fA-F_]+)",
-        ),
-        Mode(
-          begin: "\\b[0-9][0-9_]*",
-          relevance: 0,
-        ),
+        Mode(begin: "\\b((\\d+'([bhodBHOD]))[0-9xzXZa-fA-F_]+)"),
+        Mode(begin: "\\B(('([bhodBHOD]))[0-9xzXZa-fA-F_]+)"),
+        Mode(begin: "\\b[0-9][0-9_]*", relevance: 0),
       ],
     ),
     Mode(
       scope: "variable",
       variants: [
-        Mode(
-          begin: "#\\((?!parameter).+\\)",
-        ),
-        Mode(
-          begin: "\\.\\w+",
-          relevance: 0,
-        ),
+        Mode(begin: "#\\((?!parameter).+\\)"),
+        Mode(begin: "\\.\\w+", relevance: 0),
       ],
     ),
-    Mode(
-      scope: "variable.constant",
-      match: "`(?:__FILE__|__LINE__)",
-    ),
+    Mode(scope: "variable.constant", match: "`(?:__FILE__|__LINE__)"),
     Mode(
       scope: "meta",
       begin:
@@ -537,7 +519,7 @@ final verilog = Language(
         "timescale",
         "unconnected_drive",
         "undef",
-        "undefineall"
+        "undefineall",
       ],
     ),
   ],

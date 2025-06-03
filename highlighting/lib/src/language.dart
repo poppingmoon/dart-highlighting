@@ -6,12 +6,13 @@ class Language extends Mode {
 
   final List<String> aliases;
 
+  // ignore: non_constant_identifier_names
   final bool case_insensitive;
 
   /// `String | Map<String, String>`
   dynamic classNameAliases;
 
-  final List<dynamic> compilerExtensions;
+  // final List<dynamic> compilerExtensions;
 
   final bool disableAutodetect;
 
@@ -28,9 +29,10 @@ class Language extends Mode {
     required this.id,
     required this.refs,
     this.aliases = const [],
+    // ignore: non_constant_identifier_names
     this.case_insensitive = false,
     this.classNameAliases,
-    this.compilerExtensions = const [],
+    // this.compilerExtensions = const [],
     this.disableAutodetect = false,
     this.name,
     this.supersetOf,

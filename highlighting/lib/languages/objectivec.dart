@@ -129,7 +129,7 @@ final objectivec = Language(
       "NS_HANDLER",
       "NS_ENDHANDLER",
       "NS_VALUERETURN",
-      "NS_VOIDRETURN"
+      "NS_VOIDRETURN",
     ],
     "literal": ["false", "true", "FALSE", "TRUE", "nil", "YES", "NO", "NULL"],
     "built_in": [
@@ -137,7 +137,7 @@ final objectivec = Language(
       "dispatch_queue_t",
       "dispatch_sync",
       "dispatch_async",
-      "dispatch_once"
+      "dispatch_once",
     ],
     "type": [
       "int",
@@ -154,8 +154,8 @@ final objectivec = Language(
       "bool",
       "BOOL",
       "id|0",
-      "_Bool"
-    ]
+      "_Bool",
+    ],
   },
   illegal: "</",
   contains: [
@@ -176,9 +176,7 @@ final objectivec = Language(
           begin: "@\"",
           end: "\"",
           illegal: "\\n",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
         ),
       ],
     ),
@@ -188,29 +186,19 @@ final objectivec = Language(
       end: "\$",
       keywords: {
         "keyword":
-            "if else elif endif define undef warning error line pragma ifdef ifndef include"
+            "if else elif endif define undef warning error line pragma ifdef ifndef include",
       },
       contains: [
-        Mode(
-          begin: "\\\\\\n",
-          relevance: 0,
-        ),
+        Mode(begin: "\\\\\\n", relevance: 0),
         Mode(
           scope: "string",
           begin: "\"",
           end: "\"",
           illegal: "\\n",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
+          contains: [BACKSLASH_ESCAPE],
           className: "string",
         ),
-        Mode(
-          className: "string",
-          begin: "<.*?>",
-          end: "\$",
-          illegal: "\\n",
-        ),
+        Mode(className: "string", begin: "<.*?>", end: "\$", illegal: "\\n"),
         C_LINE_COMMENT_MODE,
         C_BLOCK_COMMENT_MODE,
       ],
@@ -222,15 +210,10 @@ final objectivec = Language(
       excludeEnd: true,
       keywords: {
         "\$pattern": "[a-zA-Z@][a-zA-Z0-9_]*",
-        "keyword": ["@interface", "@class", "@protocol", "@implementation"]
+        "keyword": ["@interface", "@class", "@protocol", "@implementation"],
       },
-      contains: [
-        UNDERSCORE_TITLE_MODE,
-      ],
+      contains: [UNDERSCORE_TITLE_MODE],
     ),
-    Mode(
-      begin: "\\.[a-zA-Z_]\\w*",
-      relevance: 0,
-    ),
+    Mode(begin: "\\.[a-zA-Z_]\\w*", relevance: 0),
   ],
 );

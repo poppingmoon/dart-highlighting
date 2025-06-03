@@ -23,17 +23,11 @@ final gcode = Language(
   keywords: {
     "\$pattern": "[A-Z_][A-Z0-9_.]*",
     "keyword":
-        "IF DO WHILE ENDWHILE CALL ENDIF SUB ENDSUB GOTO REPEAT ENDREPEAT EQ LT GT NE GE LE OR XOR"
+        "IF DO WHILE ENDWHILE CALL ENDIF SUB ENDSUB GOTO REPEAT ENDREPEAT EQ LT GT NE GE LE OR XOR",
   },
   contains: [
-    Mode(
-      className: "meta",
-      begin: "%",
-    ),
-    Mode(
-      className: "meta",
-      begin: "([O])([0-9]+)",
-    ),
+    Mode(className: "meta", begin: "%"),
+    Mode(className: "meta", begin: "([O])([0-9]+)"),
     C_LINE_COMMENT_MODE,
     C_BLOCK_COMMENT_MODE,
     Mode(
@@ -55,58 +49,21 @@ final gcode = Language(
       ],
     ),
     ModeReference('~contains~5'),
-    Mode(
-      scope: "string",
-      begin: "'",
-      end: "'",
-      illegal: null,
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
-    ),
-    Mode(
-      scope: "string",
-      begin: "\"",
-      end: "\"",
-      illegal: null,
-      contains: [
-        BACKSLASH_ESCAPE,
-      ],
-    ),
-    Mode(
-      className: "name",
-      begin: "([G])([0-9]+\\.?[0-9]?)",
-    ),
-    Mode(
-      className: "name",
-      begin: "([M])([0-9]+\\.?[0-9]?)",
-    ),
-    Mode(
-      className: "attr",
-      begin: "(VC|VS|#)",
-      end: "(\\d+)",
-    ),
-    Mode(
-      className: "attr",
-      begin: "(VZOFX|VZOFY|VZOFZ)",
-    ),
+    Mode(scope: "string", begin: "'", end: "'", contains: [BACKSLASH_ESCAPE]),
+    Mode(scope: "string", begin: "\"", end: "\"", contains: [BACKSLASH_ESCAPE]),
+    Mode(className: "name", begin: "([G])([0-9]+\\.?[0-9]?)"),
+    Mode(className: "name", begin: "([M])([0-9]+\\.?[0-9]?)"),
+    Mode(className: "attr", begin: "(VC|VS|#)", end: "(\\d+)"),
+    Mode(className: "attr", begin: "(VZOFX|VZOFY|VZOFZ)"),
     Mode(
       className: "built_in",
       begin: "(ATAN|ABS|ACOS|ASIN|SIN|COS|EXP|FIX|FUP|ROUND|LN|TAN)(\\[)",
-      contains: [
-        ModeReference('~contains~5'),
-      ],
+      contains: [ModeReference('~contains~5')],
       end: "\\]",
     ),
     Mode(
       className: "symbol",
-      variants: [
-        Mode(
-          begin: "N",
-          end: "\\d+",
-          illegal: "\\W",
-        ),
-      ],
+      variants: [Mode(begin: "N", end: "\\d+", illegal: "\\W")],
     ),
   ],
 );

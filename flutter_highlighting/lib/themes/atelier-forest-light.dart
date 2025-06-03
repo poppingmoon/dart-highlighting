@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const atelierForestLightTheme = {
@@ -28,8 +30,10 @@ const atelierForestLightTheme = {
   'section': TextStyle(color: Color(0xff407ee7)),
   'keyword': TextStyle(color: Color(0xff6666ea)),
   'selector-tag': TextStyle(color: Color(0xff6666ea)),
-  'root':
-      TextStyle(backgroundColor: Color(0xfff1efee), color: Color(0xff68615e)),
+  'root': TextStyle(
+    backgroundColor: Color(0xfff1efee),
+    color: Color(0xff68615e),
+  ),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'strong': TextStyle(fontWeight: FontWeight.bold),
 };

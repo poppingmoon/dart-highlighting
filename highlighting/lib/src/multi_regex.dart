@@ -8,10 +8,7 @@ import 'language.dart';
 import 'mode.dart';
 
 class RuleOptions {
-  RuleOptions({
-    this.rule,
-    required this.type,
-  });
+  RuleOptions({this.rule, required this.type});
 
   final Mode? rule;
   final String type;
@@ -28,9 +25,7 @@ class MultiRegex {
   JsStyleRegExp matcherRe = JsStyleRegExp(RegExp(''));
   final Language language;
 
-  MultiRegex({
-    required this.language,
-  });
+  MultiRegex({required this.language});
 
   void addRule(RegExp re, RuleOptions opts) {
     opts.position = position++;
@@ -42,11 +37,7 @@ class MultiRegex {
   void compile() {
     final terminators = regexes.map((el) => el.item2).toList();
     matcherRe = JsStyleRegExp(
-      langRe(
-        rewriteBackReferences(terminators, joinWith: '|'),
-        true,
-        language,
-      ),
+      langRe(rewriteBackReferences(terminators), true, language),
       global: true,
     );
     lastIndex = 0;
@@ -57,7 +48,7 @@ class MultiRegex {
 
     // final input = string.substring(lastIndex);
     matcherRe.lastIndex = lastIndex;
-    var match = matcherRe.exec(string);
+    final match = matcherRe.exec(string);
     if (match == null) {
       return null;
     }
@@ -89,9 +80,7 @@ class ResumableMultiRegex {
   int regexIndex = 0;
   final Language language;
 
-  ResumableMultiRegex({
-    required this.language,
-  });
+  ResumableMultiRegex({required this.language});
 
   MultiRegex getMatcher(int index) {
     if (multiRegexes[index] != null) {
@@ -127,10 +116,10 @@ class ResumableMultiRegex {
     m.lastIndex = lastIndex;
     var result = m.exec(s);
 
-    // The following is because we have no easy way to say "resume scanning at the
-    // existing position but also skip the current rule ONLY". What happens is
-    // all prior rules are also skipped which can result in matching the wrong
-    // thing. Example of matching "booger":
+    // The following is because we have no easy way to say "resume scanning at
+    // the existing position but also skip the current rule ONLY". What happens
+    // is all prior rules are also skipped which can result in matching the
+    // wrong thing. Example of matching "booger":
 
     // our matcher is [string, "booger", number]
     //
@@ -154,7 +143,8 @@ class ResumableMultiRegex {
     // process essentially allows us to say "match at this position, excluding
     // a prior rule that was ignored".
     //
-    // 1. Match "booger" first, ignore. Also proves that [string] does non match.
+    // 1. Match "booger" first, ignore. Also proves that [string] does non
+    //    match.
     // 2. Resume matching for [number]
     // 3. Match at index + 1 for [string, "booger", number]
     // 4. If #2 and #3 result in matches, which came first?
@@ -183,20 +173,22 @@ class ResumableMultiRegex {
   }
 }
 
+// ignore: avoid_positional_boolean_parameters
 RegExp langRe(dynamic value, bool global, Language? language) {
+  // ignore: prefer_asserts_with_message
   assert(value is String || value is RegExp);
 
   String source;
   if (value is String) {
     source = value;
   } else {
-    source = value.pattern;
+    source = (value as RegExp).pattern;
   }
 
   return RegExp(
     source,
     caseSensitive: language?.case_insensitive != true,
-    unicode: language?.unicodeRegex == true,
+    unicode: language?.unicodeRegex ?? false,
     multiLine: true,
   );
 }

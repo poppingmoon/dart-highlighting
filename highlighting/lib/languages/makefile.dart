@@ -13,15 +13,8 @@ final makefile = Language(
     '~contains~1': Mode(
       className: "variable",
       variants: [
-        Mode(
-          begin: "\\\$\\([a-zA-Z_]\\w*\\)",
-          contains: [
-            BACKSLASH_ESCAPE,
-          ],
-        ),
-        Mode(
-          begin: "\\\$[@%<?\\^\\+\\*]",
-        ),
+        Mode(begin: "\\\$\\([a-zA-Z_]\\w*\\)", contains: [BACKSLASH_ESCAPE]),
+        Mode(begin: "\\\$[@%<?\\^\\+\\*]"),
       ],
     ),
   },
@@ -30,7 +23,7 @@ final makefile = Language(
   keywords: {
     "\$pattern": "[\\w-]+",
     "keyword":
-        "define endef undefine ifdef ifndef ifeq ifneq else endif include -include sinclude override export unexport private vpath"
+        "define endef undefine ifdef ifndef ifeq ifneq else endif include -include sinclude override export unexport private vpath",
   },
   contains: [
     HASH_COMMENT_MODE,
@@ -39,10 +32,7 @@ final makefile = Language(
       className: "string",
       begin: "\"",
       end: "\"",
-      contains: [
-        BACKSLASH_ESCAPE,
-        ModeReference('~contains~1'),
-      ],
+      contains: [BACKSLASH_ESCAPE, ModeReference('~contains~1')],
     ),
     Mode(
       className: "variable",
@@ -50,15 +40,11 @@ final makefile = Language(
       end: "\\)",
       keywords: {
         "built_in":
-            "subst patsubst strip findstring filter filter-out sort word wordlist firstword lastword dir notdir suffix basename addsuffix addprefix join wildcard realpath abspath error warning shell origin flavor foreach if or and call eval file value"
+            "subst patsubst strip findstring filter filter-out sort word wordlist firstword lastword dir notdir suffix basename addsuffix addprefix join wildcard realpath abspath error warning shell origin flavor foreach if or and call eval file value",
       },
-      contains: [
-        ModeReference('~contains~1'),
-      ],
+      contains: [ModeReference('~contains~1')],
     ),
-    Mode(
-      begin: "^[a-zA-Z_]\\w*\\s*(?=[:+?]?=)",
-    ),
+    Mode(begin: "^[a-zA-Z_]\\w*\\s*(?=[:+?]?=)"),
     Mode(
       className: "meta",
       begin: "^\\.PHONY:",
@@ -69,9 +55,7 @@ final makefile = Language(
       className: "section",
       begin: "^[^\\s]+:",
       end: "\$",
-      contains: [
-        ModeReference('~contains~1'),
-      ],
+      contains: [ModeReference('~contains~1')],
     ),
   ],
 );

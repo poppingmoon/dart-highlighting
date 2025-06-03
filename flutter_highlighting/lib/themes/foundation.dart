@@ -3,8 +3,10 @@
 import 'package:flutter/painting.dart';
 
 const foundationTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xffeeeeee), color: Color(0xff000000)),
+  'root': TextStyle(
+    backgroundColor: Color(0xffeeeeee),
+    color: Color(0xff000000),
+  ),
   'addition': TextStyle(color: Color(0xff007700)),
   'attribute': TextStyle(color: Color(0xff007700)),
   'emphasis': TextStyle(color: Color(0xff007700), fontStyle: FontStyle.italic),
@@ -27,8 +29,10 @@ const foundationTheme = {
   'literal': TextStyle(color: Color(0xff009999)),
   'number': TextStyle(color: Color(0xff009999)),
   'selector-tag': TextStyle(color: Color(0xff009999)),
-  'regexp':
-      TextStyle(backgroundColor: Color(0xfffff0ff), color: Color(0xff880088)),
+  'regexp': TextStyle(
+    backgroundColor: Color(0xfffff0ff),
+    color: Color(0xff880088),
+  ),
   'symbol': TextStyle(color: Color(0xff990073)),
   'name': TextStyle(color: Color(0xff007700)),
   'selector-class': TextStyle(color: Color(0xff007700)),

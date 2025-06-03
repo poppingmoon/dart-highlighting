@@ -1,10 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const kimbieDarkTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xff221a0f), color: Color(0xffd3af86)),
+  'root': TextStyle(
+    backgroundColor: Color(0xff221a0f),
+    color: Color(0xffd3af86),
+  ),
   'comment': TextStyle(color: Color(0xffd6baad)),
   'quote': TextStyle(color: Color(0xffd6baad)),
   'meta': TextStyle(color: Color(0xffdc3958)),

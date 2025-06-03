@@ -1,5 +1,4 @@
-import 'package:collection/collection.dart';
-import 'package:highlighting/src/node.dart';
+import 'node.dart';
 
 import 'result.dart';
 
@@ -11,10 +10,7 @@ class HtmlRenderer {
 
   String get value => _buffer;
 
-  HtmlRenderer({
-    required this.classPrefix,
-    required Result result,
-  }) {
+  HtmlRenderer({required this.classPrefix, required Result result}) {
     result.walk(this);
   }
 
@@ -28,7 +24,7 @@ class HtmlRenderer {
     }
 
     String className;
-    if (node.sublanguage == true) {
+    if (node.sublanguage ?? false) {
       className = 'language-${node.language!}';
     } else {
       className = scopeToCSSClass(node.className!, classPrefix);
@@ -52,7 +48,7 @@ class HtmlRenderer {
 
 bool emitsWrappingTag(Node node) {
   return node.className != null ||
-      (node.sublanguage == true && node.language != null);
+      ((node.sublanguage ?? false) && node.language != null);
 }
 
 String scopeToCSSClass(String name, String prefix) {
@@ -65,9 +61,9 @@ String scopeToCSSClass(String name, String prefix) {
 
 String _escape(String value) {
   return value
-      .replaceAll(RegExp(r'&'), '&amp;')
-      .replaceAll(RegExp(r'<'), '&lt;')
-      .replaceAll(RegExp(r'>'), '&gt;')
+      .replaceAll(RegExp('&'), '&amp;')
+      .replaceAll(RegExp('<'), '&lt;')
+      .replaceAll(RegExp('>'), '&gt;')
       .replaceAll('"', '&quot;')
       .replaceAll('\'', '&#x27;');
 }

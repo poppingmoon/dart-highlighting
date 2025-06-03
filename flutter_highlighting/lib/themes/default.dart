@@ -3,11 +3,13 @@
 import 'package:flutter/painting.dart';
 
 const defaultTheme = {
-  'root':
-      TextStyle(backgroundColor: Color(0xfff3f3f3), color: Color(0xff444444)),
+  'root': TextStyle(
+    backgroundColor: Color(0xfff3f3f3),
+    color: Color(0xff444444),
+  ),
   'comment': TextStyle(color: Color(0xff697070)),
-  'punctuation': TextStyle(color: Color(0xff444a)),
-  'tag': TextStyle(color: Color(0xff444a)),
+  'punctuation': TextStyle(color: Color(0xaa444444)),
+  'tag': TextStyle(color: Color(0xaa444444)),
   'attribute': TextStyle(fontWeight: FontWeight.w700),
   'doctag': TextStyle(fontWeight: FontWeight.w700),
   'keyword': TextStyle(fontWeight: FontWeight.w700),

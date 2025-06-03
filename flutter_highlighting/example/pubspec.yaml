@@ -5,15 +5,23 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
-  flutter: ">=3.0.0"
+  sdk: ">=3.8.0 <4.0.0"
+  flutter: ">=3.32.0"
 
 dependencies:
-  flutter: { sdk: flutter }
-  flutter_highlighting: { path: ../ }
+  flutter:
+    sdk: flutter
+  flutter_highlighting:
+    path: ../
+  highlighting:
+    path: ../../highlighting
+
+dev_dependencies:
+  total_lints: ^3.4.0
 
 flutter:
   uses-material-design: true
 
 dependency_overrides:
-  highlighting: { path: ../../highlighting }
+  highlighting:
+    path: ../../highlighting

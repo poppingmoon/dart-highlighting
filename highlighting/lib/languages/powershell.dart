@@ -26,61 +26,33 @@ final powershell = Language(
     '~contains~0~contains~0~contains~6': Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "'",
-          end: "'",
-        ),
-        Mode(
-          begin: "@'",
-          end: "^'@",
-        ),
+        Mode(begin: "'", end: "'"),
+        Mode(begin: "@'", end: "^'@"),
       ],
     ),
     '~contains~0~contains~0~contains~5~contains~1': Mode(
       className: "variable",
       variants: [
-        Mode(
-          begin: "\\\$\\B",
-        ),
-        Mode(
-          className: "keyword",
-          begin: "\\\$this",
-        ),
-        Mode(
-          begin: "\\\$[\\w\\d][\\w\\d_:]*",
-        ),
+        Mode(begin: "\\\$\\B"),
+        Mode(className: "keyword", begin: "\\\$this"),
+        Mode(begin: "\\\$[\\w\\d][\\w\\d_:]*"),
       ],
     ),
     '~contains~0~contains~0~contains~5': Mode(
       className: "string",
       variants: [
-        Mode(
-          begin: "\"",
-          end: "\"",
-        ),
-        Mode(
-          begin: "@\"",
-          end: "^\"@",
-        ),
+        Mode(begin: "\"", end: "\""),
+        Mode(begin: "@\"", end: "^\"@"),
       ],
       contains: [
         ModeReference('~contains~0~contains~0~contains~3'),
         ModeReference('~contains~0~contains~0~contains~5~contains~1'),
-        Mode(
-          className: "variable",
-          begin: "\\\$[A-z]",
-          end: "[^A-z]",
-        ),
+        Mode(className: "variable", begin: "\\\$[A-z]", end: "[^A-z]"),
       ],
     ),
-    '~contains~0~contains~0~contains~3': Mode(
-      begin: "`[\\s\\S]",
-      relevance: 0,
-    ),
+    '~contains~0~contains~0~contains~3': Mode(begin: "`[\\s\\S]", relevance: 0),
     '~contains~0~contains~0~contains~2': Mode(
       scope: "comment",
-      begin: null,
-      end: null,
       contains: [
         Mode(
           className: "doctag",
@@ -97,14 +69,8 @@ final powershell = Language(
         ),
       ],
       variants: [
-        Mode(
-          begin: "#",
-          end: "\$",
-        ),
-        Mode(
-          begin: "<#",
-          end: "#>",
-        ),
+        Mode(begin: "#", end: "\$"),
+        Mode(begin: "<#", end: "#>"),
       ],
     ),
     '~contains~0~contains~0~contains~10': Mode(
@@ -136,11 +102,7 @@ final powershell = Language(
           className: "built_in",
           relevance: 0,
         ),
-        Mode(
-          className: "type",
-          begin: "[\\.\\w\\d]+",
-          relevance: 0,
-        ),
+        Mode(className: "type", begin: "[\\.\\w\\d]+", relevance: 0),
       ],
     ),
     '~contains~0': Mode(
@@ -175,7 +137,7 @@ final powershell = Language(
     "keyword":
         "if else foreach return do while until elseif begin for trap data dynamicparam end break throw param continue finally in switch exit filter try process catch hidden static parameter",
     "built_in":
-        "ac asnp cat cd CFS chdir clc clear clhy cli clp cls clv cnsn compare copy cp cpi cpp curl cvpa dbp del diff dir dnsn ebp echo|0 epal epcsv epsn erase etsn exsn fc fhx fl ft fw gal gbp gc gcb gci gcm gcs gdr gerr ghy gi gin gjb gl gm gmo gp gps gpv group gsn gsnp gsv gtz gu gv gwmi h history icm iex ihy ii ipal ipcsv ipmo ipsn irm ise iwmi iwr kill lp ls man md measure mi mount move mp mv nal ndr ni nmo npssc nsn nv ogv oh popd ps pushd pwd r rbp rcjb rcsn rd rdr ren ri rjb rm rmdir rmo rni rnp rp rsn rsnp rujb rv rvpa rwmi sajb sal saps sasv sbp sc scb select set shcm si sl sleep sls sort sp spjb spps spsv start stz sujb sv swmi tee trcm type wget where wjb write"
+        "ac asnp cat cd CFS chdir clc clear clhy cli clp cls clv cnsn compare copy cp cpi cpp curl cvpa dbp del diff dir dnsn ebp echo|0 epal epcsv epsn erase etsn exsn fc fhx fl ft fw gal gbp gc gcb gci gcm gcs gdr gerr ghy gi gin gjb gl gm gmo gp gps gpv group gsn gsnp gsv gtz gu gv gwmi h history icm iex ihy ii ipal ipcsv ipmo ipsn irm ise iwmi iwr kill lp ls man md measure mi mount move mp mv nal ndr ni nmo npssc nsn nv ogv oh popd ps pushd pwd r rbp rcjb rcsn rd rdr ren ri rjb rm rmdir rmo rni rnp rp rsn rsnp rujb rv rvpa rwmi sajb sal saps sasv sbp sc scb select set shcm si sl sleep sls sort sp spjb spps spsv start stz sujb sv swmi tee trcm type wget where wjb write",
   },
   contains: [
     ModeReference('~contains~0'),
@@ -194,9 +156,7 @@ final powershell = Language(
       end: "\\s*[{]",
       excludeEnd: true,
       relevance: 0,
-      contains: [
-        TITLE_MODE,
-      ],
+      contains: [TITLE_MODE],
     ),
     Mode(
       className: "function",
@@ -206,11 +166,7 @@ final powershell = Language(
       returnBegin: true,
       relevance: 0,
       contains: [
-        Mode(
-          begin: "function",
-          relevance: 0,
-          className: "keyword",
-        ),
+        Mode(begin: "function", relevance: 0, className: "keyword"),
         Mode(
           className: "title",
           begin: "\\w[\\w\\d]*((-)[\\w\\d]+)*",
@@ -247,11 +203,7 @@ final powershell = Language(
           begin:
               "(-and|-as|-band|-bnot|-bor|-bxor|-casesensitive|-ccontains|-ceq|-cge|-cgt|-cle|-clike|-clt|-cmatch|-cne|-cnotcontains|-cnotlike|-cnotmatch|-contains|-creplace|-csplit|-eq|-exact|-f|-file|-ge|-gt|-icontains|-ieq|-ige|-igt|-ile|-ilike|-ilt|-imatch|-in|-ine|-inotcontains|-inotlike|-inotmatch|-ireplace|-is|-isnot|-isplit|-join|-le|-like|-lt|-match|-ne|-not|-notcontains|-notin|-notlike|-notmatch|-or|-regex|-replace|-shl|-shr|-split|-wildcard|-xor)\\b",
         ),
-        Mode(
-          className: "literal",
-          begin: "(-){1,2}[\\w\\d-]+",
-          relevance: 0,
-        ),
+        Mode(className: "literal", begin: "(-){1,2}[\\w\\d-]+", relevance: 0),
       ],
     ),
     ModeReference('~contains~0~contains~0'),
