@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_highlighting/flutter_highlighting.dart';
 import 'package:flutter_highlighting/theme_map.dart';
+import 'package:highlighting/highlighting.dart';
 import 'package:highlighting/languages/all.dart';
 import 'package:highlighting/languages/dart.dart';
 
@@ -57,15 +58,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           PopupMenuButton<String>(
             child: _buildMenuContent(languageId),
-            itemBuilder: (context) {
-              return builtinLanguages.keys.map((key) {
-                return CheckedPopupMenuItem(
-                  value: key,
-                  checked: languageId == key,
-                  child: Text(key),
-                );
-              }).toList();
-            },
+            itemBuilder: (context) => ['ALL', ...builtinLanguages.keys]
+                .map(
+                  (key) => CheckedPopupMenuItem(
+                    value: key,
+                    checked: languageId == key,
+                    child: Text(key),
+                  ),
+                )
+                .toList(),
             onSelected: (selected) {
               setState(() {
                 languageId = selected;
@@ -94,21 +95,48 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: ListView(
-          children: <Widget>[
-            TextField(controller: controller, maxLines: null),
-            const SizedBox(height: 20),
-            HighlightView(
-              controller.text.isEmpty
-                  ? exampleMap[languageId] ?? ''
-                  : controller.text,
-              languageId: languageId,
-              theme: themeMap[theme]!,
-              padding: const EdgeInsets.all(12),
-              textStyle: const TextStyle(
-                fontFamily:
-                    'SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace',
+          children: [
+            if (languageId == 'ALL') ...[
+              for (final e in exampleMap.entries)
+                if (builtinLanguages[e.key] ??
+                        builtinLanguages.values
+                            .whereType<Language?>()
+                            .firstWhere(
+                              (language) =>
+                                  language?.aliases.contains(e.key) ?? false,
+                              orElse: () => throw Exception(e.key),
+                            )
+                    case final language?) ...[
+                  Text(language.name ?? language.id),
+                  const SizedBox(height: 8),
+                  HighlightView(
+                    e.value,
+                    languageId: language.id,
+                    theme: themeMap[theme]!,
+                  ),
+                  const SizedBox(height: 16),
+                ],
+            ] else ...[
+              TextField(controller: controller, maxLines: null),
+              const SizedBox(height: 20),
+              HighlightView(
+                controller.text.isEmpty
+                    ? exampleMap[languageId] ?? ''
+                    : controller.text,
+                languageId: languageId,
+                theme: themeMap[theme]!,
+                padding: const EdgeInsets.all(12),
+                textStyle: const TextStyle(
+                  fontFamilyFallback: [
+                    'SFMono-Regular',
+                    'Consolas',
+                    'Liberation Mono',
+                    'Menlo',
+                    'monospace',
+                  ],
+                ),
               ),
-            ),
+            ],
           ],
         ),
       ),
