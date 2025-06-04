@@ -50,6 +50,8 @@ export function portAllModes() {
   let all = "import '../src/language.dart';";
   let builtin = "final builtinLanguages = <String, Language>{";
   let community = "final communityLanguages = <String, Language>{";
+  const builtinAliases = Object();
+  const communityAliases = Object();
 
   const dirs = fs.readdirSync(dir);
   const items = [
@@ -106,6 +108,20 @@ export function portAllModes() {
       } else {
         builtin += `'${originalLang}': ${lang},`;
       }
+
+      let aliases = nonCircularObj.aliases;
+      if (aliases) {
+        if (typeof aliases === 'string') {
+          aliases = [aliases];
+        }
+        aliases.forEach(alias => {
+          if (item.community) {
+            communityAliases[alias] = originalLang;
+          } else {
+            builtinAliases[alias] = originalLang;
+          }
+        });
+      }
     } catch (err) {
       console.error(err);
     }
@@ -116,6 +132,18 @@ export function portAllModes() {
   community += "};";
   all += community + builtin;
   all += "final allLanguages = {...builtinLanguages,...communityLanguages};";
+  all += "const builtinAliases = {";
+  for (const item of Object.entries(builtinAliases)) {
+    all += `'${item[0]}': '${item[1]}',`
+  }
+  all += "};";
+  all += "const communityAliases = {";
+  for (const item of Object.entries(communityAliases)) {
+    all += `'${item[0]}': '${item[1]}',`
+  }
+  all += "};";
+  all += "const allAliases = {...builtinAliases, ...communityAliases};";
+
   fs.writeFileSync(
     `../../highlighting/lib/languages/all.dart`,
     all.replace(/\$/g, "\\$")

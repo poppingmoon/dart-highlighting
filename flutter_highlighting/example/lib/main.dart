@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_highlighting/flutter_highlighting.dart';
 import 'package:flutter_highlighting/theme_map.dart';
-import 'package:highlighting/highlighting.dart';
 import 'package:highlighting/languages/all.dart';
 import 'package:highlighting/languages/dart.dart';
 
@@ -99,13 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
             if (languageId == 'ALL') ...[
               for (final e in exampleMap.entries)
                 if (builtinLanguages[e.key] ??
-                        builtinLanguages.values
-                            .whereType<Language?>()
-                            .firstWhere(
-                              (language) =>
-                                  language?.aliases.contains(e.key) ?? false,
-                              orElse: () => throw Exception(e.key),
-                            )
+                        builtinLanguages[builtinAliases[e.key]]
                     case final language?) ...[
                   Text(language.name ?? language.id),
                   const SizedBox(height: 8),
