@@ -128,7 +128,14 @@ function generateModeEntry(
       }
 
       if (Array.isArray(value)) {
-        const arr = value.map((mode) => generateMode(mode) + ",");
+        const arr = value.map((mode) => {
+          if (Array.isArray(mode)) {
+            // https://github.com/highlightjs/highlight.js/blob/11.11.1/src/languages/typescript.js#L112-L116
+            return mode.map((mode) => generateMode(mode) + ",").join("");
+          } else {
+            return generateMode(mode) + ",";
+          }
+        });
         return { key: key, value: `[${arr.join("")}]` };
       }
 
