@@ -1,9 +1,15 @@
 import fs from "fs";
 import path from "path";
 
+import { NOTICE_COMMENT } from "./common.js";
+
 export function example() {
   // Generate code example dart files
-  let code = "var exampleMap = {";
+  let code = `
+    ${NOTICE_COMMENT}
+    // ignore_for_file: lines_longer_than_80_chars
+
+    const exampleMap = {`;
   // ["dart"]
   fs.readdirSync("../vendor/highlight.js/test/detect").forEach(langName => {
     if (langName.endsWith(".js")) return;
@@ -24,5 +30,7 @@ export function example() {
     code += `'${langName}':'${content}',`;
   });
   code += "};";
-  fs.writeFileSync("../flutter_highlight/example/lib/example_map.dart", code);
+  fs.writeFileSync("../flutter_highlighting/example/lib/example_map.dart", code);
 }
+
+example()
