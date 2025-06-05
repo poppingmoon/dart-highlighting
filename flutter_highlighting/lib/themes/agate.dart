@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const agateTheme = {
@@ -7,10 +9,10 @@ const agateTheme = {
     backgroundColor: Color(0xff333333),
     color: Color(0xffffffff),
   ),
-  'doctag': TextStyle(fontWeight: FontWeight.w700),
-  'meta-keyword': TextStyle(fontWeight: FontWeight.w700),
-  'name': TextStyle(fontWeight: FontWeight.w700),
-  'strong': TextStyle(fontWeight: FontWeight.w700),
+  'doctag': TextStyle(fontWeight: FontWeight.bold),
+  'meta-keyword': TextStyle(fontWeight: FontWeight.bold),
+  'name': TextStyle(fontWeight: FontWeight.bold),
+  'strong': TextStyle(fontWeight: FontWeight.bold),
   'code': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff888888)),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
   'section': TextStyle(color: Color(0xff62c8f3)),
@@ -38,8 +40,8 @@ const agateTheme = {
   'comment': TextStyle(color: Color(0xff888888)),
   'formula': TextStyle(color: Color(0xff888888)),
   'link': TextStyle(color: Color(0xffc6b4f0)),
-  'regexp': TextStyle(color: Color(0xffc6b4f0)),
   'selector-pseudo': TextStyle(color: Color(0xffc6b4f0)),
+  'regexp': TextStyle(color: Color(0xffc6b4f0)),
   'meta': TextStyle(color: Color(0xfffc9b9b)),
   'deletion': TextStyle(
     backgroundColor: Color(0xfffc9b9b),

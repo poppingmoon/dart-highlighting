@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const sunburstTheme = {
@@ -14,18 +16,20 @@ const sunburstTheme = {
   'type': TextStyle(color: Color(0xffe28964)),
   'string': TextStyle(color: Color(0xff65b042)),
   'subst': TextStyle(color: Color(0xffdaefa3)),
-  'link': TextStyle(color: Color(0xffe9c062)),
   'regexp': TextStyle(color: Color(0xffe9c062)),
-  'name': TextStyle(color: Color(0xff89bdff)),
+  'link': TextStyle(color: Color(0xffe9c062)),
+  'title': TextStyle(color: Color(0xff89bdff)),
   'section': TextStyle(color: Color(0xff89bdff)),
   'tag': TextStyle(color: Color(0xff89bdff)),
-  'title': TextStyle(color: Color(0xff89bdff)),
+  'name': TextStyle(color: Color(0xff89bdff)),
+  'title.class_': TextStyle(decoration: TextDecoration.underline),
+  'doctag': TextStyle(decoration: TextDecoration.underline),
+  'symbol': TextStyle(color: Color(0xff3387cc)),
   'bullet': TextStyle(color: Color(0xff3387cc)),
   'number': TextStyle(color: Color(0xff3387cc)),
-  'symbol': TextStyle(color: Color(0xff3387cc)),
   'params': TextStyle(color: Color(0xff3e87e3)),
-  'template-variable': TextStyle(color: Color(0xff3e87e3)),
   'variable': TextStyle(color: Color(0xff3e87e3)),
+  'template-variable': TextStyle(color: Color(0xff3e87e3)),
   'attribute': TextStyle(color: Color(0xffcda869)),
   'meta': TextStyle(color: Color(0xff8996a8)),
   'formula': TextStyle(
@@ -44,5 +48,5 @@ const sunburstTheme = {
   'selector-class': TextStyle(color: Color(0xff9b703f)),
   'selector-id': TextStyle(color: Color(0xff8b98ab)),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
-  'strong': TextStyle(fontWeight: FontWeight.w700),
+  'strong': TextStyle(fontWeight: FontWeight.bold),
 };

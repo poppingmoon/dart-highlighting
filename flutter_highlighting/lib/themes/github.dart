@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const githubTheme = {
@@ -23,26 +25,26 @@ const githubTheme = {
   'meta': TextStyle(color: Color(0xff005cc5)),
   'number': TextStyle(color: Color(0xff005cc5)),
   'operator': TextStyle(color: Color(0xff005cc5)),
+  'variable': TextStyle(color: Color(0xff005cc5)),
   'selector-attr': TextStyle(color: Color(0xff005cc5)),
   'selector-class': TextStyle(color: Color(0xff005cc5)),
   'selector-id': TextStyle(color: Color(0xff005cc5)),
-  'variable': TextStyle(color: Color(0xff005cc5)),
   'regexp': TextStyle(color: Color(0xff032f62)),
   'string': TextStyle(color: Color(0xff032f62)),
   'built_in': TextStyle(color: Color(0xffe36209)),
   'symbol': TextStyle(color: Color(0xffe36209)),
-  'code': TextStyle(color: Color(0xff6a737d)),
   'comment': TextStyle(color: Color(0xff6a737d)),
+  'code': TextStyle(color: Color(0xff6a737d)),
   'formula': TextStyle(color: Color(0xff6a737d)),
   'name': TextStyle(color: Color(0xff22863a)),
   'quote': TextStyle(color: Color(0xff22863a)),
-  'selector-pseudo': TextStyle(color: Color(0xff22863a)),
   'selector-tag': TextStyle(color: Color(0xff22863a)),
+  'selector-pseudo': TextStyle(color: Color(0xff22863a)),
   'subst': TextStyle(color: Color(0xff24292e)),
-  'section': TextStyle(color: Color(0xff005cc5), fontWeight: FontWeight.w700),
+  'section': TextStyle(color: Color(0xff005cc5), fontWeight: FontWeight.bold),
   'bullet': TextStyle(color: Color(0xff735c0f)),
   'emphasis': TextStyle(color: Color(0xff24292e), fontStyle: FontStyle.italic),
-  'strong': TextStyle(color: Color(0xff24292e), fontWeight: FontWeight.w700),
+  'strong': TextStyle(color: Color(0xff24292e), fontWeight: FontWeight.bold),
   'addition': TextStyle(
     color: Color(0xff22863a),
     backgroundColor: Color(0xfff0fff4),

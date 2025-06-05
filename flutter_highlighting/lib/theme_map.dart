@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'themes/1c-light.dart';
 import 'themes/a11y-dark.dart';
 import 'themes/a11y-light.dart';
 import 'themes/agate.dart';
@@ -14,6 +15,10 @@ import 'themes/atom-one-light.dart';
 import 'themes/brown-paper.dart';
 import 'themes/codepen-embed.dart';
 import 'themes/color-brewer.dart';
+import 'themes/cybertopia-cherry.dart';
+import 'themes/cybertopia-dimmer.dart';
+import 'themes/cybertopia-icecap.dart';
+import 'themes/cybertopia-saturated.dart';
 import 'themes/dark.dart';
 import 'themes/default.dart';
 import 'themes/devibeans.dart';
@@ -57,6 +62,9 @@ import 'themes/purebasic.dart';
 import 'themes/qtcreator-dark.dart';
 import 'themes/qtcreator-light.dart';
 import 'themes/rainbow.dart';
+import 'themes/rose-pine-dawn.dart';
+import 'themes/rose-pine-moon.dart';
+import 'themes/rose-pine.dart';
 import 'themes/routeros.dart';
 import 'themes/school-book.dart';
 import 'themes/shades-of-purple.dart';
@@ -74,6 +82,7 @@ import 'themes/xcode.dart';
 import 'themes/xt256.dart';
 
 const themeMap = {
+  '1c-light': theme1CLightTheme,
   'a11y-dark': a11yDarkTheme,
   'a11y-light': a11yLightTheme,
   'agate': agateTheme,
@@ -88,6 +97,10 @@ const themeMap = {
   'brown-paper': brownPaperTheme,
   'codepen-embed': codepenEmbedTheme,
   'color-brewer': colorBrewerTheme,
+  'cybertopia-cherry': cybertopiaCherryTheme,
+  'cybertopia-dimmer': cybertopiaDimmerTheme,
+  'cybertopia-icecap': cybertopiaIcecapTheme,
+  'cybertopia-saturated': cybertopiaSaturatedTheme,
   'dark': darkTheme,
   'default': defaultTheme,
   'devibeans': devibeansTheme,
@@ -131,6 +144,9 @@ const themeMap = {
   'qtcreator-dark': qtcreatorDarkTheme,
   'qtcreator-light': qtcreatorLightTheme,
   'rainbow': rainbowTheme,
+  'rose-pine-dawn': rosePineDawnTheme,
+  'rose-pine-moon': rosePineMoonTheme,
+  'rose-pine': rosePineTheme,
   'routeros': routerosTheme,
   'school-book': schoolBookTheme,
   'shades-of-purple': shadesOfPurpleTheme,

@@ -15,9 +15,14 @@ const destDir = `${pathToFlutterHighlighting}/lib/themes`;
  *
  * @param {string} color
  */
-const convertColor = color => {
+const convertColor = (color, variables) => {
   if (color === "inherit") return;
   if (color.startsWith("rgba(")) return `Color.fromRGBO${color.slice(4)}`;
+
+  let match = color.match(/^var\(([^)]*)/);
+  if (match) {
+    color = variables[match[1]] ?? color;
+  }
 
   let rgb = "";
 
@@ -36,12 +41,19 @@ const convertColor = color => {
   } else if (color === "gold") {
     rgb = "ffd700";
   } else if (color.startsWith("#")) {
-    rgb = color.slice(1);
+    rgb = color.slice(1).toLowerCase();
     if (rgb.length === 3) {
       rgb = rgb
         .split("")
         .map(x => x + x)
         .join("");
+    } else if (rgb.length === 4) {
+      const argb = [rgb[3], rgb[0], rgb[1], rgb[2]]
+        .map((x) => x.repeat(2))
+        .join("");
+      return `Color(0x${argb})`;
+    } else if (rgb.length === 8) {
+      return `Color(0x${rgb})`;
     }
   }
 
@@ -51,6 +63,13 @@ const convertColor = color => {
     console.log(`color ignored: ${color}`);
   }
 };
+
+function normalizeThemeName(name) {
+  if (/^\d/.test(name)) {
+    name = "theme" + name;
+  }
+  return _.camelCase(name + "Theme").replace(/a11y/i, "a11y");
+}
 
 /**
  * flutter_highlight/lib/themes/*
@@ -63,9 +82,10 @@ export function style() {
   fs.readdirSync(rootDir).forEach(file => {
     if (path.extname(file) != ".css") return;
     if (file === "darkula.css") return; // Deprecated
+    if (file.endsWith(".min.css")) return;
 
     const fileName = path.basename(file, ".css");
-    let varName = _.camelCase(fileName + "Theme").replace(/a11y/i, "a11y");
+    const varName = normalizeThemeName(fileName);
 
     all[0] += `import 'themes/${fileName}.dart';`;
     all[1] += `'${fileName}': ${varName},`;
@@ -74,29 +94,38 @@ export function style() {
     // console.log(ast);
 
     const obj = {};
+    const variables = Object();
     ast.walkRules((rule, index) => {
       // FIXME: a11y media query
       if (rule.parent.type === "atrule" && rule.parent.name === "media") {
         return;
       }
 
-      rule.selectors.forEach(selector => {
+      rule.selectors.forEach((selector) => {
         if (/\s+/.test(selector)) {
           // FIXME: nested selector
-          // console.log(selector);
+          console.log(`nested selector: ${selector}`);
           return;
         }
         if (selector === ".hljs") selector = "root";
         selector = selector.replace(".hljs-", "");
 
         const style = {};
-        rule.nodes.forEach(item => {
+        const localVariables = Object();
+        rule.nodes.forEach((item) => {
           if (item.type === "comment") {
             return;
           } else if (item.type === "decl") {
+            if (item.prop.startsWith("--")) {
+              localVariables[item.prop] = item.value.trim();
+              return;
+            }
             switch (item.prop) {
               case "color": {
-                const flutterColor = convertColor(item.value);
+                const flutterColor = convertColor(item.value, {
+                  ...variables,
+                  ...localVariables,
+                });
 
                 if (flutterColor) {
                   style.color = flutterColor;
@@ -105,7 +134,10 @@ export function style() {
               }
               case "background":
               case "background-color": {
-                const flutterColor = convertColor(item.value);
+                const flutterColor = convertColor(item.value, {
+                  ...variables,
+                  ...localVariables,
+                });
                 if (flutterColor) {
                   style.backgroundColor = flutterColor;
                 }
@@ -121,14 +153,34 @@ export function style() {
                 if (item.value === "bold") {
                   style.fontWeight = `FontWeight.bold`;
                   break;
+                } else if (item.value === "normal") {
+                  style.fontWeight = "FontWeight.normal";
+                  break;
                 }
                 style.fontWeight = `FontWeight.w${item.value}`;
                 break;
+              case "text-decoration":
+                if (item.value === "underline") {
+                  style.decoration = "TextDecoration.underline";
+                  break;
+                }
+              case "background-image":
+              case "display":
+              case "width":
+              case "padding":
+                // ignore
+                break;
+              default:
+                console.log(`prop ignored: ${item.prop}`);
             }
           } else {
             console.log(`rule ignored: ${item.type}`);
           }
         });
+
+        if (selector === ":root") {
+          Object.assign(variables, localVariables);
+        }
 
         const styleEntries = Object.entries(style);
 
@@ -142,7 +194,12 @@ export function style() {
       });
     });
 
-    let code = `${NOTICE_COMMENT}import 'package:flutter/painting.dart'; const ${varName} = {`;
+    let code = `
+      ${NOTICE_COMMENT}
+      // ignore_for_file: file_names
+
+      import 'package:flutter/painting.dart';
+      const ${varName} = {`;
     Object.entries(obj).forEach(([selector, v]) => {
       code += `'${selector}': TextStyle(${Object.entries(v)
         .map(([k, v]) => `${k}:${v}`)

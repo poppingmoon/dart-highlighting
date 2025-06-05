@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: file_names
+
 import 'package:flutter/painting.dart';
 
 const ideaTheme = {
@@ -7,33 +9,39 @@ const ideaTheme = {
     color: Color(0xff000000),
     backgroundColor: Color(0xffffffff),
   ),
-  'subst': TextStyle(fontWeight: FontWeight.w400, color: Color(0xff000000)),
-  'title': TextStyle(fontWeight: FontWeight.w400, color: Color(0xff000000)),
-  'comment': TextStyle(fontStyle: FontStyle.italic),
-  'quote': TextStyle(fontStyle: FontStyle.italic),
+  'subst': TextStyle(fontWeight: FontWeight.normal, color: Color(0xff000000)),
+  'title': TextStyle(fontWeight: FontWeight.normal, color: Color(0xff000000)),
+  'comment': TextStyle(color: Color(0xff808080), fontStyle: FontStyle.italic),
+  'quote': TextStyle(color: Color(0xff808080), fontStyle: FontStyle.italic),
+  'meta': TextStyle(color: Color(0xff808000)),
   'tag': TextStyle(backgroundColor: Color(0xffefefef)),
-  'keyword': TextStyle(fontWeight: FontWeight.w700, color: Color(0xff000080)),
-  'literal': TextStyle(fontWeight: FontWeight.w700, color: Color(0xff000080)),
-  'name': TextStyle(fontWeight: FontWeight.w700, color: Color(0xff000080)),
-  'section': TextStyle(fontWeight: FontWeight.w700, color: Color(0xff000080)),
-  'selector-class': TextStyle(
-    fontWeight: FontWeight.w700,
-    color: Color(0xff000080),
-  ),
-  'selector-id': TextStyle(
-    fontWeight: FontWeight.w700,
-    color: Color(0xff000080),
-  ),
+  'section': TextStyle(fontWeight: FontWeight.bold, color: Color(0xff000080)),
+  'name': TextStyle(fontWeight: FontWeight.bold, color: Color(0xff000080)),
+  'literal': TextStyle(fontWeight: FontWeight.bold, color: Color(0xff000080)),
+  'keyword': TextStyle(fontWeight: FontWeight.bold, color: Color(0xff000080)),
   'selector-tag': TextStyle(
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.bold,
     color: Color(0xff000080),
   ),
-  'type': TextStyle(fontWeight: FontWeight.w700, color: Color(0xff000080)),
-  'attribute': TextStyle(fontWeight: FontWeight.w700, color: Color(0xff0000ff)),
-  'link': TextStyle(fontWeight: FontWeight.w400, color: Color(0xff0000ff)),
-  'number': TextStyle(fontWeight: FontWeight.w400, color: Color(0xff0000ff)),
-  'regexp': TextStyle(fontWeight: FontWeight.w400, color: Color(0xff0000ff)),
-  'string': TextStyle(fontWeight: FontWeight.w700),
+  'type': TextStyle(fontWeight: FontWeight.bold, color: Color(0xff000080)),
+  'selector-id': TextStyle(
+    fontWeight: FontWeight.bold,
+    color: Color(0xff000080),
+  ),
+  'selector-class': TextStyle(
+    fontWeight: FontWeight.bold,
+    color: Color(0xff000080),
+  ),
+  'attribute': TextStyle(fontWeight: FontWeight.bold, color: Color(0xff0000ff)),
+  'number': TextStyle(fontWeight: FontWeight.normal, color: Color(0xff0000ff)),
+  'regexp': TextStyle(fontWeight: FontWeight.normal, color: Color(0xff0000ff)),
+  'link': TextStyle(fontWeight: FontWeight.normal, color: Color(0xff0000ff)),
+  'string': TextStyle(color: Color(0xff008000), fontWeight: FontWeight.bold),
+  'symbol': TextStyle(
+    color: Color(0xff000000),
+    backgroundColor: Color(0xffd0eded),
+    fontStyle: FontStyle.italic,
+  ),
   'bullet': TextStyle(
     color: Color(0xff000000),
     backgroundColor: Color(0xffd0eded),
@@ -44,15 +52,11 @@ const ideaTheme = {
     backgroundColor: Color(0xffd0eded),
     fontStyle: FontStyle.italic,
   ),
-  'symbol': TextStyle(
-    color: Color(0xff000000),
-    backgroundColor: Color(0xffd0eded),
-    fontStyle: FontStyle.italic,
-  ),
-  'template-variable': TextStyle(color: Color(0xff660e7a)),
+  'doctag': TextStyle(decoration: TextDecoration.underline),
   'variable': TextStyle(color: Color(0xff660e7a)),
+  'template-variable': TextStyle(color: Color(0xff660e7a)),
   'addition': TextStyle(backgroundColor: Color(0xffbaeeba)),
   'deletion': TextStyle(backgroundColor: Color(0xffffc8bd)),
   'emphasis': TextStyle(fontStyle: FontStyle.italic),
-  'strong': TextStyle(fontWeight: FontWeight.w700),
+  'strong': TextStyle(fontWeight: FontWeight.bold),
 };
