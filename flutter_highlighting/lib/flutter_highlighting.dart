@@ -42,16 +42,37 @@ class HighlightView extends StatelessWidget {
     var currentSpans = spans;
     final stack = <List<TextSpan>>[];
 
+    TextStyle? getParentStyle(String name) {
+      if (name.lastIndexOf('.') case final index when index > 0) {
+        final parentName = name.substring(0, index);
+        if (theme[parentName] case final style?) {
+          return style;
+        }
+        return getParentStyle(parentName);
+      }
+      return null;
+    }
+
+    TextStyle? getStyle(String? name) {
+      if (name == null) {
+        return null;
+      }
+      if (theme[name] case final style?) {
+        return style;
+      }
+      return getParentStyle(name);
+    }
+
     void traverse(Node node) {
       if (node.value != null) {
         currentSpans.add(
-          node.className == null
-              ? TextSpan(text: node.value)
-              : TextSpan(text: node.value, style: theme[node.className]),
+          TextSpan(text: node.value, style: getStyle(node.className)),
         );
       } else {
         final tmp = <TextSpan>[];
-        currentSpans.add(TextSpan(children: tmp, style: theme[node.className]));
+        currentSpans.add(
+          TextSpan(children: tmp, style: getStyle(node.className)),
+        );
         stack.add(currentSpans);
         currentSpans = tmp;
 

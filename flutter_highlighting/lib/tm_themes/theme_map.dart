@@ -1,0 +1,125 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'themes/andromeeda.dart';
+import 'themes/aurora-x.dart';
+import 'themes/ayu-dark.dart';
+import 'themes/catppuccin-frappe.dart';
+import 'themes/catppuccin-latte.dart';
+import 'themes/catppuccin-macchiato.dart';
+import 'themes/catppuccin-mocha.dart';
+import 'themes/dark-plus.dart';
+import 'themes/dracula-soft.dart';
+import 'themes/dracula.dart';
+import 'themes/everforest-dark.dart';
+import 'themes/everforest-light.dart';
+import 'themes/github-dark-default.dart';
+import 'themes/github-dark-dimmed.dart';
+import 'themes/github-dark-high-contrast.dart';
+import 'themes/github-dark.dart';
+import 'themes/github-light-default.dart';
+import 'themes/github-light-high-contrast.dart';
+import 'themes/github-light.dart';
+import 'themes/gruvbox-dark-hard.dart';
+import 'themes/gruvbox-dark-medium.dart';
+import 'themes/gruvbox-dark-soft.dart';
+import 'themes/gruvbox-light-hard.dart';
+import 'themes/gruvbox-light-medium.dart';
+import 'themes/gruvbox-light-soft.dart';
+import 'themes/houston.dart';
+import 'themes/kanagawa-dragon.dart';
+import 'themes/kanagawa-lotus.dart';
+import 'themes/kanagawa-wave.dart';
+import 'themes/laserwave.dart';
+import 'themes/light-plus.dart';
+import 'themes/material-theme-darker.dart';
+import 'themes/material-theme-lighter.dart';
+import 'themes/material-theme-ocean.dart';
+import 'themes/material-theme-palenight.dart';
+import 'themes/material-theme.dart';
+import 'themes/min-dark.dart';
+import 'themes/min-light.dart';
+import 'themes/monokai.dart';
+import 'themes/night-owl.dart';
+import 'themes/nord.dart';
+import 'themes/one-dark-pro.dart';
+import 'themes/one-light.dart';
+import 'themes/plastic.dart';
+import 'themes/poimandres.dart';
+import 'themes/red.dart';
+import 'themes/rose-pine-dawn.dart';
+import 'themes/rose-pine-moon.dart';
+import 'themes/rose-pine.dart';
+import 'themes/slack-dark.dart';
+import 'themes/slack-ochin.dart';
+import 'themes/snazzy-light.dart';
+import 'themes/solarized-dark.dart';
+import 'themes/solarized-light.dart';
+import 'themes/synthwave-84.dart';
+import 'themes/tokyo-night.dart';
+import 'themes/vesper.dart';
+import 'themes/vitesse-black.dart';
+import 'themes/vitesse-dark.dart';
+import 'themes/vitesse-light.dart';
+
+const tmThemeMap = {
+  'andromeeda': andromeedaTheme,
+  'aurora-x': auroraXTheme,
+  'ayu-dark': ayuDarkTheme,
+  'catppuccin-frappe': catppuccinFrappeTheme,
+  'catppuccin-latte': catppuccinLatteTheme,
+  'catppuccin-macchiato': catppuccinMacchiatoTheme,
+  'catppuccin-mocha': catppuccinMochaTheme,
+  'dark-plus': darkPlusTheme,
+  'dracula-soft': draculaSoftTheme,
+  'dracula': draculaTheme,
+  'everforest-dark': everforestDarkTheme,
+  'everforest-light': everforestLightTheme,
+  'github-dark-default': githubDarkDefaultTheme,
+  'github-dark-dimmed': githubDarkDimmedTheme,
+  'github-dark-high-contrast': githubDarkHighContrastTheme,
+  'github-dark': githubDarkTheme,
+  'github-light-default': githubLightDefaultTheme,
+  'github-light-high-contrast': githubLightHighContrastTheme,
+  'github-light': githubLightTheme,
+  'gruvbox-dark-hard': gruvboxDarkHardTheme,
+  'gruvbox-dark-medium': gruvboxDarkMediumTheme,
+  'gruvbox-dark-soft': gruvboxDarkSoftTheme,
+  'gruvbox-light-hard': gruvboxLightHardTheme,
+  'gruvbox-light-medium': gruvboxLightMediumTheme,
+  'gruvbox-light-soft': gruvboxLightSoftTheme,
+  'houston': houstonTheme,
+  'kanagawa-dragon': kanagawaDragonTheme,
+  'kanagawa-lotus': kanagawaLotusTheme,
+  'kanagawa-wave': kanagawaWaveTheme,
+  'laserwave': laserwaveTheme,
+  'light-plus': lightPlusTheme,
+  'material-theme-darker': materialThemeDarkerTheme,
+  'material-theme-lighter': materialThemeLighterTheme,
+  'material-theme-ocean': materialThemeOceanTheme,
+  'material-theme-palenight': materialThemePalenightTheme,
+  'material-theme': materialThemeTheme,
+  'min-dark': minDarkTheme,
+  'min-light': minLightTheme,
+  'monokai': monokaiTheme,
+  'night-owl': nightOwlTheme,
+  'nord': nordTheme,
+  'one-dark-pro': oneDarkProTheme,
+  'one-light': oneLightTheme,
+  'plastic': plasticTheme,
+  'poimandres': poimandresTheme,
+  'red': redTheme,
+  'rose-pine-dawn': rosePineDawnTheme,
+  'rose-pine-moon': rosePineMoonTheme,
+  'rose-pine': rosePineTheme,
+  'slack-dark': slackDarkTheme,
+  'slack-ochin': slackOchinTheme,
+  'snazzy-light': snazzyLightTheme,
+  'solarized-dark': solarizedDarkTheme,
+  'solarized-light': solarizedLightTheme,
+  'synthwave-84': synthwave84Theme,
+  'tokyo-night': tokyoNightTheme,
+  'vesper': vesperTheme,
+  'vitesse-black': vitesseBlackTheme,
+  'vitesse-dark': vitesseDarkTheme,
+  'vitesse-light': vitesseLightTheme,
+};

@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// ignore_for_file: file_names
+
+import 'package:flutter/painting.dart';
+
+const vesperTheme = {
+  'root': TextStyle(
+    backgroundColor: Color(0xff101010),
+    color: Color(0xffffffff),
+  ),
+  'comment': TextStyle(color: Color(0xffff8080)),
+  'variable': TextStyle(color: Color(0xffffffff)),
+  'name': TextStyle(color: Color(0xffffc799)),
+  'keyword': TextStyle(color: Color(0xffa0a0a0)),
+  'type': TextStyle(color: Color(0xffffc799)),
+  'meta': TextStyle(color: Color(0xffa0a0a0)),
+  'title.function_': TextStyle(color: Color(0xffffc799)),
+  'number': TextStyle(color: Color(0xffffc799)),
+  'literal': TextStyle(color: Color(0xffffc799)),
+  'string': TextStyle(color: Color(0xff99ffe4)),
+  'symbol': TextStyle(color: Color(0xffffc799)),
+  'variable.language_': TextStyle(color: Color(0xffa0a0a0)),
+  'attr': TextStyle(color: Color(0xffa0a0a0)),
+  'addition': TextStyle(color: Color(0xff99ffe4)),
+  'deletion': TextStyle(color: Color(0xffff8080)),
+  'regexp': TextStyle(color: Color(0xffa0a0a0)),
+  'char.escape_': TextStyle(color: Color(0xffa0a0a0)),
+  'strong': TextStyle(fontWeight: FontWeight.bold, color: Color(0xffffffff)),
+  'emphasis': TextStyle(fontStyle: FontStyle.italic, color: Color(0xffffffff)),
+  'built_in': TextStyle(color: Color(0xffffc799)),
+  'title': TextStyle(color: Color(0xffff8080)),
+  'property': TextStyle(color: Color(0xffffffff)),
+  'quote': TextStyle(fontWeight: FontWeight.bold, color: Color(0xffffffff)),
+  'params': TextStyle(color: Color(0xffffffff)),
+  'doctag': TextStyle(color: Color(0xffa0a0a0)),
+  'template-tag': TextStyle(color: Color(0xffa0a0a0)),
+  'template-variable': TextStyle(color: Color(0xffa0a0a0)),
+  'title.class_': TextStyle(color: Color(0xffff8080)),
+  'title.class_.inherited__': TextStyle(color: Color(0xffff8080)),
+  'attribute': TextStyle(color: Color(0xffa0a0a0)),
+  'operator': TextStyle(color: Color(0xffffc799)),
+  'selector-attr': TextStyle(color: Color(0xffffc799)),
+  'selector-class': TextStyle(color: Color(0xffffc799)),
+  'selector-id': TextStyle(color: Color(0xffffc799)),
+  'code': TextStyle(color: Color(0xffff8080)),
+  'formula': TextStyle(color: Color(0xffff8080)),
+  'selector-tag': TextStyle(color: Color(0xffffc799)),
+  'selector-pseudo': TextStyle(color: Color(0xffffc799)),
+};

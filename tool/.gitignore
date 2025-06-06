@@ -1,3 +1,8 @@
-js/
+js/*
+!js/flutter-highlight-tm.js
+!js/flutter-highlight.js
+!js/gallery.js
+!js/gulpfile.esm.js
+!js/highlight.js
 node_modules/
 package-lock.json

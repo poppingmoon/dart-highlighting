@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// ignore_for_file: file_names
+
+import 'package:flutter/painting.dart';
+
+const lightPlusTheme = {
+  'root': TextStyle(
+    backgroundColor: Color(0xffffffff),
+    color: Color(0xff000000),
+  ),
+  'comment': TextStyle(color: Color(0xffcd3131)),
+  'literal': TextStyle(color: Color(0xff0000ff)),
+  'number': TextStyle(color: Color(0xff098658)),
+  'name': TextStyle(color: Color(0xff800000)),
+  'attr': TextStyle(color: Color(0xffe50000)),
+  'strong': TextStyle(fontWeight: FontWeight.bold, color: Color(0xff800000)),
+  'emphasis': TextStyle(fontStyle: FontStyle.italic),
+  'addition': TextStyle(color: Color(0xff098658)),
+  'deletion': TextStyle(color: Color(0xffa31515)),
+  'bullet': TextStyle(color: Color(0xff0451a5)),
+  'type': TextStyle(color: Color(0xff267f99)),
+  'meta': TextStyle(color: Color(0xff0000ff)),
+  'string': TextStyle(color: Color(0xff0000ff)),
+  'regexp': TextStyle(color: Color(0xff811f3f)),
+  'keyword': TextStyle(color: Color(0xff0000ff)),
+  'operator': TextStyle(color: Color(0xff000000)),
+  'variable.language_': TextStyle(color: Color(0xff0000ff)),
+  'title.function_': TextStyle(color: Color(0xff795e26)),
+  'title.class_': TextStyle(color: Color(0xff267f99)),
+  'title.class_.inherited__': TextStyle(color: Color(0xff267f99)),
+  'variable': TextStyle(color: Color(0xff001080)),
+  'char.escape_': TextStyle(color: Color(0xffee0000)),
+  'built_in': TextStyle(color: Color(0xff267f99)),
+  'symbol': TextStyle(color: Color(0xff267f99)),
+  'title': TextStyle(color: Color(0xff000000)),
+  'subst': TextStyle(color: Color(0xff0000ff)),
+  'doctag': TextStyle(color: Color(0xff0000ff)),
+  'template-tag': TextStyle(color: Color(0xff0000ff)),
+  'template-variable': TextStyle(color: Color(0xff0000ff)),
+  'attribute': TextStyle(color: Color(0xffe50000)),
+  'selector-attr': TextStyle(color: Color(0xff0000ff)),
+  'selector-class': TextStyle(color: Color(0xff0000ff)),
+  'selector-id': TextStyle(color: Color(0xff0000ff)),
+  'code': TextStyle(color: Color(0xffcd3131)),
+  'formula': TextStyle(color: Color(0xffcd3131)),
+  'quote': TextStyle(color: Color(0xff800000)),
+  'selector-tag': TextStyle(color: Color(0xff800000)),
+  'selector-pseudo': TextStyle(color: Color(0xff800000)),
+};

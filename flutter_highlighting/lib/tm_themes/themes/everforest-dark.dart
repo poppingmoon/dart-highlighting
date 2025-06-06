@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// ignore_for_file: file_names
+
+import 'package:flutter/painting.dart';
+
+const everforestDarkTheme = {
+  'root': TextStyle(
+    backgroundColor: Color(0xff2d353b),
+    color: Color(0xff9aa79d),
+  ),
+  'operator': TextStyle(color: Color(0xffe69875)),
+  'attr': TextStyle(color: Color(0xffdbbc7f)),
+  'number': TextStyle(color: Color(0xffd699b6)),
+  'emphasis': TextStyle(fontStyle: FontStyle.italic),
+  'strong': TextStyle(fontWeight: FontWeight.bold),
+  'bullet': TextStyle(color: Color(0xffe67e80)),
+  'keyword': TextStyle(color: Color(0xffe67e80)),
+  'type': TextStyle(color: Color(0xffdbbc7f)),
+  'string': TextStyle(color: Color(0xffd3c6aa)),
+  'built_in': TextStyle(color: Color(0xffdbbc7f)),
+  'symbol': TextStyle(color: Color(0xffd699b6)),
+  'meta': TextStyle(color: Color(0xffd3c6aa)),
+  'literal': TextStyle(color: Color(0xff83c092)),
+  'title': TextStyle(color: Color(0xff83c092)),
+  'variable.language_': TextStyle(color: Color(0xff7fbbb3)),
+  'variable': TextStyle(color: Color(0xff83c092)),
+  'title.class_': TextStyle(color: Color(0xffd3c6aa)),
+  'title.function_': TextStyle(color: Color(0xff83c092)),
+  'section': TextStyle(color: Color(0xff7fbbb3)),
+  'params': TextStyle(color: Color(0xff7fbbb3)),
+  'char.escape_': TextStyle(color: Color(0xff83c092)),
+  'name': TextStyle(color: Color(0xffd699b6)),
+  'comment': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff859289)),
+  'deletion': TextStyle(color: Color(0xffe67e80)),
+  'addition': TextStyle(color: Color(0xffa7c080)),
+  'link': TextStyle(
+    decoration: TextDecoration.underline,
+    color: Color(0xffa7c080),
+  ),
+  'regexp': TextStyle(color: Color(0xffdbbc7f)),
+  'doctag': TextStyle(color: Color(0xffe67e80)),
+  'template-tag': TextStyle(color: Color(0xffe67e80)),
+  'template-variable': TextStyle(color: Color(0xffe67e80)),
+  'title.class_.inherited__': TextStyle(color: Color(0xff83c092)),
+  'attribute': TextStyle(color: Color(0xffdbbc7f)),
+  'selector-attr': TextStyle(color: Color(0xff83c092)),
+  'selector-class': TextStyle(color: Color(0xff83c092)),
+  'selector-id': TextStyle(color: Color(0xff83c092)),
+  'code': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff859289)),
+  'formula': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff859289)),
+  'quote': TextStyle(color: Color(0xffd699b6)),
+  'selector-tag': TextStyle(color: Color(0xffd699b6)),
+  'selector-pseudo': TextStyle(color: Color(0xffd699b6)),
+};

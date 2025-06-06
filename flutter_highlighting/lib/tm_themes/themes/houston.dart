@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// ignore_for_file: file_names
+
+import 'package:flutter/painting.dart';
+
+const houstonTheme = {
+  'root': TextStyle(
+    backgroundColor: Color(0xff17191e),
+    color: Color(0xffcccccc),
+  ),
+  'operator': TextStyle(color: Color(0xffeef0f9)),
+  'keyword': TextStyle(color: Color(0xff54b9ff)),
+  'variable': TextStyle(color: Color(0xff4bf3c8)),
+  'variable.language_': TextStyle(color: Color(0xffacafff)),
+  'title.function_': TextStyle(color: Color(0xff00daef)),
+  'title.class_': TextStyle(color: Color(0xffacafff)),
+  'type': TextStyle(color: Color(0xff54b9ff)),
+  'string': TextStyle(color: Color(0xffffd493)),
+  'title.class_.inherited__': TextStyle(color: Color(0xffacafff)),
+  'number': TextStyle(color: Color(0xffffd493)),
+  'literal': TextStyle(color: Color(0xffffd493)),
+  'name': TextStyle(color: Color(0xff54b9ff)),
+  'attr': TextStyle(color: Color(0xff4bf3c8)),
+  'strong': TextStyle(color: Color(0xff4bf3c8)),
+  'bullet': TextStyle(color: Color(0xff4bf3c8)),
+  'regexp': TextStyle(color: Color(0xffeef0f9)),
+  'char.escape_': TextStyle(color: Color(0xffeef0f9)),
+  'meta': TextStyle(color: Color(0xffeef0f9)),
+  'comment': TextStyle(color: Color(0xffeef0f9)),
+  'built_in': TextStyle(color: Color(0xffeef0f9)),
+  'symbol': TextStyle(color: Color(0xffacafff)),
+  'deletion': TextStyle(color: Color(0xff4bf3c8)),
+  'addition': TextStyle(color: Color(0xffffd493)),
+  'title': TextStyle(color: Color(0xffeef0f9)),
+  'quote': TextStyle(color: Color(0xeef0f98f)),
+  'emphasis': TextStyle(fontStyle: FontStyle.italic),
+  'params': TextStyle(color: Color(0xffeef0f9)),
+  'section': TextStyle(color: Color(0xff4bf3c8)),
+  'link': TextStyle(color: Color(0xff54b9ff)),
+  'doctag': TextStyle(color: Color(0xff54b9ff)),
+  'template-tag': TextStyle(color: Color(0xff54b9ff)),
+  'template-variable': TextStyle(color: Color(0xff54b9ff)),
+  'attribute': TextStyle(color: Color(0xff4bf3c8)),
+  'selector-attr': TextStyle(color: Color(0xffffd493)),
+  'selector-class': TextStyle(color: Color(0xffffd493)),
+  'selector-id': TextStyle(color: Color(0xffffd493)),
+  'code': TextStyle(color: Color(0xffeef0f9)),
+  'formula': TextStyle(color: Color(0xffeef0f9)),
+  'selector-tag': TextStyle(color: Color(0xff54b9ff)),
+  'selector-pseudo': TextStyle(color: Color(0xff54b9ff)),
+};

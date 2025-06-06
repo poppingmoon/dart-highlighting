@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_highlighting/flutter_highlighting.dart';
 import 'package:flutter_highlighting/theme_map.dart';
+import 'package:flutter_highlighting/tm_themes/theme_map.dart';
 import 'package:highlighting/languages/all.dart';
 import 'package:highlighting/languages/dart.dart';
 
@@ -75,15 +76,22 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           PopupMenuButton<String>(
             child: _buildMenuContent(theme),
-            itemBuilder: (context) {
-              return themeMap.keys.map((key) {
-                return CheckedPopupMenuItem(
+            itemBuilder: (context) => [
+              ...themeMap.keys.map(
+                (key) => CheckedPopupMenuItem(
                   value: key,
                   checked: theme == key,
                   child: Text(key),
-                );
-              }).toList();
-            },
+                ),
+              ),
+              ...tmThemeMap.keys.map(
+                (key) => CheckedPopupMenuItem(
+                  value: 'tm-$key',
+                  checked: theme == 'tm-$key',
+                  child: Text('tm-$key'),
+                ),
+              ),
+            ],
             onSelected: (selected) {
               setState(() {
                 theme = selected;
@@ -105,7 +113,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   HighlightView(
                     e.value,
                     languageId: language.id,
-                    theme: themeMap[theme]!,
+                    theme: theme.startsWith('tm-')
+                        ? tmThemeMap[theme.substring(3)]!
+                        : themeMap[theme]!,
                   ),
                   const SizedBox(height: 16),
                 ],
@@ -117,7 +127,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ? exampleMap[languageId] ?? ''
                     : controller.text,
                 languageId: languageId,
-                theme: themeMap[theme]!,
+                theme: theme.startsWith('tm-')
+                    ? tmThemeMap[theme.substring(3)]!
+                    : themeMap[theme]!,
                 padding: const EdgeInsets.all(12),
                 textStyle: const TextStyle(
                   fontFamilyFallback: [

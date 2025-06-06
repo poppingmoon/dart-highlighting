@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// ignore_for_file: file_names
+
+import 'package:flutter/painting.dart';
+
+const poimandresTheme = {
+  'root': TextStyle(
+    backgroundColor: Color(0xff1b1e28),
+    color: Color(0xffa6accd),
+  ),
+  'comment': TextStyle(color: Color(0xffd0679d)),
+  'meta': TextStyle(color: Color(0xff5de4c7)),
+  'params': TextStyle(color: Color(0xffe4f0fb)),
+  'keyword': TextStyle(color: Color(0xffa6accd)),
+  'operator': TextStyle(color: Color(0xff91b4d5)),
+  'type': TextStyle(color: Color(0xa6accdc0)),
+  'name': TextStyle(color: Color(0xff5de4c7)),
+  'number': TextStyle(color: Color(0xff5de4c7)),
+  'literal': TextStyle(color: Color(0xffadd7ff)),
+  'string': TextStyle(color: Color(0xff5de4c7)),
+  'strong': TextStyle(fontWeight: FontWeight.bold, color: Color(0xff7390aa)),
+  'title.class_.inherited__': TextStyle(color: Color(0xffadd7ff)),
+  'title.class_': TextStyle(color: Color(0xa6accdc0)),
+  'symbol': TextStyle(color: Color(0xff91b4d5)),
+  'variable.language_': TextStyle(
+    fontStyle: FontStyle.italic,
+    color: Color(0xffadd7ff),
+  ),
+  'attr': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff91b4d5)),
+  'addition': TextStyle(color: Color(0xffadd7ff)),
+  'deletion': TextStyle(color: Color(0xff506477)),
+  'regexp': TextStyle(color: Color(0xff5fb3a1)),
+  'char.escape_': TextStyle(color: Color(0xff5fb3a1)),
+  'emphasis': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff7390aa)),
+  'quote': TextStyle(fontStyle: FontStyle.italic),
+  'bullet': TextStyle(color: Color(0xffadd7ff)),
+  'built_in': TextStyle(color: Color(0xffadd7ff)),
+  'variable': TextStyle(color: Color(0xffe4f0fb)),
+  'title': TextStyle(color: Color(0xffe4f0fb)),
+  'title.function_': TextStyle(color: Color(0xffadd7ff)),
+  'section': TextStyle(fontWeight: FontWeight.bold, color: Color(0xffe4f0fb)),
+  'link': TextStyle(color: Color(0xff5de4c7)),
+  'doctag': TextStyle(color: Color(0xffa6accd)),
+  'template-tag': TextStyle(color: Color(0xffa6accd)),
+  'template-variable': TextStyle(color: Color(0xffa6accd)),
+  'attribute': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff91b4d5)),
+  'selector-attr': TextStyle(color: Color(0xffadd7ff)),
+  'selector-class': TextStyle(color: Color(0xffadd7ff)),
+  'selector-id': TextStyle(color: Color(0xffadd7ff)),
+  'code': TextStyle(color: Color(0xffd0679d)),
+  'formula': TextStyle(color: Color(0xffd0679d)),
+  'selector-tag': TextStyle(color: Color(0xff5de4c7)),
+  'selector-pseudo': TextStyle(color: Color(0xff5de4c7)),
+};
