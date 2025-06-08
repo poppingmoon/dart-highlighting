@@ -13,7 +13,7 @@ dependencies:
   highlighting:
     git:
       url: https://github.com/poppingmoon/dart-highlighting
-      ref: 76d9f984d53de07b445965f13a5e02c3bd3ed83a
+      ref: cabd93636e331707ad6ff0f548a9c21e07b0e6c7
       path: highlighting
 
 dev_dependencies:
