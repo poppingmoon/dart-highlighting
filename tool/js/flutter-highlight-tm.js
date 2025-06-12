@@ -225,6 +225,9 @@ export function style() {
           }
         }
       }
+      if (obj[scope]?.["fontStyle"] === "FontStyle.italic") {
+        obj[scope]["fontStyle"] = "FontStyle.normal";
+      }
     }
     const titleScopes = [
       "title",
@@ -313,6 +316,10 @@ export function style() {
         }
       }
     }
+    if (obj["params"]?.["fontStyle"] === "FontStyle.italic") {
+      obj["params"]["fontStyle"] = "FontStyle.normal";
+    }
+
 
     let code = `
       ${NOTICE_COMMENT}

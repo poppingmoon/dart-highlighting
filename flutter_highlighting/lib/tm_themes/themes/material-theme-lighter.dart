@@ -19,7 +19,7 @@ const materialThemeLighterTheme = {
   'title.function_': TextStyle(color: Color(0xff6182b8)),
   'deletion': TextStyle(color: Color(0xffe53935)),
   'addition': TextStyle(color: Color(0xff91b859)),
-  'params': TextStyle(fontStyle: FontStyle.italic),
+  'params': TextStyle(fontStyle: FontStyle.normal),
   'quote': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff39adb5)),
   'meta': TextStyle(color: Color(0xffe53935)),
   'keyword': TextStyle(color: Color(0xfff76d47)),

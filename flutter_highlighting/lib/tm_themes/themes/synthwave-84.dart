@@ -15,7 +15,7 @@ const synthwave84Theme = {
     fontWeight: FontWeight.bold,
     color: Color(0xfffe4450),
   ),
-  'params': TextStyle(fontStyle: FontStyle.italic),
+  'params': TextStyle(fontStyle: FontStyle.normal),
   'type': TextStyle(color: Color(0xfffede5d)),
   'meta': TextStyle(color: Color(0xfffede5d)),
   'literal': TextStyle(color: Color(0xfff97e72)),

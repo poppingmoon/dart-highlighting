@@ -19,7 +19,7 @@ const materialThemeDarkerTheme = {
   'title.function_': TextStyle(color: Color(0xff82aaff)),
   'deletion': TextStyle(color: Color(0xfff07178)),
   'addition': TextStyle(color: Color(0xffc3e88d)),
-  'params': TextStyle(fontStyle: FontStyle.italic),
+  'params': TextStyle(fontStyle: FontStyle.normal),
   'quote': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff89ddff)),
   'meta': TextStyle(color: Color(0xfff07178)),
   'keyword': TextStyle(color: Color(0xfff78c6c)),

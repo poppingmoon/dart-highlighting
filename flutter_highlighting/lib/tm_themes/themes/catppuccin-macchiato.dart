@@ -37,7 +37,7 @@ const catppuccinMacchiatoTheme = {
     fontStyle: FontStyle.normal,
     color: Color(0xffeed49f),
   ),
-  'params': TextStyle(fontStyle: FontStyle.italic, color: Color(0xffee99a0)),
+  'params': TextStyle(fontStyle: FontStyle.normal, color: Color(0xffee99a0)),
   'literal': TextStyle(color: Color(0xffed8796)),
   'name': TextStyle(
     fontStyle: FontStyle.normal,

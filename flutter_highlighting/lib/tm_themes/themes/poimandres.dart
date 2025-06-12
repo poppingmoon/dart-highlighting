@@ -24,7 +24,7 @@ const poimandresTheme = {
   'title.class_': TextStyle(color: Color(0xa6accdc0)),
   'symbol': TextStyle(color: Color(0xff91b4d5)),
   'variable.language_': TextStyle(
-    fontStyle: FontStyle.italic,
+    fontStyle: FontStyle.normal,
     color: Color(0xffadd7ff),
   ),
   'attr': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff91b4d5)),

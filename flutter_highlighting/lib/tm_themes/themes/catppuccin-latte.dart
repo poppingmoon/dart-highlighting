@@ -37,7 +37,7 @@ const catppuccinLatteTheme = {
     fontStyle: FontStyle.normal,
     color: Color(0xffdf8e1d),
   ),
-  'params': TextStyle(fontStyle: FontStyle.italic, color: Color(0xffe64553)),
+  'params': TextStyle(fontStyle: FontStyle.normal, color: Color(0xffe64553)),
   'literal': TextStyle(color: Color(0xffd20f39)),
   'name': TextStyle(
     fontStyle: FontStyle.normal,

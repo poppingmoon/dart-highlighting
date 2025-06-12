@@ -27,7 +27,7 @@ const monokaiTheme = {
     color: Color(0xfff8f8f2),
   ),
   'keyword': TextStyle(color: Color(0xfff92672)),
-  'type': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff66d9ef)),
+  'type': TextStyle(fontStyle: FontStyle.normal, color: Color(0xff66d9ef)),
   'title.class_.inherited__': TextStyle(
     fontStyle: FontStyle.normal,
     decoration: TextDecoration.underline,
@@ -38,7 +38,7 @@ const monokaiTheme = {
     fontWeight: FontWeight.normal,
     color: Color(0xffa6e22e),
   ),
-  'params': TextStyle(fontStyle: FontStyle.italic, color: Color(0xfffd971f)),
+  'params': TextStyle(fontStyle: FontStyle.normal, color: Color(0xfffd971f)),
   'name': TextStyle(
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.normal,

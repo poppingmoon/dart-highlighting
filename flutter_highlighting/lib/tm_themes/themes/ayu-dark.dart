@@ -17,7 +17,7 @@ const ayuDarkTheme = {
   'literal': TextStyle(fontStyle: FontStyle.italic, color: Color(0xfff29668)),
   'variable': TextStyle(color: Color(0xffbfbdb6)),
   'variable.language_': TextStyle(
-    fontStyle: FontStyle.italic,
+    fontStyle: FontStyle.normal,
     color: Color(0xff39bae6),
   ),
   'type': TextStyle(color: Color(0xff39bae6)),

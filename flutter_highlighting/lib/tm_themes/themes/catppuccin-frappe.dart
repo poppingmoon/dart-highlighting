@@ -37,7 +37,7 @@ const catppuccinFrappeTheme = {
     fontStyle: FontStyle.normal,
     color: Color(0xffe5c890),
   ),
-  'params': TextStyle(fontStyle: FontStyle.italic, color: Color(0xffea999c)),
+  'params': TextStyle(fontStyle: FontStyle.normal, color: Color(0xffea999c)),
   'literal': TextStyle(color: Color(0xffe78284)),
   'name': TextStyle(
     fontStyle: FontStyle.normal,

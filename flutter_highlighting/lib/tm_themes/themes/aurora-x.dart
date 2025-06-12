@@ -24,7 +24,7 @@ const auroraXTheme = {
   'strong': TextStyle(fontWeight: FontWeight.bold, color: Color(0xfff07178)),
   'symbol': TextStyle(color: Color(0xffffcb6b)),
   'variable.language_': TextStyle(
-    fontStyle: FontStyle.italic,
+    fontStyle: FontStyle.normal,
     color: Color(0xffff5370),
   ),
   'attr': TextStyle(color: Color(0xffc792ea)),

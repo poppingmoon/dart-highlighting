@@ -37,7 +37,7 @@ const catppuccinMochaTheme = {
     fontStyle: FontStyle.normal,
     color: Color(0xfff9e2af),
   ),
-  'params': TextStyle(fontStyle: FontStyle.italic, color: Color(0xffeba0ac)),
+  'params': TextStyle(fontStyle: FontStyle.normal, color: Color(0xffeba0ac)),
   'literal': TextStyle(color: Color(0xfff38ba8)),
   'name': TextStyle(
     fontStyle: FontStyle.normal,

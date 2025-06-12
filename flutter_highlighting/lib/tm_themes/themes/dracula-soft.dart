@@ -17,7 +17,7 @@ const draculaSoftTheme = {
   'link': TextStyle(color: Color(0xff97e1f1)),
   'quote': TextStyle(fontStyle: FontStyle.italic, color: Color(0xffe7ee98)),
   'variable.language_': TextStyle(
-    fontStyle: FontStyle.italic,
+    fontStyle: FontStyle.normal,
     color: Color(0xffbf9eee),
   ),
   'title.class_.inherited__': TextStyle(
@@ -29,7 +29,7 @@ const draculaSoftTheme = {
   'name': TextStyle(color: Color(0xfff286c4)),
   'attr': TextStyle(fontStyle: FontStyle.italic, color: Color(0xff62e884)),
   'title.function_': TextStyle(color: Color(0xff62e884)),
-  'params': TextStyle(fontStyle: FontStyle.italic, color: Color(0xffffb86c)),
+  'params': TextStyle(fontStyle: FontStyle.normal, color: Color(0xffffb86c)),
   'keyword': TextStyle(color: Color(0xfff286c4)),
   'built_in': TextStyle(fontStyle: FontStyle.normal, color: Color(0xff97e1f1)),
   'type': TextStyle(
