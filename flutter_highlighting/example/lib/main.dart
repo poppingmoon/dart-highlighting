@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_highlighting/flutter_highlighting.dart';
 import 'package:flutter_highlighting/theme_map.dart';
 import 'package:flutter_highlighting/tm_themes/theme_map.dart';
 import 'package:highlighting/languages/all.dart';
 import 'package:highlighting/languages/dart.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'example_map.dart';
 

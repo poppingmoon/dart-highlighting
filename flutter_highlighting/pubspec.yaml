@@ -13,8 +13,9 @@ dependencies:
   highlighting:
     git:
       url: https://github.com/poppingmoon/dart-highlighting
-      ref: cabd93636e331707ad6ff0f548a9c21e07b0e6c7
+      ref: aria
       path: highlighting
+  material_ui: ^1.5.0
 
 dev_dependencies:
   total_lints: ^3.4.0
